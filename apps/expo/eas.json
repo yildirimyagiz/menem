@@ -1,0 +1,35 @@
+{
+  "cli": {
+    "version": ">= 4.1.2"
+  },
+  "build": {
+    "base": {
+      "node": "22.12.0",
+      "pnpm": "9.15.4",
+      "ios": {
+        "resourceClass": "m-medium"
+      }
+    },
+    "appName": {
+      "name": "booky" // Ensure this is an object with a name property
+    },
+    "development": {
+      "extends": "base",
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {
+      "extends": "base",
+      "distribution": "internal",
+      "ios": {
+        "simulator": true
+      }
+    },
+    "production": {
+      "extends": "base"
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}

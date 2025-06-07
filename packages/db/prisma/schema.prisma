@@ -1,0 +1,2052 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator typescriptInterfaces {
+  provider = "prisma-generator-typescript-interfaces"
+  output   = "./src/interfaces.ts"
+}
+
+model Account {
+  id                String      @id @default(cuid())
+  userId            String
+  type              AccountType
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+  isActive          Boolean?    @default(true) // Add this if Account can be active/inactive
+  user              User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt         DateTime    @default(now())
+  updatedAt         DateTime    @updatedAt // Ensure this directive is present
+
+  @@unique([provider, providerAccountId])
+}
+
+model Agency {
+  id               String             @id @default(cuid()) // Assuming cuid for new agencies
+  name             String
+  description      String?
+  email            String?
+  phoneNumber      String?
+  address          String?
+  website          String?
+  logoUrl          String?
+  status           SharedStatus       @default(PENDING) // Using consolidated status
+  createdAt        DateTime           @default(now())
+  deletedAt        DateTime?
+  updatedAt        DateTime           @updatedAt
+  Agent            Agent[]
+  Analytics        Analytics[]
+  CommunicationLog CommunicationLog[]
+  ComplianceRecord ComplianceRecord[]
+  Expense          Expense[]
+  Hashtag          Hashtag[]
+  Language         Language[]
+
+  Mention           Mention[]
+  Notification      Notification[]
+  Photo             Photo[]
+  Post              Post[]
+  Report            Report[]
+  Reservation       Reservation[]
+  Review            Review[]
+  Subscription      Subscription[]
+  Task              Task[]
+  User              User[]
+  Property          Property[]
+  Facility          Facility?        @relation(fields: [facilityId], references: [id])
+  facilityId        String?
+  IncludedService   IncludedService? @relation(fields: [includedServiceId], references: [id])
+  includedServiceId String?
+  ExtraCharge       ExtraCharge?     @relation(fields: [extraChargeId], references: [id])
+  extraChargeId     String?
+  isActive          Boolean          @default(true)
+  ownerId           String?
+  Owner             User?            @relation("AgencyOwner", fields: [ownerId], references: [id])
+  settings          Json?
+  theme             String?
+  externalId        String?          @unique
+  integration       Json?
+  Guest             Guest[]
+  Contract          Contract[]
+
+  @@index([deletedAt])
+  @@index([email])
+  @@index([name])
+}
+
+enum AgentSpecialities {
+  RESIDENTIAL
+  COMMERCIAL
+  LUXURY
+  RENTAL
+  INVESTMENT
+  OTHER
+}
+
+model Agent {
+  id               String              @id @default(cuid()) // Assuming cuid for new agents
+  name             String
+  email            String?
+  phoneNumber      String?
+  bio              String?
+  address          String?
+  website          String?
+  logoUrl          String?
+  status           SharedStatus        @default(PENDING) // Using consolidated status
+  createdAt        DateTime            @default(now())
+  deletedAt        DateTime?
+  updatedAt        DateTime            @updatedAt
+  agencyId         String?
+  Agency           Agency?             @relation(fields: [agencyId], references: [id])
+  specialities     AgentSpecialities[]
+  Analytics        Analytics[]
+  ComplianceRecord ComplianceRecord[]
+
+  Notification Notification[]
+  Photo        Photo[]
+  Post         Post[]
+  Property     Property[]
+  Report       Report[]
+  Reservation  Reservation[]
+  Review       Review[]
+  Subscription Subscription[]
+  Task         Task[]
+  // Enhancements
+  settings     Json?
+  externalId   String?        @unique
+  integration  Json?
+  ownerId      String?
+  Owner        User?          @relation(fields: [ownerId], references: [id])
+  lastActive   DateTime?
+
+  @@unique([email])
+  @@unique([name, agencyId])
+  @@index([deletedAt])
+  @@index([email])
+  @@index([name])
+}
+
+enum SharedStatus {
+  PENDING
+  ACTIVE
+  SUSPENDED
+}
+
+model Analytics {
+  id         String        @id @default(cuid())
+  entityId   String // ID of the entity being analyzed (e.g., Property.id, User.id)
+  entityType String // Type of the entity (e.g., "Property", "User")
+  type       AnalyticsType // Specific type of analytics event (e.g., LISTING_VIEW, ML_PROPERTY_SCORE)
+  data       Json? // Flexible JSON field to store event-specific data
+  timestamp  DateTime      @default(now())
+  deletedAt  DateTime?
+
+  // Optional direct relations for easier querying if needed, though entityId/entityType is more generic
+  propertyId    String?
+  Property      Property?    @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  userId        String?
+  User          User?        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  agentId       String?
+  Agent         Agent?       @relation(fields: [agentId], references: [id], onDelete: Cascade)
+  agencyId      String?
+  Agency        Agency?      @relation(fields: [agencyId], references: [id], onDelete: Cascade)
+  reservationId String?
+  Reservation   Reservation? @relation(fields: [reservationId], references: [id], onDelete: Cascade)
+  taskId        String?
+  Task          Task?        @relation(fields: [taskId], references: [id], onDelete: Cascade)
+
+  @@index([entityId, entityType])
+  @@index([type])
+  @@index([timestamp])
+  @@index([propertyId])
+  @@index([userId])
+  @@index([agentId])
+  @@index([agencyId])
+}
+
+model Availability {
+  id        String   @id @default(cuid())
+  date      DateTime
+  isBlocked Boolean  @default(false)
+  isBooked  Boolean  @default(false)
+
+  // Relationships
+  propertyId    String
+  property      Property     @relation(fields: [propertyId], references: [id])
+  reservationId String?
+  reservation   Reservation? @relation(fields: [reservationId], references: [id])
+  pricingRuleId String?
+  pricingRule   PricingRule? @relation(fields: [pricingRuleId], references: [id])
+
+  // Availability Tracking
+  totalUnits     Int   @default(1)
+  availableUnits Int   @default(1)
+  bookedUnits    Int   @default(0)
+  blockedUnits   Int   @default(0)
+  specialPricing Json? // [{ startDate: DateTime, endDate: DateTime, price: Float }, ...]
+
+  // Pricing
+  basePrice     Float @default(0)
+  currentPrice  Float @default(0)
+  priceSettings Json?
+  minNights     Int?  @default(1)
+  maxNights     Int?  @default(365)
+  maxGuests     Int   @default(2)
+
+  discountSettings Json?
+
+  // Dynamic Pricing Adjustments
+  weekendRate        Float?
+  weekdayRate        Float?
+  weekendMultiplier  Float? @default(1)
+  weekdayMultiplier  Float? @default(1)
+  seasonalMultiplier Float? @default(1)
+
+  // Timestamps
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+
+  @@unique([propertyId, date])
+  @@index([date, availableUnits])
+  @@index([isBlocked])
+  @@index([propertyId, date])
+}
+
+model VerificationToken {
+  id        String   @id @default(cuid())
+  userId    String
+  token     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt // Added @updatedAt directive
+}
+
+enum ChannelType {
+  PUBLIC
+  PRIVATE
+  GROUP
+}
+
+enum ChannelCategory {
+  AGENT
+  AGENCY
+  TENANT
+  PROPERTY
+  PAYMENT
+  SYSTEM
+  REPORT
+  RESERVATION
+  TASK
+  TICKET
+}
+
+model Channel {
+  id                String             @id @default(cuid())
+  cuid              String             @unique @default(uuid())
+  name              String
+  type              ChannelType        @default(PUBLIC)
+  category          ChannelCategory    @default(AGENCY)
+  description       String?
+  createdAt         DateTime           @default(now())
+  updatedAt         DateTime           @updatedAt
+  deletedAt         DateTime?
+  CommunicationLogs CommunicationLog[]
+
+  @@index([name], map: "idx_channel_name")
+}
+
+model Ticket {
+  id                String             @id @default(cuid())
+  cuid              String             @unique @default(uuid())
+  subject           String
+  description       String?
+  status            TicketStatus       @default(OPEN)
+  createdAt         DateTime           @default(now())
+  updatedAt         DateTime           @updatedAt
+  closedAt          DateTime?
+  deletedAt         DateTime?
+  CommunicationLogs CommunicationLog[]
+
+  @@index([status])
+}
+
+enum TicketStatus {
+  OPEN
+  IN_PROGRESS
+  RESOLVED
+  CLOSED
+  ARCHIVED
+}
+
+enum ContractStatus {
+  ACTIVE
+  INACTIVE
+  DRAFT
+  PUBLISHED
+  EXPIRED
+  TERMINATED
+  CANCELLED
+  OVERDUE
+  RENEWED
+}
+
+model Contract {
+  id          String         @id @default(cuid())
+  name        String
+  description String         @db.Text
+  status      ContractStatus
+  startDate   DateTime
+  endDate     DateTime
+  tenantId    String
+  propertyId  String
+  agencyId    String
+  terms       Json?
+  metadata    Json?
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime
+  deletedAt   DateTime?
+  Agency      Agency?        @relation(fields: [agencyId], references: [id])
+  Tenant      Tenant?        @relation(fields: [tenantId], references: [id])
+  Property    Property?      @relation(fields: [propertyId], references: [id])
+  increase    Increase[]
+}
+
+model CommunicationLog {
+  id          String             @id @default(cuid())
+  senderId    String
+  receiverId  String
+  type        CommunicationType
+  content     String             @db.Text
+  entityId    String?
+  entityType  String?
+  metadata    Json?
+  isRead      Boolean            @default(false)
+  readAt      DateTime?
+  deliveredAt DateTime?
+  deletedAt   DateTime?
+  timestamp   DateTime           @default(now())
+  userId      String?
+  agencyId    String?
+  threadId    String? // For grouping messages in a conversation
+  replyToId   String? // For threaded replies
+  Agency      Agency?            @relation(fields: [agencyId], references: [id])
+  User        User?              @relation(fields: [userId], references: [id])
+  replyTo     CommunicationLog?  @relation("Replies", fields: [replyToId], references: [id])
+  replies     CommunicationLog[] @relation("Replies")
+  Channel     Channel?           @relation(fields: [channelId], references: [id])
+  channelId   String?
+  Ticket      Ticket?            @relation(fields: [ticketId], references: [id])
+  ticketId    String?
+  createdAt   DateTime           @default(now())
+  updatedAt   DateTime
+
+  @@index([deletedAt])
+  @@index([entityId, entityType])
+  @@index([receiverId])
+  @@index([senderId])
+  @@index([type])
+}
+
+model ComplianceRecord {
+  id          String           @id @default(cuid())
+  entityId    String
+  entityType  String
+  type        ComplianceType
+  status      ComplianceStatus
+  documentUrl String?
+  expiryDate  DateTime?
+  notes       String?
+  isVerified  Boolean          @default(false)
+
+  propertyId    String?
+  agentId       String?
+  agencyId      String?
+  reservationId String?
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime
+  deletedAt     DateTime?
+  Agency        Agency?      @relation(fields: [agencyId], references: [id])
+  Agent         Agent?       @relation(fields: [agentId], references: [id])
+  Property      Property?    @relation(fields: [propertyId], references: [id])
+  Reservation   Reservation? @relation(fields: [reservationId], references: [id])
+
+  @@index([agencyId])
+  @@index([agentId])
+  @@index([deletedAt])
+  @@index([entityId, entityType])
+  @@index([expiryDate])
+  @@index([propertyId])
+  @@index([reservationId])
+  @@index([type])
+}
+
+model Currency {
+  id           String        @id @default(cuid())
+  code         String        @unique
+  name         String
+  symbol       String
+  exchangeRate Float
+  isActive     Boolean       @default(true)
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime
+  Expense      Expense[]
+  Payment      Payment[]
+  Reservation  Reservation[]
+  Property     Property[]
+  PricingRule  PricingRule[]
+}
+
+enum Gender {
+  MALE
+  FEMALE
+}
+
+model Guest {
+  id             String        @id @default(cuid())
+  name           String
+  phone          String
+  image          String?
+  nationality    String
+  passportNumber String
+  gender         Gender
+  birthDate      DateTime
+  address        String
+  city           String
+  country        String
+  zipCode        String
+  email          String
+  agencyId       String?
+  Agency         Agency?       @relation(fields: [agencyId], references: [id])
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+  deletedAt      DateTime?
+  Property       Property[]
+  Reservation    Reservation[]
+
+  @@index([email])
+}
+
+model CommissionRule {
+  id         String             @id @default(cuid())
+  providerId String
+  provider   Provider           @relation("ProviderToCommissionRule", fields: [providerId], references: [id])
+  ruleType   CommissionRuleType
+  startDate  DateTime?
+  endDate    DateTime?
+  commission Float
+  minVolume  Int? // For volume-based rules
+  maxVolume  Int?
+  conditions Json? // Flexible conditions storage
+  createdAt  DateTime           @default(now())
+  updatedAt  DateTime           @updatedAt
+  deletedAt  DateTime?
+
+  @@unique([providerId, ruleType])
+  @@index([providerId])
+  @@index([ruleType])
+  @@index([deletedAt])
+}
+
+enum CommissionRuleType {
+  SEASONAL
+  VOLUME
+  PROPERTY_TYPE
+  LOCATION_BASED
+  BOOKING_VALUE
+  LOYALTY
+  SPECIAL_PROMOTION
+  PACKAGE_DEAL
+  PRICE_COMPARISON
+  COMMISSION_SUMMARY
+  BOOKING_VOLUME
+  REVENUE
+  PERFORMANCE
+}
+
+model Discount {
+  deletedAt DateTime?
+  id        String    @id @default(cuid())
+
+  name          String        @db.VarChar(100)
+  description   String?
+  code          String?       @unique @db.VarChar(20)
+  value         Float
+  type          DiscountType
+  startDate     DateTime?
+  endDate       DateTime?
+  maxUsage      Int?
+  currentUsage  Int           @default(0)
+  isActive      Boolean       @default(true)
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime
+  propertyId    String
+  Property      Property      @relation(fields: [propertyId], references: [id])
+  Reservation   Reservation[]
+  pricingRuleId String? // <-- FK to PricingRule
+  PricingRule   PricingRule?  @relation(fields: [pricingRuleId], references: [id])
+
+  @@index([deletedAt])
+  @@index([type], map: "idx_discount_type")
+}
+
+model PricingRule {
+  deletedAt     DateTime?
+  id            String        @id @default(cuid())
+  name          String
+  description   String?
+  basePrice     Float
+  strategy      String        @default("FIXED")
+  startDate     DateTime?
+  endDate       DateTime?
+  minNights     Int?          @default(1)
+  maxNights     Int?          @default(30)
+  weekdayPrices Json?
+  taxRules      Json?
+  discountRules Json?
+  isActive      Boolean       @default(true)
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime
+  propertyId    String
+  Property      Property      @relation("PropertyToPricingRule", fields: [propertyId], references: [id])
+  Reservation   Reservation[]
+
+  Availability  Availability[]
+  Subscriptions Subscription[]
+  Discounts     Discount[] // <-- Reverse relation
+  currencyId    String
+  currency      Currency?      @relation(fields: [currencyId], references: [id])
+
+  @@index([deletedAt])
+}
+
+model Expense {
+  id         String  @id @default(cuid())
+  propertyId String?
+  tenantId   String?
+
+  agencyId          String?
+  type              ExpenseType
+  amount            Float
+  currencyId        String
+  dueDate           DateTime?
+  paidDate          DateTime?
+  status            ExpenseStatus    @default(PENDING)
+  notes             String?
+  createdAt         DateTime         @default(now())
+  updatedAt         DateTime         @updatedAt
+  deletedAt         DateTime?
+  Agency            Agency?          @relation(fields: [agencyId], references: [id], onDelete: Cascade)
+  Currency          Currency         @relation(fields: [currencyId], references: [id])
+  Property          Property?        @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  Tenant            Tenant?          @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  Facility          Facility?        @relation(fields: [facilityId], references: [id])
+  facilityId        String?
+  IncludedService   IncludedService? @relation(fields: [includedServiceId], references: [id])
+  includedServiceId String?
+  ExtraCharge       ExtraCharge?     @relation(fields: [extraChargeId], references: [id])
+  extraChargeId     String?
+
+  @@index([agencyId])
+  @@index([deletedAt])
+  @@index([propertyId])
+  @@index([status])
+  @@index([tenantId])
+}
+
+model Hashtag {
+  deletedAt   DateTime?
+  id          String      @id @default(cuid())
+  name        String      @unique
+  type        HashtagType @default(GENERAL)
+  description String?
+  usageCount  Int         @default(1)
+  relatedTags String[]
+  createdById String?
+  agencyId    String?
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime
+  Agency      Agency?     @relation(fields: [agencyId], references: [id])
+  User        User?       @relation(fields: [createdById], references: [id])
+
+  Post     Post[]
+  Property Property[]
+
+  @@index([deletedAt])
+  @@index([name])
+  @@index([usageCount])
+}
+
+model Increase {
+  id            String         @id @default(cuid())
+  propertyId    String
+  tenantId      String
+  proposedBy    String
+  oldRent       Float
+  newRent       Float
+  effectiveDate DateTime
+  status        IncreaseStatus @default(PENDING)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime
+  deletedAt     DateTime?
+  Property      Property       @relation(fields: [propertyId], references: [id])
+  Tenant        Tenant         @relation(fields: [tenantId], references: [id])
+  Offer         Offer?
+  Contract      Contract?      @relation(fields: [contractId], references: [id])
+  contractId    String?
+}
+
+model Language {
+  id         String    @id @default(cuid())
+  code       String    @unique
+  name       String
+  nativeName String
+  isRTL      Boolean   @default(false)
+  isActive   Boolean   @default(true)
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime
+  deletedAt  DateTime?
+  agencyId   String?
+  Agency     Agency?   @relation(fields: [agencyId], references: [id])
+}
+
+model Mention {
+  id            String      @id @default(cuid())
+  mentionedById String
+  mentionedToId String
+  type          MentionType
+  taskId        String?
+
+  propertyId  String?
+  content     String?
+  isRead      Boolean   @default(false)
+  agencyId    String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime
+  deletedAt   DateTime?
+  userId      String?
+  Agency      Agency?   @relation(fields: [agencyId], references: [id])
+  mentionedBy User      @relation("MentionsByUser", fields: [mentionedById], references: [id], onDelete: Cascade)
+  mentionedTo User      @relation("MentionsToUser", fields: [mentionedToId], references: [id], onDelete: Cascade)
+  Property    Property? @relation(fields: [propertyId], references: [id])
+  Task        Task?     @relation(fields: [taskId], references: [id])
+  user        User?     @relation("MentionsGenericUser", fields: [userId], references: [id])
+
+  @@unique([mentionedById, mentionedToId, type, taskId, propertyId])
+  @@index([createdAt])
+  @@index([deletedAt])
+  @@index([mentionedById])
+  @@index([mentionedToId])
+  @@index([propertyId])
+  @@index([taskId])
+}
+
+model Notification {
+  id         String           @id @default(cuid())
+  userId     String
+  type       NotificationType
+  content    String
+  entityId   String?
+  entityType String?
+  isRead     Boolean          @default(false)
+  tenantId   String?
+  agencyId   String?
+  createdAt  DateTime         @default(now())
+  updatedAt  DateTime         @updatedAt
+  deletedAt  DateTime?
+  reviewId   String?
+  agentId    String?
+  Agency     Agency?          @relation(fields: [agencyId], references: [id])
+  Agent      Agent?           @relation(fields: [agentId], references: [id])
+  Review     Review?          @relation(fields: [reviewId], references: [id])
+  Tenant     Tenant?          @relation(fields: [tenantId], references: [id])
+  User       User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([deletedAt])
+  @@index([tenantId])
+  @@index([type])
+  @@index([userId])
+}
+
+model Offer {
+  increaseId String? @unique
+
+  id                  String       @id @default(cuid())
+  offerType           OfferType    @default(STANDARD)
+  status              OfferStatus  @default(PENDING)
+  basePrice           Float
+  discountRate        Float?
+  finalPrice          Float
+  guestId             String?
+  startDate           DateTime
+  endDate             DateTime
+  specialRequirements String?
+  notes               String?
+  createdAt           DateTime     @default(now())
+  updatedAt           DateTime     @updatedAt
+  deletedAt           DateTime?
+  reservationId       String?      @unique
+  propertyId          String
+  User                User?        @relation(fields: [guestId], references: [id])
+  Increase            Increase?    @relation(fields: [increaseId], references: [id])
+  Reservation         Reservation? @relation(fields: [reservationId], references: [id])
+  Property            Property?    @relation(fields: [propertyId], references: [id])
+
+  @@index([deletedAt])
+  @@index([guestId])
+  @@index([propertyId])
+  @@index([reservationId])
+}
+
+model Payment {
+  id            String        @id @default(cuid())
+  tenantId      String
+  amount        Float
+  currencyId    String
+  paymentDate   DateTime
+  dueDate       DateTime
+  status        PaymentStatus @default(UNPAID)
+  paymentMethod String?
+  reference     String?
+  notes         String?
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+  deletedAt     DateTime?
+
+  // Stripe specific fields
+  stripePaymentIntentId String? @unique
+  stripePaymentMethodId String?
+  stripeClientSecret    String?
+  stripeStatus          String?
+  stripeError           String?
+
+  Currency Currency @relation(fields: [currencyId], references: [id])
+  Tenant   Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@index([deletedAt])
+  @@index([dueDate])
+  @@index([paymentDate])
+  @@index([tenantId])
+  @@index([stripePaymentIntentId])
+}
+
+model Permission {
+  id          String  @id @default(cuid())
+  name        String  @unique
+  description String?
+  User        User[]  @relation("UserPermissions")
+}
+
+model Photo {
+  id            String    @id @default(cuid())
+  url           String    @unique // Publicly accessible URL of the (potentially processed) image
+  originalName  String? // Original filename as uploaded by the user
+  filename      String? // Filename on storage, if different from originalName or part of URL
+  type          PhotoType @default(GALLERY)
+  caption       String? // Could be used for user-provided caption or derived info
+  alt           String?
+  src           String?
+  featured      Boolean   @default(false)
+  width         Int?
+  height        Int?
+  fileSize      Int?
+  mimeType      String?   @db.VarChar(100)
+  dominantColor String?   @db.VarChar(7)
+  mlMetadata    Json? // To store any additional structured metadata from ML service
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  deletedAt     DateTime?
+
+  userId     String?
+  agencyId   String?
+  propertyId String?
+  agentId    String?
+  postId     String?
+  Agency     Agency?   @relation(fields: [agencyId], references: [id])
+  Agent      Agent?    @relation(fields: [agentId], references: [id])
+  Post       Post?     @relation(fields: [postId], references: [id])
+  Property   Property? @relation(fields: [propertyId], references: [id])
+  User       User?     @relation(fields: [userId], references: [id])
+
+  @@index([agentId])
+  @@index([deletedAt])
+  @@index([featured])
+  @@index([postId])
+  @@index([propertyId])
+  @@index([type])
+  @@index([userId])
+}
+
+model Post {
+  deletedAt DateTime?
+  id        String    @id @default(cuid())
+  title     String
+  content   String
+  slug      String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  userId    String
+  agencyId  String?
+  hashtagId String?
+  agentId   String?
+  Photo     Photo[]
+  Agency    Agency?  @relation(fields: [agencyId], references: [id])
+  Agent     Agent?   @relation(fields: [agentId], references: [id])
+  Hashtag   Hashtag? @relation(fields: [hashtagId], references: [id])
+  User      User     @relation(fields: [userId], references: [id])
+
+  @@index([deletedAt])
+}
+
+model Provider {
+  id             String           @id @default(cuid())
+  name           String
+  apiKey         String? // Optional: Store API key if needed for integration
+  apiSecret      String? // Optional: Store API secret if needed for integration
+  baseUrl        String? // Optional: Base URL for API requests (for dynamic providers)
+  isActive       Boolean          @default(true)
+  commission     Float // Commission rate for the provider
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+  deletedAt      DateTime? // Soft delete for the provider
+  report         Report[] // Reports associated with this provider
+  reservations   Reservation[]    @relation("ReservationProvider") // Reservations from this provider
+  commissionRule CommissionRule[] @relation("ProviderToCommissionRule") // Commission rules for this provider
+  source         BookingSource
+
+  @@index([deletedAt])
+  @@index([isActive]) // Added index for easy lookup of active/inactive providers
+}
+
+enum BookingSource {
+  Direct
+  Airbnb
+  Booking
+  Expedia
+  Other
+  Agency
+  Provider
+}
+
+model Property {
+  id                 String              @id @default(cuid())
+  propertyNumber     String              @unique @default(uuid())
+  title              String
+  description        String
+  propertyType       PropertyType        @default(SingleFamily)
+  propertyStatus     PropertyStatus      @default(AVAILABLE)
+  category           PropertyCategory    @default(APARTMENT)
+  locationId         String?
+  Location           Location?           @relation(fields: [locationId], references: [id])
+  size               Float // in square meters
+  bedrooms           Int?
+  bathrooms          Int?
+  floors             Int?
+  yearBuilt          Int?
+  condition          PropertyCondition   @default(GOOD)
+  features           PropertyFeatures[]
+  amenities          PropertyAmenities[]
+  constructionType   ConstructionType?
+  buildingClass      BuildingClass?      @default(CLASS_A)
+  energyRating       EnergyRating?       @default(B)
+  parkingSpaces      Int                 @default(0)
+  cancellationPolicy String?
+  checkInTime        DateTime?
+  checkOutTime       DateTime?
+  specialNotes       String?
+  rules              String?
+  nearbyAttractions  String?
+  transportOptions   String?
+  favoriteCount      Int                 @default(0)
+  listingType        ListingType         @default(SALE)
+
+  // Ownership & Legal
+  ownershipType     OwnershipType?     @default(FREEHOLD)
+  ownershipCategory OwnershipCategory? @default(PERSONAL)
+  titleDeedNumber   String?            @unique
+  titleDeedDate     DateTime?
+
+  // Financial
+  marketValue      Float?
+  taxValue         Float?  @map("taxAssessedValue")
+  insuranceValue   Float?  @default(0)
+  mortgageEligible Boolean @default(false)
+
+  // Relationships
+  agentId  String?
+  ownerId  String?
+  sellerId String?
+  buyerId  String?
+  agencyId String?
+  eventId  String?
+  events   Event[] // One property, many events
+
+  // Contact
+  contactMethod ContactMethod @default(EMAIL)
+  contactEmail  String?
+  contactPhone  String?
+  isActive      Boolean       @default(true)
+  mlScore       Float? // For storing a general ML analysis score
+  featured      Boolean       @default(false) // Mark property as featured
+
+  // Metadata
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+
+  // Relations
+  Analytics        Analytics[]
+  ComplianceRecord ComplianceRecord[]
+  Expense          Expense[]
+  Increase         Increase[]
+
+  Mention           Mention[]
+  Photo             Photo[] // Use this relation for property images
+  Agent             Agent?           @relation(fields: [agentId], references: [id])
+  Owner             User?            @relation("PropertyOwner", fields: [ownerId], references: [id])
+  Seller            User?            @relation("PropertySeller", fields: [sellerId], references: [id])
+  Buyer             User?            @relation("PropertyBuyer", fields: [buyerId], references: [id])
+  Agency            Agency?          @relation(fields: [agencyId], references: [id])
+  Review            Review[]
+  Task              Task[]
+  Hashtag           Hashtag[]
+  PricingRules      PricingRule[]    @relation("PropertyToPricingRule")
+  Facility          Facility?        @relation(fields: [facilityId], references: [id])
+  facilityId        String?
+  IncludedService   IncludedService? @relation(fields: [includedServiceId], references: [id])
+  includedServiceId String?
+  ExtraCharge       ExtraCharge?     @relation(fields: [extraChargeId], references: [id])
+  extraChargeId     String?
+  Availability      Availability[]
+  TaxRecord         TaxRecord[]
+  Mortgage          Mortgage[]
+  Favorite          Favorite[]
+  Currency          Currency?        @relation(fields: [currencyId], references: [id])
+  currencyId        String?
+  Discount          Discount[]
+  Offer             Offer[]
+  Reservation       Reservation[]
+  Tenant            Tenant[]
+  Guest             Guest?           @relation(fields: [guestId], references: [id])
+  guestId           String?
+  Contract          Contract[]
+  Report            Report[]
+
+  @@index([propertyNumber])
+  @@index([propertyType, category])
+  @@index([bedrooms, bathrooms])
+  @@index([size])
+  @@index([propertyStatus])
+  @@index([ownershipType])
+  @@index([ownershipCategory])
+  @@index([titleDeedNumber])
+  @@index([yearBuilt])
+  @@index([energyRating])
+  @@index([condition])
+  @@index([deletedAt])
+}
+
+enum ListingType {
+  SALE
+  RENT
+  BOOKING
+}
+
+model Event {
+  id          String    @id @default(cuid())
+  propertyId  String
+  Property    Property  @relation(fields: [propertyId], references: [id])
+  title       String
+  description String?
+  eventType   EventType @default(VIEWING)
+  scheduledAt DateTime
+  duration    Int?
+  createdById String?
+  createdBy   User?     @relation("UserCreatedEvents", fields: [createdById], references: [id])
+  attendees   User[]    @relation("EventAttendees")
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  deletedAt   DateTime?
+  isActive    Boolean   @default(true)
+
+  @@index([propertyId])
+  @@index([scheduledAt])
+  @@index([eventType])
+  @@index([deletedAt])
+}
+
+enum EventType {
+  VIEWING
+  OPEN_HOUSE
+  VIRTUAL_TOUR
+  INSPECTION
+  OTHER
+}
+
+model Facility {
+  id          String         @id @default(uuid())
+  name        String         @unique
+  description String?
+  icon        String?
+  logo        String?
+  locationId  String?
+  Location    Location?      @relation(fields: [locationId], references: [id])
+  type        FacilityType   @default(RESIDENTIAL)
+  status      FacilityStatus @default(ACTIVE)
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+  deletedAt   DateTime?
+  properties  Property[]
+
+  agencies          Agency[]
+  users             User[]
+  tasks             Task[]
+  reports           Report[]
+  FacilityAmenities FacilityAmenities[]
+  locationAmenities LocationAmenities[]
+  expenses          Expense[]
+  includedServices  IncludedService[]
+  extraCharges      ExtraCharge[]
+
+  @@index([name])
+  @@index([description])
+  @@index([createdAt])
+  @@index([updatedAt])
+  @@index([deletedAt])
+}
+
+enum FacilityType {
+  RESIDENTIAL
+  COMMERCIAL
+  MIXED_USE
+  INDUSTRIAL
+  OFFICE
+  RETAIL
+  WAREHOUSE
+  PARKING
+  GYM
+  SWIMMING_POOL
+  YOGA
+  FITNESS
+  GOLF
+  CAFETERIA
+  RESTAURANT
+  THEATER
+  CONCERT_HALL
+  MUSEUM
+  GALLERY
+  CINEMA
+  ZOO
+  BOTANIC_GARDEN
+  THEME_PARK
+  GOLF_COURSE
+  BEACH
+  PARK
+}
+
+enum FacilityStatus {
+  ACTIVE
+  INACTIVE
+}
+
+model IncludedService {
+  id          String     @id @default(uuid())
+  name        String     @unique
+  description String?
+  icon        String?
+  logo        String?
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  deletedAt   DateTime?
+  properties  Property[]
+
+  agencies          Agency[]
+  users             User[]
+  tasks             Task[]
+  reports           Report[]
+  FacilityAmenities FacilityAmenities[]
+  locationAmenities LocationAmenities[]
+  expenses          Expense[]
+  extraCharges      ExtraCharge[]
+  Facility          Facility?           @relation(fields: [facilityId], references: [id])
+  facilityId        String?
+
+  @@index([name])
+  @@index([description])
+  @@index([createdAt])
+  @@index([updatedAt])
+  @@index([deletedAt])
+}
+
+model ExtraCharge {
+  id          String     @id @default(uuid())
+  name        String     @unique
+  description String?
+  icon        String?
+  logo        String?
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  deletedAt   DateTime?
+  properties  Property[]
+
+  agencies          Agency[]
+  users             User[]
+  tasks             Task[]
+  reports           Report[]
+  FacilityAmenities FacilityAmenities[]
+  locationAmenities LocationAmenities[]
+  expenses          Expense[] // This relation seems fine
+  // includedServices  IncludedService[] // This was likely a typo or misconfiguration if it was meant to be a self-relation or link back.
+  // If ExtraCharge can have many IncludedService, it needs a join or explicit FK.
+  // For now, assuming it's not a direct relation here unless specified.
+  Facility          Facility?           @relation(fields: [facilityId], references: [id])
+  facilityId        String?
+  IncludedService   IncludedService?    @relation(fields: [includedServiceId], references: [id])
+  includedServiceId String?
+
+  @@index([name])
+  @@index([description])
+  @@index([createdAt])
+  @@index([updatedAt])
+  @@index([deletedAt])
+}
+
+model Report {
+  deletedAt                DateTime?
+  id                       String           @id @default(cuid())
+  title                    String
+  reportType               ReportType
+  generatedById            String
+  startDate                DateTime
+  endDate                  DateTime
+  entityId                 String?
+  entityType               String?
+  totalRevenue             Float?
+  totalBookings            Int?
+  averagePrice             Float?
+  occupancyRate            Float?
+  fileUrl                  String?
+  description              String?
+  data                     Json?
+  status                   ReportStatus     @default(GENERATED)
+  createdAt                DateTime         @default(now())
+  updatedAt                DateTime         @updatedAt
+  generatedBy              User?            @relation(fields: [generatedById], references: [id])
+  agencyId                 String?
+  reservationIds           String[]
+  totalReservations        Int?
+  cancelledReservations    Int?
+  completedReservations    Int?
+  averageReservationLength Float?
+  totalPaidReservations    Float?
+  totalUnpaidReservations  Float?
+  Agency                   Agency?          @relation(fields: [agencyId], references: [id])
+  Reservation              Reservation[]
+  Facility                 Facility?        @relation(fields: [facilityId], references: [id])
+  facilityId               String?
+  IncludedService          IncludedService? @relation(fields: [includedServiceId], references: [id])
+  includedServiceId        String?
+  ExtraCharge              ExtraCharge?     @relation(fields: [extraChargeId], references: [id])
+  extraChargeId            String?
+  Provider                 Provider?        @relation(fields: [providerId], references: [id])
+  providerId               String?
+  propertyId               String?
+  Property                 Property?        @relation(fields: [propertyId], references: [id])
+  Tenant                   Tenant?          @relation(fields: [tenantId], references: [id])
+  tenantId                 String?
+  Agent                    Agent?           @relation(fields: [agentId], references: [id])
+  agentId                  String?
+
+  @@index([deletedAt])
+  @@index([reportType])
+  @@index([status])
+  @@index([propertyId])
+  @@index([providerId])
+  @@index([tenantId])
+}
+
+model Location {
+  id          String     @id @default(uuid())
+  country     String // e.g., "US", "TR"
+  city        String
+  district    String?
+  address     String
+  postalCode  String?
+  coordinates Json? // { lat: number, lng: number }
+  properties  Property[]
+
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  deletedAt DateTime?
+  User      User[]
+  Facility  Facility[]
+
+  @@index([deletedAt])
+  @@index([country])
+  @@index([city])
+  @@index([address])
+  @@index([postalCode])
+  @@index([country, city])
+  @@index([coordinates])
+}
+
+model Reservation {
+  deletedAt        DateTime?
+  id               String             @id @default(cuid())
+  propertyId       String
+  userId           String
+  agentId          String?
+  startDate        DateTime
+  endDate          DateTime
+  guests           Int                @default(1)
+  status           ReservationStatus  @default(PENDING)
+  totalPrice       Float
+  currencyId       String
+  paymentStatus    PaymentStatus      @default(UNPAID)
+  specialRequests  String?
+  checkInTime      DateTime?
+  checkOutTime     DateTime?
+  createdAt        DateTime           @default(now())
+  updatedAt        DateTime           @updatedAt
+  pricingRuleId    String?
+  discountId       String?
+  agencyId         String?
+  reportId         String?
+  Analytics        Analytics[]
+  guestId          String
+  Guest            Guest              @relation(fields: [guestId], references: [id])
+  ComplianceRecord ComplianceRecord[]
+  Offer            Offer?
+  Agency           Agency?            @relation(fields: [agencyId], references: [id])
+  Agent            Agent?             @relation(fields: [agentId], references: [id])
+  Currency         Currency           @relation(fields: [currencyId], references: [id])
+  Discount         Discount?          @relation(fields: [discountId], references: [id])
+  PricingRule      PricingRule?       @relation(fields: [pricingRuleId], references: [id])
+  Report           Report?            @relation(fields: [reportId], references: [id])
+  User             User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+  Property         Property           @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  Availability     Availability[]
+
+  providerId String?
+  Provider   Provider? @relation("ReservationProvider", fields: [providerId], references: [id])
+
+  @@index([deletedAt])
+  @@index([propertyId])
+  @@index([status])
+  @@index([userId])
+}
+
+model TaxRecord {
+  id         String    @id @default(uuid())
+  propertyId String
+  year       Int
+  amount     Float
+  percentage Float
+  paid       Boolean   @default(false)
+  dueDate    DateTime?
+  paidDate   DateTime?
+  notes      String?
+  Property   Property  @relation(fields: [propertyId], references: [id])
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+
+  @@index([propertyId, year])
+}
+
+model Mortgage {
+  id           String         @id @default(uuid())
+  propertyId   String
+  lender       String
+  principal    Float
+  interestRate Float
+  startDate    DateTime
+  endDate      DateTime?
+  status       MortgageStatus @default(ACTIVE)
+  notes        String?
+  Property     Property       @relation(fields: [propertyId], references: [id])
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  deletedAt    DateTime?
+
+  @@index([propertyId, status])
+}
+
+enum MortgageStatus {
+  ACTIVE
+  PAID
+  DEFAULTED
+  CANCELLED
+}
+
+model Review {
+  id String @id @default(cuid())
+
+  userId          String
+  agentId         String?
+  agencyId        String?
+  propertyId      String?
+  title           String
+  content         String
+  rating          Int
+  parentReviewId  String?
+  isEdited        Boolean        @default(false)
+  helpfulCount    Int            @default(0)
+  notHelpfulCount Int            @default(0)
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+  deletedAt       DateTime?
+  Notification    Notification[]
+  Agency          Agency?        @relation(fields: [agencyId], references: [id], onDelete: Cascade)
+  Agent           Agent?         @relation(fields: [agentId], references: [id], onDelete: Cascade)
+  User            User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  Property        Property?      @relation(fields: [propertyId], references: [id])
+
+  @@index([deletedAt])
+  @@index([parentReviewId])
+  @@index([userId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Subscription {
+  deletedAt        DateTime?
+  id               String             @id @default(cuid())
+  entityId         String
+  entityType       String
+  tier             SubscriptionTier   @default(BASIC)
+  status           SubscriptionStatus @default(ACTIVE)
+  startDate        DateTime           @default(now())
+  endDate          DateTime
+  features         String[]
+  paymentHistoryId String?
+  isAutoRenew      Boolean            @default(true)
+  createdAt        DateTime           @default(now())
+  updatedAt        DateTime           @updatedAt
+  agencyId         String?
+  agentId          String?
+  Agency           Agency?            @relation(fields: [agencyId], references: [id])
+  Agent            Agent?             @relation(fields: [agentId], references: [id])
+  User             User?              @relation(fields: [userId], references: [id])
+  userId           String?
+  paymentMethod    String?
+  paymentStatus    PaymentStatus      @default(UNPAID)
+  pricingRuleId    String?
+  PricingRule      PricingRule?       @relation(fields: [pricingRuleId], references: [id])
+
+  @@index([deletedAt])
+}
+
+model Task {
+  id           String       @id @default(cuid())
+  title        String
+  description  String?
+  status       TaskStatus   @default(TODO)
+  type         TaskType
+  priority     TaskPriority @default(MEDIUM)
+  createdById  String?
+  assignedToId String?
+
+  propertyId        String?
+  agentId           String?
+  agencyId          String?
+  dueDate           DateTime?
+  completedAt       DateTime?
+  createdAt         DateTime         @default(now())
+  updatedAt         DateTime         @updatedAt
+  deletedAt         DateTime?
+  Analytics         Analytics[]
+  Mention           Mention[]
+  Agency            Agency?          @relation(fields: [agencyId], references: [id])
+  Agent             Agent?           @relation(fields: [agentId], references: [id])
+  createdBy         User?            @relation("TasksCreatedByUser", fields: [createdById], references: [id])
+  assignedTo        User?            @relation("TasksAssignedToUser", fields: [assignedToId], references: [id])
+  Property          Property?        @relation(fields: [propertyId], references: [id])
+  Facility          Facility?        @relation(fields: [facilityId], references: [id])
+  facilityId        String?
+  IncludedService   IncludedService? @relation(fields: [includedServiceId], references: [id])
+  includedServiceId String?
+  ExtraCharge       ExtraCharge?     @relation(fields: [extraChargeId], references: [id])
+  extraChargeId     String?
+
+  @@index([deletedAt])
+}
+
+model Tenant {
+  id          String  @id @default(cuid())
+  userId      String  @unique
+  firstName   String
+  lastName    String
+  email       String  @unique
+  phoneNumber String?
+
+  leaseStartDate DateTime
+  leaseEndDate   DateTime
+  paymentStatus  PaymentStatus  @default(PAID)
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime
+  deletedAt      DateTime?
+  propertyId     String
+  Expense        Expense[]
+  Increase       Increase[]
+  Notification   Notification[]
+  Payment        Payment[]
+  Property       Property       @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  User           User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  Contract       Contract[]
+  Report         Report[]
+
+  @@index([deletedAt])
+  @@index([leaseStartDate, leaseEndDate])
+  @@index([propertyId])
+  @@index([userId])
+}
+
+enum UserStatus {
+  ACTIVE
+  INACTIVE
+  SUSPENDED
+}
+
+model User {
+  id             String      @id @default(cuid())
+  email          String      @unique
+  username       String?     @unique
+  displayName    String?
+  name           String?
+  firstName      String?
+  lastName       String?
+  phoneNumber    String?
+  profilePicture String?
+  image          String?
+  role           Role        @default(USER)
+  type           AccountType @default(OAUTH)
+  isActive       Boolean     @default(true)
+  lastLogin      DateTime?
+  emailVerified  DateTime?
+  responseTime   String?
+  createdAt      DateTime    @default(now())
+  updatedAt      DateTime
+  deletedAt      DateTime?
+  locale         String?
+  timezone       String?
+  preferences    Json?
+  agencyId       String?
+  status         UserStatus  @default(ACTIVE)
+
+  Account             Account[]
+  Analytics           Analytics[]
+  CommunicationLog    CommunicationLog[]
+  Hashtag             Hashtag[]
+  MentionsByUser      Mention[]          @relation("MentionsByUser")
+  MentionsToUser      Mention[]          @relation("MentionsToUser")
+  MentionsGenericUser Mention[]          @relation("MentionsGenericUser")
+  createdEvents       Event[]            @relation("UserCreatedEvents", fields: [], references: [])
+  attendingEvents     Event[]            @relation("EventAttendees")
+
+  Subscription        Subscription[]
+  Notification        Notification[]
+  Offer               Offer[]
+  Photo               Photo[]
+  Post                Post[]
+  Reservation         Reservation[]
+  Review              Review[]
+  Session             Session[]
+  TasksAssigned       Task[]           @relation("TasksAssignedToUser")
+  TasksCreated        Task[]           @relation("TasksCreatedByUser")
+  Tenant              Tenant?
+  Agency              Agency?          @relation(fields: [agencyId], references: [id])
+  OwnedAgencies       Agency[]         @relation("AgencyOwner")
+  Permission          Permission[]     @relation("UserPermissions")
+  OwnedProperties     Property[]       @relation("PropertyOwner")
+  ListedProperties    Property[]       @relation("PropertySeller")
+  PurchasedProperties Property[]       @relation("PropertyBuyer")
+  Facility            Facility?        @relation(fields: [facilityId], references: [id])
+  facilityId          String?
+  IncludedService     IncludedService? @relation(fields: [includedServiceId], references: [id])
+  includedServiceId   String?
+  ExtraCharge         ExtraCharge?     @relation(fields: [extraChargeId], references: [id])
+  extraChargeId       String?
+  Agent               Agent[]
+  Location            Location?        @relation(fields: [locationId], references: [id])
+  locationId          String?
+  Favorite            Favorite[]
+  Report              Report[]
+
+  @@index([agencyId])
+  @@index([deletedAt])
+  @@index([email])
+  @@index([isActive])
+  @@index([role])
+}
+
+enum AccountType {
+  OAUTH
+  EMAIL
+  OIDC
+  CREDENTIALS
+  GOOGLE
+  FACEBOOK
+}
+
+enum AnalyticsType {
+  LISTING_VIEW
+  BOOKING_CONVERSION
+  ML_PROPERTY_SCORE // Added for property analysis score
+  USER_ENGAGEMENT
+  REVENUE
+  PERFORMANCE
+  AGENT_PERFORMANCE
+  AGENCY_PERFORMANCE
+}
+
+enum ArchitecturalStyle {
+  MODERN
+  CONTEMPORARY
+  TRADITIONAL
+  COLONIAL
+  VICTORIAN
+  CRAFTSMAN
+  MID_CENTURY
+  MEDITERRANEAN
+  FARMHOUSE
+  RANCH
+  SPANISH
+  TUDOR
+}
+
+enum CommunicationType {
+  PROBLEM
+  REQUEST
+  ADVICE
+  INFORMATION
+  FEEDBACK
+}
+
+enum ComplianceType {
+  DATA_PROTECTION
+  FINANCIAL_REGULATION
+  PROPERTY_LAW
+  TAX_COMPLIANCE
+  LICENSE_VERIFICATION
+  INSURANCE
+  PROFESSIONAL_STANDARDS
+  TITLE_DEED
+  OWNERSHIP_PROOF
+  FIRE_SAFETY_CERTIFICATE
+  ENERGY_EFFICIENCY_CERTIFICATE
+  BUILDING_PERMIT
+  ZONING_PERMIT
+  OCCUPANCY_CERTIFICATE
+  ANTI_MONEY_LAUNDERING
+  BACKGROUND_CHECK
+  RENTAL_REGISTRATION
+  SHORT_TERM_RENTAL_LICENSE
+  AUTHORIZATION_PAPER
+}
+
+enum ComplianceStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+enum ConstructionType {
+  WOOD_FRAME
+  BRICK
+  CONCRETE
+  STEEL
+  STONE
+  LOG
+  PREFAB
+  MODULAR
+}
+
+enum CoolingType {
+  CENTRAL_AC
+  WINDOW_UNIT
+  DUCTLESS_MINI_SPLIT
+  EVAPORATIVE_COOLER
+}
+
+enum DeviceType {
+  MOBILE
+  DESKTOP
+  TABLET
+  OTHER
+}
+
+enum DiscountType {
+  FIRST_BOOKING
+  LONG_TERM
+  REFERRAL
+  SEASONAL
+  CUSTOM
+  PERCENTAGE
+  FIXED_AMOUNT
+  FREE_NIGHTS
+}
+
+enum EnergyEfficiencyRating {
+  ENERGY_STAR
+  LEED_CERTIFIED
+  LEED_SILVER
+  LEED_GOLD
+  LEED_PLATINUM
+  NET_ZERO
+}
+
+enum ExpenseStatus {
+  PENDING
+  PAID
+  OVERDUE
+  CANCELLED
+}
+
+enum ExpenseType {
+  MAINTENANCE
+  CLEANING
+  UTILITIES
+  MANAGEMENT_FEE
+  TAX
+  INSURANCE
+  REPAIR
+  SECURITY
+  OTHER
+}
+
+enum FacilityAmenities {
+  SWIMMING_POOL
+  FITNESS_CENTER
+  SAUNA
+  JACUZZI
+  TENNIS_COURT
+  BASKETBALL_COURT
+  PLAYGROUND
+  COMMUNITY_CENTER
+  GAME_ROOM
+  CO_WORKING_SPACE
+  BIKE_STORAGE
+  PARKING_GARAGE
+  EV_CHARGING
+  SECURITY_DESK
+  CONCIERGE
+  ELEVATOR
+  LAUNDRY_ROOM
+  PACKAGE_ROOM
+  BBQ_AREA
+  ROOFTOP_TERRACE
+}
+
+enum GreenCertification {
+  ENERGY_STAR
+  LEED
+  WELL
+  BREEAM
+  GREEN_GLOBES
+}
+
+enum HashtagType {
+  GENERAL
+  PROPERTY
+
+  AGENT
+}
+
+enum HeatingType {
+  FORCED_AIR
+  RADIANT
+  ELECTRIC
+  GAS
+  OIL
+  HEAT_PUMP
+  GEOTHERMAL
+}
+
+enum IncreaseStatus {
+  PENDING
+  ACCEPTED
+  REJECTED
+  WITHDRAWN
+}
+
+enum LocationAmenities {
+  CITY_CENTER
+  BEACH
+  PARK
+  SHOPPING_MALL
+  HOSPITAL
+  SCHOOL
+  UNIVERSITY
+  POLICE_STATION
+  FIRE_STATION
+  PUBLIC_TRANSPORT
+  SUBWAY_STATION
+  BUS_STOP
+  AIRPORT
+  RESTAURANT_DISTRICT
+  ENTERTAINMENT_ZONE
+  BUSINESS_DISTRICT
+  CULTURAL_CENTER
+  MUSEUM
+  LIBRARY
+  SPORTS_COMPLEX
+}
+
+enum MentionType {
+  USER
+  PROPERTY
+
+  TASK
+}
+
+enum NotificationType {
+  MENTION
+  TASK_ASSIGNED
+  BOOKING_CONFIRMED
+  REVIEW_RECEIVED
+  PRICE_CHANGE
+  SYSTEM_UPDATE
+  COMPLIANCE_ALERT
+  COMMUNICATION_RECEIVED
+  RENT_DUE
+  RENT_PAID
+  LEASE_EXPIRING
+  MAINTENANCE_REQUEST
+  LEASE_RENEWAL
+  LATE_PAYMENT_WARNING
+  LEASE_TERMINATION
+  RENT_INCREASE
+  COMMUNITY_NOTICE
+  POLICY_UPDATE
+  LIKE
+  COMMENT
+  FOLLOW
+  AVAILABILITY
+  OTHER
+}
+
+enum OfferStatus {
+  PENDING
+  ACCEPTED
+  REJECTED
+  EXPIRED
+  CANCELLED
+}
+
+enum OfferType {
+  STANDARD
+  PROMOTIONAL
+  LAST_MINUTE
+  GROUP
+  EXTENDED_STAY
+}
+
+enum ParkingType {
+  STREET
+  DRIVEWAY
+  GARAGE
+  CARPORT
+  UNDERGROUND
+  ASSIGNED_PARKING
+}
+
+enum PaymentStatus {
+  UNPAID
+  PARTIALLY_PAID
+  PAID
+  REFUNDED
+  OVERDUE
+  CANCELLED
+}
+
+enum PhotoType {
+  COVER
+  GALLERY
+  PROFILE
+  DOCUMENT
+  INTERIOR
+  EXTERIOR
+  AERIAL
+  FLOOR_PLAN
+}
+
+enum PricingRuleType {
+  SEASONAL
+  LONG_TERM
+  EARLY_BOOKING
+  LAST_MINUTE
+  SPECIAL_EVENT
+}
+
+enum PropertyFeatures {
+  FURNISHED
+  PARTIALLY_FURNISHED
+  UNFURNISHED
+  OPEN_FLOOR_PLAN
+  HIGH_CEILING
+  BALCONY
+  TERRACE
+  GARDEN
+  SEA_VIEW
+  MOUNTAIN_VIEW
+  CITY_VIEW
+  SMART_HOME
+  ENERGY_EFFICIENT
+  SOLAR_PANELS
+  EARTHQUAKE_RESISTANT // Corrected typo
+  SOUNDPROOF
+  WHEELCHAIR_ACCESSIBLear
+  PET_FRIENDLY
+  HOME_OFFICE
+  WALK_IN_CLOSET
+}
+
+enum ReportStatus {
+  GENERATED
+  IN_PROGRESS
+  COMPLETED
+  FAILED
+  ARCHIVED
+}
+
+enum ReportType {
+  FINANCIAL
+  PERFORMANCE
+  COMPLIANCE
+  MARKET_ANALYSIS
+  REVENUE
+  OCCUPANCY
+  GUEST_ANALYSIS
+  OFFER_PERFORMANCE
+  RESERVATION_SUMMARY
+  EXPENSE_TRACKING
+  TASK_MANAGEMENT
+  PROPERTY_PERFORMANCE
+}
+
+enum ReservationStatus {
+  PENDING
+  CONFIRMED
+  CANCELLED
+  COMPLETED
+  REFUNDED
+}
+
+enum ReviewType {
+  PROPERTY
+
+  AGENT
+  AGENCY
+  SERVICE
+}
+
+enum Role {
+  USER
+  ADMIN
+  SUPER_ADMIN
+  AGENCY
+  AGENCY_ADMIN
+  AGENT_ADMIN
+  AGENT
+  SELLER
+  BUYER
+  GUEST
+  TENANT
+  MODERATOR
+  FACILITY_MANAGER
+}
+
+enum SubscriptionStatus {
+  ACTIVE
+  INACTIVE
+  SUSPENDED
+  EXPIRED
+}
+
+enum SubscriptionTier {
+  BASIC
+  PRO
+  ENTERPRISE
+}
+
+enum TaskPriority {
+  LOW
+  MEDIUM
+  HIGH
+  URGENT
+}
+
+enum TaskStatus {
+  TODO
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+}
+
+enum TaskType {
+  PROPERTY_MAINTENANCE
+  LISTING_REVIEW
+  CLIENT_FOLLOW_UP
+  DOCUMENT_PROCESSING
+  MARKETING_TASK
+  SALES_ACTIVITY
+  COMPLIANCE_CHECK
+  COMMUNICATION_FOLLOW_UP
+}
+
+enum PropertyStatus {
+  AVAILABLE
+  UNDER_CONTRACT
+  SOLD
+  RENTED
+  PENDING_APPROVAL
+  OFF_MARKET
+  MAINTENANCE
+  FORECLOSURE
+}
+
+enum PropertyType {
+  SingleFamily
+  TOWNHOUSE
+  CONDO
+  APARTMENT
+  DUPLEX
+  TRIPLEX
+  QUADPLEX
+  OFFICE_BUILDING
+  RETAIL_SPACE
+  WAREHOUSE
+  INDUSTRIAL_COMPLEX
+  MIXED_USE
+  MULTI_FAMILY
+  MOBILE_HOME
+  MANUFACTURED_HOME
+  FARM
+  RANCH
+}
+
+enum PropertyCategory {
+  APARTMENT
+  HOUSE
+  VILLA
+  OFFICE
+  RETAIL
+  WAREHOUSE
+  FACTORY
+  LAND_PLOT
+  FARM
+  SHOP
+  BUILDING
+}
+
+enum PropertyCondition {
+  EXCELLENT
+  GOOD
+  FAIR
+  NEEDS_RENOVATION
+  UNDER_CONSTRUCTION
+}
+
+enum PropertyAmenities {
+  POOL
+  GYM
+  GARDEN
+  PARKING
+  SECURITY
+  ELEVATOR
+  STORAGE
+  BALCONY
+  TERRACE
+  FURNISHED
+  
+}
+
+enum BuildingClass {
+  CLASS_A
+  CLASS_B
+  CLASS_C
+  CLASS_D
+  LUXURY
+  HISTORIC
+}
+
+enum EnergyRating {
+  A
+  B
+  C
+  D
+  E
+  F
+  G
+}
+
+enum OwnershipType {
+  FREEHOLD
+  LEASEHOLD
+  COMMONHOLD
+  COOPERATIVE
+  TIMESHARE
+  FRACTIONAL
+}
+
+enum OwnershipCategory {
+  PERSONAL
+  COMPANY
+  BANK
+  CONSTRUCTION_COMPANY
+  INVESTMENT_FUND
+  GOVERNMENT
+  TRUST
+}
+
+enum ContactMethod {
+  EMAIL
+  PHONE
+  MESSAGE
+  ANY
+}
+
+model Favorite {
+  id         String    @id @default(cuid())
+  userId     String
+  propertyId String
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  deletedAt  DateTime?
+
+  user     User     @relation(fields: [userId], references: [id])
+  property Property @relation(fields: [propertyId], references: [id])
+
+  @@unique([userId, propertyId])
+  @@index([userId])
+  @@index([propertyId])
+  @@index([deletedAt])
+}
+
+model MLConfiguration {
+  id                String   @id @default("singleton") // Ensures only one configuration record
+  enableAutoTagging Boolean  @default(true)
+  qualityThreshold  Float    @default(0.75)
+  // Add other ML-specific settings here as defined in AnalysisSettings type
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}

@@ -1,0 +1,45 @@
+{
+  "home": "Home",
+  "favorites": "Preferiti",
+
+  "messages": "Messaggi",
+  "notifications": "Notifiche",
+  "payments": "Pagamenti",
+  "settings": "Impostazioni",
+  "profile": "Profilo",
+  "logout": "Disconnetti",
+  "loggingOut": "Disconnessione...",
+  "sitetitle": "RentalProc",
+  "Index": {
+    "title": "Benvenuto su Menem",
+    "description": "La tua soluzione di gestione immobiliare",
+    "propertyManagement": {
+      "title": "Gestione Immobiliare",
+      "description": "Gestisci le tue proprietà in modo efficiente con il nostro set completo di strumenti."
+    },
+    "waterManagement": {
+      "title": "Gestione dell'Acqua",
+      "description": "Monitora e ottimizza il consumo d'acqua nelle tue proprietà."
+    }
+  },
+  "Auth": {
+    "signIn": "Accedi con Google",
+    "signOut": "Disconnetti",
+    "welcomeBack": "Bentornato, {name}"
+  },
+  "Posts": {
+    "create": "Crea Post",
+    "title": "Titolo",
+    "content": "Contenuto",
+    "loading": "Caricamento post...",
+    "save": "Salva",
+    "cancel": "Annulla",
+    "edit": "Modifica",
+    "delete": "Elimina",
+    "noPostsYet": "Nessun post ancora",
+    "errorUnauthorized": "Devi essere autenticato per eseguire questa azione",
+    "errorCreatePost": "Errore durante la creazione del post",
+    "errorUpdatePost": "Errore durante l'aggiornamento del post",
+    "errorDeletePost": "Errore durante l'eliminazione del post"
+  }
+}
