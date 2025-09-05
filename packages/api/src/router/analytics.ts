@@ -1,7 +1,4 @@
-import type { TRPCRouterRecord } from "@trpc/server";
 import { AnalyticsType } from "@prisma/client";
-import { z } from "zod";
-
 import type {
   Agency,
   Agent,
@@ -10,11 +7,12 @@ import type {
   Reservation,
   Task,
   User,
-} from "@acme/db";
+} from "@reservatior/db";
+import { z } from "zod";
 
 import { getPaginationParams } from "../helpers/pagination";
 import { withCacheAndFormat } from "../helpers/withCacheAndFormat";
-import { protectedProcedure } from "../trpc";
+import { createTRPCRouter, protectedProcedure } from "../trpc";
 
 const analyticsTypeSchema = z.nativeEnum(AnalyticsType);
 
@@ -72,7 +70,7 @@ function sanitizeAnalytics(analytics: AnalyticsWithRelations | null) {
   };
 }
 
-export const analyticsRouter = {
+export const analyticsRouter = createTRPCRouter({
   all: protectedProcedure
     .input(
       z
@@ -302,4 +300,4 @@ export const analyticsRouter = {
 
       return metrics;
     }),
-} satisfies TRPCRouterRecord;
+});

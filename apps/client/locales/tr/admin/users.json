@@ -1,0 +1,74 @@
+{
+  "Admin": {
+    "noUsersFound": "Kullanıcı bulunamadı. İlk kullanıcınızı ekleyerek başlayın!",
+    "addFirstUser": "İlk Kullanıcıyı Ekle",
+    "userManagement": "Kullanıcı Yönetimi",
+    "userManagementDescription": "Tüm kullanıcılarınızı yönetin ve görüntüleyin",
+    "addNewUser": "Yeni Kullanıcı Ekle",
+    "searchUsers": "Kullanıcı ara...",
+    "search": "Ara",
+    "showingResults": "{start}-{end} arası gösteriliyor (toplam {total} sonuç)",
+    "previous": "Önceki",
+    "next": "Sonraki",
+    "name": "Ad",
+    "role": "Rol",
+    "actions": "İşlemler",
+    "viewDetails": "Detayları Gör",
+    "editUser": "Kullanıcıyı Düzenle",
+    "deleteUser": "Kullanıcıyı Sil",
+    "addUser": {
+      "title": "Yeni Kullanıcı Ekle",
+      "description": "Sisteminize yeni bir kullanıcı eklemek için aşağıdaki formu doldurun. Zorunlu alanlar * ile işaretlenmiştir.",
+      "closeAria": "Kullanıcı ekleme formunu kapat",
+      "success": "Kullanıcı başarıyla oluşturuldu!",
+      "error": "Kullanıcı oluşturma başarısız oldu",
+      "submit": "Kullanıcı Ekle",
+      "submitting": "Kullanıcı Ekleniyor...",
+      "validation": {
+        "nameRequired": "Ad zorunludur",
+        "emailRequired": "E-posta zorunludur",
+        "emailInvalid": "Lütfen geçerli bir e-posta girin"
+      },
+      "fields": {
+        "nameLabel": "Ad",
+        "namePlaceholder": "Kullanıcının tam adını girin",
+        "emailLabel": "E-posta",
+        "emailPlaceholder": "Kullanıcının e-posta adresini girin",
+        "roleLabel": "Rol",
+        "rolePlaceholder": "Rol seçin",
+        "typeLabel": "Tür",
+        "typePlaceholder": "Tür seçin",
+        "statusLabel": "Durum",
+        "statusPlaceholder": "Durum seçin",
+        "phoneLabel": "Telefon Numarası",
+        "phonePlaceholder": "Telefon numarası girin",
+        "firstNameLabel": "Ad (İlk)",
+        "firstNamePlaceholder": "Adı girin",
+        "lastNameLabel": "Soyad",
+        "lastNamePlaceholder": "Soyadı girin",
+        "displayNameLabel": "Görünen Ad",
+        "displayNamePlaceholder": "Görünen adı girin",
+        "usernameLabel": "Kullanıcı Adı",
+        "usernamePlaceholder": "Kullanıcı adını girin",
+        "isActiveLabel": "Kullanıcı aktif"
+      }
+    },
+    "sidebar": {
+      "closeAria": "Kenar çubuğunu kapat",
+      "close": "Kapat",
+      "form": {
+        "name": "Ad",
+        "email": "E-posta"
+      },
+      "view": {
+        "name": "Ad:",
+        "email": "E-posta:"
+      },
+      "actions": {
+        "save": "Kaydet",
+        "cancel": "İptal",
+        "edit": "Düzenle"
+      }
+    }
+  }
+}

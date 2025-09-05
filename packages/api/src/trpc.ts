@@ -10,29 +10,49 @@ import { initTRPC, TRPCError } from "@trpc/server";
 import superjson from "superjson";
 import { ZodError } from "zod";
 
-import type { Session } from "@acme/auth";
-import { auth, validateToken } from "@acme/auth";
-import { db } from "@acme/db";
+import type { Session } from "@reservatior/auth";
+import { validateToken } from "@reservatior/auth";
+import { db } from "@reservatior/db";
+
+// Extend the session user type to include role and agencyId
+export interface ExtendedUser {
+  id: string;
+  email?: string | null;
+  name?: string | null;
+  image?: string | null;
+  role?: string;
+  agencyId?: string | null;
+}
+
+export interface ExtendedSession extends Session {
+  user: ExtendedUser;
+}
 
 /**
  * Isomorphic Session getter for API requests
- * - Expo requests will have a session token in the Authorization header
+ * - Mobile app requests will have a session token in the Authorization header
  * - Next.js requests will have a session token in cookies
  */
-const isomorphicGetSession = async (headers: Headers): Promise<Session | null> => {
-  const authToken = headers.get("Authorization") ?? null;
+const isomorphicGetSession = async (
+  headers: Headers,
+): Promise<ExtendedSession | null> => {
+  let authToken = headers.get("Authorization") ?? null;
+  console.log("[isomorphicGetSession] Incoming Authorization:", authToken);
   try {
     if (authToken) {
+      // Strip 'Bearer ' prefix if present for JWT tokens
+      if (authToken.startsWith("Bearer ")) {
+        authToken = authToken.slice(7);
+      }
       const maybeSession = await validateToken(authToken);
+      console.log("[isomorphicGetSession] validateToken result:", maybeSession);
       if (maybeSession && "user" in maybeSession) {
-        return maybeSession;
+        return maybeSession as ExtendedSession;
       }
       return null;
     }
-    const maybeSession = await auth();
-    if (maybeSession && "user" in maybeSession) {
-      return maybeSession;
-    }
+    // In a pure Node/tRPC context, we cannot retrieve a session from cookies like NextAuth does in Next.js.
+    // Only JWT-based authentication via Authorization header is supported here.
     return null;
   } catch (err) {
     console.warn("Session retrieval failed", err);
@@ -54,20 +74,31 @@ const isomorphicGetSession = async (headers: Headers): Promise<Session | null> =
  */
 export const createTRPCContext = async (opts: {
   headers: Headers;
-  session: Session | null;
+  session?: ExtendedSession | null;
 }) => {
   const authToken = opts.headers.get("Authorization") ?? null;
-  const session = await isomorphicGetSession(opts.headers);
-
+  console.log("[createTRPCContext] Incoming Authorization:", authToken);
+  let session = opts.session;
+  // If session is undefined, try to get it from headers (for SSR/API calls)
+  if (typeof session === "undefined") {
+    session = await isomorphicGetSession(opts.headers);
+  }
+  // Defensive: ensure session is object or null
+  if (session && typeof session !== "object") {
+    console.warn(
+      "[tRPC] Invalid session type in context, forcing to null",
+      session,
+    );
+    session = null;
+  }
   const source = opts.headers.get("x-trpc-source") ?? "unknown";
-  if (session && "user" in session) {
+  if (session && typeof session === "object" && "user" in session) {
     console.log(">>> tRPC Request from", source, "by", session.user);
   } else {
     console.log(">>> tRPC Request from", source, "by", undefined);
   }
-
   return {
-    session,
+    session: session ?? null,
     db,
     token: authToken,
   };
@@ -152,10 +183,7 @@ export const publicProcedure = t.procedure.use(timingMiddleware);
 export const protectedProcedure = t.procedure
   .use(timingMiddleware)
   .use(({ ctx, next }) => {
-    if (
-      !ctx.session ||
-      !("user" in ctx.session)
-    ) {
+    if (!ctx.session || !("user" in ctx.session)) {
       throw new TRPCError({ code: "UNAUTHORIZED" });
     }
     return next({
@@ -165,3 +193,203 @@ export const protectedProcedure = t.procedure
       },
     });
   });
+
+/**
+ * Role-based authorization middleware
+ * Ensures user has the required role(s) to access the resource
+ */
+export const requireRole = (allowedRoles: string[]) =>
+  t.middleware(({ ctx, next }) => {
+    if (!ctx.session?.user) {
+      throw new TRPCError({ code: "UNAUTHORIZED" });
+    }
+
+    const userRole = ctx.session.user.role ?? "USER";
+    if (!allowedRoles.includes(userRole)) {
+      throw new TRPCError({
+        code: "FORBIDDEN",
+        message: `Access denied. Required roles: ${allowedRoles.join(", ")}`,
+      });
+    }
+
+    return next({
+      ctx: {
+        ...ctx,
+        userRole,
+      },
+    });
+  });
+
+/**
+ * Agency-based authorization middleware
+ * Ensures user can only access resources within their agency
+ */
+export const requireAgencyAccess = t.middleware(async ({ ctx, next }) => {
+  if (!ctx.session?.user) {
+    throw new TRPCError({ code: "UNAUTHORIZED" });
+  }
+
+  const user = ctx.session.user;
+  const userRole = user.role ?? "USER";
+
+  // Super admins and admins can access everything
+  if (["SUPER_ADMIN", "ADMIN"].includes(userRole)) {
+    return next({
+      ctx: {
+        ...ctx,
+        userRole,
+        agencyId: null, // No agency restriction for admins
+      },
+    });
+  }
+
+  // Get user's agency ID
+  let agencyId: string | null = null;
+
+  if (user.agencyId) {
+    agencyId = user.agencyId;
+  } else if (
+    ["AGENCY", "AGENCY_ADMIN", "AGENT", "AGENT_ADMIN"].includes(userRole)
+  ) {
+    // For agency-related roles, get agency from user record
+    const userRecord = await ctx.db.user.findUnique({
+      where: { id: user.id },
+      select: { agencyId: true },
+    });
+    agencyId = userRecord?.agencyId ?? null;
+  }
+
+  return next({
+    ctx: {
+      ...ctx,
+      userRole,
+      agencyId,
+    },
+  });
+});
+
+/**
+ * Property ownership authorization middleware
+ * Ensures user can only access properties they own, manage, or are assigned to
+ */
+export const requirePropertyAccess = t.middleware(async ({ ctx, next }) => {
+  if (!ctx.session?.user) {
+    throw new TRPCError({ code: "UNAUTHORIZED" });
+  }
+
+  const user = ctx.session.user;
+  const userRole = user.role ?? "USER";
+
+  // Super admins and admins can access everything
+  if (["SUPER_ADMIN", "ADMIN"].includes(userRole)) {
+    return next({
+      ctx: {
+        ...ctx,
+        userRole,
+        canAccessAllProperties: true,
+      },
+    });
+  }
+
+  // Get user's relationships
+  const userRecord = await ctx.db.user.findUnique({
+    where: { id: user.id },
+    select: {
+      agencyId: true,
+      Agent: {
+        select: {
+          id: true,
+          agencyId: true,
+        },
+      },
+    },
+  });
+
+  const agencyId = userRecord?.agencyId;
+  const agentId = userRecord?.Agent?.[0]?.id;
+
+  return next({
+    ctx: {
+      ...ctx,
+      userRole,
+      agencyId,
+      agentId,
+      canAccessAllProperties: false,
+    },
+  });
+});
+
+/**
+ * Agent authorization middleware
+ * Ensures user can only access agents within their agency or their own profile
+ */
+export const requireAgentAccess = t.middleware(async ({ ctx, next }) => {
+  if (!ctx.session?.user) {
+    throw new TRPCError({ code: "UNAUTHORIZED" });
+  }
+
+  const user = ctx.session.user;
+  const userRole = user.role ?? "USER";
+
+  // Super admins and admins can access everything
+  if (["SUPER_ADMIN", "ADMIN"].includes(userRole)) {
+    return next({
+      ctx: {
+        ...ctx,
+        userRole,
+        canAccessAllAgents: true,
+      },
+    });
+  }
+
+  // Get user's relationships
+  const userRecord = await ctx.db.user.findUnique({
+    where: { id: user.id },
+    select: {
+      agencyId: true,
+      Agent: {
+        select: {
+          id: true,
+          agencyId: true,
+        },
+      },
+    },
+  });
+
+  const agencyId = userRecord?.agencyId;
+  const agentId = userRecord?.Agent?.[0]?.id;
+
+  return next({
+    ctx: {
+      ...ctx,
+      userRole,
+      agencyId,
+      agentId,
+      canAccessAllAgents: false,
+    },
+  });
+});
+
+/**
+ * Procedures with role-based access control
+ */
+export const adminProcedure = protectedProcedure.use(
+  requireRole(["SUPER_ADMIN", "ADMIN"]),
+);
+export const agencyProcedure = protectedProcedure.use(
+  requireRole(["AGENCY", "AGENCY_ADMIN", "AGENT", "AGENT_ADMIN"]),
+);
+export const agentProcedure = protectedProcedure.use(
+  requireRole(["AGENT", "AGENT_ADMIN"]),
+);
+
+/**
+ * Procedures with agency-based filtering
+ */
+export const agencyFilteredProcedure =
+  protectedProcedure.use(requireAgencyAccess);
+export const propertyFilteredProcedure = protectedProcedure.use(
+  requirePropertyAccess,
+);
+export const agentFilteredProcedure =
+  protectedProcedure.use(requireAgentAccess);

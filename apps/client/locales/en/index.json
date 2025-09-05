@@ -1,0 +1,120 @@
+{
+  "Index": {
+    "title": "Reservatior - Property Management Platform",
+    "description": "Find your perfect property with Reservatior's comprehensive property management platform."
+  },
+  "hero": {
+    "title": "Find Your Perfect Property",
+    "description": "Discover amazing properties in your favorite locations with our comprehensive search and booking platform."
+  },
+  "search": {
+    "location": "Enter location...",
+    "budget": "Enter budget...",
+    "checkIn": "Check-in date",
+    "checkOut": "Check-out date",
+    "guests": "Number of guests",
+    "searchButton": "Search Properties",
+    "advancedSearch": "Advanced Search"
+  },
+  "features": {
+    "title": "Why Choose Reservatior?",
+    "description": "Discover the features that make us the leading property management platform",
+    "search": {
+      "title": "Advanced Search",
+      "description": "Find properties with our powerful search filters"
+    },
+    "booking": {
+      "title": "Easy Booking",
+      "description": "Book your perfect property with just a few clicks"
+    },
+    "management": {
+      "title": "Property Management",
+      "description": "Manage your properties efficiently with our tools"
+    },
+    "support": {
+      "title": "24/7 Support",
+      "description": "Get help whenever you need it with our support team"
+    }
+  },
+  "testimonials": {
+    "title": "What Our Users Say",
+    "description": "Real feedback from real users"
+  },
+  "newsletter": {
+    "title": "Stay Updated",
+    "description": "Get the latest property updates and offers",
+    "placeholder": "Enter your email",
+    "button": "Subscribe"
+  },
+  "Common": {
+    "unknownError": "An unknown error occurred."
+  },
+  "Property": {
+    "loadingTitle": "Loading properties...",
+    "loadErrorTitle": "Error loading properties",
+    "noDataTitle": "No properties yet",
+    "noDataDescription": "Add your first property to get started.",
+    "search": "Search",
+    "searchPlaceholder": "Search properties...",
+    "filters": {
+      "open": "Open filters",
+      "label": "Filters",
+      "tooltip": "Open filters"
+    },
+    "metrics": {
+      "total": "Total Properties",
+      "totalHint": "All listings in the system",
+      "available": "Available",
+      "availableHint": "Ready to publish or rent",
+      "recent": "Recently Updated",
+      "recentHint": "Updated in the last 30 days",
+      "pending": "Pending Approval",
+      "pendingHint": "Awaiting admin approval"
+    }
+  },
+  "ClientPropertyDetail": {
+    "size": "Size",
+    "sizeUnit": "sq ft",
+    "bedrooms": "Bedrooms",
+    "bathrooms": "Bathrooms",
+    "amenities": "Amenities",
+    "about": "About this property",
+    "mapsKeyMissing": "Google Maps API key missing.",
+    "loadFailed": "Failed to load property.",
+    "notFound": "Property not found or unavailable.",
+    "alt": {
+      "property": "Property: {title}",
+      "propertyImage": "Property image: {title}"
+    },
+    "availability": {
+      "title": "Availability",
+      "book": "Book",
+      "reserve": "Reserve",
+      "moveIn": "Move In",
+      "rent": "Rent",
+      "date": "Date",
+      "units": "Units",
+      "processing": "Processing...",
+      "requestMoveIn": "Request Move In",
+      "updateFailed": "Failed to update availability: {error}",
+      "calendarTitle": "Availability Calendar",
+      "calendarPlaceholder": "The availability calendar for this property will appear here. Users can view available, booked, or blocked dates, and take actions such as booking, reserving, or moving in.",
+      "ctaBookReserveMoveIn": "Book / Reserve / Move In"
+    },
+    "event": {
+      "defaultTitle": "Viewing Request",
+      "arrangeViewing": "Arrange a Viewing",
+      "titleLabel": "Event Title",
+      "datetimeLabel": "Preferred Date & Time",
+      "messageLabel": "Message (optional)",
+      "messagePlaceholder": "Any specific requests or questions?",
+      "requesting": "Requesting...",
+      "requestViewing": "Request Viewing",
+      "createFailedDefault": "Failed to create event",
+      "createFailedWithReason": "Failed to create event: {error}"
+    },
+    "common": {
+      "closeSidebar": "Close sidebar"
+    }
+  }
+}

@@ -1,25 +1,42 @@
 import type { TRPCRouterRecord } from "@trpc/server";
+import type {
+  Currency as PrismaCurrency,
+  Payment as PrismaPayment,
+  User as PrismaUser,
+} from "@prisma/client";
+import {
+  CreateCurrencySchema,
+  FacilityFilterSchema,
+} from "@reservatior/validators";
 import { TRPCError } from "@trpc/server";
 import { z } from "zod";
-
-import { CreateCurrencySchema, FacilityFilterSchema } from "@acme/validators";
 
 import { getPaginationParams } from "../helpers/pagination";
 import { withCacheAndFormat } from "../helpers/withCacheAndFormat";
 import { protectedProcedure, publicProcedure } from "../trpc";
 
-// Utility to sanitize currency data
-function sanitizeCurrency(currency: any) {
-  if (!currency) return currency;
-  const { Payment, ...rest } = currency;
+// Types for relations and sanitized return
+type CurrencyWithRelations = PrismaCurrency & {
+  Payment?: PrismaPayment[] | null;
+  users?: PrismaUser[] | null;
+};
+
+type SanitizedCurrency = Omit<PrismaCurrency, "Payment" | "users"> & {
+  payments: Pick<PrismaPayment, "id" | "amount" | "status">[];
+  users: Pick<PrismaUser, "id" | "email">[];
+};
+
+// Utility to sanitize currency data (expects non-null currency)
+function sanitizeCurrency(currency: CurrencyWithRelations): SanitizedCurrency {
+  const { Payment, users, ...rest } = currency;
   return {
-    ...rest,
-    payments:
-      Payment?.map((payment: any) => ({
-        id: payment.id,
-        amount: payment.amount,
-        status: payment.status,
-      })) ?? [],
+    ...(rest as PrismaCurrency),
+    payments: (Payment ?? []).map((payment) => ({
+      id: payment.id,
+      amount: payment.amount,
+      status: payment.status,
+    })),
+    users: (users ?? []).map((u) => ({ id: u.id, email: u.email })),
   };
 }
 
@@ -37,6 +54,7 @@ export const currencyRouter = {
             take,
             include: {
               Payment: true,
+              users: true,
             },
           }),
           ctx.db.currency.count(),
@@ -57,6 +75,7 @@ export const currencyRouter = {
         where: { id: input.id },
         include: {
           Payment: true,
+          users: true,
         },
       });
       if (!currency) {
@@ -80,6 +99,7 @@ export const currencyRouter = {
           },
           include: {
             Payment: true,
+            users: true,
           },
         });
         return sanitizeCurrency(currency);
@@ -115,6 +135,7 @@ export const currencyRouter = {
           },
           include: {
             Payment: true,
+            users: true,
           },
         });
         return sanitizeCurrency(currency);
@@ -148,6 +169,7 @@ export const currencyRouter = {
           where: { id: input },
           include: {
             Payment: true,
+            users: true,
           },
         });
         return sanitizeCurrency(currency);

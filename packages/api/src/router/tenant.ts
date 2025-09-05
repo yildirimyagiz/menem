@@ -6,30 +6,21 @@ import type {
   Payment,
   PaymentStatus,
   Prisma,
+  Property,
   Tenant,
   User,
 } from "@prisma/client";
 import type { TRPCRouterRecord } from "@trpc/server";
-import { z } from "zod";
-
 import {
   CreateTenantSchema,
   TenantFilterSchema,
   UpdateTenantSchema,
-} from "@acme/validators";
+} from "@reservatior/validators";
+import { z } from "zod";
 
 import { getPaginationParams } from "../helpers/pagination";
 import { withCacheAndFormat } from "../helpers/withCacheAndFormat";
 import { protectedProcedure } from "../trpc";
-
-const tenantIncludes = {
-  User: true,
-  Property: true,
-  Expense: true,
-  Increase: true,
-  Notification: true,
-  Payment: true,
-} as const;
 
 // Utility to sanitize tenant data
 const sanitizeTenant = (
@@ -40,6 +31,7 @@ const sanitizeTenant = (
         Increase: Increase[];
         Notification: Notification[];
         Payment: Payment[];
+        Property: Property;
       })
     | null,
 ) => {
@@ -71,6 +63,7 @@ const sanitizeTenant = (
     increases: tenant.Increase,
     notifications: tenant.Notification,
     payments: tenant.Payment,
+    property: tenant.Property,
   };
 };
 
@@ -81,6 +74,10 @@ export const tenantRouter = {
       const { skip, take, page, limit } = getPaginationParams(input ?? {});
       const cacheKey = `tenants:${page}:${limit}`;
       return await withCacheAndFormat(cacheKey, async () => {
+        const leaseStartDateFrom = input?.leaseStartDateFrom;
+        const leaseStartDateTo = input?.leaseStartDateTo;
+        const leaseEndDateFrom = input?.leaseEndDateFrom;
+        const leaseEndDateTo = input?.leaseEndDateTo;
         const where: Prisma.TenantWhereInput = {
           ...(input?.userId ? { userId: input.userId } : {}),
           ...(input?.email ? { email: input.email } : {}),
@@ -91,27 +88,19 @@ export const tenantRouter = {
             ? { lastName: { contains: input.lastName, mode: "insensitive" } }
             : {}),
           ...(input?.propertyId ? { propertyId: input.propertyId } : {}),
-          ...(input?.leaseStartDateFrom || input?.leaseStartDateTo
+          ...(leaseStartDateFrom || leaseStartDateTo
             ? {
                 leaseStartDate: {
-                  ...(input?.leaseStartDateFrom
-                    ? { gte: input.leaseStartDateFrom }
-                    : {}),
-                  ...(input?.leaseStartDateTo
-                    ? { lte: input.leaseStartDateTo }
-                    : {}),
+                  ...(leaseStartDateFrom ? { gte: leaseStartDateFrom } : {}),
+                  ...(leaseStartDateTo ? { lte: leaseStartDateTo } : {}),
                 },
               }
             : {}),
-          ...(input?.leaseEndDateFrom || input?.leaseEndDateTo
+          ...(leaseEndDateFrom || leaseEndDateTo
             ? {
                 leaseEndDate: {
-                  ...(input?.leaseEndDateFrom
-                    ? { gte: input.leaseEndDateFrom }
-                    : {}),
-                  ...(input?.leaseEndDateTo
-                    ? { lte: input.leaseEndDateTo }
-                    : {}),
+                  ...(leaseEndDateFrom ? { gte: leaseEndDateFrom } : {}),
+                  ...(leaseEndDateTo ? { lte: leaseEndDateTo } : {}),
                 },
               }
             : {}),
@@ -128,7 +117,7 @@ export const tenantRouter = {
             where,
             include: {
               User: true,
-
+              Property: true,
               Expense: true,
               Increase: true,
               Notification: true,
@@ -165,6 +154,7 @@ export const tenantRouter = {
             Increase: true,
             Notification: true,
             Payment: true,
+            Property: true,
           },
         });
         return sanitizeTenant(tenant);
@@ -229,6 +219,7 @@ export const tenantRouter = {
           Increase: true,
           Notification: true,
           Payment: true,
+          Property: true,
         },
       });
       return sanitizeTenant(tenant);

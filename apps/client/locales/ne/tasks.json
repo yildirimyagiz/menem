@@ -1,0 +1,140 @@
+{
+  "_meta": {
+    "description": "[User-facing strings for the tasks module. Fill with extracted and translated keys from tasks UI.]"
+  },
+  "page": {
+    "title": "[Task Management]"
+  },
+  "filters": {
+    "taskType": "[Task Type]",
+    "priority": "[Priority]",
+    "status": "[Status]",
+    "dueDate": "[Due Date]",
+    "assignedTo": "[Assigned To]",
+    "property": "[Property]",
+    "facility": "[Facility]",
+    "cost": "[Cost]",
+    "estimatedTime": "[Estimated Time]",
+    "recurring": "[Recurring]",
+    "attachments": "[Attachments]",
+    "notes": "[Notes]",
+    "taskStatus": "[Task Status]",
+    "featured": "[Featured]",
+    "locationInfo": "[Location Info]",
+    "clearAll": "[Clear All]",
+    "applyFilters": "[Apply Filters]",
+    "moreFilters": "[More Filters]"
+  },
+  "status": {
+    "todo": {
+      "name": "[TODO]",
+      "description": "[Task is waiting to be started]"
+    },
+    "inProgress": {
+      "name": "[IN_PROGRESS]",
+      "description": "[Task is currently being worked on]"
+    },
+    "completed": {
+      "name": "[COMPLETED]",
+      "description": "[Task has been finished]"
+    },
+    "cancelled": {
+      "name": "[CANCELLED]",
+      "description": "[Task has been cancelled]"
+    }
+  },
+  "priority": {
+    "low": "[Low]",
+    "medium": "[Medium]",
+    "high": "[High]",
+    "urgent": "[Urgent]"
+  },
+  "taskTypes": {
+    "maintenance": "[Maintenance]",
+    "cleaning": "[Cleaning]",
+    "inspection": "[Inspection]",
+    "repair": "[Repair]",
+    "installation": "[Installation]",
+    "upgrade": "[Upgrade]",
+    "emergency": "[Emergency]",
+    "routine": "[Routine]"
+  },
+  "list": {
+    "loading": "[Loading tasks...]",
+    "noTasks": "[No tasks found]",
+    "noTasksDescription": "[Create your first task to get started]",
+    "createTask": "[Create Task]"
+  },
+  "taskCard": {
+    "dueDate": "[Due: {date}]",
+    "assignedTo": "[Assigned to: {name}]",
+    "priority": "[Priority: {level}]",
+    "status": "[Status: {status}]",
+    "estimatedTime": "[Est. Time: {time}]",
+    "cost": "[Cost: ${amount}]",
+    "viewDetails": "[View Details]",
+    "edit": "[Edit]",
+    "delete": "[Delete]",
+    "markComplete": "[Mark Complete]",
+    "markInProgress": "[Mark In Progress]"
+  },
+  "modal": {
+    "createTask": "[Create Task]",
+    "editTask": "[Edit Task]",
+    "taskDetails": "[Task Details]",
+    "close": "[Close]",
+    "save": "[Save]",
+    "cancel": "[Cancel]"
+  },
+  "form": {
+    "title": "[Title]",
+    "description": "[Description]",
+    "dueDate": "[Due Date]",
+    "priority": "[Priority]",
+    "status": "[Status]",
+    "assignedTo": "[Assigned To]",
+    "property": "[Property]",
+    "facility": "[Facility]",
+    "estimatedTime": "[Estimated Time (hours)]",
+    "cost": "[Cost]",
+    "recurring": "[Recurring]",
+    "attachments": "[Attachments]",
+    "notes": "[Notes]",
+    "validation": {
+      "titleRequired": "[Title is required]",
+      "descriptionRequired": "[Description is required]",
+      "dueDateRequired": "[Due date is required]",
+      "priorityRequired": "[Priority is required]",
+      "statusRequired": "[Status is required]"
+    }
+  },
+  "toast": {
+    "success": {
+      "created": "[Task created successfully]",
+      "updated": "[Task updated successfully]",
+      "deleted": "[Task deleted successfully]",
+      "statusUpdated": "[Task status updated successfully]"
+    },
+    "error": {
+      "create": "[Failed to create task]",
+      "update": "[Failed to update task]",
+      "delete": "[Failed to delete task]",
+      "statusUpdate": "[Failed to update task status]"
+    }
+  },
+  "common": {
+    "loading": "[Loading...]",
+    "error": "[Error]",
+    "success": "[Success]",
+    "cancel": "[Cancel]",
+    "save": "[Save]",
+    "delete": "[Delete]",
+    "close": "[Close]",
+    "view": "[View]",
+    "edit": "[Edit]",
+    "confirm": "[Confirm]",
+    "back": "[Back]",
+    "next": "[Next]",
+    "previous": "[Previous]"
+  }
+}

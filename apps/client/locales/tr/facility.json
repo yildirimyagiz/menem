@@ -1,0 +1,99 @@
+{
+  "title": "Tesis",
+  "description": "Tesis detayları ve yönetimi.",
+  "modals": {
+    "createTitle": "Yeni Tesis Oluştur",
+    "editTitle": "Tesis Düzenle",
+    "deleteTitle": "Tesis Sil",
+    "deleteConfirm": "Bu tesisi silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
+    "importTitle": "Tesisleri İçe Aktar",
+    "exportTitle": "Tesisleri Dışa Aktar",
+    "importSuccess": "Tesisler başarıyla içe aktarıldı.",
+    "importFailed": "Tesisler içe aktarılamadı.",
+    "exportSuccess": "Tesisler başarıyla dışa aktarıldı.",
+    "exportFailed": "Tesisler dışa aktarılamadı.",
+    "noFileSelected": "Dosya seçilmedi",
+    "pleaseSelectFile": "İçe aktarmak için bir dosya seçin",
+    "noSelection": "Seçim Yok",
+    "pleaseSelectAtLeastOne": "İçe aktarmak için en az bir tesis seçin"
+  },
+  "form": {
+    "name": "Ad",
+    "description": "Açıklama",
+    "type": "Tür",
+    "status": "Durum",
+    "active": "Aktif",
+    "inactive": "Pasif",
+    "draft": "Taslak",
+    "amenities": "Olanaklar",
+    "locationAmenities": "Konum Olanakları",
+    "facilityAmenities": "Tesis Olanakları",
+    "addFacility": "Tesis Ekle",
+    "updateFacility": "Tesis Güncelle",
+    "createFacility": "Tesis Oluştur",
+    "saving": "Kaydediliyor...",
+    "creating": "Oluşturuluyor...",
+    "updating": "Güncelleniyor..."
+  },
+  "buttons": {
+    "cancel": "İptal",
+    "save": "Kaydet",
+    "update": "Güncelle",
+    "create": "Oluştur",
+    "delete": "Sil",
+    "export": "Dışa Aktar",
+    "import": "İçe Aktar",
+    "refresh": "Yenile",
+    "applyFilters": "Filtreleri Uygula",
+    "reset": "Sıfırla",
+    "backToFacilities": "Tesislere Geri Dön"
+  },
+  "tabs": {
+    "facilities": "Tesisler",
+    "expenses": "Giderler",
+    "extraCharges": "Ek Ücretler",
+    "includedServices": "Dahil Hizmetler"
+  },
+  "sections": {
+    "includedServices": "Dahil Hizmetler",
+    "extraCharges": "Ek Ücretler",
+    "manageIncludedServices": "Tesisinizle birlikte gelen hizmetleri yönetin",
+    "manageExtraCharges": "Tesisiniz için ek ücretleri yönetin"
+  },
+  "toast": {
+    "success": "Başarılı",
+    "error": "Hata",
+    "facilityCreated": "Tesis başarıyla oluşturuldu",
+    "facilityUpdated": "Tesis başarıyla güncellendi",
+    "facilityDeleted": "Tesis başarıyla silindi",
+    "facilityDeleteFailed": "Tesis silinemedi.",
+    "includedServiceCreated": "Dahil hizmet başarıyla oluşturuldu",
+    "includedServiceUpdated": "Dahil hizmet başarıyla güncellendi",
+    "includedServiceDeleted": "Dahil hizmet başarıyla silindi",
+    "includedServiceDeleteFailed": "Dahil hizmet silinemedi",
+    "extraChargeCreated": "Ek ücret başarıyla oluşturuldu",
+    "extraChargeUpdated": "Ek ücret başarıyla güncellendi",
+    "extraChargeDeleted": "Ek ücret başarıyla silindi",
+    "extraChargeDeleteFailed": "Ek ücret silinemedi",
+    "expenseCreated": "Gider başarıyla oluşturuldu",
+    "expenseUpdated": "Gider başarıyla güncellendi",
+    "expenseDeleted": "Gider başarıyla silindi",
+    "expenseDeleteFailed": "Gider silinemedi",
+    "importSuccess": "Tesisler başarıyla içe aktarıldı",
+    "importFailed": "Tesisler içe aktarılamadı",
+    "exportSuccess": "Tesisler başarıyla dışa aktarıldı",
+    "exportFailed": "Tesisler dışa aktarılamadı",
+    "searchComplete": "Arama Tamamlandı",
+    "searchFailed": "Arama Başarısız",
+    "searchError": "Arama Hatası"
+  },
+  "search": {
+    "search": "Ara",
+    "searchPlaceholder": "Tesis ara...",
+    "applyFilters": "Filtreleri Uygula",
+    "reset": "Sıfırla"
+  },
+  "validation": {
+    "required": "Bu alan zorunludur"
+  }
+}

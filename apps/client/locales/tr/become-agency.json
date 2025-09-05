@@ -1,0 +1,214 @@
+{
+  "becomeAgency": {
+    "title": "Ajans Olun",
+    "subtitle": "Gayrimenkul ajansı olarak platformumuza katılın",
+    "description": "Ajans profilinizi oluşturun ve kapsamlı gayrimenkul platformumuzda mülkleri, danışmanları ve müşterileri yönetmeye başlayın.",
+    "steps": {
+      "title": "Kayıt Adımları",
+      "step1": "Formu doldurun",
+      "step2": "Bir abonelik planı seçin",
+      "step3": "Ödemeyi tamamlayın",
+      "step4": "Platformu kullanmaya başlayın"
+    },
+    "form": {
+      "title": "Ajans Bilgileri",
+      "subtitle": "Bize ajansınızdan bahsedin",
+      "name": {
+        "label": "Ajans Adı",
+        "placeholder": "Ajans adınızı girin",
+        "required": "Ajans adı zorunludur",
+        "invalid": "Lütfen geçerli bir ajans adı girin"
+      },
+      "email": {
+        "label": "E-posta Adresi",
+        "placeholder": "E-posta adresinizi girin",
+        "required": "E-posta adresi zorunludur",
+        "invalid": "Lütfen geçerli bir e-posta adresi girin"
+      },
+      "phone": {
+        "label": "Telefon Numarası",
+        "placeholder": "Telefon numaranızı girin",
+        "required": "Telefon numarası zorunludur",
+        "invalid": "Lütfen geçerli bir telefon numarası girin"
+      },
+      "website": {
+        "label": "Web Sitesi (İsteğe Bağlı)",
+        "placeholder": "Web sitenizin URL'sini girin",
+        "invalid": "Lütfen geçerli bir web sitesi URL'si girin"
+      },
+      "description": {
+        "label": "Açıklama (İsteğe Bağlı)",
+        "placeholder": "Ajansınızdan bahsedin",
+        "maxLength": "Maksimum 500 karakter"
+      },
+      "submit": "Ödemeye Devam Et",
+      "submitting": "Gönderiliyor...",
+      "cancel": "İptal"
+    },
+    "packages": {
+      "title": "Planınızı Seçin",
+      "subtitle": "Ajansınız için mükemmel planı seçin",
+      "basic": {
+        "title": "Temel",
+        "price": "29 TL",
+        "period": "aylık",
+        "description": "Küçük ajanslar için ideal",
+        "features": [
+          "10'a kadar danışman",
+          "Temel mülk yönetimi",
+          "E-posta desteği",
+          "Standart raporlar"
+        ]
+      },
+      "professional": {
+        "title": "Profesyonel",
+        "price": "79 TL",
+        "period": "aylık",
+        "description": "Büyüyen ajanslar için ideal",
+        "features": [
+          "50'ye kadar danışman",
+          "Gelişmiş mülk yönetimi",
+          "Öncelikli destek",
+          "Gelişmiş analizler",
+          "Özel markalama"
+        ]
+      },
+      "enterprise": {
+        "title": "Kurumsal",
+        "price": "199 TL",
+        "period": "aylık",
+        "description": "Büyük ajanslar için",
+        "features": [
+          "Sınırsız danışman",
+          "Tam mülk yönetimi",
+          "7/24 destek",
+          "Özel entegrasyonlar",
+          "Beyaz etiket seçenekleri",
+          "Özel hesap yöneticisi"
+        ]
+      },
+      "select": "Plan Seç",
+      "selected": "Seçildi",
+      "change": "Planı Değiştir",
+      "bestValue": "En İyi Fiyat"
+    },
+    "payment": {
+      "title": "Ödeme Bilgileri",
+      "subtitle": "Kaydınızı tamamlayın",
+      "cardNumber": "Kart Numarası",
+      "expiryDate": "Son Kullanma Tarihi",
+      "cvv": "CVV",
+      "cardholderName": "Kart Sahibinin Adı",
+      "billingAddress": "Fatura Adresi",
+      "city": "Şehir",
+      "state": "Eyalet",
+      "zipCode": "Posta Kodu",
+      "country": "Ülke",
+      "pay": "Şimdi Öde",
+      "processing": "Ödeme İşleniyor...",
+      "secure": "Güvenli Ödeme",
+      "encrypted": "Ödeme bilgileriniz şifrelenmiştir ve güvenlidir"
+    },
+    "success": {
+      "title": "Reservatior'a Hoş Geldiniz!",
+      "subtitle": "Ajansınız başarıyla oluşturuldu",
+      "description": "Artık mülklerinizi, danışmanlarınızı ve müşterilerinizi yönetebilirsiniz. Giriş talimatları için e-postanızı kontrol edin.",
+      "dashboard": "Gösterge Paneline Git",
+      "setup": "Kurulumu Tamamla",
+      "email": "E-postayı Kontrol Et"
+    },
+    "validation": {
+      "required": "Bu alan zorunludur",
+      "invalidEmail": "Lütfen geçerli bir e-posta adresi girin",
+      "invalidPhone": "Lütfen geçerli bir telefon numarası girin",
+      "invalidUrl": "Lütfen geçerli bir web sitesi URL'si girin",
+      "minLength": "En az {min} karakter olmalıdır",
+      "maxLength": "En fazla {max} karakter olmalıdır",
+      "uniqueName": "Ajans adı benzersiz olmalıdır",
+      "uniqueEmail": "E-posta adresi benzersiz olmalıdır",
+      "selectPackage": "Lütfen bir abonelik paketi seçin"
+    },
+    "notifications": {
+      "agencyCreated": "Ajans Oluşturuldu",
+      "agencyCreatedDesc": "Ajansınız başarıyla oluşturuldu!",
+      "paymentIntentCreated": "Ödeme Amacı Oluşturuldu",
+      "paymentIntentCreatedDesc": "Ödeme amacı başarıyla oluşturuldu",
+      "error": "Hata",
+      "agencyCreateFailed": "Ajans oluşturulamadı",
+      "paymentError": "Ödeme Hatası",
+      "paymentFailed": "Ödeme işlenemedi",
+      "networkError": "Ağ hatası",
+      "tryAgain": "Tekrar dene"
+    },
+    "benefits": {
+      "title": "Neden Reservatior?",
+      "subtitle": "Binlerce başarılı ajansa katılın",
+      "propertyManagement": {
+        "title": "Mülk Yönetimi",
+        "description": "Gelişmiş araçlar ve analizlerle mülk portföyünüzü kolayca yönetin"
+      },
+      "agentManagement": {
+        "title": "Danışman Yönetimi",
+        "description": "Kapsamlı araçlar ve performans takibiyle danışman ekibinizi yönetin"
+      },
+      "clientManagement": {
+        "title": "Müşteri Yönetimi",
+        "description": "Entegre CRM ile müşterilerle ilişkiler kurun ve sürdürün"
+      },
+      "analytics": {
+        "title": "Gelişmiş Analizler",
+        "description": "Detaylı raporlar ve analizlerle performansınız hakkında bilgi edinin"
+      },
+      "support": {
+        "title": "7/24 Destek",
+        "description": "Özel destek ekibimizle ihtiyacınız olduğunda yardım alın"
+      },
+      "security": {
+        "title": "Kurumsal Güvenlik",
+        "description": "Verileriniz kurumsal düzeyde güvenlik önlemleriyle korunmaktadır"
+      }
+    },
+    "faq": {
+      "title": "Sıkça Sorulan Sorular",
+      "subtitle": "Ajans olmakla ilgili bilmeniz gereken her şey",
+      "questions": [
+        {
+          "question": "Ajans olmak ne kadar ücretlidir?",
+          "answer": "29 TL/ay başlangıçlı esnek fiyatlandırma planları sunuyoruz. Ajansınızın ihtiyaçlarına en uygun planı seçin."
+        },
+        {
+          "question": "Abonelik planımı daha sonra değiştirebilir miyim?",
+          "answer": "Evet, abonelik planınızı istediğiniz zaman gösterge panelinden yükseltebilir veya düşürebilirsiniz."
+        },
+        {
+          "question": "Hesabımda kaç danışman olabilir?",
+          "answer": "Danışman sayısı abonelik planınıza bağlıdır. Temel planlar 10'a kadar danışmana izin verirken, Kurumsal planlarda sınırsız danışman vardır."
+        },
+        {
+          "question": "Ücretsiz deneme mevcut mu?",
+          "answer": "Evet, tüm yeni ajanslar için 14 günlük ücretsiz deneme sunuyoruz. Başlamak için kredi kartı gerekmez."
+        },
+        {
+          "question": "Ne tür destek mevcuttur?",
+          "answer": "Tüm planlar için e-posta desteği sağlıyoruz, Profesyonel ve Kurumsal planlar için öncelikli destek ve özel hesap yöneticileri sunuyoruz."
+        }
+      ]
+    },
+    "loading": {
+      "title": "Yükleniyor",
+      "creating": "Ajans oluşturuluyor...",
+      "processing": "Ödeme işleniyor...",
+      "redirecting": "Yönlendiriliyor...",
+      "loading": "Yükleniyor..."
+    },
+    "errors": {
+      "title": "Hata",
+      "formError": "Lütfen formunuzu kontrol edin ve tekrar deneyin",
+      "paymentError": "Ödeme başarısız oldu. Lütfen tekrar deneyin",
+      "networkError": "Ağ hatası. Lütfen bağlantınızı kontrol edin",
+      "serverError": "Sunucu hatası. Lütfen daha sonra tekrar deneyin",
+      "tryAgain": "Tekrar dene",
+      "contactSupport": "Destek ile iletişime geçin"
+    }
+  }
+}

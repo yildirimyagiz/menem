@@ -1,0 +1,490 @@
+{
+  "Index": {
+    "hero": {
+      "title": "Hayalinizdeki Evi Bulun",
+      "subtitle": "Hayal Evi",
+      "description": "Kapsamlı mülk arama platformumuzla evinizi bulun"
+    },
+    "search": {
+      "location": "Konum girin",
+      "budget": "Bütçe",
+      "button": "Ara",
+      "propertyType": "Gayrimenkul Türü",
+      "propertyTypes": {
+        "apartment": "Daire",
+        "house": "Ev",
+        "condo": "Kat Mülkiyeti",
+        "studio": "Stüdyo"
+      },
+      "quickFilters": "Hızlı filtreler:"
+    },
+    "filters": {
+      "studio": "Stüdyo",
+      "1bed": "1 Yatak",
+      "2bed": "2 Yatak",
+      "petFriendly": "Evcil Hayvan Dostu"
+    },
+    "stats": {
+      "availableProperties": "Mevcut Mülkler",
+      "neighborhoods": "Mahalleler",
+      "support": "7/24 Destek",
+      "rating": "Ortalama Puan",
+      "properties": "Mülkler",
+      "propertiesDescription": "Mevcut ilanlar",
+      "happyClients": "Mutlu Müşteriler",
+      "happyClientsDescription": "Memnun müşteriler",
+      "averageRating": "Ortalama Puan",
+      "averageRatingDescription": "5 yıldızdan",
+      "growth": "Büyüme",
+      "growthDescription": "Yıllık büyüme",
+      "neighborhoodsDescription": "Kapsanan alanlar",
+      "satisfaction": "Memnuniyet",
+      "satisfactionDescription": "Müşteri memnuniyeti",
+      "whyChoose": "Neden Seçmelisiniz",
+      "trustedBy": "Dünya çapında binlerce kullanıcı tarafından güvenilen platform"
+    },
+    "features": {
+      "lightningFast": "Şimşek Hızında",
+      "lightningFastDescription": "Optimize edilmiş arama ile saniyeler içinde mülk bulun",
+      "trustedPlatform": "Güvenilir Platform",
+      "trustedPlatformDescription": "Sadece doğrulanmış mülkler ve güvenilir acenteler",
+      "bestPrices": "En İyi Fiyatlar",
+      "bestPricesDescription": "Rekabetçi fiyatlandırma ve şeffaf ücretler"
+    },
+    "makeMoney": {
+      "title": "Para Kazanın",
+      "description": "Emlak sektöründe finansal başarı için yolunuzu seçin. Farklı beceri seviyeleri ve zaman taahhütleri için çoklu fırsatlar mevcuttur.",
+      "becomeAgent": {
+        "title": "Acente Olun",
+        "description": "Başkalarının mükemmel evini bulmalarına yardım ederek para kazanmaya başlayın",
+        "features": {
+          "flexible": "Esnek saatler",
+          "commission": "Komisyon tabanlı",
+          "training": "Eğitim sağlanır"
+        },
+        "earnings": "2.000$ - 15.000$/ay"
+      },
+      "becomeAgency": {
+        "title": "Acente Olun",
+        "description": "İşinizi büyütün ve birden fazla acenteyi yönetin",
+        "features": {
+          "team": "Ekip yönetimi",
+          "commissions": "Daha yüksek komisyonlar",
+          "tools": "İş araçları"
+        },
+        "earnings": "10.000$ - 50.000$/ay"
+      },
+      "referral": {
+        "title": "Referans Programı",
+        "description": "Arkadaşlarınızı ve ailenizi yönlendirerek ödüller kazanın",
+        "features": {
+          "easy": "Başlaması kolay",
+          "noExperience": "Deneyim gerekmez",
+          "instant": "Anında ödüller"
+        },
+        "earnings": "100$ - 1.000$/ay"
+      },
+      "difficulty": {
+        "easy": "Kolay",
+        "medium": "Orta",
+        "hard": "Zor"
+      },
+      "potentialEarnings": "Potansiyel Kazanç",
+      "keyBenefits": "Temel Faydalar",
+      "getStarted": "Başlayın",
+      "readyToStart": "Kazanmaya Hazır mısınız?",
+      "joinThousands": "Kariyerlerini Reservatior ile kuran binlerce başarılı acente ve acenteye katılın.",
+      "contactUs": "Bize Ulaşın",
+      "learnMore": "Daha Fazla Bilgi"
+    },
+    "getStarted": {
+      "title": "Bir sonraki yerinizi bulmaya hazır mısınız?",
+      "subtitle": "Favori ilanlarınızı kaydetmek, turlar planlamak ve daha fazlası için kayıt olun.",
+      "button": "Başlayın"
+    },
+
+    "common": {
+      "loading": "Yükleniyor...",
+      "error": {
+        "generic": "Mülkler yüklenemedi."
+      }
+    },
+    "amenities": {
+      "gym": "Spor Salonu",
+      "pool": "Havuz",
+      "parking": "Otopark"
+    },
+    "properties": {
+      "beds": "yatak",
+      "baths": "banyo",
+      "sqft": "m²",
+      "noTitle": "Başlıksız Gayrimenkul"
+    },
+    "results": {
+      "beds": "{count} yatak",
+      "baths": "{count} banyo"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Bir Sonraki Evinizi Bulun",
+      "subtitle": "Binlerce ilan, acente ve acente arayın.",
+      "search": {
+        "placeholder": "Bir konum girin",
+        "button": "Mülkleri Ara",
+        "location": "Konum",
+        "dates": "Tarihler",
+        "guests": "Misafirler",
+        "propertyType": "Gayrimenkul Türü",
+        "priceRange": "Fiyat Aralığı",
+        "amenities": "Özellikler",
+        "searchNow": "Şimdi Ara",
+        "advancedSearch": "Gelişmiş Arama",
+        "quickSearch": "Hızlı Arama"
+      },
+      "suggestions": {
+        "loading": "Öneriler yükleniyor...",
+        "noResults": "Sonuç bulunamadı",
+        "recentSearches": "Son Aramalar",
+        "popularLocations": "Popüler Konumlar",
+        "clearHistory": "Geçmişi Temizle"
+      }
+    },
+    "stats": {
+      "title": "Platform İstatistikleri",
+      "availableProperties": "Mevcut Mülkler",
+      "neighborhoods": "Mahalleler",
+      "support": "Destek",
+      "properties": "Mülkler",
+      "tenants": "Kiracılar",
+      "agents": "Acenteler",
+      "cities": "Şehirler",
+      "countries": "Ülkeler",
+      "satisfaction": "Memnuniyet Oranı",
+      "responseTime": "Yanıt Süresi"
+    },
+    "exploreDestinations": {
+      "title": "Macera yapalım",
+      "subtitle": "Dünyanın en iyi kalma yerlerini keşfedin.",
+      "popular": "Popüler Destinasyonlar",
+      "trending": "Trend Destinasyonlar",
+      "featured": "Öne Çıkan Destinasyonlar",
+      "viewAll": "Tüm Destinasyonları Görüntüle",
+      "destinations": "Destinasyonlar",
+      "cities": "Şehirler",
+      "countries": "Ülkeler",
+      "regions": "Bölgeler",
+      "neighborhoods": "Mahalleler"
+    },
+    "quickBrowseLinks": {
+      "title": "Hızlı Göz At",
+      "subtitle": "Aradığınızı hızlıca bulun",
+      "browse": "Göz At",
+      "quickLinks": "Hızlı Bağlantılar",
+      "categories": "Kategoriler",
+      "propertyTypes": "Gayrimenkul Türleri",
+      "locations": "Konumlar",
+      "amenities": "Özellikler",
+      "priceRanges": "Fiyat Aralıkları",
+      "filters": "Filtreler"
+    },
+    "featuredProperties": {
+      "title": "Öne Çıkan Mülkler",
+      "subtitle": "Sizin için seçilmiş mülkler",
+      "viewAll": "Tüm Mülkleri Görüntüle",
+      "property": "Gayrimenkul",
+      "properties": "Mülkler",
+      "featured": "Öne Çıkan",
+      "new": "Yeni",
+      "hot": "Popüler",
+      "trending": "Trend",
+      "price": "Fiyat",
+      "location": "Konum",
+      "rating": "Puan",
+      "bedrooms": "Yatak Odaları",
+      "bathrooms": "Banyolar",
+      "area": "Alan",
+      "amenities": "Özellikler",
+      "description": "Açıklama",
+      "details": "Detaylar",
+      "contact": "İletişim",
+      "favorite": "Favori",
+      "share": "Paylaş",
+      "compare": "Karşılaştır",
+      "viewDetails": "Detayları Görüntüle",
+      "bookNow": "Şimdi Rezervasyon Yap",
+      "rentNow": "Şimdi Kirala",
+      "buyNow": "Şimdi Satın Al"
+    },
+    "marketTrends": {
+      "title": "Pazar Trendleri",
+      "subtitle": "En son pazar içgörüleriyle güncel kalın",
+      "trends": "Pazar Trendleri",
+      "analysis": "Pazar Analizi",
+      "insights": "Pazar İçgörüleri",
+      "reports": "Pazar Raporları",
+      "statistics": "Pazar İstatistikleri",
+      "forecasts": "Pazar Tahminleri",
+      "comparison": "Pazar Karşılaştırması",
+      "growth": "Pazar Büyümesi",
+      "decline": "Pazar Düşüşü",
+      "stable": "Pazar Stabil"
+    },
+    "trends": {
+      "title": "Pazar Trendleri ve İçgörüleri",
+      "avgPrice": "Ort. Fiyat (Kira)",
+      "newListings": "Bu Ay Yeni İlanlar",
+      "avgDaysOnMarket": "Pazarda Ort. Gün",
+      "totalCities": "Kapsanan Şehirler"
+    },
+    "howItWorks": {
+      "title": "Nasıl Çalışır",
+      "subtitle": "Mükemmel evinizi bulmak için basit adımlar",
+      "steps": "Adımlar",
+      "process": "Süreç",
+      "guide": "Nasıl Çalışır",
+      "search": "Mülkleri Ara",
+      "searchDesc": "Bölgenizde ev, daire ve yatırımları bulun.",
+      "tour": "Turlar Planlayın",
+      "tourDesc": "Yüz yüze veya sanal turları kolayca rezervasyon yapın.",
+      "apply": "Çevrimiçi Başvurun",
+      "applyDesc": "Başvuruları ve belgeleri güvenli bir şekilde gönderin.",
+      "moveIn": "Taşının!",
+      "moveInDesc": "Kiranızı imzalayın ve anahtarları alın.",
+      "step1": {
+        "title": "Ara",
+        "description": "Binlerce mülk arasından göz atın"
+      },
+      "step2": {
+        "title": "Karşılaştır",
+        "description": "Mülkleri yan yana karşılaştırın"
+      },
+      "step3": {
+        "title": "İletişim",
+        "description": "Acenteler veya sahiplerle iletişime geçin"
+      },
+      "step4": {
+        "title": "Rezervasyon",
+        "description": "Tercih ettiğiniz mülkü rezervasyon yapın"
+      }
+    },
+    "neighborhoodHighlights": {
+      "title": "Mahalle Vurguları",
+      "subtitle": "Her alanı özel kılan şeyleri keşfedin",
+      "neighborhoods": "Mahalleler",
+      "highlights": "Vurgular",
+      "local": "Yerel Alan",
+      "amenities": "Yerel Özellikler",
+      "schools": "Okullar",
+      "hospitals": "Hastaneler",
+      "shopping": "Alışveriş",
+      "restaurants": "Restoranlar",
+      "transportation": "Ulaşım",
+      "parks": "Parklar",
+      "crime": "Suç Oranı",
+      "walkability": "Yürünebilirlik",
+      "transit": "Toplu Taşıma Puanı"
+    },
+    "getStartedBanner": {
+      "title": "Başlamaya Hazır mısınız?",
+      "subtitle": "Binlerce memnun kullanıcıya katılın",
+      "cta": "Harekete Geç",
+      "signUp": "Şimdi Kayıt Ol",
+      "learnMore": "Daha Fazla Bilgi",
+      "explore": "Özellikleri Keşfet",
+      "demo": "Demo Talep Et",
+      "contact": "Bize Ulaşın"
+    },
+    "enhancedHeroSection": {
+      "title": "Gelişmiş Ana Bölüm",
+      "hero": "Ana",
+      "mainTitle": "Hayalinizdeki Mülkü Bulun",
+      "subtitle": "Evinizi aramak için mükemmel yeri keşfedin",
+      "search": "Ara",
+      "advancedSearch": "Gelişmiş Arama",
+      "quickSearch": "Hızlı Arama",
+      "filters": "Filtreler",
+      "sortBy": "Sırala",
+      "viewMode": "Görünüm Modu",
+      "mapView": "Harita Görünümü",
+      "listView": "Liste Görünümü",
+      "gridView": "Izgara Görünümü"
+    },
+    "enhancedMakeMoneySection": {
+      "title": "Mülkünüzle Para Kazanın",
+      "subtitle": "Mülkünüzü gelir kaynağına dönüştürün",
+      "makeMoney": "Para Kazanın",
+      "earnings": "Kazanç",
+      "income": "Gelir",
+      "revenue": "Gelir",
+      "profit": "Kar",
+      "investment": "Yatırım",
+      "roi": "Yatırım Getirisi",
+      "rental": "Kira Geliri",
+      "leasing": "Kiralama",
+      "hosting": "Barındırma",
+      "management": "Gayrimenkul Yönetimi",
+      "services": "Hizmetler",
+      "opportunities": "Fırsatlar"
+    },
+    "enhancedStatsSection": {
+      "title": "Gelişmiş İstatistikler",
+      "subtitle": "Kapsamlı platform istatistikleri",
+      "statistics": "İstatistikler",
+      "metrics": "Metrikler",
+      "numbers": "Sayılar",
+      "data": "Veri",
+      "analytics": "Analitik",
+      "insights": "İçgörüler",
+      "performance": "Performans",
+      "growth": "Büyüme",
+      "trends": "Trendler",
+      "comparison": "Karşılaştırma"
+    },
+    "locationAutocomplete": {
+      "title": "Konum Arama",
+      "placeholder": "Bir konum arayın...",
+      "search": "Konum Ara",
+      "autocomplete": "Otomatik Tamamlama",
+      "suggestions": "Öneriler",
+      "recent": "Son Aramalar",
+      "popular": "Popüler Konumlar",
+      "nearby": "Yakındaki",
+      "cities": "Şehirler",
+      "neighborhoods": "Mahalleler",
+      "landmarks": "Simge Yapılar",
+      "addresses": "Adresler",
+      "coordinates": "Koordinatlar",
+      "clear": "Aramayı Temizle",
+      "noResults": "Sonuç bulunamadı",
+      "loading": "Öneriler yükleniyor..."
+    },
+    "filters": {
+      "title": "Filtreler",
+      "apply": "Filtreleri Uygula",
+      "clear": "Filtreleri Temizle",
+      "reset": "Filtreleri Sıfırla",
+      "save": "Filtreleri Kaydet",
+      "load": "Kaydedilen Filtreleri Yükle",
+      "propertyType": "Gayrimenkul Türü",
+      "priceRange": "Fiyat Aralığı",
+      "bedrooms": "Yatak Odaları",
+      "bathrooms": "Banyolar",
+      "amenities": "Özellikler",
+      "location": "Konum",
+      "dateAvailable": "Müsait Tarih",
+      "petFriendly": "Evcil Hayvan Dostu",
+      "furnished": "Eşyalı",
+      "parking": "Otopark",
+      "garden": "Bahçe",
+      "balcony": "Balkon",
+      "elevator": "Asansör",
+      "security": "Güvenlik",
+      "pool": "Havuz",
+      "gym": "Spor Salonu"
+    },
+    "sorting": {
+      "title": "Sırala",
+      "price": "Fiyat",
+      "date": "Tarih",
+      "rating": "Puan",
+      "distance": "Mesafe",
+      "relevance": "Alaka",
+      "popularity": "Popülerlik",
+      "newest": "En Yeni",
+      "oldest": "En Eski",
+      "priceLowToHigh": "Fiyat: Düşükten Yükseğe",
+      "priceHighToLow": "Fiyat: Yüksekten Düşüğe",
+      "ratingHighToLow": "Puan: Yüksekten Düşüğe",
+      "distanceNearest": "Mesafe: En Yakın Önce"
+    },
+    "pagination": {
+      "previous": "Önceki",
+      "next": "Sonraki",
+      "page": "Sayfa",
+      "of": "/",
+      "showing": "Gösteriliyor",
+      "to": "ile",
+      "results": "sonuç",
+      "perPage": "sayfa başına",
+      "loadMore": "Daha Fazla Yükle",
+      "showAll": "Tümünü Göster"
+    },
+    "loading": {
+      "title": "Yükleniyor",
+      "properties": "Mülkler yükleniyor...",
+      "suggestions": "Öneriler yükleniyor...",
+      "search": "Aranıyor...",
+      "filters": "Filtreler uygulanıyor...",
+      "results": "Sonuçlar yükleniyor..."
+    },
+    "errors": {
+      "title": "Hata",
+      "generic": "Bir şeyler ters gitti",
+      "noResults": "Sonuç bulunamadı",
+      "searchFailed": "Arama başarısız",
+      "loadFailed": "Veri yüklenemedi",
+      "networkError": "Ağ hatası",
+      "tryAgain": "Tekrar deneyin",
+      "contactSupport": "Destekle iletişime geçin"
+    },
+    "actions": {
+      "search": "Ara",
+      "filter": "Filtrele",
+      "sort": "Sırala",
+      "view": "Görüntüle",
+      "contact": "İletişim",
+      "favorite": "Favori",
+      "share": "Paylaş",
+      "compare": "Karşılaştır",
+      "book": "Rezervasyon",
+      "rent": "Kirala",
+      "buy": "Satın Al",
+      "save": "Kaydet",
+      "load": "Yükle",
+      "clear": "Temizle",
+      "reset": "Sıfırla",
+      "apply": "Uygula",
+      "cancel": "İptal",
+      "confirm": "Onayla",
+      "back": "Geri",
+      "next": "Sonraki",
+      "previous": "Önceki"
+    }
+  },
+  "neighborhoods": {
+    "title": "Popüler Mahalleler",
+    "downtown": {
+      "name": "Şehir Merkezi",
+      "desc": "Alışveriş, yemek ve eğlence ile canlı şehir yaşamı."
+    },
+    "midtown": {
+      "name": "Orta Şehir",
+      "desc": "İş ve yaşam dengesi için ideal merkezi konum."
+    },
+    "uptown": {
+      "name": "Yukarı Şehir",
+      "desc": "Kafeler, butikler ve gece hayatı ile trend alan."
+    },
+    "suburbs": {
+      "name": "Banliyöler",
+      "desc": "Sakin ve aile dostu çevrelerde huzurlu yaşam."
+    },
+    "beachfront": {
+      "name": "Sahil",
+      "desc": "Güzel sahil topluluklarında okyanus kenarında dinlenin."
+    },
+    "readGuide": "Rehberi Oku"
+  },
+  "quickBrowse": {
+    "title": "Şehre Göre Evlere Göz Atın",
+    "city": {
+      "san-francisco": "San Francisco",
+      "new-york": "New York",
+      "miami": "Miami",
+      "chicago": "Chicago",
+      "los-angeles": "Los Angeles",
+      "seattle": "Seattle"
+    }
+  }
+} 

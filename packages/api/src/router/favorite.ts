@@ -1,15 +1,14 @@
 import { randomUUID } from "node:crypto";
+import type { Prisma } from "@reservatior/db";
 import type { TRPCRouterRecord } from "@trpc/server";
-import { TRPCError } from "@trpc/server";
-import { z } from "zod";
-
-import type { Prisma } from "@acme/db";
 import {
   CreateFavoriteSchema,
   FavoriteFilterSchema,
   ToggleFavoriteSchema,
   UpdateFavoriteSchema,
-} from "@acme/validators";
+} from "@reservatior/validators";
+import { TRPCError } from "@trpc/server";
+import { z } from "zod";
 
 import { getPaginationParams } from "../helpers/pagination";
 import { withCacheAndFormat } from "../helpers/withCacheAndFormat";

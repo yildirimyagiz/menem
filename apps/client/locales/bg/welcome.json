@@ -1,0 +1,27 @@
+{
+  "Welcome": {
+    "category": {
+      "discover": {
+        "step1": "[Step 1]",
+        "step2": "[Step 2]",
+        "step3": "[Step 3]"
+      },
+      "connect": {
+        "step1": "[Step 1]",
+        "step2": "[Step 2]",
+        "step3": "[Step 3]"
+      },
+      "manage": {
+        "step1": "[Step 1]",
+        "step2": "[Step 2]",
+        "step3": "[Step 3]"
+      }
+    },
+    "title": "[Title]",
+    "intro": "[Intro]",
+    "signIn": "[Sign In]",
+    "signUp": "[Sign Up]",
+    "exploreGuest": "[Explore Guest]",
+    "copyright": "[Copyright]"
+  }
+}

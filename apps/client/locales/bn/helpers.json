@@ -1,0 +1,86 @@
+{
+  "helpers": {
+    "dropdowns": {
+      "country": {
+        "title": "[Country Selection]",
+        "placeholder": "[Select a country]",
+        "searchPlaceholder": "[Search countries...]",
+        "noResults": "[No countries found]",
+        "loading": "[Loading countries...]",
+        "error": "[Error loading countries]"
+      },
+      "state": {
+        "title": "[State/Province Selection]",
+        "placeholder": "[Select a state/province]",
+        "searchPlaceholder": "[Search states...]",
+        "noResults": "[No states found]",
+        "loading": "[Loading states...]",
+        "error": "[Error loading states]"
+      },
+      "city": {
+        "title": "[City Selection]",
+        "placeholder": "[Select a city]",
+        "searchPlaceholder": "[Search cities...]",
+        "noResults": "[No cities found]",
+        "loading": "[Loading cities...]",
+        "error": "[Error loading cities]"
+      },
+      "location": {
+        "title": "[Location Selection]",
+        "placeholder": "[Select a location]",
+        "searchPlaceholder": "[Search locations...]",
+        "noResults": "[No locations found]",
+        "loading": "[Loading locations...]",
+        "error": "[Error loading locations]"
+      },
+      "phone": {
+        "title": "[Phone Number]",
+        "placeholder": "[Enter phone number]",
+        "countryCode": "[Country Code]",
+        "phoneNumber": "[Phone Number]",
+        "invalidPhone": "[Invalid phone number]",
+        "required": "[Phone number is required]",
+        "formatError": "[Please enter a valid phone number]"
+      }
+    },
+    "validation": {
+      "required": "[This field is required]",
+      "email": "[Please enter a valid email address]",
+      "phone": "[Please enter a valid phone number]",
+      "minLength": "[Must be at least {min} characters]",
+      "maxLength": "[Must be no more than {max} characters]",
+      "pattern": "[Please enter a valid format]",
+      "unique": "[This value must be unique]",
+      "password": "[Password must be at least 8 characters]",
+      "confirmPassword": "[Passwords must match]"
+    },
+    "common": {
+      "loading": "[Loading...]",
+      "error": "[An error occurred]",
+      "success": "[Success]",
+      "cancel": "[Cancel]",
+      "confirm": "[Confirm]",
+      "save": "[Save]",
+      "delete": "[Delete]",
+      "edit": "[Edit]",
+      "add": "[Add]",
+      "remove": "[Remove]",
+      "close": "[Close]",
+      "back": "[Back]",
+      "next": "[Next]",
+      "previous": "[Previous]",
+      "submit": "[Submit]",
+      "reset": "[Reset]",
+      "clear": "[Clear]",
+      "search": "[Search]",
+      "filter": "[Filter]",
+      "sort": "[Sort]",
+      "refresh": "[Refresh]",
+      "retry": "[Retry]",
+      "download": "[Download]",
+      "upload": "[Upload]",
+      "export": "[Export]",
+      "import": "[Import]"
+    }
+  }
+}

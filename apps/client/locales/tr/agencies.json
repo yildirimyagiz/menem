@@ -1,0 +1,210 @@
+{
+  "Admin": {
+    "agencies": {
+      "loading": "Loading agencies...",
+      "retry": "Tekrar Dene",
+      "title": "Acenteler",
+      "description": "Sistemdeki tüm acenteleri yönetin ve izleyin",
+      "refresh": "Yenile",
+      "filters": "Filtreler",
+      "export": "Dışa Aktar",
+      "exporting": "Dışa aktarılıyor...",
+      "addAgency": "Yeni Acente Ekle",
+      "totalAgencies": "Toplam Acente",
+      "activeAgencies": "Aktif Acente",
+      "pendingAgencies": "Beklemede Acente",
+      "suspendedAgencies": "Süreç Acente",
+      "overview": "Genel Bakış",
+      "agencies": "Acenteler",
+      "analytics": "Analiz",
+      "settings": "Ayarlar",
+      "recentActivity": "Son Aktivite",
+      "recentActivityDescription": "Son agency activities and changes",
+      "unknownAgency": "Bilinmeyen Acente",
+      "inactive": "Pasif",
+      "quickActions": "Hızlı İşlemler",
+      "createNewAgency": "Yeni Acente Oluştur",
+      "exportData": "Verileri Dışa Aktar",
+      "refreshData": "Verileri Yenile",
+      "agencyManagement": "Acente Yönetimi",
+      "agencyManagementDescription": "Sistemdeki tüm acenteleri yönetin ve izleyin",
+      "analyticsDashboard": "Analiz Paneli",
+      "analyticsDashboardDescription": "Tüm analiz ve bilgiler",
+      "agencyGrowth": "Acente Gelişmeler",
+      "statusDistribution": "Durum Dağılımı",
+      "monthlyGrowth": "Aylık Gelişmeler",
+      "newAgencies": "Yeni Acenteler",
+      "trendAnalysis": "Trend Analizi",
+      "agencySettings": "Acente Ayarları",
+      "agencySettingsDescription": "Acente yönetim ayarlarını yapılandırın",
+      "generalSettings": "Genel Ayarlar",
+      "autoApproval": "Otomatik Onay",
+      "disabled": "Devre Dışı",
+      "enabled": "Etkin",
+      "emailNotifications": "Email Bildirimleri",
+      "dataRetentionPeriod": "Veri Retention Period",
+      "days": "günler",
+      "securitySettings": "Güvenlik Ayarları",
+      "twoFactorAuthentication": "İki Faktörlü Doğrulama",
+      "required": "Gerekli",
+      "sessionTimeout": "Session Timeout",
+      "minutes": "dakika",
+      "apiRateLimiting": "API Rate Limiting",
+      "success": "Başarılı",
+      "agencyCreated": "Acente başarıyla oluşturuldu",
+      "agencyUpdated": "Acente başarıyla güncellendi",
+      "agencyDeleted": "Acente başarıyla silindi",
+      "filterAgencies": "Filter Agencies",
+      "filterDescription": "Acenteleri filtrele",
+      "table": {
+        "search": {
+          "placeholder": "Acenteleri arayın..."
+        },
+        "columns": {
+          "selectAll": "Tüm satırları seç",
+          "name": "Ad",
+          "description": "Açıklama",
+          "noDescription": "Açıklama yok",
+          "email": "E-posta",
+          "noEmail": "E-posta yok",
+          "phone": "Telefon",
+          "noPhone": "Telefon yok",
+          "status": "Durum",
+          "statusOptions": {
+            "PENDING": "Beklemede",
+            "ACTIVE": "Aktif",
+            "SUSPENDED": "Askıda"
+          },
+          "active": "Aktif",
+          "inactive": "Pasif",
+          "agents": "Danışman",
+          "properties": "Mülkler",
+          "users": "Kullanıcılar",
+          "subscriptions": "Abonelikler",
+          "createdAt": "Oluşturulma Tarihi",
+          "unknownDate": "Bilinmeyen",
+          "actions": "Eylemler"
+        },
+        "toolbar": {
+          "filters": "Filtreler",
+          "export": "Dışa Aktar",
+          "reset": "Sıfırla"
+        },
+        "pagination": {
+          "showing": "Gösterilen",
+          "of": "den",
+          "results": "sonuç",
+          "firstPage": "İlk sayfa",
+          "previousPage": "Önceki sayfa",
+          "page": "Sayfa",
+          "nextPage": "Sonraki sayfa",
+          "lastPage": "Son sayfa"
+        }
+      },
+      "createModal": {
+        "title": "Yeni Acente Oluştur",
+        "description": "Sistemde yeni bir acente oluşturun. Aşağıda gerekli bilgileri doldurun.",
+        "fields": {
+          "name": "Ad",
+          "namePlaceholder": "Acente adını girin",
+          "description": "Açıklama",
+          "descriptionPlaceholder": "Acente açıklamasını girin",
+          "email": "E-posta",
+          "emailPlaceholder": "E-posta adresini girin",
+          "phone": "Telefon",
+          "phonePlaceholder": "Telefon numarasını girin",
+          "address": "Adres",
+          "addressPlaceholder": "Adresi girin",
+          "website": "Website",
+          "websitePlaceholder": "Website URL'sini girin",
+          "logoUrl": "Logo URL",
+          "logoUrlPlaceholder": "Logo URL'sini girin",
+          "status": "Durum",
+          "statusOptions": {
+            "PENDING": "Beklemede",
+            "ACTIVE": "Aktif",
+            "SUSPENDED": "Askıda"
+          },
+          "isActive": "Aktif",
+          "active": "Aktif",
+          "inactive": "Pasif"
+        },
+        "errors": {
+          "nameRequired": "Ad gereklidir.",
+          "invalidEmail": "Geçersiz e-posta adresi."
+        },
+        "success": {
+          "title": "Acente Oluşturuldu",
+          "description": "Acente başarıyla oluşturuldu."
+        },
+        "error": {
+          "title": "Hata",
+          "description": "Acente oluşturulamadı."
+        },
+        "cancel": "İptal",
+        "creating": "Oluşturuluyor...",
+        "create": "Acente Oluştur"
+      },
+      "editModal": {
+        "success": {
+          "title": "Acente Güncellendi",
+          "description": "Acente başarıyla güncellendi."
+        },
+        "error": {
+          "title": "Hata",
+          "description": "Failed to update agency."
+        }
+      },
+      "deleteModal": {
+        "title": "Acente Sil",
+        "description": "Bu acenteyi silmek istediğinizden emin misiniz? Bu eylem geri alınamaz.",
+        "warning": {
+          "title": "Bu eylem geri alınamaz",
+          "description": "Bu, sisteminizden acenteyi kalıcı olarak kaldırır. Tüm ilişkili veriler silinmiş olarak işaretlenecek ancak denetim amaçları için korunabilir."
+        },
+        "success": {
+          "title": "Acente Silindi",
+          "description": "Acente başarıyla silindi."
+        },
+        "error": {
+          "title": "Hata",
+          "description": "Acente silinemedi."
+        },
+        "cancel": "İptal",
+        "deleting": "Siliniyor...",
+        "delete": "Acente Sil"
+      },
+      "filterForm": {
+        "activeFilters": "Aktif Filtreler",
+        "clearAll": "Tümünü Temizle",
+        "badges": {
+          "search": "Ara",
+          "status": "Durum",
+          "activeStatus": "Aktif",
+          "active": "Aktif",
+          "inactive": "Pasif"
+        },
+        "searchLabel": "Ara",
+        "searchPlaceholder": "Acenteleri arayın...",
+        "statusLabel": "Durum",
+        "statusPlaceholder": "Durumu seçin",
+        "allStatuses": "Tüm Durumlar",
+        "statusOptions": {
+          "PENDING": "Beklemede",
+          "ACTIVE": "Aktif",
+          "SUSPENDED": "Askıda"
+        },
+        "activeStatusLabel": "Aktif Durum",
+        "activeStatusPlaceholder": "Aktif durumu seçin",
+        "allAgencies": "Tüm Acenteler",
+        "active": "Aktif",
+        "inactive": "Pasif",
+        "reset": "Sıfırla",
+        "apply": "Filtreleri Uygula"
+      },
+      "errorLoading": "Veriler yüklenirken hata oluştu",
+      "noData": "Veri mevcut değil",
+      "noDataDescription": "Kriterlerinize uyan kayıtlar bulunamadı"
+    }
+  }
+}

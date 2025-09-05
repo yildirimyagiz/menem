@@ -1,0 +1,59 @@
+{
+  "title": "Manage Tickets",
+  "subtitle": "Track, filter, and manage all support tickets.",
+  "create": "Create Ticket",
+  "empty": "No tickets found. Adjust filters or create a new ticket.",
+  "filters": {
+    "searchPlaceholder": "Search by subject...",
+    "searchAria": "Search tickets by subject",
+    "status": {
+      "aria": "Filter by status",
+      "all": "All",
+      "open": "Open",
+      "inProgress": "In Progress",
+      "resolved": "Resolved",
+      "closed": "Closed",
+      "archived": "Archived"
+    }
+  },
+  "table": {
+    "subject": "Subject",
+    "status": "Status",
+    "requester": "Requester",
+    "agent": "Agent",
+    "createdAt": "Created",
+    "actions": "Actions"
+  },
+  "loading": "Loading tickets...",
+  "view": "View",
+  "pagination": {
+    "showing": "Showing {from}-{to} of {total}",
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "statusLabels": {
+    "open": "Open",
+    "inProgress": "In Progress",
+    "resolved": "Resolved",
+    "closed": "Closed",
+    "archived": "Archived"
+  },
+  "createModal": {
+    "title": "Create Ticket",
+    "description": "Fill in the details below to create a new support ticket.",
+    "fields": {
+      "subject": "Subject",
+      "description": "Description",
+      "status": "Status",
+      "agent": "Assign Agent",
+      "agentPlaceholder": "Optional"
+    },
+    "none": "None",
+    "cancel": "Cancel",
+    "create": "Create",
+    "creating": "Creating...",
+    "errors": {
+      "subjectRequired": "Subject is required"
+    }
+  }
+}

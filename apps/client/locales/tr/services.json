@@ -1,0 +1,153 @@
+{
+  "services": {
+    "admin": {
+      "title": "Admin Hizmetleri",
+      "dashboard": {
+        "title": "Admin Paneli",
+        "stats": {
+          "totalUsers": "Toplam Kullanıcı",
+          "activeProperties": "Aktif Gayrimenkul",
+          "revenue": "Gelir",
+          "systemHealth": "Sistem Sağlığı",
+          "pendingTasks": "Bekleyen Görevler",
+          "totalTenants": "Toplam Kiracı",
+          "monthlyCashflow": "Aylık Nakit Akışı",
+          "occupancyRate": "Doluluk Oranı"
+        },
+        "activities": {
+          "title": "Son Aktiviteler",
+          "noActivities": "Son aktivite yok",
+          "loading": "Aktiviteler yükleniyor..."
+        },
+        "systemStatus": {
+          "title": "Sistem Durumu",
+          "online": "Çevrimiçi",
+          "offline": "Çevrimdışı",
+          "database": "Veritabanı",
+          "apiServices": "API Hizmetleri",
+          "storage": "Depolama Kullanımı"
+        }
+      },
+      "sections": {
+        "userManagement": "Kullanıcı Yönetimi",
+        "propertyManagement": "Gayrimenkul Yönetimi",
+        "financials": "Finansal",
+        "operationsAnalytics": "Operasyonlar ve Analitik",
+        "settingsMisc": "Ayarlar ve Diğer"
+      },
+      "quickActions": {
+        "title": "Hızlı İşlemler",
+        "addUser": "Kullanıcı Ekle",
+        "addProperty": "Gayrimenkul Ekle",
+        "generateReport": "Rapor Oluştur",
+        "viewAnalytics": "Analitikleri Görüntüle"
+      }
+    },
+    "ml": {
+      "title": "Makine Öğrenmesi Hizmetleri",
+      "analysis": {
+        "title": "Gayrimenkul Analizi",
+        "loading": "Gayrimenkul analiz ediliyor...",
+        "success": "Analiz tamamlandı",
+        "error": "Analiz başarısız",
+        "processing": "Görseller işleniyor...",
+        "uploading": "Görseller yükleniyor..."
+      },
+      "features": {
+        "propertyType": "Gayrimenkul Türü",
+        "detectedRooms": "Tespit Edilen Odalar",
+        "detectedAmenities": "Tespit Edilen Olanaklar",
+        "interiorQuality": "İç Mekan Kalitesi",
+        "exteriorCondition": "Dış Mekan Durumu",
+        "modernityScore": "Modernlik Skoru",
+        "spaceUtilization": "Alan Kullanımı",
+        "lightingQuality": "Aydınlatma Kalitesi",
+        "cleanliness": "Temizlik",
+        "maintenanceLevel": "Bakım Seviyesi",
+        "aestheticAppeal": "Estetik Çekicilik"
+      },
+      "location": {
+        "neighborhoodQuality": "Mahalle Kalitesi",
+        "accessibilityScore": "Erişilebilirlik Skoru",
+        "transportationRating": "Ulaşım Değerlendirmesi",
+        "safetyScore": "Güvenlik Skoru",
+        "noiseLevel": "Gürültü Seviyesi",
+        "walkability": "Yürünebilirlik"
+      },
+      "settings": {
+        "title": "Analiz Ayarları",
+        "autoTagging": "Otomatik Etiketleme",
+        "qualityThreshold": "Kalite Eşiği",
+        "confidenceThreshold": "Güven Eşiği",
+        "locationAnalysis": "Konum Analizi",
+        "priceEstimation": "Fiyat Tahmini"
+      },
+      "health": {
+        "title": "ML Hizmet Sağlığı",
+        "status": "Durum",
+        "modelLoaded": "Model Yüklendi",
+        "labelsLoaded": "Etiketler Yüklendi",
+        "checking": "ML hizmeti kontrol ediliyor...",
+        "healthy": "Hizmet sağlıklı",
+        "unhealthy": "Hizmet sağlıksız"
+      }
+    },
+    "payment": {
+      "title": "Ödeme Hizmetleri",
+      "createIntent": "Ödeme niyeti oluşturuluyor...",
+      "confirmPayment": "Ödeme onaylanıyor...",
+      "processing": "Ödeme işleniyor...",
+      "success": "Ödeme başarılı",
+      "failed": "Ödeme başarısız",
+      "error": "Ödeme hatası",
+      "cancelled": "Ödeme iptal edildi",
+      "pending": "Ödeme bekliyor",
+      "refunded": "Ödeme iade edildi"
+    },
+    "reservation": {
+      "title": "Rezervasyon Hizmetleri",
+      "validation": {
+        "propertyRequired": "Gayrimenkul ID'si gereklidir",
+        "guestRequired": "Misafir ID'si gereklidir",
+        "userRequired": "Kullanıcı ID'si gereklidir",
+        "startDateRequired": "Başlangıç tarihi gereklidir",
+        "endDateRequired": "Bitiş tarihi gereklidir",
+        "invalidDateRange": "Bitiş tarihi başlangıç tarihinden sonra olmalıdır",
+        "invalidGuests": "Misafir sayısı 0'dan büyük olmalıdır",
+        "invalidPrice": "Toplam fiyat 0'dan büyük olmalıdır",
+        "currencyRequired": "Para birimi ID'si gereklidir",
+        "paymentAmountRequired": "Ödeme tutarı 0'dan büyük olmalıdır",
+        "paymentMethodRequired": "Ödeme yöntemi gereklidir"
+      },
+      "status": {
+        "pending": "Bekliyor",
+        "confirmed": "Onaylandı",
+        "cancelled": "İptal Edildi",
+        "completed": "Tamamlandı",
+        "failed": "Başarısız"
+      },
+      "paymentStatus": {
+        "unpaid": "Ödenmedi",
+        "paid": "Ödendi",
+        "pending": "Bekliyor",
+        "failed": "Başarısız",
+        "refunded": "İade Edildi"
+      },
+      "actions": {
+        "create": "Rezervasyon Oluştur",
+        "update": "Rezervasyon Güncelle",
+        "cancel": "Rezervasyon İptal Et",
+        "confirm": "Rezervasyon Onayla",
+        "refund": "Ödeme İade Et"
+      },
+      "calculations": {
+        "nights": "gece",
+        "totalPrice": "Toplam Fiyat",
+        "perNight": "gece başına",
+        "fees": "Ücretler",
+        "taxes": "Vergiler",
+        "discount": "İndirim"
+      }
+    }
+  }
+} 

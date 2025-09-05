@@ -1,0 +1,35 @@
+{
+  "form": {
+    "title": "[Event]",
+    "add": "[Add Event]",
+    "edit": "[Edit Event]",
+    "delete": "[Delete Event]",
+    "eventName": "[Event Name]",
+    "scheduledAt": "[Scheduled At]",
+    "actions": "[Actions]",
+    "submit": "[Submit]",
+    "cancel": "[Cancel]"
+  },
+  "toast": {
+    "added": {
+      "title": "[Event Added]",
+      "description": "[The event was added successfully.]"
+    },
+    "updated": {
+      "title": "[Event Updated]",
+      "description": "[The event was updated successfully.]"
+    },
+    "deleted": {
+      "title": "[Event Deleted]",
+      "description": "[The event was deleted successfully.]"
+    },
+    "error": {
+      "title": "[Error]",
+      "description": "[An error occurred. Please try again.]"
+    }
+  },
+  "list": {
+    "empty": "[No events found.]",
+    "loading": "[Loading events...]"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "contact": {
+    "title": "İletişim",
+    "description": "Bizimle iletişime geçin",
+    "info": {
+      "address": {
+        "title": "🗺 ADRES",
+        "description": "Photo booth tattooed prism, portland taiyaki hoodie neutra typewriter"
+      },
+      "email": {
+        "title": "💌 E-POSTA",
+        "description": "example@example.com"
+      },
+      "phone": {
+        "title": "☎ TELEFON",
+        "description": "000-123-456-7890"
+      },
+      "socials": {
+        "title": "🌏 SOSYAL MEDYA"
+      }
+    },
+    "form": {
+      "title": "Bize mesaj gönderin",
+      "fullName": "Ad soyad",
+      "email": "E-posta adresi",
+      "message": "Mesaj",
+      "fullNamePlaceholder": "Örnek Ad",
+      "emailPlaceholder": "ornek@example.com",
+      "messagePlaceholder": "Mesajınızı buraya yazın...",
+      "submitButton": "Mesaj Gönder",
+      "loading": "Gönderiliyor...",
+      "success": "Mesaj başarıyla gönderildi!",
+      "error": "Mesaj gönderilirken hata oluştu. Lütfen tekrar deneyin."
+    },
+    "metadata": {
+      "title": "Bizimle İletişime Geçin",
+      "description": "İletişim sayfamızı keşfedin"
+    }
+  }
+} 

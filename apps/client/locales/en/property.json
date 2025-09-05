@@ -1,0 +1,373 @@
+{
+  "property": {
+    "title": "Properties",
+    "description": "Browse and search properties",
+    "pageTitle": "Properties for Rent & Sale",
+    "pageDescription": "Find your perfect property. Browse thousands of properties for rent and sale with detailed filters and advanced search options.",
+    "filters": {
+      "price": {
+        "section": "Price",
+        "minLabel": "Min Rent",
+        "maxLabel": "Max Rent",
+        "minPlaceholder": "0",
+        "maxPlaceholder": "No max",
+        "dropdownLabel": "Price Range",
+        "applyButton": "Apply"
+      },
+      "beds": {
+        "section": "Beds",
+        "subtitle": "Select two tiles for min/max range",
+        "options": {
+          "any": "Any",
+          "studio_plus": "Studio+",
+          "1_plus": "1+",
+          "2_plus": "2+",
+          "3_plus": "3+",
+          "4_plus": "4+"
+        }
+      },
+      "baths": {
+        "section": "Baths",
+        "options": {
+          "any": "Any",
+          "1_plus": "1+",
+          "2_plus": "2+",
+          "3_plus": "3+"
+        }
+      },
+      "homeType": {
+        "section": "Home Type",
+        "apartment": "Apartments",
+        "house": "Houses",
+        "condo": "Condos",
+        "townhouse": "Townhomes"
+      },
+      "allFilters": "All Filters",
+      "listingType": "Listing Type",
+      "searchPlaceholder": "Search properties...",
+      "clearAll": "Clear All",
+      "saveSearch": "Save Search",
+      "seeResults": "See Results"
+    },
+    "card": {
+      "badges": {
+        "featured": "Featured",
+        "new": "New",
+        "inactive": "Inactive"
+      },
+      "price": {
+        "uponRequest": "Price upon request",
+        "perMonth": "per month"
+      },
+      "features": {
+        "beds": "beds",
+        "baths": "baths",
+        "sqft": "sqft",
+        "parking": "parking",
+        "na": "N/A"
+      },
+      "actions": {
+        "view": "View Details"
+      },
+      "agency": {
+        "independent": "Independent"
+      },
+      "fallback": {
+        "addressNotAvailable": "Address not available",
+        "propertyInCity": "{type} in {city}"
+      }
+    },
+    "hero": {
+      "heading": "Find Your Perfect Home",
+      "subtitle": "Discover {total} properties with detailed filters and expert guidance",
+      "searchPlaceholder": "Search by location, property type, or keywords...",
+      "searchButton": "Search",
+      "stats": {
+        "totalProperties": "Total Properties",
+        "averagePrice": "Avg. Price",
+        "featured": "Featured",
+        "active": "Active"
+      }
+    },
+    "emptyState": {
+      "title": "No properties found",
+      "description": "Try adjusting your search criteria or filters to find more properties.",
+      "clearFilters": "Clear all filters"
+    },
+    "pagination": {
+      "showingResults": "Showing {start} to {end} of {total} results",
+      "previous": "Previous",
+      "next": "Next"
+    },
+    "viewModes": {
+      "grid": "Grid",
+      "list": "List",
+      "map": "Map",
+      "gridView": "Grid View",
+      "listView": "List View",
+      "mapView": "Map View"
+    },
+    "sorting": {
+      "label": "Sort by",
+      "sortBy": "Sort By",
+      "priceLowToHigh": "Price: Low to High",
+      "priceHighToLow": "Price: High to Low",
+      "newest": "Newest",
+      "oldest": "Oldest",
+      "featured": "Featured"
+    },
+
+    "propertyTypes": {
+      "apartment": "Apartment",
+      "house": "House",
+      "condo": "Condo",
+      "townhouse": "Townhouse",
+      "property": "Property",
+      "singleFamily": "Single Family",
+      "duplex": "Duplex",
+      "triplex": "Triplex",
+      "quadplex": "Quadplex",
+      "officeBuilding": "Office Building",
+      "retailSpace": "Retail Space",
+      "warehouse": "Warehouse",
+      "industrialComplex": "Industrial Complex",
+      "mixedUse": "Mixed Use",
+      "multiFamily": "Multi Family",
+      "mobileHome": "Mobile Home",
+      "manufacturedHome": "Manufactured Home",
+      "farm": "Farm",
+      "ranch": "Ranch"
+    },
+    "location": {
+      "searchPlaceholder": "Search by location, property type, or keywords...",
+      "addLocation": "Add Location",
+      "removeLocation": "Remove Location",
+      "clearAllLocations": "Clear All Locations"
+    },
+    "bedsAndBathsFilter": {
+      "label": "Beds & Baths",
+      "bedrooms": "Bedrooms",
+      "bathrooms": "Bathrooms",
+      "apply": "Apply",
+      "options": {
+        "any": "Any",
+        "fivePlus": "5+",
+        "fourPlus": "4+"
+      }
+    },
+    "locationSearch": {
+      "placeholder": "Add another city, neighborhood, or zip",
+      "clearAll": "Clear All",
+      "removeLocation": "Remove {location}",
+      "nearbyChicago": "NEARBY CHICAGO, IL",
+      "addLocation": "Add Location",
+      "removeLocationButton": "Remove Location",
+      "clearAllLocations": "Clear All Locations"
+    },
+    "common": {
+      "close": "Close",
+      "apply": "Apply",
+      "cancel": "Cancel",
+      "save": "Save",
+      "edit": "Edit",
+      "delete": "Delete",
+      "loading": "Loading...",
+      "error": "Error",
+      "success": "Success",
+      "warning": "Warning",
+      "info": "Information"
+    },
+    "filterHeader": {
+      "listingType": "Listing Type",
+      "allFilters": "All Filters",
+      "activeFilters": "Active filters:",
+      "clearAll": "Clear all"
+    },
+    "animatedSearchBar": {
+      "placeholder": "Search properties...",
+      "clearSearch": "Clear search",
+      "toggleFilters": "Toggle filters",
+      "popularSearches": "Popular searches",
+      "searchSuggestions": "Search suggestions for"
+    },
+    "sidebar": {
+      "propertyDetails": "Property Details",
+      "edit": "Edit",
+      "save": "Save",
+      "saving": "Saving...",
+      "cancel": "Cancel",
+      "title": "Title",
+      "description": "Description",
+      "size": "Size",
+      "bathrooms": "Bathrooms",
+      "na": "N/A",
+      "successTitle": "Success",
+      "successDescription": "Property updated successfully!",
+      "errorTitle": "Error",
+      "errorDescription": "Failed to update property. Please try again.",
+      "errorMissing": "Selected property or property ID is undefined"
+    },
+    "agents": {
+      "error": "Error loading agents",
+      "noAgents": "No agents found.",
+      "loading": "Loading...",
+      "showMore": "Show me more"
+    },
+    "results": {
+      "title": "Results",
+      "range": "Showing {start} to {end} of {total} results"
+    },
+    "viewModeToggle": {
+      "grid": "Grid View",
+      "list": "List View",
+      "map": "Map View",
+      "gridView": "Grid View",
+      "listView": "List View",
+      "mapView": "Map View"
+    },
+    "map": {
+      "title": "Properties on the Map",
+      "countWithLocation": "{count} properties with location",
+      "panUp": "Pan up",
+      "panLeft": "Pan left",
+      "panRight": "Pan right",
+      "panDown": "Pan down",
+      "zoomIn": "Zoom in",
+      "zoomOut": "Zoom out",
+      "move": "Move",
+      "addressNotAvailable": "Address not available",
+      "beds": "{n} beds",
+      "baths": "{n} baths",
+      "sqft": "{n} sqft",
+      "viewDetails": "View Details",
+      "hideMap": "Hide map",
+      "noProperties": "No properties with location data available",
+      "close": "Close Map",
+      "hide": "Hide Map",
+      "showSearch": "Show Search",
+      "toggleSearch": "Toggle Search"
+    },
+    "availability": {
+      "loading": "Loading...",
+      "notFound": "Property not found.",
+      "availability": "Availability",
+      "bookNow": "Book Now",
+      "requestMoveIn": "Request Move-in",
+      "requestViewing": "Request Viewing"
+    },
+    "searchBar": {
+      "placeholder": "Search properties...",
+      "clearSearch": "Clear search"
+    },
+    "animatedCard": {
+      "featured": "Featured",
+      "new": "New",
+      "inactive": "Inactive",
+      "priceUponRequest": "Price upon request",
+      "perMonth": "per month",
+      "beds": "{n} beds",
+      "baths": "{n} baths",
+      "sqft": "{n} m2",
+      "na": "N/A",
+      "parking": "parking",
+      "independent": "Independent"
+    },
+    "grid": {
+      "error": "Error loading properties",
+      "noResults": "No properties found",
+      "tryAdjustingFilters": "Try adjusting your search criteria or filters",
+      "featured": "Featured",
+      "removeFromFavorites": "Remove from favorites",
+      "addToFavorites": "Add to favorites",
+      "priceOnRequest": "Price on request",
+      "sqm": "{n} m²"
+    },
+    "meta": {
+      "title": "Properties for Rent & Sale",
+      "description": "Find your perfect property. Browse thousands of properties for rent and sale with detailed filters and advanced search options."
+    },
+    "new": {
+      "stepper": [
+        "Basic Info",
+        "Location",
+        "Details",
+        "Photos",
+        "Pricing",
+        "Review & Submit"
+      ],
+      "title": "Create a New Property",
+      "subtitle": "Let's build something amazing together",
+      "back": "Back",
+      "next": "Next",
+      "create": "Create Property",
+      "creating": "Creating..."
+    },
+    "details": {
+      "tabs": {
+        "overview": "Overview",
+        "details": "Details & Features",
+        "financial": "Financial & Legal",
+        "events": "Events",
+        "reviews": "Reviews",
+        "offers": "Offers"
+      },
+      "notFound": "Property Not Found",
+      "notFoundDescription": "The property you're looking for doesn't exist.",
+      "metaTitle": "Property Details"
+    },
+    "credits": {
+      "title": "Available Credits & Mortgages",
+      "loading": "Loading credits...",
+      "error": "Error loading credits",
+      "noCredits": "No credits or mortgages available for this property.",
+      "table": {
+        "lender": "Lender",
+        "principal": "Principal",
+        "interestRate": "Interest Rate",
+        "status": "Status",
+        "actions": "Actions"
+      },
+      "apply": "Apply",
+      "applyForCredit": "Apply for Credit",
+      "confirmApplication": "Confirm Application",
+      "cancel": "Cancel",
+      "applyAria": "Apply for credit"
+    },
+    "allFiltersModal": {
+      "allFilters": "All Filters",
+      "close": "Close",
+      "clearAll": "Clear All",
+      "saveSearch": "Save Search",
+      "seeResults": "See Results"
+    },
+    "actions": {
+      "viewProperty": "View Property",
+      "editProperty": "Edit Property",
+      "deleteProperty": "Delete Property",
+      "addToFavorites": "Add to Favorites",
+      "removeFromFavorites": "Remove from Favorites",
+      "shareProperty": "Share Property",
+      "contactAgent": "Contact Agent"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive",
+      "pending": "Pending",
+      "sold": "Sold",
+      "rented": "Rented",
+      "available": "Available"
+    },
+    "loading": {
+      "loadingProperties": "Loading properties...",
+      "loadingMap": "Loading map...",
+      "searchingProperties": "Searching properties..."
+    },
+    "errors": {
+      "loadFailed": "Failed to load properties",
+      "loadFailedDescription": "There was an error loading the properties. Please try again.",
+      "searchFailed": "Failed to search properties",
+      "searchFailedDescription": "There was an error searching for properties. Please try again.",
+      "retryButton": "Retry"
+    }
+  }
+}

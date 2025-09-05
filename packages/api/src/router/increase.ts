@@ -1,14 +1,13 @@
 import { randomUUID } from "crypto"; // Prefer crypto.randomUUID
 import type { IncreaseStatus, Prisma } from "@prisma/client";
 import type { TRPCRouterRecord } from "@trpc/server";
-import { TRPCError } from "@trpc/server";
-import { z } from "zod";
-
 import {
   CreateIncreaseSchema,
   IncreaseFilterSchema,
   UpdateIncreaseSchema,
-} from "@acme/validators";
+} from "@reservatior/validators";
+import { TRPCError } from "@trpc/server";
+import { z } from "zod";
 
 import { getPaginationParams } from "../helpers/pagination";
 import { withCacheAndFormat } from "../helpers/withCacheAndFormat";
@@ -62,7 +61,8 @@ export const increaseRouter = {
       try {
         const { skip, take, page, limit } = getPaginationParams({
           page: typeof input?.page === "number" ? input.page : undefined,
-          limit: typeof input?.limit === "number" ? input.limit : undefined,
+          limit:
+            typeof input?.pageSize === "number" ? input.pageSize : undefined,
         });
 
         const {
@@ -256,12 +256,12 @@ export const increaseRouter = {
           id: randomUUID(),
           // Assuming CreateIncreaseSchema provides correctly typed fields.
           // Connect relations using the nested structure Prisma expects.
-          Property: { connect: { id: input.propertyId as string } },
-          Tenant: { connect: { id: input.tenantId as string } },
-          proposedBy: input.proposedBy as string, // Validator might be z.unknown()
-          oldRent: input.oldRent as number, // Validator might be z.unknown()
-          newRent: input.newRent as number, // Validator might be z.unknown()
-          effectiveDate: input.effectiveDate as Date, // Validator might be z.unknown()
+          Property: { connect: { id: input.propertyId } },
+          Tenant: { connect: { id: input.tenantId } },
+          proposedBy: input.proposedBy, // Validator might be z.unknown()
+          oldRent: input.oldRent, // Validator might be z.unknown()
+          newRent: input.newRent, // Validator might be z.unknown()
+          effectiveDate: input.effectiveDate, // Validator might be z.unknown()
           status: input.status as IncreaseStatus,
           createdAt: now,
           updatedAt: now,

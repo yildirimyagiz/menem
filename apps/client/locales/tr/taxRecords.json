@@ -1,0 +1,103 @@
+{
+  "_meta": {
+    "description": "Vergi kayıtları modülü için kullanıcıya yönelik dizeler. Vergi kayıtları UI'sından çıkarılan ve çevrilen anahtarlarla doldurun."
+  },
+  "page": {
+    "title": "Vergi Kayıtları",
+    "create": "Vergi Kaydı Ekle"
+  },
+  "form": {
+    "title": "Vergi Kaydı",
+    "year": "Yıl",
+    "amount": "Tutar",
+    "percentage": "Yüzde",
+    "dueDate": "Son Tarih",
+    "notes": "Notlar",
+    "notesPlaceholder": "Ek notları girin...",
+    "submit": "Gönder",
+    "update": "Güncelle",
+    "validation": {
+      "yearRequired": "Yıl gereklidir",
+      "yearRange": "Yıl 2000 ile 2100 arasında olmalıdır",
+      "amountRequired": "Tutar gereklidir",
+      "amountPositive": "Tutar pozitif olmalıdır",
+      "percentageRequired": "Yüzde gereklidir",
+      "percentageRange": "Yüzde 0 ile 100 arasında olmalıdır",
+      "notesMaxLength": "Notlar 1000 karakteri aşamaz"
+    }
+  },
+  "list": {
+    "loading": "Vergi kayıtları yükleniyor...",
+    "noRecords": "Vergi kaydı bulunamadı",
+    "noRecordsDescription": "Başlamak için ilk vergi kaydınızı oluşturun",
+    "headers": {
+      "year": "Yıl",
+      "amount": "Tutar",
+      "percentage": "Yüzde",
+      "status": "Durum",
+      "dueDate": "Son Tarih",
+      "paidDate": "Ödeme Tarihi",
+      "property": "Gayrimenkul",
+      "actions": "İşlemler"
+    },
+    "actions": {
+      "view": "Görüntüle",
+      "edit": "Düzenle",
+      "delete": "Sil",
+      "markPaid": "Ödendi Olarak İşaretle"
+    }
+  },
+  "status": {
+    "paid": "Ödendi",
+    "overdue": "Gecikmiş",
+    "pending": "Beklemede"
+  },
+  "modal": {
+    "createTitle": "Vergi Kaydı Ekle",
+    "editTitle": "Vergi Kaydı Düzenle",
+    "viewTitle": "Vergi Kaydı Detayları",
+    "close": "Kapat",
+    "save": "Kaydet",
+    "cancel": "İptal"
+  },
+  "toast": {
+    "success": {
+      "create": "Vergi kaydı başarıyla oluşturuldu",
+      "createDescription": "Vergi kaydınız kaydedildi.",
+      "update": "Vergi kaydı başarıyla güncellendi",
+      "updateDescription": "Vergi kaydınız güncellendi.",
+      "payment": "Ödeme başarıyla kaydedildi",
+      "paymentDescription": "Vergi kaydı ödendi olarak işaretlendi."
+    },
+    "error": {
+      "create": "Vergi kaydı oluşturulamadı",
+      "update": "Vergi kaydı güncellenemedi",
+      "payment": "Ödeme kaydedilemedi"
+    }
+  },
+  "details": {
+    "year": "Yıl: {year}",
+    "amount": "Tutar: ${amount}",
+    "percentage": "Yüzde: {percentage}%",
+    "dueDate": "Son Tarih: {date}",
+    "paidDate": "Ödeme Tarihi: {date}",
+    "status": "Durum: {status}",
+    "property": "Gayrimenkul: {name}",
+    "notes": "Notlar: {notes}"
+  },
+  "common": {
+    "loading": "Yükleniyor...",
+    "error": "Hata",
+    "success": "Başarılı",
+    "cancel": "İptal",
+    "save": "Kaydet",
+    "delete": "Sil",
+    "close": "Kapat",
+    "view": "Görüntüle",
+    "edit": "Düzenle",
+    "confirm": "Onayla",
+    "back": "Geri",
+    "next": "İleri",
+    "previous": "Önceki"
+  }
+}

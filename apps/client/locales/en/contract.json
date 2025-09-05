@@ -1,0 +1,146 @@
+{
+  "contract": {
+    "title": "Contract Management",
+    "subtitle": "Manage your rental contracts, track agreements, and optimize your property management with our comprehensive contract dashboard.",
+    "form": {
+      "title": "Contract",
+      "add": "Add Contract",
+      "edit": "Edit Contract",
+      "delete": "Delete Contract",
+      "contractNumber": "Contract Number",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "actions": "Actions",
+      "submit": "Submit",
+      "cancel": "Cancel"
+    },
+    "stats": {
+      "totalContracts": "Total Contracts",
+      "activeContracts": "Active Contracts",
+      "expiredContracts": "Expired Contracts",
+      "draftContracts": "Draft Contracts"
+    },
+    "tabs": {
+      "all": "All",
+      "active": "Active",
+      "expired": "Expired",
+      "draft": "Draft"
+    },
+    "actions": {
+      "newContract": "New Contract",
+      "createContract": "Create Contract",
+      "analytics": "Analytics",
+      "search": "Search contracts...",
+      "tryAgain": "Try Again"
+    },
+    "tooltips": {
+      "createContract": "Create a new contract",
+      "analytics": "View contract analytics"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive",
+      "draft": "Draft",
+      "published": "Published",
+      "expired": "Expired",
+      "terminated": "Terminated",
+      "cancelled": "Cancelled",
+      "overdue": "Overdue",
+      "renewed": "Renewed"
+    },
+    "card": {
+      "noDescription": "No description available",
+      "daysRemaining": "days remaining",
+      "expired": "expired",
+      "expiringSoon": "expiring soon",
+      "viewDetails": "View Details",
+      "editContract": "Edit Contract",
+      "deleteContract": "Delete Contract",
+      "viewTerms": "View Terms",
+      "signContract": "Sign Contract",
+      "property": "Property",
+      "agency": "Agency",
+      "duration": "Duration",
+      "status": "Status",
+      "terms": "Terms",
+      "view": "View",
+      "created": "Created",
+      "actions": {
+        "viewTerms": "View Terms",
+        "signContract": "Sign Contract",
+        "editContract": "Edit Contract",
+        "deleteContract": "Delete Contract"
+      }
+    },
+    "errors": {
+      "failedToLoad": "Failed to Load Contracts",
+      "unexpectedError": "An unexpected error occurred.",
+      "noContractsFound": "No Contracts Found",
+      "noSearchResults": "No contracts match your search criteria.",
+      "getStarted": "Get started by creating your first contract."
+    },
+    "filter": {
+      "filters": "Filters",
+      "show": "Show",
+      "hide": "Hide",
+      "status": "Filter by status",
+      "allStatuses": "All Statuses",
+      "advancedFilters": "Advanced Filters",
+      "refineDescription": "Refine your contract search with detailed criteria",
+      "tenantId": "Tenant ID",
+      "enterTenantId": "Enter tenant ID",
+      "propertyId": "Property ID",
+      "enterPropertyId": "Enter property ID",
+      "agencyId": "Agency ID",
+      "enterAgencyId": "Enter agency ID",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "startDateFrom": "Start From",
+      "startDateTo": "Start To",
+      "endDateFrom": "End From",
+      "endDateTo": "End To",
+      "pickDate": "Pick a date",
+      "sortBy": "Sort By",
+      "sortOrder": "Sort Order",
+      "apply": "Apply",
+      "clear": "Clear",
+      "activeFilters": "Active Filters:",
+      "sortOptions": {
+        "startDate": "Start Date",
+        "endDate": "End Date",
+        "status": "Status",
+        "name": "Name"
+      },
+      "orderOptions": {
+        "asc": "Ascending",
+        "desc": "Descending"
+      }
+    },
+    "toast": {
+      "added": {
+        "title": "Contract Added",
+        "description": "The contract was added successfully."
+      },
+      "updated": {
+        "title": "Contract Updated",
+        "description": "The contract was updated successfully."
+      },
+      "deleted": {
+        "title": "Contract Deleted",
+        "description": "The contract was deleted successfully."
+      },
+      "error": {
+        "title": "Error",
+        "description": "An error occurred. Please try again."
+      },
+      "createContract": {
+        "title": "Create Contract",
+        "description": "Contract creation feature coming soon!"
+      }
+    },
+    "list": {
+      "empty": "No contracts found.",
+      "loading": "Loading contracts..."
+    }
+  }
+}

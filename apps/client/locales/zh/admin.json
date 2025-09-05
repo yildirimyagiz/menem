@@ -1,0 +1,11 @@
+{
+  "admin": {
+    "dashboard": "Admin Dashboard",
+    "userManagement": "User Management",
+    "agencyManagement": "Agency Management",
+    "reportsAnalytics": "Reports & Analytics",
+    "systemLogs": "System Logs",
+    "databaseManagement": "Database Management",
+    "notifications": "Notifications"
+  }
+}

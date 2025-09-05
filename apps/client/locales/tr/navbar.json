@@ -1,0 +1,20 @@
+{
+  "nav": {
+    "listings": "İlanlar",
+    "agents": "Acenteler",
+    "agencies": "Acenteler",
+    "facilities": "Tesisler",
+    "about": "Hakkında",
+    "contact": "İletişim"
+  },
+  "auth": {
+    "login": "Giriş",
+    "signup": "Kayıt Ol"
+  },
+  "brand": {
+    "name": "Reservatior"
+  },
+  "search": {
+    "placeholder": "Ara..."
+  }
+} 

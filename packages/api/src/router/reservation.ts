@@ -7,17 +7,16 @@ import type {
   PricingRule,
   Prisma,
   Reservation as PrismaReservation,
-  Property, // Added Property
+  Property as _Property,
   Report,
   User,
 } from "@prisma/client";
-import { z } from "zod";
-
 import {
   CreateReservationSchema,
   ReservationFilterSchema,
   UpdateReservationSchema,
-} from "@acme/validators";
+} from "@reservatior/validators";
+import { z } from "zod";
 
 import { getPaginationParams } from "../helpers/pagination";
 import { withCacheAndFormat } from "../helpers/withCacheAndFormat";

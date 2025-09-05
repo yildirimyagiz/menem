@@ -1,0 +1,42 @@
+{
+  "form": {
+    "title": "[Contract]",
+    "add": "[Add Contract]",
+    "edit": "[Edit Contract]",
+    "delete": "[Delete Contract]",
+    "contractNumber": "[Contract Number]",
+    "startDate": "[Start Date]",
+    "endDate": "[End Date]",
+    "actions": "[Actions]",
+    "submit": "[Submit]",
+    "cancel": "[Cancel]"
+  },
+  "toast": {
+    "added": {
+      "title": "[Contract Added]",
+      "description": "[The contract was added successfully.]"
+    },
+    "updated": {
+      "title": "[Contract Updated]",
+      "description": "[The contract was updated successfully.]"
+    },
+    "deleted": {
+      "title": "[Contract Deleted]",
+      "description": "[The contract was deleted successfully.]"
+    },
+    "error": {
+      "title": "[Error]",
+      "description": "[An error occurred. Please try again.]"
+    }
+  },
+  "list": {
+    "empty": "[No contracts found.]",
+    "loading": "[Loading contracts...]"
+  },
+  "filter": {
+    "startDateFrom": "[Start From]",
+    "startDateTo": "[Start To]",
+    "endDateFrom": "[End From]",
+    "endDateTo": "[End To]"
+  }
+}

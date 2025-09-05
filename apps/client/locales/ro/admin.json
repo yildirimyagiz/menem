@@ -1,0 +1,269 @@
+{
+  "title": "[Admin Dashboard]",
+  "description": "[Welcome to the admin dashboard. Use the links below to manage the platform.]",
+  "systemOnline": "[System Online]",
+  "statistics": {
+    "totalUsers": "[Total Users]",
+    "detailUsers": "[Active users in the system]",
+    "activeProperties": "[Active Properties]",
+    "detailProperties": "[Properties currently available]",
+    "revenue": "[Revenue]",
+    "detailRevenue": "[Total revenue this month]",
+    "systemHealth": "[System Health]",
+    "detailHealth": "[Overall system performance]"
+  },
+  "recentActivities": {
+    "title": "[Recent Activities]",
+    "liveUpdates": "[Live Updates]",
+    "viewAll": "[View All]"
+  },
+  "quickActions": {
+    "title": "[Quick Actions]",
+    "addNewUser": "[Add New User]",
+    "addProperty": "[Add Property]",
+    "generateReport": "[Generate Report]"
+  },
+  "systemStatus": {
+    "title": "[System Status]",
+    "database": "[Database]",
+    "apiServices": "[API Services]",
+    "storage": "[Storage]"
+  },
+  "managementSections": {
+    "title": "[Management Sections]",
+    "collapseAll": "[Collapse All]",
+    "expandAll": "[Expand All]"
+  },
+  "floatingActions": {
+    "addNewUser": "[Add New User]",
+    "addNewProperty": "[Add New Property]",
+    "viewAnalytics": "[View Analytics]"
+  },
+  "sectionGroups": {
+    "userManagement": {
+      "title": "[User Management]",
+      "description": "[Manage users, accounts, and permissions]"
+    },
+    "propertyManagement": {
+      "title": "[Property Management]",
+      "description": "[Manage properties and facilities]"
+    },
+    "financials": {
+      "title": "[Financials]",
+      "description": "[Manage payments, currencies, and financial rules]"
+    },
+    "operationsAnalytics": {
+      "title": "[Operations & Analytics]",
+      "description": "[Monitor operations and view analytics]"
+    },
+    "settingsMisc": {
+      "title": "[Settings & Misc]",
+      "description": "[System settings and miscellaneous features]"
+    }
+  },
+  "sections": {
+    "dashboard": "[Dashboard]",
+    "users": "[Users]",
+    "accounts": "[Accounts]",
+    "agents": "[Agents]",
+    "agencies": "[Agencies]",
+    "tenants": "[Tenants]",
+    "permission": "[Permissions]",
+    "properties": "[Properties]",
+    "facilities": "[Facilities]",
+    "providers": "[Providers]",
+    "channels": "[Channels]",
+    "availability": "[Availability]",
+    "photo": "[Photos]",
+    "payment": "[Payments]",
+    "currency": "[Currencies]",
+    "commissionRule": "[Commission Rules]",
+    "pricingRule": "[Pricing Rules]",
+    "discount": "[Discounts]",
+    "mortgage": "[Mortgages]",
+    "offer": "[Offers]",
+    "subscription": "[Subscription]",
+    "subscriptions": "[Subscriptions]",
+    "analytics": "[Analytics]",
+    "tasks": "[Tasks]",
+    "events": "[Events]",
+    "report": "[Reports]",
+    "complianceRecord": "[Compliance Records]",
+    "contracts": "[Contracts]",
+    "reservations": "[Reservations]",
+    "ticket": "[Tickets]",
+    "profile": "[Profile]",
+    "mlSettings": "[ML Settings]",
+    "ml-settings": "[ML Settings]",
+    "settings": "[Settings]",
+    "notifications": "[Notifications]"
+  },
+  "agencies": {
+    "title": "[Agency Management]",
+    "description": "[Manage all agencies and their information]",
+    "refresh": "[Refresh]",
+    "filters": "[Filters]",
+    "export": "[Export]",
+    "addAgency": "[Add Agency]",
+    "totalAgencies": "[Total Agencies]",
+    "activeAgencies": "[Active Agencies]",
+    "pendingAgencies": "[Pending Agencies]",
+    "suspendedAgencies": "[Suspended Agencies]",
+    "overview": "[Overview]",
+    "agencies": "[Agencies]",
+    "analytics": "[Analytics]",
+    "settings": "[Settings]",
+    "table": {
+      "search": {
+        "placeholder": "[Search agencies...]"
+      },
+      "toolbar": {
+        "filters": "[Filters]",
+        "export": "[Export]",
+        "reset": "[Reset]"
+      },
+      "actions": {
+        "openMenu": "[Open menu]",
+        "view": "[View]",
+        "edit": "[Edit]",
+        "copyId": "[Copy ID]",
+        "delete": "[Delete]"
+      },
+      "pagination": {
+        "showing": "[Showing]",
+        "of": "[of]",
+        "results": "[results]",
+        "firstPage": "[First page]",
+        "previousPage": "[Previous page]",
+        "page": "[Page]",
+        "nextPage": "[Next page]",
+        "lastPage": "[Last page]"
+      },
+      "filters": {
+        "searchPlaceholder": "[Search {title}...]",
+        "noResults": "[No results found.]",
+        "selected": "[selected]",
+        "clearFilters": "[Clear filters]"
+      },
+      "sort": {
+        "ascending": "[Sort Ascending]",
+        "descending": "[Sort Descending]"
+      },
+      "hideColumn": "[Hide Column]"
+    },
+    "noUsersFound": "[No users found]",
+    "addFirstUser": "[Add first user]",
+    "userManagement": "[User Management]",
+    "userManagementDescription": "[User Management Description]",
+    "addNewUser": "[Add New User]",
+    "searchUsers": "[Search Users]",
+    "search": "[Search]",
+    "showingResults": "[Showing Results]",
+    "previous": "[Previous]",
+    "next": "[Next]",
+    "name": "[Name]",
+    "role": "[Role]",
+    "actions": "[Actions]",
+    "viewDetails": "[View Details]",
+    "editUser": "[Edit User]",
+    "deleteUser": "[Delete User]",
+    "reservations": {
+      "title": "[Reservations]",
+      "description": "[Reservations Description]",
+      "comingSoon": "[Coming Soon]",
+      "noStats": "[No Stats]",
+      "stats": {
+        "total": "[Total]",
+        "active": "[Active]",
+        "completed": "[Completed]",
+        "cancelled": "[Cancelled]"
+      },
+      "searchPlaceholder": "[Search Placeholder]",
+      "statusPlaceholder": "[Status Placeholder]",
+      "propertyPlaceholder": "[Property Placeholder]"
+    },
+    "userId": "[User ID]",
+    "type": "[Type]",
+    "selectType": "[Select Type]",
+    "oauth": "[OAuth]",
+    "email": "[Email]",
+    "oidc": "[OIDC]",
+    "credentials": "[Credentials]",
+    "google": "[Google]",
+    "facebook": "[Facebook]",
+    "provider": "[Provider]",
+    "providerAccountId": "[Provider Account ID]",
+    "active": "[Active]",
+    "cancel": "[Cancel]",
+    "error": "[Error]",
+    "failedToDeleteAccount": "[Failed to delete account]",
+    "success": "[Success]",
+    "accountUpdatedSuccessfully": "[Account updated successfully]",
+    "accountCreatedSuccessfully": "[Account created successfully]",
+    "failedToSaveAccount": "[Failed to save account]",
+    "loadingAccounts": "[Loading accounts]",
+    "manageAccounts": "[Manage Accounts]",
+    "addAccount": "[Add Account]",
+    "accounts": "[Accounts]",
+    "showingAccounts": "[Showing Accounts]"
+  },
+  "Profile": {
+    " ": "[Profile]",
+    "title": "[Profile Title]",
+    "description": "[Profile Description]",
+    "cancel": "[Cancel]",
+    "loading": "[Loading]",
+    "saveChanges": "[Save Changes]",
+    "editProfile": "[Edit Profile]",
+    "personalInfo": "[Personal Info]",
+    "photos": "[Photos]",
+    "account": "[Account]",
+    "memberSince": "[Member Since]",
+    "lastLogin": "[Last Login]",
+    "personalInfoDescription": "[Personal Info Description]",
+    "firstName": "[First Name]",
+    "firstNamePlaceholder": "[First Name Placeholder]",
+    "lastName": "[Last Name]",
+    "lastNamePlaceholder": "[Last Name Placeholder]",
+    "displayName": "[Display Name]",
+    "displayNamePlaceholder": "[Display Name Placeholder]",
+    "email": "[Email]",
+    "emailPlaceholder": "[Email Placeholder]",
+    "phoneNumber": "[Phone Number]",
+    "phoneNumberPlaceholder": "[Phone Number Placeholder]",
+    "profilePicture": "[Profile Picture]",
+    "profilePicturePlaceholder": "[Profile Picture Placeholder]",
+    "language": "[Language]",
+    "timezone": "[Timezone]"
+  },
+  "adminMLSettings": {
+    "loading": "[Loading]",
+    "title": "[Title]"
+  },
+  "admin": {
+    "accounts": {
+      "table": {
+        "type": "[Type]",
+        "provider": "[Provider]",
+        "accountId": "[Account ID]",
+        "action": "[Action]",
+        "userEmail": "[User Email]",
+        "actions": "[Actions]",
+        "noResults": "[No results found]"
+      },
+      "filters": {
+        "noResults": "[No Results]",
+        "clear": "[Clear]"
+      },
+      "view": {}
+    }
+  },
+  "auth": {
+    "error": {
+      "error": "[Error]",
+      "default": "[An error occurred during authentication. Please try again.]",
+      "title": "[Authentication Error]",
+      "backToLogin": "[Back to Login]"
+    }
+  }
+}

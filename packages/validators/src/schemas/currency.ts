@@ -8,12 +8,17 @@ export const CurrencySchema = z.object({
   symbol: z.string(),
   exchangeRate: z.number().positive(),
   isActive: z.boolean().default(true),
-  createdAt: z.date().optional(),
-  updatedAt: z.date().optional(),
+  createdAt: z.date().default(() => new Date()),
+  updatedAt: z.date(),
+  
+  // Relations
   Expense: z.array(z.any()).optional(),
-
   Payment: z.array(z.any()).optional(),
   Reservation: z.array(z.any()).optional(),
+  Property: z.array(z.any()).optional(),
+  PricingRule: z.array(z.any()).optional(),
+  users: z.array(z.any()).optional(), // Users who have selected this as their preferred currency
+  TaxRecord: z.array(z.any()).optional(),
 });
 
 // Create Currency Schema
@@ -46,10 +51,10 @@ export const CurrencyFilterSchema = z.object({
   createdAtTo: z.date().optional(),
   updatedAtFrom: z.date().optional(),
   updatedAtTo: z.date().optional(),
-  sortBy: z.enum(["code", "name", "exchangeRate", "createdAt"]).optional(),
+  sortBy: z.enum(["code", "name", "exchangeRate", "createdAt", "updatedAt"]).optional(),
   sortOrder: z.enum(["asc", "desc"]).optional(),
-  page: z.number().min(1).optional(),
-  pageSize: z.number().min(1).max(100).optional(),
+  page: z.number().min(1).default(1),
+  pageSize: z.number().min(1).max(100).default(10),
 });
 
 // Zod Type Inference for TypeScript

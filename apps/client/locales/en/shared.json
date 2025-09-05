@@ -1,0 +1,435 @@
+{
+  "shared": {
+    "components": {
+      "button": {
+        "loading": "Loading...",
+        "disabled": "Disabled",
+        "submit": "Submit",
+        "cancel": "Cancel",
+        "save": "Save",
+        "delete": "Delete",
+        "edit": "Edit",
+        "add": "Add",
+        "remove": "Remove",
+        "close": "Close",
+        "back": "Back",
+        "next": "Next",
+        "previous": "Previous",
+        "confirm": "Confirm",
+        "retry": "Retry",
+        "refresh": "Refresh",
+        "download": "Download",
+        "upload": "Upload",
+        "export": "Export",
+        "import": "Import"
+      },
+      "input": {
+        "placeholder": "Enter text...",
+        "required": "This field is required",
+        "invalid": "Invalid input",
+        "loading": "Loading...",
+        "search": "Search...",
+        "email": "Enter email...",
+        "password": "Enter password...",
+        "phone": "Enter phone number...",
+        "number": "Enter number...",
+        "date": "Select date...",
+        "time": "Select time...",
+        "url": "Enter URL...",
+        "file": "Choose file..."
+      },
+      "fieldset": {
+        "label": "Label",
+        "description": "Description",
+        "error": "Error message",
+        "required": "Required field",
+        "optional": "Optional field",
+        "help": "Help text",
+        "hint": "Hint text"
+      },
+      "pagination": {
+        "previous": "Previous",
+        "next": "Next",
+        "page": "Page",
+        "of": "of",
+        "showing": "Showing",
+        "to": "to",
+        "ofTotal": "of",
+        "items": "items",
+        "noResults": "No results found",
+        "loading": "Loading pages...",
+        "error": "Error loading pages"
+      },
+      "modal": {
+        "title": "Modal Title",
+        "close": "Close",
+        "confirm": "Confirm",
+        "cancel": "Cancel",
+        "loading": "Loading...",
+        "error": "Error",
+        "success": "Success"
+      },
+      "dropdown": {
+        "select": "Select an option",
+        "search": "Search...",
+        "noResults": "No results found",
+        "loading": "Loading...",
+        "error": "Error loading options",
+        "clear": "Clear selection",
+        "all": "All",
+        "none": "None"
+      },
+      "checkbox": {
+        "checked": "Checked",
+        "unchecked": "Unchecked",
+        "indeterminate": "Indeterminate",
+        "selectAll": "Select All",
+        "deselectAll": "Deselect All"
+      },
+      "switch": {
+        "on": "On",
+        "off": "Off",
+        "enabled": "Enabled",
+        "disabled": "Disabled"
+      },
+      "badge": {
+        "new": "New",
+        "hot": "Hot",
+        "sale": "Sale",
+        "featured": "Featured",
+        "popular": "Popular",
+        "trending": "Trending",
+        "limited": "Limited",
+        "exclusive": "Exclusive"
+      },
+      "avatar": {
+        "profile": "Profile",
+        "user": "User",
+        "guest": "Guest",
+        "admin": "Admin",
+        "agent": "Agent",
+        "owner": "Owner",
+        "tenant": "Tenant",
+        "default": "Default"
+      },
+      "logo": {
+        "brand": "Brand",
+        "company": "Company",
+        "app": "Application",
+        "home": "Home"
+      },
+      "social": {
+        "share": "Share",
+        "follow": "Follow",
+        "like": "Like",
+        "comment": "Comment",
+        "facebook": "Facebook",
+        "twitter": "Twitter",
+        "instagram": "Instagram",
+        "linkedin": "LinkedIn",
+        "youtube": "YouTube"
+      },
+      "spinner": {
+        "loading": "Loading...",
+        "processing": "Processing...",
+        "saving": "Saving...",
+        "uploading": "Uploading...",
+        "downloading": "Downloading...",
+        "connecting": "Connecting...",
+        "syncing": "Syncing..."
+      },
+      "darkMode": {
+        "title": "Dark Mode",
+        "light": "Light",
+        "dark": "Dark",
+        "auto": "Auto",
+        "system": "System",
+        "toggle": "Toggle dark mode"
+      },
+      "menu": {
+        "open": "Open menu",
+        "close": "Close menu",
+        "navigation": "Navigation",
+        "settings": "Settings",
+        "profile": "Profile",
+        "logout": "Logout"
+      },
+      "tag": {
+        "add": "Add tag",
+        "remove": "Remove tag",
+        "edit": "Edit tag",
+        "search": "Search tags...",
+        "noTags": "No tags",
+        "create": "Create new tag"
+      },
+      "comment": {
+        "add": "Add comment",
+        "edit": "Edit comment",
+        "delete": "Delete comment",
+        "reply": "Reply",
+        "like": "Like",
+        "unlike": "Unlike",
+        "report": "Report",
+        "placeholder": "Write a comment...",
+        "submit": "Submit comment",
+        "cancel": "Cancel"
+      },
+      "textarea": {
+        "placeholder": "Enter text...",
+        "characters": "characters",
+        "remaining": "remaining",
+        "maxLength": "Maximum length",
+        "minLength": "Minimum length"
+      },
+      "logout": {
+        "title": "Logout",
+        "message": "Are you sure you want to logout?",
+        "confirm": "Yes, logout",
+        "cancel": "Cancel",
+        "success": "Logged out successfully"
+      },
+      "link": {
+        "external": "External link",
+        "newTab": "Opens in new tab",
+        "download": "Download link",
+        "email": "Email link",
+        "phone": "Phone link"
+      },
+      "divider": {
+        "separator": "Separator",
+        "section": "Section divider"
+      },
+      "menuBar": {
+        "navigation": "Navigation menu",
+        "toggle": "Toggle menu",
+        "close": "Close menu",
+        "open": "Open menu"
+      },
+      "navMobile": {
+        "menu": "Mobile menu",
+        "toggle": "Toggle mobile menu",
+        "close": "Close mobile menu",
+        "navigation": "Mobile navigation"
+      },
+      "nav": {
+        "navigation": "Navigation",
+        "menu": "Menu",
+        "home": "Home"
+      },
+      "navItem": {
+        "link": "Navigation link",
+        "active": "Active page",
+        "current": "Current page"
+      },
+
+      "playIcon": {
+        "play": "Play",
+        "pause": "Pause",
+        "stop": "Stop",
+        "volume": "Volume"
+      },
+      "nextPrev": {
+        "next": "Next",
+        "previous": "Previous",
+        "first": "First",
+        "last": "Last",
+        "page": "Page"
+      },
+      "multiSelect": {
+        "placeholder": "Select options...",
+        "noOptions": "No options available",
+        "selected": "Selected",
+        "clear": "Clear all",
+        "selectAll": "Select all",
+        "deselectAll": "Deselect all"
+      },
+      "socialsList": {
+        "follow": "Follow us",
+        "share": "Share",
+        "facebook": "Facebook",
+        "twitter": "Twitter",
+        "instagram": "Instagram",
+        "linkedin": "LinkedIn",
+        "youtube": "YouTube"
+      },
+      "socialsShare": {
+        "share": "Share",
+        "copy": "Copy link",
+        "copied": "Link copied",
+        "facebook": "Share on Facebook",
+        "twitter": "Share on Twitter",
+        "linkedin": "Share on LinkedIn",
+        "email": "Share via email"
+      },
+      "availabilityDatePicker": {
+        "title": "Select Availability",
+        "startDate": "Start date",
+        "endDate": "End date",
+        "available": "Available",
+        "unavailable": "Unavailable",
+        "selectDates": "Select dates",
+        "clear": "Clear selection"
+      },
+      "buttonCircle": {
+        "action": "Action button",
+        "close": "Close",
+        "minimize": "Minimize",
+        "maximize": "Maximize"
+      },
+      "buttonClose": {
+        "close": "Close",
+        "dismiss": "Dismiss",
+        "cancel": "Cancel"
+      },
+      "buttonPrimary": {
+        "primary": "Primary action",
+        "submit": "Submit",
+        "confirm": "Confirm"
+      },
+      "buttonSecondary": {
+        "secondary": "Secondary action",
+        "cancel": "Cancel",
+        "back": "Back"
+      },
+      "buttonThird": {
+        "tertiary": "Tertiary action",
+        "more": "More",
+        "details": "Details"
+      },
+      "heading": {
+        "title": "Title",
+        "subtitle": "Subtitle",
+        "description": "Description",
+        "section": "Section heading"
+      },
+      "heading2": {
+        "title": "Title",
+        "subtitle": "Subtitle",
+        "description": "Description"
+      },
+
+      "logoSvg": {
+        "brand": "Brand logo",
+        "company": "Company logo",
+        "app": "Application logo"
+      },
+      "logoSvgLight": {
+        "brand": "Brand logo (light)",
+        "company": "Company logo (light)",
+        "app": "Application logo (light)"
+      },
+      "select": {
+        "placeholder": "Select option",
+        "noOptions": "No options available",
+        "loading": "Loading options...",
+        "error": "Error loading options",
+        "search": "Search options...",
+        "clear": "Clear selection"
+      },
+      "select2": {
+        "placeholder": "Select option",
+        "noOptions": "No options available",
+        "loading": "Loading options...",
+        "error": "Error loading options",
+        "search": "Search options...",
+        "clear": "Clear selection"
+      },
+      "selectBlue": {
+        "placeholder": "Select option",
+        "noOptions": "No options available",
+        "loading": "Loading options...",
+        "error": "Error loading options",
+        "search": "Search options...",
+        "clear": "Clear selection"
+      },
+    
+      "mCheckBox": {
+        "checked": "Checked",
+        "unchecked": "Unchecked",
+        "indeterminate": "Indeterminate",
+        "selectAll": "Select All",
+        "deselectAll": "Deselect All"
+      }
+    },
+    "validation": {
+      "required": "This field is required",
+      "email": "Please enter a valid email address",
+      "phone": "Please enter a valid phone number",
+      "url": "Please enter a valid URL",
+      "number": "Please enter a valid number",
+      "minLength": "Must be at least {min} characters",
+      "maxLength": "Must be no more than {max} characters",
+      "pattern": "Please enter a valid format",
+      "unique": "This value must be unique",
+      "password": "Password must be at least 8 characters",
+      "confirmPassword": "Passwords must match",
+      "date": "Please enter a valid date",
+      "time": "Please enter a valid time",
+      "file": "Please select a valid file",
+      "image": "Please select a valid image file",
+      "fileSize": "File size must be less than {size}",
+      "fileType": "File type not supported"
+    },
+    "common": {
+      "loading": "Loading...",
+      "error": "An error occurred",
+      "success": "Success",
+      "warning": "Warning",
+      "info": "Information",
+      "confirm": "Confirm",
+      "cancel": "Cancel",
+      "save": "Save",
+      "delete": "Delete",
+      "edit": "Edit",
+      "add": "Add",
+      "remove": "Remove",
+      "close": "Close",
+      "back": "Back",
+      "next": "Next",
+      "previous": "Previous",
+      "submit": "Submit",
+      "reset": "Reset",
+      "clear": "Clear",
+      "search": "Search",
+      "filter": "Filter",
+      "sort": "Sort",
+      "refresh": "Refresh",
+      "retry": "Retry",
+      "download": "Download",
+      "upload": "Upload",
+      "export": "Export",
+      "import": "Import",
+      "yes": "Yes",
+      "no": "No",
+      "ok": "OK",
+      "apply": "Apply",
+      "dismiss": "Dismiss",
+      "undo": "Undo",
+      "redo": "Redo",
+      "copy": "Copy",
+      "paste": "Paste",
+      "cut": "Cut",
+      "select": "Select",
+      "deselect": "Deselect",
+      "expand": "Expand",
+      "collapse": "Collapse",
+      "show": "Show",
+      "hide": "Hide",
+      "enable": "Enable",
+      "disable": "Disable",
+      "activate": "Activate",
+      "deactivate": "Deactivate",
+      "start": "Start",
+      "stop": "Stop",
+      "pause": "Pause",
+      "resume": "Resume",
+      "play": "Play",
+
+      "mute": "Mute",
+      "unmute": "Unmute",
+      "volume": "Volume",
+      "fullscreen": "Fullscreen",
+      "exitFullscreen": "Exit Fullscreen"
+    }
+  }
+} 

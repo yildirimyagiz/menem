@@ -1,0 +1,38 @@
+{
+  "sections": {
+    "social": "Sosyal",
+    "product": "Hizmetler",
+    "company": "Şirket",
+    "legal": "Yasal Sorumluluk"
+  },
+  "social": {
+    "linkedin": "LinkedIn",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "twitter": "Twitter"
+  },
+  "product": {
+    "features": "Özellikler",
+    "pricing": "Fiyatlandırma",
+    "testimonials": "Referanslar",
+    "faq": "SSS"
+  },
+  "company": {
+    "about": "Hakkında",
+    "blog": "Blog",
+    "careers": "Kariyer",
+    "contact": "İletişim"
+  },
+  "legal": {
+    "terms": "Şartlar",
+    "privacy": "Gizlilik",
+    "cookies": "Çerezler",
+    "licenses": "Lisanslar"
+  },
+  "brand": {
+    "name": "Reservatior",
+    "description": "Yenilikçi teknoloji ve mülk sahipleri, yöneticiler ve kiracılar arasında olumlu ilişkiler kurmaya odaklanarak gayrimenkul yönetimini dönüştürüyoruz.",
+    "copyright": "© {year} Reservatior, Inc.",
+    "rights": "Tüm hakları saklıdır."
+  }
+} 

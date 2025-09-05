@@ -5,17 +5,16 @@ import type { Location as LocationModel } from "@prisma/client";
 // type LocationModel = any;
 import type { TRPCRouterRecord } from "@trpc/server";
 import { Prisma } from "@prisma/client";
-import { z } from "zod";
-
 import {
   CreateLocationSchema,
   LocationFilterSchema,
   UpdateLocationSchema,
-} from "@acme/validators";
+} from "@reservatior/validators";
+import { z } from "zod";
 
 import { getPaginationParams } from "../helpers/pagination";
 import { withCacheAndFormat } from "../helpers/withCacheAndFormat";
-import { protectedProcedure } from "../trpc";
+import { protectedProcedure, publicProcedure } from "../trpc";
 
 // Utility to sanitize location data
 const sanitizeLocation = (location: LocationModel | null) => {
@@ -149,5 +148,89 @@ export const locationRouter = {
         }
         throw error;
       }
+    }),
+
+  places: publicProcedure
+    .input(z.object({ city: z.string().optional() }).optional())
+    .query(async ({ input }) => {
+      // Static curated places for San Francisco, based on Gaby Maeda's city guide
+      const sfPlaces = [
+        {
+          name: "El Farolito",
+          description:
+            "A well-loved taqueria in the Mission District, famous for burritos, suizas, and salsas.",
+          type: "Restaurant",
+          address: "2779 Mission St, San Francisco, CA 94110",
+        },
+        {
+          name: "Friends and Family",
+          description:
+            "Woman-owned, queer-owned cocktail bar in Oakland with outstanding drinks and a fun, chill vibe.",
+          type: "Bar",
+          address: "468 25th St, Oakland, CA 94612",
+        },
+        {
+          name: "Birba",
+          description:
+            "Eclectic wine bar in Hayes Valley with a great patio and unique wine list. Home to Thai pop-up Intu-On on Sundays.",
+          type: "Wine Bar",
+          address: "458 Grove St, San Francisco, CA 94102",
+        },
+        {
+          name: "Del Popolo",
+          description:
+            "Brick-and-mortar pizzeria known for chewy, naturally fermented dough and potato pizza with fontina and rosemary.",
+          type: "Pizzeria",
+          address: "855 Bush St, San Francisco, CA 94108",
+        },
+        {
+          name: "Pearl 6101",
+          description:
+            "Neighborhood restaurant in Outer Richmond with a beautiful space and crave-worthy dishes by chef-owner Mel Lopez.",
+          type: "Restaurant",
+          address: "6101 California St, San Francisco, CA 94121",
+        },
+        {
+          name: "Josey Baker Bread",
+          description:
+            "Bakery grinding their own flour, supplying buckwheat, red wheat, cornmeal, and whole-grain mixes to local restaurants.",
+          type: "Bakery",
+          address: "736 Divisadero St, San Francisco, CA 94117",
+        },
+        {
+          name: "Commis",
+          description:
+            "Fine-dining restaurant in Oakland with a welcoming vibe and open kitchen.",
+          type: "Fine Dining",
+          address: "3859 Piedmont Ave, Oakland, CA 94611",
+        },
+        {
+          name: "Californios",
+          description:
+            "Thoughtful, beautiful, and delicious fine-dining restaurant in San Francisco.",
+          type: "Fine Dining",
+          address: "355 11th St, San Francisco, CA 94103",
+        },
+        {
+          name: "b. Patisserie",
+          description:
+            "Pastry shop by Belinda Leong, known for kouign-amann and chocolate sable cookies.",
+          type: "Bakery",
+          address: "2821 California St, San Francisco, CA 94115",
+        },
+        {
+          name: "The Anchovy Bar",
+          description:
+            "Sister restaurant to State Bird, specializing in San Francisco Bay anchovies and seafood dishes.",
+          type: "Seafood",
+          address: "1740 O'Farrell St, San Francisco, CA 94115",
+        },
+      ];
+      // For now, only support San Francisco
+      if (!input?.city || input.city.toLowerCase().includes("san francisco")) {
+        return sfPlaces;
+      }
+      // Return empty or placeholder for other cities
+      return [];
     }),
 } satisfies TRPCRouterRecord;

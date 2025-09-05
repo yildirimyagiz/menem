@@ -1,0 +1,238 @@
+{
+  "title": "Yönetici Paneli",
+  "description": "Yönetici paneline hoş geldiniz. Platformu yönetmek için aşağıdaki bağlantıları kullanın.",
+  "systemOnline": "Sistem Çevrimiçi",
+  "statistics": {
+    "totalUsers": "Toplam Kullanıcı",
+    "detailUsers": "Sistemdeki aktif kullanıcılar",
+    "activeProperties": "Aktif Mülkler",
+    "detailProperties": "Şu anda mevcut mülkler",
+    "revenue": "Gelir",
+    "detailRevenue": "Bu ay toplam gelir",
+    "systemHealth": "Sistem Sağlığı",
+    "detailHealth": "Genel sistem performansı"
+  },
+  "recentActivities": {
+    "title": "Son Aktiviteler",
+    "liveUpdates": "Canlı Güncellemeler",
+    "viewAll": "Tümünü Gör"
+  },
+  "quickActions": {
+    "title": "Hızlı İşlemler",
+    "addNewUser": "Yeni Kullanıcı Ekle",
+    "addProperty": "Gayrimenkul Ekle",
+    "generateReport": "Rapor Oluştur"
+  },
+  "systemStatus": {
+    "title": "Sistem Durumu",
+    "database": "Veritabanı",
+    "apiServices": "API Servisleri",
+    "storage": "Depolama"
+  },
+  "managementSections": {
+    "title": "Yönetim Bölümleri",
+    "collapseAll": "Hepsini Daralt",
+    "expandAll": "Hepsini Genişlet"
+  },
+  "floatingActions": {
+    "addNewUser": "Yeni Kullanıcı Ekle",
+    "addNewProperty": "Yeni Gayrimenkul Ekle",
+    "viewAnalytics": "Analitikleri Gör"
+  },
+  "sectionGroups": {
+    "userManagement": {
+      "title": "Kullanıcı Yönetimi",
+      "description": "Kullanıcıları, hesapları ve izinleri yönetin"
+    },
+    "propertyManagement": {
+      "title": "Gayrimenkul Yönetimi",
+      "description": "Mülkleri ve tesisleri yönetin"
+    },
+    "financials": {
+      "title": "Finansallar",
+      "description": "Ödemeleri, para birimlerini ve finansal kuralları yönetin"
+    },
+    "operationsAnalytics": {
+      "title": "Operasyonlar & Analitik",
+      "description": "Operasyonları izleyin ve analitikleri görüntüleyin"
+    },
+    "settingsMisc": {
+      "title": "Ayarlar & Diğer",
+      "description": "Sistem ayarları ve çeşitli özellikler"
+    }
+  },
+  "sections": {
+    "dashboard": "Panel",
+    "users": "Kullanıcılar",
+    "accounts": "Hesaplar",
+    "agents": "Acenteler",
+    "agencies": "Acenteler",
+    "tenants": "Kiracılar",
+    "permission": "İzinler",
+    "properties": "Mülkler",
+    "facilities": "Tesisler",
+    "providers": "Sağlayıcılar",
+    "channels": "Kanallar",
+    "availability": "Uygunluk",
+    "photo": "Fotoğraflar",
+    "payment": "Ödemeler",
+    "currency": "Para Birimleri",
+    "commissionRule": "Komisyon Kuralları",
+    "pricingRule": "Fiyatlandırma Kuralları",
+    "discount": "İndirimler",
+    "mortgage": "Krediler",
+    "offer": "Teklifler",
+    "subscription": "Abonelik",
+    "subscriptions": "Abonelikler",
+    "analytics": "Analitik",
+    "tasks": "Görevler",
+    "events": "Etkinlikler",
+    "report": "Raporlar",
+    "complianceRecord": "Uyum Kayıtları",
+    "contracts": "Sözleşmeler",
+    "reservations": "Rezervasyonlar",
+    "ticket": "Biletler",
+    "profile": "Profil",
+    "mlSettings": "ML Ayarları",
+    "ml-settings": "ML Ayarları",
+    "settings": "Ayarlar",
+    "notifications": "Bildirimler"
+  },
+  "agencies": {
+    "title": "Ajans Yönetimi",
+    "description": "Tüm ajansları ve bilgilerini yönetin",
+    "refresh": "Yenile",
+    "filters": "Filtreler",
+    "export": "Dışa Aktar",
+    "addAgency": "Ajans Ekle",
+    "totalAgencies": "Toplam Ajans",
+    "activeAgencies": "Aktif Acenteler",
+    "pendingAgencies": "Bekleyen Acenteler",
+    "suspendedAgencies": "Askıya Alınan Acenteler",
+    "overview": "Genel Bakış",
+    "agencies": "Acenteler",
+    "analytics": "Analitik",
+    "settings": "Ayarlar",
+    "table": {
+      "search": { "placeholder": "Ajanslarda ara..." },
+      "toolbar": { "filters": "Filtreler", "export": "Dışa Aktar", "reset": "Sıfırla" },
+      "actions": { "openMenu": "Menüyü Aç", "view": "Görüntüle", "edit": "Düzenle", "copyId": "ID'yi Kopyala", "delete": "Sil" },
+      "pagination": { "showing": "Gösteriliyor", "of": "-den", "results": "sonuç", "firstPage": "İlk sayfa", "previousPage": "Önceki sayfa", "page": "Sayfa", "nextPage": "Sonraki sayfa", "lastPage": "Son sayfa" },
+      "filters": { "searchPlaceholder": "{title} içinde ara...", "noResults": "Sonuç bulunamadı.", "selected": "seçili", "clearFilters": "Filtreleri Temizle" },
+      "sort": { "ascending": "Artan Sırala", "descending": "Azalan Sırala" },
+      "hideColumn": "Kolonu Gizle"
+    },
+    "noUsersFound": "Kullanıcı bulunamadı",
+    "addFirstUser": "İlk kullanıcıyı ekle",
+    "userManagement": "Kullanıcı Yönetimi",
+    "userManagementDescription": "Kullanıcı Yönetimi Açıklaması",
+    "addNewUser": "Yeni Kullanıcı Ekle",
+    "searchUsers": "Kullanıcıları Ara",
+    "search": "Ara",
+    "showingResults": "Sonuçlar Gösteriliyor",
+    "previous": "Önceki",
+    "next": "Sonraki",
+    "name": "İsim",
+    "role": "Rol",
+    "actions": "İşlemler",
+    "viewDetails": "Detayları Gör",
+    "editUser": "Kullanıcıyı Düzenle",
+    "deleteUser": "Kullanıcıyı Sil",
+    "reservations": {
+      "title": "Rezervasyonlar",
+      "description": "Rezervasyonlar Açıklaması",
+      "comingSoon": "Çok Yakında",
+      "noStats": "İstatistik Yok",
+      "stats": { "total": "Toplam", "active": "Aktif", "completed": "Tamamlandı", "cancelled": "İptal Edildi" },
+      "searchPlaceholder": "Rezervasyonlarda ara...",
+      "statusPlaceholder": "Durum Seç...",
+      "propertyPlaceholder": "Gayrimenkul Seç..."
+    },
+    "userId": "Kullanıcı ID",
+    "type": "Tür",
+    "selectType": "Tür Seç",
+    "oauth": "OAuth",
+    "email": "E-posta",
+    "oidc": "OIDC",
+    "credentials": "Kimlik Bilgileri",
+    "google": "Google",
+    "facebook": "Facebook",
+    "provider": "Sağlayıcı",
+    "providerAccountId": "Sağlayıcı Hesap ID",
+    "active": "Aktif",
+    "cancel": "İptal",
+    "error": "Hata",
+    "failedToDeleteAccount": "Hesap silinemedi",
+    "success": "Başarılı",
+    "accountUpdatedSuccessfully": "Hesap başarıyla güncellendi",
+    "accountCreatedSuccessfully": "Hesap başarıyla oluşturuldu",
+    "failedToSaveAccount": "Hesap kaydedilemedi",
+    "loadingAccounts": "Hesaplar yükleniyor",
+    "manageAccounts": "Hesapları Yönet",
+    "addAccount": "Hesap Ekle",
+    "accounts": "Hesaplar",
+    "showingAccounts": "Gösterilen Hesaplar"
+  },
+  "Profile": {
+    " ": "Profil",
+    "title": "Profil Başlığı",
+    "description": "Profil Açıklaması",
+    "cancel": "İptal",
+    "loading": "Yükleniyor",
+    "saveChanges": "Değişiklikleri Kaydet",
+    "editProfile": "Profili Düzenle",
+    "personalInfo": "Kişisel Bilgi",
+    "photos": "Fotoğraflar",
+    "account": "Hesap",
+    "memberSince": "Üyelik Tarihi",
+    "lastLogin": "Son Giriş",
+    "personalInfoDescription": "Kişisel Bilgi Açıklaması",
+    "firstName": "Ad",
+    "firstNamePlaceholder": "Ad Giriniz",
+    "lastName": "Soyad",
+    "lastNamePlaceholder": "Soyad Giriniz",
+    "displayName": "Görünen Ad",
+    "displayNamePlaceholder": "Görünen Ad Giriniz",
+    "email": "E-posta",
+    "emailPlaceholder": "E-posta Giriniz",
+    "phoneNumber": "Telefon Numarası",
+    "phoneNumberPlaceholder": "Telefon Numarası Giriniz",
+    "profilePicture": "Profil Fotoğrafı",
+    "profilePicturePlaceholder": "Profil Fotoğrafı Yükle",
+    "language": "Dil",
+    "timezone": "Zaman Dilimi"
+  },
+  "adminMLSettings": {
+    "loading": "Yükleniyor",
+    "title": "Başlık"
+  },
+  "admin": {
+    "accounts": {
+      "table": {
+        "type": "Tür",
+        "provider": "Sağlayıcı",
+        "accountId": "Hesap ID",
+        "action": "İşlem",
+        "userEmail": "Kullanıcı E-posta",
+        "actions": "İşlemler",
+        "noResults": "Sonuç bulunamadı"
+      },
+      "filters": {
+        "noResults": "Sonuç Yok",
+        "clear": "Temizle"
+      },
+      "view": {}
+    }
+  },
+  "auth": {
+    "error": {
+      "error": "Hata",
+      "default": "Kimlik doğrulama sırasında bir hata oluştu. Lütfen tekrar deneyin.",
+      "title": "Kimlik Doğrulama Hatası",
+      "backToLogin": "Girişe Dön"
+    }
+  }
+}
+
+
+

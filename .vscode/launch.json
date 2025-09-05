@@ -2,16 +2,26 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Next.js",
-      "type": "node-terminal",
+      "name": "SuperClaude Local Demo",
+      "type": "python",
       "request": "launch",
-      "command": "pnpm dev",
-      "cwd": "${workspaceFolder}/apps/nextjs",
-      "skipFiles": ["<node_internals>/**"],
-      "sourceMaps": true,
-      "sourceMapPathOverrides": {
-        "/turbopack/[project]/*": "${webRoot}/*" //https://github.com/vercel/next.js/issues/62008
-      }
+      "program": "${workspaceFolder}/superclaude_cli.py",
+      "args": [
+        "--demo"
+      ],
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "SuperClaude Local CLI",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/superclaude_cli.py",
+      "args": [
+        "--help"
+      ],
+      "console": "integratedTerminal",
+      "justMyCode": true
     }
   ]
 }

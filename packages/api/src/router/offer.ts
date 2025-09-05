@@ -1,14 +1,12 @@
 import type { Prisma } from "@prisma/client";
-import type { TRPCRouterRecord } from "@trpc/server";
 import { OfferStatus, OfferType } from "@prisma/client";
-import { TRPCError } from "@trpc/server"; // Ensure TRPCError is imported
-import { z } from "zod";
-
 import {
   CreateOfferSchema,
   UpdateOfferSchema,
-  // OfferFilterSchema, // Assuming you might create this in validators
-} from "@acme/validators";
+} from "@reservatior/validators";
+import type { TRPCRouterRecord } from "@trpc/server";
+import { TRPCError } from "@trpc/server"; // Ensure TRPCError is imported
+import { z } from "zod";
 
 import { getPaginationParams } from "../helpers/pagination";
 import { protectedProcedure, publicProcedure } from "../trpc";
@@ -97,7 +95,7 @@ function sanitizeOffer(offer: OfferWithIncludes): SanitizedOffer {
 
 export const offerRouter: TRPCRouterRecord = {
   list: publicProcedure
-    // Consider defining this complex input schema in @acme/validators as OfferFilterSchema
+    // Consider defining this complex input schema in @reservatior/validators as OfferFilterSchema
     .input(
       z
         .object({
@@ -208,7 +206,7 @@ export const offerRouter: TRPCRouterRecord = {
           ctx.db.offer.findMany({
             where,
             orderBy: {
-              [input.sortBy ?? "createdAt"]: input?.sortOrder ?? "desc",
+              [input.sortBy ?? "createdAt"]: input.sortOrder ?? "desc",
             },
             skip,
             take,

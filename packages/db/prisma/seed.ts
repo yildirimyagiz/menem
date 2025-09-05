@@ -69,21 +69,35 @@ export async function seedCurrency() {
     });
   }
   // Add some more random ones
-  for (let i = 0; i < NUM_RECORDS_PER_MODEL - currencies.length; i++) {
-    await prisma.currency.create({
-      data: {
-        code: faker.finance.currencyCode(),
-        name: faker.finance.currencyName(),
-        symbol: faker.finance.currencySymbol(),
-        exchangeRate: faker.number.float({
-          min: 0.1,
-          max: 100,
-          multipleOf: 0.01,
-        }), // precision -> multipleOf
-        isActive: faker.datatype.boolean(),
-        updatedAt: new Date(), // Add missing updatedAt
-      },
-    });
+  const existingCodes = new Set(
+    (await prisma.currency.findMany({ select: { code: true } })).map(
+      (c) => c.code,
+    ),
+  );
+  let added = 0;
+  while (added < NUM_RECORDS_PER_MODEL - currencies.length) {
+    const code = faker.finance.currencyCode();
+    if (existingCodes.has(code)) continue;
+    try {
+      await prisma.currency.create({
+        data: {
+          code,
+          name: faker.finance.currencyName(),
+          symbol: faker.finance.currencySymbol(),
+          exchangeRate: faker.number.float({
+            min: 0.1,
+            max: 100,
+            multipleOf: 0.01,
+          }), // precision -> multipleOf
+          isActive: faker.datatype.boolean(),
+          updatedAt: new Date(), // Add missing updatedAt
+        },
+      });
+      existingCodes.add(code);
+      added++;
+    } catch (e) {
+      // skip on duplicate
+    }
   }
   console.log(
     `Seeded currencies (upserted ${currencies.length}, created ${Math.max(0, NUM_RECORDS_PER_MODEL - currencies.length)}).`,
@@ -213,7 +227,7 @@ export async function seedUser() {
           lastName,
           allowSpecialCharacters: false,
         }),
-        username: faker.internet.userName({ firstName, lastName }),
+        username: faker.internet.username({ firstName, lastName }),
         name: `${firstName} ${lastName}`,
         firstName,
         lastName,
@@ -226,6 +240,10 @@ export async function seedUser() {
           agencies.length > 0 ? faker.helpers.arrayElement(agencies).id : null,
         createdAt: faker.date.past(),
         updatedAt: new Date(),
+        lastSeen: faker.datatype.boolean()
+          ? faker.date.recent({ days: 7 })
+          : null,
+        isOnline: faker.datatype.boolean(),
       },
     });
   }
@@ -320,7 +338,7 @@ export async function seedAgent() {
         name: agentName,
         email: faker.internet.email({
           firstName: agentName.split(" ")[0],
-          lastName: agentName.split(" ")[1] || "Agent",
+          lastName: agentName.split(" ")[1] ?? "Agent",
           allowSpecialCharacters: false,
         }),
         phoneNumber: faker.phone.number(),
@@ -573,7 +591,6 @@ export async function seedChannel() {
   console.log(`Seeded ${NUM_RECORDS_PER_MODEL} channels.`);
 }
 
-// --- Main Business Models ---
 export async function seedProperty() {
   const { faker } = await import("@faker-js/faker");
   const locations = await prisma.location.findMany({ select: { id: true } });
@@ -589,11 +606,40 @@ export async function seedProperty() {
     return;
   }
 
+  // Use only valid enum values for propertyType and category
   const propertyTypes: any[] = [
-    "SingleFamily",
     "APARTMENT",
+    "HOUSE",
+    "VILLA",
+    "DUPLEX",
+    "PENTHOUSE",
+    "STUDIO",
     "CONDO",
     "TOWNHOUSE",
+    "LOFT",
+    "COTTAGE",
+    "BUNGALOW",
+    "CHALET",
+    "CABIN",
+    "MANSION",
+    "RANCH",
+    "FARM",
+    "OFFICE",
+    "SHOP",
+    "RETAIL",
+    "WAREHOUSE",
+    "HOTEL",
+    "HOSTEL",
+    "GUESTHOUSE",
+    "BEDANDBREAKFAST",
+    "RESORT",
+    "GARAGE",
+    "PARKING",
+    "AGRICULTURAL",
+    "DEVELOPMENT",
+    "FACTORY",
+    "PLANT",
+    "OTHER",
   ];
   const propertyStatuses: any[] = [
     "AVAILABLE",
@@ -601,10 +647,72 @@ export async function seedProperty() {
     "RENTED",
     "UNDER_CONTRACT",
   ];
-  const propertyCategories: any[] = ["APARTMENT", "HOUSE", "VILLA", "OFFICE"];
+  const propertyCategories: any[] = [
+    "RESIDENTIAL",
+    "COMMERCIAL",
+    "LAND",
+    "INDUSTRIAL",
+    "OTHER",
+  ];
+  const propertyFeatures: any[] = [
+    "FURNISHED",
+    "PARTIALLY_FURNISHED",
+    "UNFURNISHED",
+    "OPEN_FLOOR_PLAN",
+    "HIGH_CEILING",
+    "BALCONY",
+    "TERRACE",
+    "GARDEN",
+    "SEA_VIEW",
+    "MOUNTAIN_VIEW",
+    "CITY_VIEW",
+    "SMART_HOME",
+    "ENERGY_EFFICIENT",
+    "SOLAR_PANELS",
+    "EARTHQUAKE_RESISTANT",
+    "SOUNDPROOF",
+    "WHEELCHAIR_ACCESSIBLE",
+    "PET_FRIENDLY",
+    "HOME_OFFICE",
+    "WALK_IN_CLOSET",
+  ];
+
+  const propertyAmenities: any[] = [
+    "POOL",
+    "GYM",
+    "GARDEN",
+    "PARKING",
+    "SECURITY",
+    "ELEVATOR",
+    "STORAGE",
+    "BALCONY",
+    "TERRACE",
+    "AIR_CONDITIONING",
+    "HEATING",
+    "WIFI",
+    "SAUNA",
+    "JACUZZI",
+    "FIREPLACE",
+    "BBQ",
+    "PET_FRIENDLY",
+    "WHEELCHAIR_ACCESS",
+    "LAUNDRY",
+    "DISHWASHER",
+    "SMART_HOME",
+    "SOLAR_PANELS",
+    "CONCIERGE",
+    "PLAYGROUND",
+    "TENNIS_COURT",
+    "BASKETBALL_COURT",
+    "CINEMA_ROOM",
+    "GAME_ROOM",
+    "ROOFTOP",
+    "SEA_VIEW",
+    "MOUNTAIN_VIEW",
+    "CITY_VIEW",
+  ];
 
   for (let i = 0; i < NUM_RECORDS_PER_MODEL * 2; i++) {
-    // Create more properties
     await prisma.property.create({
       data: {
         title:
@@ -636,17 +744,16 @@ export async function seedProperty() {
         ownerId: users.length > 0 ? faker.helpers.arrayElement(users).id : null,
         agencyId:
           agencies.length > 0 ? faker.helpers.arrayElement(agencies).id : null,
-        isActive: faker.datatype.boolean(),
+        isActive: true,
         featured: faker.datatype.boolean(),
         createdAt: faker.date.past(),
         updatedAt: new Date(),
-        // Add other fields as needed, e.g., features, amenities (arrays of enums)
         features: faker.helpers.arrayElements(
-          ["FURNISHED", "BALCONY", "SMART_HOME"],
+          propertyFeatures,
           faker.number.int({ min: 0, max: 3 }),
         ) as any[],
         amenities: faker.helpers.arrayElements(
-          ["POOL", "GYM", "PARKING"],
+          propertyAmenities,
           faker.number.int({ min: 0, max: 3 }),
         ) as any[],
       },
@@ -983,6 +1090,7 @@ export async function seedNotification() {
 export async function seedTaxRecord() {
   const { faker } = await import("@faker-js/faker");
   const properties = await prisma.property.findMany({ select: { id: true } });
+  const users = await prisma.user.findMany({ select: { id: true } });
 
   if (properties.length === 0) {
     console.warn(
@@ -991,15 +1099,26 @@ export async function seedTaxRecord() {
     return;
   }
 
+  if (users.length === 0) {
+    console.warn(
+      "Skipping seedTaxRecord: No users found. Seed users first.",
+    );
+    return;
+  }
+
   for (let i = 0; i < NUM_RECORDS_PER_MODEL; i++) {
+    const user = faker.helpers.arrayElement(users);
     await prisma.taxRecord.create({
       data: {
         propertyId: faker.helpers.arrayElement(properties).id,
         year: new Date().getFullYear() - faker.number.int({ min: 0, max: 5 }),
-        amount: faker.number.float({ min: 100, max: 10000, multipleOf: 0.01 }), // precision -> multipleOf
-        percentage: faker.number.float({ min: 0.5, max: 5, multipleOf: 0.01 }), // precision -> multipleOf
+        amount: faker.number.float({ min: 100, max: 10000, multipleOf: 0.01 }),
+        percentage: faker.number.float({ min: 0.5, max: 5, multipleOf: 0.01 }),
         paid: faker.datatype.boolean(),
         dueDate: faker.date.future(),
+        clientId: user.id,
+        createdById: user.id,
+        updatedById: user.id,
         createdAt: faker.date.past(),
         updatedAt: new Date(),
       },
@@ -1045,6 +1164,7 @@ export async function seedExpense() {
   const properties = await prisma.property.findMany({ select: { id: true } });
   const agencies = await prisma.agency.findMany({ select: { id: true } });
   const currencies = await prisma.currency.findMany({ select: { id: true } });
+  const facilities = await prisma.facility.findMany({ select: { id: true } });
 
   if (currencies.length === 0) {
     console.warn(
@@ -1070,6 +1190,10 @@ export async function seedExpense() {
         agencyId:
           agencies.length > 0 && faker.datatype.boolean()
             ? faker.helpers.arrayElement(agencies).id
+            : null,
+        facilityId:
+          facilities.length > 0 && faker.datatype.boolean()
+            ? faker.helpers.arrayElement(facilities).id
             : null,
         dueDate: faker.datatype.boolean() ? faker.date.future() : null,
         createdAt: faker.date.past(),
@@ -1119,12 +1243,20 @@ export async function seedAnalytics() {
     select: { id: true },
     take: 5,
   });
-  const analyticsTypes: any[] = ["LISTING_VIEW", "USER_ENGAGEMENT", "REVENUE"];
+  const taxRecords = await prisma.taxRecord.findMany({ select: { id: true }, take: 5 });
+  
+  const analyticsTypes: any[] = [
+    "LISTING_VIEW", "USER_ENGAGEMENT", "REVENUE",
+    "TAX_PAYMENT", "TAX_OVERDUE", "TAX_COMPLIANCE", 
+    "TAX_REVENUE", "TAX_PERFORMANCE", "TAX_REMINDER", 
+    "TAX_AUDIT", "TAX_REPORT"
+  ];
 
   for (let i = 0; i < NUM_RECORDS_PER_MODEL; i++) {
     const entityType = faker.helpers.arrayElement([
       "Property",
-      "User",
+      "User", 
+      "TaxRecord",
       "General",
     ]);
     let entityId = faker.string.uuid();
@@ -1132,6 +1264,8 @@ export async function seedAnalytics() {
       entityId = faker.helpers.arrayElement(properties).id;
     if (entityType === "User" && users.length > 0)
       entityId = faker.helpers.arrayElement(users).id;
+    if (entityType === "TaxRecord" && taxRecords.length > 0)
+      entityId = faker.helpers.arrayElement(taxRecords).id;
 
     await prisma.analytics.create({
       data: {
@@ -1152,6 +1286,7 @@ export async function seedAnalytics() {
             : users.length > 0 && faker.datatype.boolean()
               ? faker.helpers.arrayElement(users).id
               : null,
+
       },
     });
   }
@@ -1181,6 +1316,8 @@ export async function seedCommunicationLog() {
 
   for (let i = 0; i < NUM_RECORDS_PER_MODEL; i++) {
     const [sender, receiver] = faker.helpers.arrayElements(users, 2);
+    const channel =
+      channels.length > 0 ? faker.helpers.arrayElement(channels) : null;
     await prisma.communicationLog.create({
       data: {
         senderId: sender.id,
@@ -1192,14 +1329,40 @@ export async function seedCommunicationLog() {
         agencyId:
           agencies.length > 0 && faker.datatype.boolean()
             ? faker.helpers.arrayElement(agencies).id
-            : null, // CommunicationLog model has `updatedAt DateTime` without `@updatedAt`
-        channelId:
-          channels.length > 0 && faker.datatype.boolean()
-            ? faker.helpers.arrayElement(channels).id
             : null,
+        channelId: channel ? channel.id : null,
         timestamp: faker.date.recent({ days: 7 }),
         createdAt: faker.date.past(),
         updatedAt: new Date(),
+        isEdited: faker.datatype.boolean(),
+        editedAt: faker.datatype.boolean()
+          ? faker.date.recent({ days: 7 })
+          : null,
+        deletedById: faker.datatype.boolean() ? sender.id : null,
+        reactions: JSON.stringify({
+          "👍": [sender.id],
+          "😂": [receiver.id],
+        }),
+        attachments: JSON.stringify([
+          {
+            id: faker.string.uuid(),
+            type: "image",
+            url: faker.image.avatar(),
+            name: "avatar.png",
+            size: 12345,
+            mimeType: "image/png",
+          },
+        ]),
+        readBy: JSON.stringify([
+          {
+            userId: sender.id,
+            readAt: faker.date.recent({ days: 7 }),
+          },
+          {
+            userId: receiver.id,
+            readAt: faker.date.recent({ days: 7 }),
+          },
+        ]),
       },
     });
   }
@@ -1209,7 +1372,20 @@ export async function seedCommunicationLog() {
 export async function seedTicket() {
   const { faker } = await import("@faker-js/faker");
   const ticketStatuses: any[] = ["OPEN", "IN_PROGRESS", "RESOLVED", "CLOSED"];
+  const users = await prisma.user.findMany({
+    select: { id: true, role: true },
+  });
+  if (users.length === 0) {
+    console.warn("Skipping seedTicket: No users found. Seed users first.");
+    return;
+  }
+  const agents = users.filter((u) => u.role === "AGENT");
   for (let i = 0; i < NUM_RECORDS_PER_MODEL; i++) {
+    const user = faker.helpers.arrayElement(users);
+    const agent =
+      agents.length > 0 && faker.datatype.boolean()
+        ? faker.helpers.arrayElement(agents)
+        : null;
     await prisma.ticket.create({
       data: {
         subject: faker.lorem.sentence(6),
@@ -1218,6 +1394,8 @@ export async function seedTicket() {
         createdAt: faker.date.past(),
         updatedAt: new Date(),
         closedAt: faker.datatype.boolean() ? faker.date.recent() : null,
+        userId: user.id,
+        agentId: agent ? agent.id : null,
       },
     });
   }
@@ -1228,6 +1406,23 @@ export async function seedPayment() {
   const { faker } = await import("@faker-js/faker");
   const tenants = await prisma.tenant.findMany({ select: { id: true } });
   const currencies = await prisma.currency.findMany({ select: { id: true } });
+  const properties = await prisma.property.findMany({ select: { id: true } });
+  const expenses = await prisma.expense.findMany({ select: { id: true } });
+  const reservations = await prisma.reservation.findMany({
+    select: { id: true },
+  });
+  const subscriptions = await prisma.subscription.findMany({
+    select: { id: true },
+  });
+  const commissionRules = await prisma.commissionRule.findMany({
+    select: { id: true },
+  });
+  const includedServices = await prisma.includedService.findMany({
+    select: { id: true },
+  });
+  const extraCharges = await prisma.extraCharge.findMany({
+    select: { id: true },
+  });
 
   if (tenants.length === 0 || currencies.length === 0) {
     console.warn(
@@ -1237,23 +1432,47 @@ export async function seedPayment() {
   }
 
   const paymentStatuses: any[] = ["UNPAID", "PAID", "REFUNDED", "OVERDUE"];
+  const contextOptions = [
+    { key: "propertyId", arr: properties },
+    { key: "expenseId", arr: expenses },
+    { key: "reservationId", arr: reservations },
+    { key: "subscriptionId", arr: subscriptions },
+    { key: "commissionRuleId", arr: commissionRules },
+    { key: "includedServiceId", arr: includedServices },
+    { key: "extraChargeId", arr: extraCharges },
+  ];
 
   for (let i = 0; i < NUM_RECORDS_PER_MODEL; i++) {
+    // Pick one context type at random
+    const context = faker.helpers.arrayElement(contextOptions);
+    const contextData: Record<string, string | null> = {};
+    contextOptions.forEach((opt) => {
+      contextData[opt.key] =
+        opt.key === context.key && opt.arr.length > 0
+          ? faker.helpers.arrayElement(opt.arr).id
+          : null;
+    });
+
     await prisma.payment.create({
       data: {
         tenantId: faker.helpers.arrayElement(tenants).id,
-        amount: faker.number.float({ min: 50, max: 2000, multipleOf: 0.01 }), // precision -> multipleOf
+        amount: faker.number.float({ min: 50, max: 2000, multipleOf: 0.01 }),
         currencyId: faker.helpers.arrayElement(currencies).id,
         paymentDate: faker.date.recent({ days: 30 }),
-        dueDate: faker.date.between({
-          from: faker.date.recent({ days: 60 }),
-          to: faker.date.soon({ days: 30 }),
-        }),
+        dueDate: faker.date.soon({ days: 30 }),
         status: faker.helpers.arrayElement(paymentStatuses),
         paymentMethod: faker.finance.transactionType(),
+        reference: faker.string.alphanumeric(10),
+        notes: faker.lorem.sentence(),
         stripePaymentIntentId: "pi_" + faker.string.alphanumeric(24),
+        stripePaymentMethodId: null,
+        stripeClientSecret: null,
+        stripeStatus: null,
+        stripeError: null,
         createdAt: faker.date.past(),
         updatedAt: new Date(),
+        deletedAt: null,
+        ...contextData,
       },
     });
   }
@@ -1299,7 +1518,6 @@ export async function seedSubscription() {
   console.log(`Seeded ${NUM_RECORDS_PER_MODEL} subscriptions.`);
 }
 
-// --- Newly Added Models from Schema ---
 export async function seedProvider() {
   const { faker } = await import("@faker-js/faker");
   const bookingSources: any[] = [
@@ -2058,11 +2276,95 @@ export async function main() {
   console.log("--- Join/Link Tables & Many-to-Many Seeded ---");
 }
 
+// --- Photo Seeding for All Related Models ---
+async function seedAllEntityPhotos() {
+  const { faker } = await import("@faker-js/faker");
+  const photoTypes = [
+    "GALLERY",
+    "PROFILE",
+    "DOCUMENT",
+    "INTERIOR",
+    "EXTERIOR",
+    "AERIAL",
+    "FLOOR_PLAN",
+  ];
+
+  // Helper assigns correct foreign key
+  const generatePhotos = async (
+    entity: { id: string },
+    entityType: "property" | "agency" | "user" | "post",
+  ) => {
+    const photos: any[] = [];
+    const getEntityKey = () => {
+      switch (entityType) {
+        case "property":
+          return { propertyId: entity.id };
+        case "agency":
+          return { agencyId: entity.id };
+        case "user":
+          return { userId: entity.id };
+        case "post":
+          return { postId: entity.id };
+        default:
+          return {};
+      }
+    };
+    // 1 featured COVER
+    photos.push({
+      url: faker.image.urlPicsumPhotos({ width: 800, height: 600 }),
+      type: "COVER",
+      caption: faker.lorem.sentence(),
+      featured: true,
+      alt: `${entityType.charAt(0).toUpperCase() + entityType.slice(1)} ${entity.id} Cover`,
+      ...getEntityKey(),
+      createdAt: faker.date.past(),
+      updatedAt: new Date(),
+    });
+    // 9 random
+    for (let i = 0; i < 9; i++) {
+      photos.push({
+        url: faker.image.urlPicsumPhotos({ width: 800, height: 600 }),
+        type: faker.helpers.arrayElement(photoTypes),
+        caption: faker.lorem.sentence(),
+        featured: false,
+        alt: `${entityType.charAt(0).toUpperCase() + entityType.slice(1)} ${entity.id} Photo ${i + 2}`,
+        ...getEntityKey(),
+        createdAt: faker.date.past(),
+        updatedAt: new Date(),
+      });
+    }
+    await prisma.photo.createMany({ data: photos });
+  };
+
+  // Seed for properties
+  const properties = await prisma.property.findMany({ select: { id: true } });
+  for (const property of properties) {
+    await generatePhotos(property, "property");
+  }
+  // Seed for agencies
+  const agencies = await prisma.agency.findMany({ select: { id: true } });
+  for (const agency of agencies) {
+    await generatePhotos(agency, "agency");
+  }
+  // Seed for users
+  const users = await prisma.user.findMany({ select: { id: true } });
+  for (const user of users) {
+    await generatePhotos(user, "user");
+  }
+  // Seed for posts
+  const posts = await prisma.post.findMany({ select: { id: true } });
+  for (const post of posts) {
+    await generatePhotos(post, "post");
+  }
+  console.log("Seeded 10 photos for each property, agency, user, and post.");
+}
+
 main()
   .catch((e) => {
     console.error(e);
     process.exit(1);
   })
   .finally(async () => {
+    await seedAllEntityPhotos();
     await prisma.$disconnect();
   });

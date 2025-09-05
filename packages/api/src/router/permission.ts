@@ -1,13 +1,12 @@
+import type { Permission, Prisma, User } from "@reservatior/db";
 import type { TRPCRouterRecord } from "@trpc/server";
-import { TRPCError } from "@trpc/server";
-import { z } from "zod";
-
-import type { Permission, Prisma, User } from "@acme/db";
 import {
   CreatePermissionSchema,
   PermissionFilterSchema,
   UpdatePermissionSchema,
-} from "@acme/validators";
+} from "@reservatior/validators";
+import { TRPCError } from "@trpc/server";
+import { z } from "zod";
 
 import {
   getPaginationParams,

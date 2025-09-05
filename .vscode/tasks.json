@@ -1,0 +1,150 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "SuperClaude: Architect Analysis",
+      "type": "shell",
+      "command": "python3",
+      "args": [
+        "superclaude_cli.py",
+        "--persona",
+        "architect",
+        "--implement"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "new",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "SuperClaude: Frontend Development",
+      "type": "shell",
+      "command": "python3",
+      "args": [
+        "superclaude_cli.py",
+        "--persona",
+        "frontend",
+        "--design"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "new",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "SuperClaude: Backend Development",
+      "type": "shell",
+      "command": "python3",
+      "args": [
+        "superclaude_cli.py",
+        "--persona",
+        "backend",
+        "--implement"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "new",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "SuperClaude: Debug Issues",
+      "type": "shell",
+      "command": "python3",
+      "args": [
+        "superclaude_cli.py",
+        "--persona",
+        "analyzer",
+        "--troubleshoot"
+      ],
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "new",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "SuperClaude: Security Assessment",
+      "type": "shell",
+      "command": "python3",
+      "args": [
+        "superclaude_cli.py",
+        "--persona",
+        "security",
+        "--analyze"
+      ],
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "new",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "SuperClaude: Generate Documentation",
+      "type": "shell",
+      "command": "python3",
+      "args": [
+        "superclaude_cli.py",
+        "--persona",
+        "scribe",
+        "--document"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "new",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "SuperClaude: Run Demo",
+      "type": "shell",
+      "command": "python3",
+      "args": [
+        "superclaude_cli.py",
+        "--demo"
+      ],
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "new",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "problemMatcher": []
+    }
+  ]
+}

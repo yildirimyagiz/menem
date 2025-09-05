@@ -1,0 +1,158 @@
+{
+  "_meta": {
+    "description": "User-facing strings for the reservation module. Fill with extracted and translated keys from reservation UI."
+  },
+  "page": {
+    "title": "Book a Property",
+    "loading": "Loading properties...",
+    "noProperties": "No properties available for booking.",
+    "error": {
+      "loadingProperties": "Error loading properties",
+      "loadingReservations": "Error loading reservations",
+      "unexpectedError": "An unexpected error occurred."
+    }
+  },
+  "booking": {
+    "bookNow": "Book Now",
+    "selectDates": "Select Dates",
+    "datePlaceholder": "Select check-in and check-out dates",
+    "guests": "Guests",
+    "specialRequests": "Special Requests (Optional)",
+    "specialRequestsPlaceholder": "Any special requests or requirements...",
+    "payment": "Payment",
+    "validation": {
+      "fillRequiredFields": "Please fill in all required fields.",
+      "validationError": "Validation Error"
+    }
+  },
+  "modal": {
+    "title": "Book {propertyTitle}",
+    "success": {
+      "title": "Reservation Created",
+      "description": "Your reservation has been successfully created.",
+      "paymentProcessed": "Your reservation has been created and payment processed."
+    },
+    "error": {
+      "title": "Reservation Failed",
+      "description": "Failed to create reservation.",
+      "tryAgain": "Failed to create reservation. Please try again."
+    }
+  },
+  "reservationList": {
+    "title": "My Reservations",
+    "loading": "Loading reservations...",
+    "noReservations": {
+      "title": "No reservations found",
+      "description": "You haven't made any reservations yet. Start by exploring our properties."
+    },
+    "headers": {
+      "reservationId": "Reservation ID:",
+      "checkIn": "Check-in",
+      "checkOut": "Check-out",
+      "guests": "Guests",
+      "total": "Total",
+      "specialRequests": "Special Requests:"
+    },
+    "guest": "guest",
+    "guests": "guests",
+    "actions": {
+      "viewDetails": "View Details",
+      "cancel": "İptal",
+      "cancelling": "Cancelling..."
+    },
+    "details": {
+      "title": "Reservation Details",
+      "description": "Detailed information about your reservation.",
+      "property": "Property",
+      "dates": "Dates",
+      "paymentInformation": "Payment Information",
+      "agency": "Agency",
+      "status": "Durum",
+      "amount": "Amount"
+    },
+    "toast": {
+      "cancelled": {
+        "title": "Reservation Cancelled",
+        "description": "Your reservation has been successfully cancelled."
+      },
+      "cancellationFailed": {
+        "title": "Cancellation Failed",
+        "description": "Failed to cancel reservation."
+      }
+    }
+  },
+  "payment": {
+    "totalAmount": "Total Amount:",
+    "selectPaymentMethod": "Select Payment Method",
+    "paypal": "PayPal",
+    "creditCard": "Credit Card",
+    "paypalComingSoon": {
+      "title": "PayPal Coming Soon",
+      "description": "We're working on PayPal integration. Please use credit card payment for now.",
+      "button": "PayPal (Coming Soon)"
+    },
+    "processing": {
+      "processing": "Processing payment...",
+      "loading": "Loading payment form..."
+    },
+    "error": {
+      "title": "Payment Error",
+      "initializeFailed": "Failed to initialize payment. Please try again.",
+      "confirmationFailed": "Payment confirmation failed. Please try again.",
+      "failed": "Payment failed"
+    },
+    "security": "🔒 Your payment information is secure and encrypted. We never store your card details.",
+    "paypalIntegration": {
+      "title": "PayPal Integration",
+      "description": "PayPal integration is coming soon. Please use credit card payment for now."
+    }
+  },
+  "status": {
+    "confirmed": "CONFIRMED",
+    "pending": "Beklemede",
+    "cancelled": "CANCELLED",
+    "paid": "PAID",
+    "unpaid": "UNPAID"
+  },
+  "commission": {
+    "title": "Commission Rules",
+    "loading": "Loading commission rules...",
+    "noRules": "No commission rules found for this booking."
+  },
+  "tax": {
+    "title": "Tax Records",
+    "loading": "Loading tax records...",
+    "noRecords": "No tax records found for this booking."
+  },
+  "pricing": {
+    "breakdown": "Pricing Breakdown",
+    "basePrice": "Base Price",
+    "specialPricing": "Special Pricing",
+    "extraCharges": "Extra Charges",
+    "discounts": "Discounts",
+    "total": "Total",
+    "nights": "nights"
+  },
+  "availability": {
+    "calendar": "Availability Calendar",
+    "available": "Mevcut",
+    "unavailable": "Mevcut Değil",
+    "booked": "Booked",
+    "selectDates": "Select your dates"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Hata",
+    "success": "Başarılı",
+    "cancel": "İptal",
+    "save": "Kaydet",
+    "delete": "Sil",
+    "close": "Kapat",
+    "view": "Görüntüle",
+    "edit": "Düzenle",
+    "confirm": "Onayla",
+    "back": "Geri",
+    "next": "İleri",
+    "previous": "Önceki"
+  }
+}

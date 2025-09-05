@@ -1,0 +1,49 @@
+{
+  "Index": {
+    "title": "[Reservatior - Property Management Platform]",
+    "description": "[Find your perfect property with Reservatior's comprehensive property management platform.]"
+  },
+  "hero": {
+    "title": "[Find Your Perfect Property]",
+    "description": "[Discover amazing properties in your favorite locations with our comprehensive search and booking platform.]"
+  },
+  "search": {
+    "location": "[Enter location...]",
+    "budget": "[Enter budget...]",
+    "checkIn": "[Check-in date]",
+    "checkOut": "[Check-out date]",
+    "guests": "[Number of guests]",
+    "searchButton": "[Search Properties]",
+    "advancedSearch": "[Advanced Search]"
+  },
+  "features": {
+    "title": "[Why Choose Reservatior?]",
+    "description": "[Discover the features that make us the leading property management platform]",
+    "search": {
+      "title": "[Advanced Search]",
+      "description": "[Find properties with our powerful search filters]"
+    },
+    "booking": {
+      "title": "[Easy Booking]",
+      "description": "[Book your perfect property with just a few clicks]"
+    },
+    "management": {
+      "title": "[Property Management]",
+      "description": "[Manage your properties efficiently with our tools]"
+    },
+    "support": {
+      "title": "[24/7 Support]",
+      "description": "[Get help whenever you need it with our support team]"
+    }
+  },
+  "testimonials": {
+    "title": "[What Our Users Say]",
+    "description": "[Real feedback from real users]"
+  },
+  "newsletter": {
+    "title": "[Stay Updated]",
+    "description": "[Get the latest property updates and offers]",
+    "placeholder": "[Enter your email]",
+    "button": "[Subscribe]"
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "events": {
+    "title": "Events",
+    "subtitle": "Manage events and schedules",
+    "form": {
+      "title": "Event",
+      "add": "Add Event",
+      "edit": "Edit Event",
+      "delete": "Delete Event",
+      "eventName": "Event Name",
+      "title": "Title",
+      "titlePlaceholder": "Enter event title",
+      "description": "Description",
+      "descriptionPlaceholder": "Enter event description",
+      "eventType": "Event Type",
+      "scheduledAt": "Scheduled At",
+      "duration": "Duration",
+      "durationMinutes": "Duration (minutes)",
+      "isActive": "Active",
+      "actions": "Actions",
+      "submit": "Submit",
+      "cancel": "Cancel",
+      "create": "Create Event",
+      "update": "Update Event"
+    },
+    "list": {
+      "title": "Events",
+      "empty": "No events found.",
+      "loading": "Loading events...",
+      "noEventsFound": "No events found",
+      "createFirstEvent": "Create your first event to get started",
+      "viewAll": "View all"
+    },
+    "types": {
+      "viewing": "Viewing",
+      "maintenance": "Maintenance",
+      "inspection": "Inspection",
+      "meeting": "Meeting",
+      "other": "Other"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive",
+      "scheduled": "Scheduled",
+      "completed": "Completed",
+      "cancelled": "Cancelled"
+    },
+    "actions": {
+      "view": "View",
+      "edit": "Edit",
+      "delete": "Delete",
+      "cancel": "Cancel",
+      "reschedule": "Reschedule"
+    },
+    "toast": {
+      "added": {
+        "title": "Event Added",
+        "description": "The event was added successfully."
+      },
+      "updated": {
+        "title": "Event Updated",
+        "description": "The event was updated successfully."
+      },
+      "deleted": {
+        "title": "Event Deleted",
+        "description": "The event was deleted successfully."
+      },
+      "error": {
+        "title": "Error",
+        "description": "An error occurred. Please try again."
+      },
+      "success": {
+        "title": "Success",
+        "description": "Event created successfully"
+      }
+    },
+    "validation": {
+      "titleRequired": "Title is required",
+      "descriptionRequired": "Description is required",
+      "eventTypeRequired": "Event type is required",
+      "scheduledAtRequired": "Scheduled date is required",
+      "durationRequired": "Duration is required",
+      "durationMin": "Duration must be at least 15 minutes",
+      "durationMax": "Duration cannot exceed 480 minutes (8 hours)"
+    },
+    "filters": {
+      "title": "Filter Events",
+      "eventType": "Event Type",
+      "status": "Status",
+      "dateRange": "Date Range",
+      "from": "From",
+      "to": "To",
+      "apply": "Apply Filters",
+      "clear": "Clear Filters"
+    },
+    "details": {
+      "title": "Event Details",
+      "property": "Property",
+      "createdBy": "Created By",
+      "attendees": "Attendees",
+      "duration": "Duration",
+      "startTime": "Start Time",
+      "endTime": "End Time",
+      "notes": "Notes"
+    }
+  }
+}

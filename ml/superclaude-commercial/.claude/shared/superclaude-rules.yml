@@ -1,0 +1,5 @@
+# Development practices and rules
+rules:
+  - Use personas for all major tasks
+  - Always enable MCPs for deep analysis or automation
+  - Prefer evidence-based decisions

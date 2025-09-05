@@ -1,0 +1,99 @@
+{
+  "title": "[Facility]",
+  "description": "[Facility details and management.]",
+  "modals": {
+    "createTitle": "[Create New Facility]",
+    "editTitle": "[Edit Facility]",
+    "deleteTitle": "[Delete Facility]",
+    "deleteConfirm": "[Are you sure you want to delete this facility? This action cannot be undone.]",
+    "importTitle": "[Import Facilities]",
+    "exportTitle": "[Export Facilities]",
+    "importSuccess": "[Facilities have been imported successfully.]",
+    "importFailed": "[Failed to import facilities.]",
+    "exportSuccess": "[Facilities have been exported successfully.]",
+    "exportFailed": "[Failed to export facilities.]",
+    "noFileSelected": "[No file selected]",
+    "pleaseSelectFile": "[Please select a file to import]",
+    "noSelection": "[No Selection]",
+    "pleaseSelectAtLeastOne": "[Please select at least one facility to import]"
+  },
+  "form": {
+    "name": "[Name]",
+    "description": "[Description]",
+    "type": "[Type]",
+    "status": "[Status]",
+    "active": "[Active]",
+    "inactive": "[Inactive]",
+    "draft": "[Draft]",
+    "amenities": "[Amenities]",
+    "locationAmenities": "[Location Amenities]",
+    "facilityAmenities": "[Facility Amenities]",
+    "addFacility": "[Add Facility]",
+    "updateFacility": "[Update Facility]",
+    "createFacility": "[Create Facility]",
+    "saving": "[Saving...]",
+    "creating": "[Creating...]",
+    "updating": "[Updating...]"
+  },
+  "buttons": {
+    "cancel": "[Cancel]",
+    "save": "[Save]",
+    "update": "[Update]",
+    "create": "[Create]",
+    "delete": "[Delete]",
+    "export": "[Export]",
+    "import": "[Import]",
+    "refresh": "[Refresh]",
+    "applyFilters": "[Apply Filters]",
+    "reset": "[Reset]",
+    "backToFacilities": "[Back to Facilities]"
+  },
+  "tabs": {
+    "facilities": "[Facilities]",
+    "expenses": "[Expenses]",
+    "extraCharges": "[Extra Charges]",
+    "includedServices": "[Included Services]"
+  },
+  "sections": {
+    "includedServices": "[Included Services]",
+    "extraCharges": "[Extra Charges]",
+    "manageIncludedServices": "[Manage services included with your facility]",
+    "manageExtraCharges": "[Manage additional charges for your facility]"
+  },
+  "toast": {
+    "success": "[Success]",
+    "error": "[Error]",
+    "facilityCreated": "[Facility created successfully]",
+    "facilityUpdated": "[Facility updated successfully]",
+    "facilityDeleted": "[Facility deleted successfully]",
+    "facilityDeleteFailed": "[Failed to delete facility.]",
+    "includedServiceCreated": "[Included service created successfully]",
+    "includedServiceUpdated": "[Included service updated successfully]",
+    "includedServiceDeleted": "[Included service deleted successfully]",
+    "includedServiceDeleteFailed": "[Failed to delete included service]",
+    "extraChargeCreated": "[Extra charge created successfully]",
+    "extraChargeUpdated": "[Extra charge updated successfully]",
+    "extraChargeDeleted": "[Extra charge deleted successfully]",
+    "extraChargeDeleteFailed": "[Failed to delete extra charge]",
+    "expenseCreated": "[Expense created successfully]",
+    "expenseUpdated": "[Expense updated successfully]",
+    "expenseDeleted": "[Expense deleted successfully]",
+    "expenseDeleteFailed": "[Failed to delete expense]",
+    "importSuccess": "[Facilities have been imported successfully]",
+    "importFailed": "[Failed to import facilities]",
+    "exportSuccess": "[Facilities have been exported successfully]",
+    "exportFailed": "[Failed to export facilities]",
+    "searchComplete": "[Search Complete]",
+    "searchFailed": "[Search Failed]",
+    "searchError": "[Search Error]"
+  },
+  "search": {
+    "search": "[Search]",
+    "searchPlaceholder": "[Search facilities...]",
+    "applyFilters": "[Apply Filters]",
+    "reset": "[Reset]"
+  },
+  "validation": {
+    "required": "[This field is required]"
+  }
+}

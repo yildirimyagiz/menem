@@ -5,13 +5,12 @@ import type {
   Reservation,
 } from "@prisma/client";
 import type { TRPCRouterRecord } from "@trpc/server";
-import { z } from "zod";
-
 import {
   AvailabilityFilterSchema,
   CreateAvailabilitySchema,
   UpdateAvailabilitySchema,
-} from "@acme/validators";
+} from "@reservatior/validators";
+import { z } from "zod";
 
 import { getPaginationParams } from "../helpers/pagination";
 import { withCacheAndFormat } from "../helpers/withCacheAndFormat";
@@ -176,5 +175,16 @@ export const availabilityRouter = {
         }
         throw error;
       }
+    }),
+
+  byProperty: protectedProcedure
+    .input(z.object({ propertyId: z.string() }))
+    .query(async ({ ctx, input }) => {
+      const availabilities = await ctx.db.availability.findMany({
+        where: { propertyId: input.propertyId, deletedAt: null },
+        include: { property: true, reservation: true, pricingRule: true },
+        orderBy: { date: "asc" },
+      });
+      return availabilities.map((a) => sanitizeAvailability(a));
     }),
 } satisfies TRPCRouterRecord;

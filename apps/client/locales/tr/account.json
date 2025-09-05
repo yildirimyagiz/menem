@@ -1,0 +1,86 @@
+{
+  "admin": {
+    "accounts": {
+      "table": {
+        "provider": "Sağlayıcı",
+        "type": "Tür",
+        "accountId": "Hesap ID",
+        "userEmail": "Kullanıcı E-postası",
+        "na": "N/A",
+        "openMenu": "Menüyü aç",
+        "actions": "İşlemler",
+        "filterAccounts": "Hesapları filtrele...",
+        "noResults": "Sonuç bulunamadı."
+      },
+      "types": {
+        "oauth": "OAuth",
+        "email": "E-posta",
+        "oidc": "OIDC",
+        "credentials": "Kimlik Bilgileri",
+        "google": "Google",
+        "facebook": "Facebook"
+      },
+      "filters": {
+        "noResults": "Sonuç bulunamadı.",
+        "clear": "Filtreleri temizle"
+      },
+      "pagination": {
+        "previous": "Önceki",
+        "next": "Sonraki",
+        "showing": "Gösteriliyor",
+        "of": "/",
+        "results": "sonuç"
+      }
+    }
+  },
+  "common": {
+    "edit": "Düzenle",
+    "delete": "Sil",
+    "sort": {
+      "asc": "Artan",
+      "desc": "Azalan",
+      "hide": "Gizle"
+    },
+    "reset": "Sıfırla"
+  },
+  "Admin": {
+    "accounts": {
+      "loading": "Hesaplar yükleniyor...",
+      "errorLoading": "Hesaplar yüklenirken hata",
+      "retry": "Tekrar Deneyin",
+      "title": "Hesap Yönetimi",
+      "description": "Sistemdeki tüm hesapları yönetin ve izleyin",
+      "refresh": "Yenile",
+      "filters": "Filtreler",
+      "export": "Dışa Aktar",
+      "exporting": "Dışa aktarılıyor...",
+      "addAccount": "Hesap Ekle",
+      "totalAccounts": "Toplam Hesaplar",
+      "activeAccounts": "Aktif Hesaplar",
+      "pendingAccounts": "Bekleyen Hesaplar",
+      "suspendedAccounts": "Askıya Alınan Hesaplar",
+      "overview": "Genel Bakış",
+      "accounts": "Hesaplar",
+      "analytics": "Analitik",
+      "settings": "Ayarlar",
+      "reports": "Raporlar",
+      "users": "Kullanıcılar",
+      "agents": "Acenteler",
+      "agencies": "Acenteler",
+      "properties": "Mülkler",
+      "reservations": "Rezervasyonlar",
+      "bookings": "Rezervasyonlar",
+      "payments": "Ödemeler",
+      "invoices": "Faturalar",
+      "security": "Güvenlik",
+      "notifications": "Bildirimler",
+      "preferences": "Tercihler",
+      "help": "Yardım",
+      "support": "Destek",
+      "documentation": "Dokümantasyon",
+      "api": "API",
+      "integrations": "Entegrasyonlar",
+      "webhooks": "Webhook'lar"
+    }
+  }
+} 

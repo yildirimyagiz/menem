@@ -1,0 +1,103 @@
+{
+  "_meta": {
+    "description": "[User-facing strings for the tax records module. Fill with extracted and translated keys from tax records UI.]"
+  },
+  "page": {
+    "title": "[Tax Records]",
+    "create": "[Add Tax Record]"
+  },
+  "form": {
+    "title": "[Tax Record]",
+    "year": "[Year]",
+    "amount": "[Amount]",
+    "percentage": "[Percentage]",
+    "dueDate": "[Due Date]",
+    "notes": "[Notes]",
+    "notesPlaceholder": "[Enter any additional notes...]",
+    "submit": "[Submit]",
+    "update": "[Update]",
+    "validation": {
+      "yearRequired": "[Year is required]",
+      "yearRange": "[Year must be between 2000 and 2100]",
+      "amountRequired": "[Amount is required]",
+      "amountPositive": "[Amount must be positive]",
+      "percentageRequired": "[Percentage is required]",
+      "percentageRange": "[Percentage must be between 0 and 100]",
+      "notesMaxLength": "[Notes cannot exceed 1000 characters]"
+    }
+  },
+  "list": {
+    "loading": "[Loading tax records...]",
+    "noRecords": "[No tax records found]",
+    "noRecordsDescription": "[Create your first tax record to get started]",
+    "headers": {
+      "year": "[Year]",
+      "amount": "[Amount]",
+      "percentage": "[Percentage]",
+      "status": "[Status]",
+      "dueDate": "[Due Date]",
+      "paidDate": "[Paid Date]",
+      "property": "[Property]",
+      "actions": "[Actions]"
+    },
+    "actions": {
+      "view": "[View]",
+      "edit": "[Edit]",
+      "delete": "[Delete]",
+      "markPaid": "[Mark as Paid]"
+    }
+  },
+  "status": {
+    "paid": "[Paid]",
+    "overdue": "[Overdue]",
+    "pending": "[Pending]"
+  },
+  "modal": {
+    "createTitle": "[Add Tax Record]",
+    "editTitle": "[Edit Tax Record]",
+    "viewTitle": "[Tax Record Details]",
+    "close": "[Close]",
+    "save": "[Save]",
+    "cancel": "[Cancel]"
+  },
+  "toast": {
+    "success": {
+      "create": "[Tax record created successfully]",
+      "createDescription": "[Your tax record has been saved.]",
+      "update": "[Tax record updated successfully]",
+      "updateDescription": "[Your tax record has been updated.]",
+      "payment": "[Payment recorded successfully]",
+      "paymentDescription": "[The tax record has been marked as paid.]"
+    },
+    "error": {
+      "create": "[Failed to create tax record]",
+      "update": "[Failed to update tax record]",
+      "payment": "[Failed to record payment]"
+    }
+  },
+  "details": {
+    "year": "[Year: {year}]",
+    "amount": "[Amount: ${amount}]",
+    "percentage": "[Percentage: {percentage}%]",
+    "dueDate": "[Due Date: {date}]",
+    "paidDate": "[Paid Date: {date}]",
+    "status": "[Status: {status}]",
+    "property": "[Property: {name}]",
+    "notes": "[Notes: {notes}]"
+  },
+  "common": {
+    "loading": "[Loading...]",
+    "error": "[Error]",
+    "success": "[Success]",
+    "cancel": "[Cancel]",
+    "save": "[Save]",
+    "delete": "[Delete]",
+    "close": "[Close]",
+    "view": "[View]",
+    "edit": "[Edit]",
+    "confirm": "[Confirm]",
+    "back": "[Back]",
+    "next": "[Next]",
+    "previous": "[Previous]"
+  }
+}

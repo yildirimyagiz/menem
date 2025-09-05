@@ -1,14 +1,13 @@
 import type { HashtagType, Prisma } from "@prisma/client";
 import type { TRPCRouterRecord } from "@trpc/server";
-import { TRPCError } from "@trpc/server";
-import { v4 as uuidv4 } from "uuid";
-import { z } from "zod";
-
 import {
   CreateHashtagSchema,
   HashtagFilterSchema,
   UpdateHashtagSchema,
-} from "@acme/validators";
+} from "@reservatior/validators";
+import { TRPCError } from "@trpc/server";
+import { v4 as uuidv4 } from "uuid";
+import { z } from "zod";
 
 import { getPaginationParams } from "../helpers/pagination";
 import { protectedProcedure } from "../trpc";
@@ -59,11 +58,7 @@ export const hashtagRouter = {
         const safePage =
           typeof input?.page === "number" ? input.page : undefined;
         const safeLimit =
-          typeof input?.limit === "number"
-            ? input.limit
-            : typeof input?.pageSize === "number"
-              ? input.pageSize
-              : undefined;
+          typeof input?.pageSize === "number" ? input.pageSize : undefined;
         const { skip, take, page, limit } = getPaginationParams({
           page: safePage,
           limit: safeLimit,

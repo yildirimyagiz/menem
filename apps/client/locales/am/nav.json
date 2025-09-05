@@ -1,0 +1,25 @@
+{
+  "nav": {
+    "home": "[Home]",
+    "dashboard": "[Dashboard]",
+    "profile": "[Profile]",
+    "settings": "[Settings]",
+    "logout": "[Logout]",
+    "login": "[Login]",
+    "register": "[Register]",
+    "search": "[Search]",
+    "notifications": "[Notifications]",
+    "messages": "[Messages]",
+    "help": "[Help]",
+    "support": "[Support]",
+    "about": "[About]",
+    "contact": "[Contact]",
+    "privacy": "[Privacy]",
+    "terms": "[Terms]",
+    "language": "[Language]",
+    "theme": "[Theme]",
+    "darkMode": "[Dark Mode]",
+    "lightMode": "[Light Mode]",
+    "systemMode": "[System Mode]"
+  }
+}

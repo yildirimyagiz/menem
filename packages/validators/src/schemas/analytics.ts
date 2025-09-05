@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 // Enum for AnalyticsType based on your Prisma schema
-export const AnalyticsTypeEnum = z.enum([
+export const AnalyticsType = z.enum([
   "LISTING_VIEW",
   "BOOKING_CONVERSION",
   "ML_PROPERTY_SCORE",
@@ -10,6 +10,15 @@ export const AnalyticsTypeEnum = z.enum([
   "PERFORMANCE",
   "AGENT_PERFORMANCE",
   "AGENCY_PERFORMANCE",
+  // Tax Analytics Types
+  "TAX_PAYMENT",
+  "TAX_OVERDUE",
+  "TAX_COMPLIANCE",
+  "TAX_REVENUE",
+  "TAX_PERFORMANCE",
+  "TAX_REMINDER",
+  "TAX_AUDIT",
+  "TAX_REPORT"
 ]);
 
 // Analytics Schema
@@ -17,7 +26,7 @@ export const AnalyticsSchema = z.object({
   id: z.string(),
   entityId: z.string(),
   entityType: z.string(),
-  type: AnalyticsTypeEnum,
+  type: AnalyticsType,
   data: z.record(z.unknown()).optional().nullable(), // For JSON data
   timestamp: z.date(),
   deletedAt: z.date().optional().nullable(),
@@ -29,6 +38,7 @@ export const AnalyticsSchema = z.object({
   agencyId: z.string().optional().nullable(),
   reservationId: z.string().optional().nullable(),
   taskId: z.string().optional().nullable(),
+  taxRecordId: z.string().optional().nullable(),
 
   // You might want to include related objects if you fetch them,
   // but for basic validation, IDs are often sufficient.
@@ -38,13 +48,14 @@ export const AnalyticsSchema = z.object({
   // Agency: z.any().optional(),
   // Reservation: z.any().optional(),
   // Task: z.any().optional(),
+  // TaxRecord: z.any().optional(),
 });
 
 // Create Analytics Schema
 export const CreateAnalyticsSchema = z.object({
   entityId: z.string(),
   entityType: z.string(),
-  type: AnalyticsTypeEnum,
+  type: AnalyticsType,
   data: z.record(z.unknown()).optional().nullable(),
   timestamp: z.date().optional(), // Often set by default in DB
 
@@ -55,6 +66,7 @@ export const CreateAnalyticsSchema = z.object({
   agencyId: z.string().optional().nullable(),
   reservationId: z.string().optional().nullable(),
   taskId: z.string().optional().nullable(),
+  taxRecordId: z.string().optional().nullable(),
 });
 
 // Update Analytics Schema (Analytics records are often immutable, but for completeness)
@@ -68,17 +80,18 @@ export const UpdateAnalyticsSchema = z.object({
 export const AnalyticsFilterSchema = z.object({
   entityId: z.string().optional(),
   entityType: z.string().optional(),
-  type: AnalyticsTypeEnum.optional(),
+  type: AnalyticsType.optional(),
   propertyId: z.string().optional(),
   userId: z.string().optional(),
   agentId: z.string().optional(),
   agencyId: z.string().optional(),
+  taxRecordId: z.string().optional(),
   startDate: z.date().optional(),
   endDate: z.date().optional(),
   sortBy: z.enum(["timestamp", "type", "entityType"]).optional(),
   sortOrder: z.enum(["asc", "desc"]).optional(),
-  page: z.number().min(1).optional(),
-  pageSize: z.number().min(1).max(100).optional(),
+  page: z.number().min(1).default(1),
+  pageSize: z.number().min(1).max(100).default(10),
 });
 
 // Zod Type Inference for TypeScript

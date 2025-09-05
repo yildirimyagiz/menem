@@ -1,0 +1,74 @@
+{
+  "Admin": {
+    "noUsersFound": "No users found. Get started by adding your first user!",
+    "addFirstUser": "Add First User",
+    "userManagement": "User Management",
+    "userManagementDescription": "Manage and view all your users",
+    "addNewUser": "Add New User",
+    "searchUsers": "Search users...",
+    "search": "Search",
+    "showingResults": "Showing {start}-{end} of {total} results",
+    "previous": "Previous",
+    "next": "Next",
+    "name": "Name",
+    "role": "Role",
+    "actions": "Actions",
+    "viewDetails": "View Details",
+    "editUser": "Edit User",
+    "deleteUser": "Delete User",
+    "addUser": {
+      "title": "Add a New User",
+      "description": "Fill out the form below to add a new user to your system. All required fields are marked with *.",
+      "closeAria": "Close add user form",
+      "success": "User created successfully!",
+      "error": "Failed to create user",
+      "submit": "Add User",
+      "submitting": "Adding User...",
+      "validation": {
+        "nameRequired": "Name is required",
+        "emailRequired": "Email is required",
+        "emailInvalid": "Please enter a valid email"
+      },
+      "fields": {
+        "nameLabel": "Name",
+        "namePlaceholder": "Enter user's full name",
+        "emailLabel": "Email",
+        "emailPlaceholder": "Enter user's email address",
+        "roleLabel": "Role",
+        "rolePlaceholder": "Select role",
+        "typeLabel": "Type",
+        "typePlaceholder": "Select type",
+        "statusLabel": "Status",
+        "statusPlaceholder": "Select status",
+        "phoneLabel": "Phone Number",
+        "phonePlaceholder": "Enter phone number",
+        "firstNameLabel": "First Name",
+        "firstNamePlaceholder": "Enter first name",
+        "lastNameLabel": "Last Name",
+        "lastNamePlaceholder": "Enter last name",
+        "displayNameLabel": "Display Name",
+        "displayNamePlaceholder": "Enter display name",
+        "usernameLabel": "Username",
+        "usernamePlaceholder": "Enter username",
+        "isActiveLabel": "User is active"
+      }
+    },
+    "sidebar": {
+      "closeAria": "Close sidebar",
+      "close": "Close",
+      "form": {
+        "name": "Name",
+        "email": "Email"
+      },
+      "view": {
+        "name": "Name:",
+        "email": "Email:"
+      },
+      "actions": {
+        "save": "Save",
+        "cancel": "Cancel",
+        "edit": "Edit"
+      }
+    }
+  }
+}

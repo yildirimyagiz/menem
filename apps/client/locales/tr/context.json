@@ -1,0 +1,74 @@
+{
+  "context": {
+    "language": {
+      "title": "Dil Seçimi",
+      "description": "Tercih ettiğiniz dili seçin",
+      "currentLanguage": "Mevcut Dil",
+      "changeLanguage": "Dili Değiştir",
+      "languages": {
+        "en": "İngilizce",
+        "zh": "Çince",
+        "es": "İspanyolca",
+        "ar": "Arapça",
+        "hi": "Hintçe",
+        "fr": "Fransızca",
+        "tr": "Türkçe",
+        "fa": "Farsça",
+        "de": "Almanca",
+        "ja": "Japonca",
+        "it": "İtalyanca",
+        "ru": "Rusça"
+      }
+    },
+    "currency": {
+      "title": "Para Birimi Seçimi",
+      "description": "Tercih ettiğiniz para birimini seçin",
+      "currentCurrency": "Mevcut Para Birimi",
+      "changeCurrency": "Para Birimini Değiştir",
+      "currencies": {
+        "USD": "Amerikan Doları",
+        "EUR": "Euro",
+        "GBP": "İngiliz Sterlini",
+        "CAD": "Kanada Doları",
+        "AUD": "Avustralya Doları",
+        "JPY": "Japon Yeni",
+        "CNY": "Çin Yuanı",
+        "INR": "Hint Rupisi"
+      }
+    },
+    "chat": {
+      "title": "Sohbet Sistemi",
+      "description": "Gerçek zamanlı mesajlaşma ve destek",
+      "openChat": "Sohbeti Aç",
+      "closeChat": "Sohbeti Kapat",
+      "minimizeChat": "Sohbeti Küçült",
+      "maximizeChat": "Sohbeti Büyüt",
+      "unreadMessages": "Okunmamış Mesajlar",
+      "online": "Çevrimiçi",
+      "offline": "Çevrimdışı",
+      "away": "Uzakta",
+      "typing": "yazıyor...",
+      "lastSeen": "Son görülme",
+      "sendMessage": "Mesaj Gönder",
+      "messagePlaceholder": "Mesajınızı yazın...",
+      "connecting": "Bağlanıyor...",
+      "connected": "Bağlandı",
+      "disconnected": "Bağlantı Kesildi",
+      "reconnecting": "Yeniden Bağlanıyor...",
+      "connectionError": "Bağlantı Hatası",
+      "supportAgent": "Destek Temsilcisi",
+      "startConversation": "Konuşma Başlat",
+      "endConversation": "Konuşmayı Sonlandır"
+    },
+    "sidebar": {
+      "title": "Kenar Çubuğu Navigasyonu",
+      "description": "Navigasyon ve düzen kontrolleri",
+      "collapse": "Kenar Çubuğunu Daralt",
+      "expand": "Kenar Çubuğunu Genişlet",
+      "toggle": "Kenar Çubuğunu Aç/Kapat",
+      "mobileMenu": "Mobil Menü",
+      "closeMobileMenu": "Mobil Menüyü Kapat",
+      "openMobileMenu": "Mobil Menüyü Aç"
+    }
+  }
+} 

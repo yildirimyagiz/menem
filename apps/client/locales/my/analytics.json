@@ -1,0 +1,145 @@
+{
+  "Analytics": {
+    "title": "[Analytics]",
+    "description": "[Comprehensive analytics and insights for your platform]",
+    "loading": "[Loading analytics...]",
+    "error": {
+      "loading": "[Error loading analytics]"
+    },
+    "retry": "[Try Again]",
+    "refresh": "[Refresh]",
+    "export": "[Export]",
+    "overview": "[Overview]",
+    "settingsDescription": "[Configure analytics settings and preferences]",
+    "quickActions": "[Quick Actions]",
+    "filters": {
+      "search": "[Search]",
+      "searchPlaceholder": "[Search analytics...]",
+      "type": "[Type]",
+      "allTypes": "[All Types]",
+      "entityType": "[Entity Type]",
+      "allEntities": "[All Entities]",
+      "dateRange": "[Date Range]",
+      "startDate": "[Start Date]",
+      "endDate": "[End Date]"
+    },
+    "types": {
+      "LISTING_VIEW": "[Listing View]",
+      "BOOKING_CONVERSION": "[Booking Conversion]",
+      "ML_PROPERTY_SCORE": "[ML Property Score]",
+      "USER_ENGAGEMENT": "[User Engagement]",
+      "REVENUE": "[Revenue]",
+      "PERFORMANCE": "[Performance]",
+      "AGENT_PERFORMANCE": "[Agent Performance]",
+      "AGENCY_PERFORMANCE": "[Agency Performance]"
+    },
+    "entityTypes": {
+      "property": "[Property]",
+      "user": "[User]",
+      "agent": "[Agent]",
+      "agency": "[Agency]",
+      "reservation": "[Reservation]",
+      "task": "[Task]"
+    },
+    "metrics": {
+      "totalRecords": "[Total Records]",
+      "averagePerDay": "[Average Per Day]",
+      "uniqueTypes": "[Unique Types]",
+      "growthRate": "[Growth Rate]"
+    },
+    "chart": {
+      "title": "[Analytics Charts]",
+      "description": "[Visual representation of analytics data]",
+      "noData": "[No data available]",
+      "analyticsOverTime": "[Analytics Over Time]",
+      "totalRecords": "[Total Records]",
+      "uniqueTypes": "[Unique Types]",
+      "avgPerDay": "[Avg Per Day]",
+      "totalAnalytics": "[Total Analytics]",
+      "inDateRange": "[in date range]",
+      "differentAnalyticsTypes": "[different analytics types]",
+      "averageDailyRecords": "[average daily records]"
+    },
+    "table": {
+      "title": "[Analytics Data]",
+      "description": "[Detailed analytics records]",
+      "totalRecords": "[total records]",
+      "type": "[Type]",
+      "entity": "[Entity]",
+      "relatedTo": "[Related To]",
+      "timestamp": "[Timestamp]",
+      "data": "[Data]",
+      "actions": "[Actions]",
+      "noData": "[No analytics data found]",
+      "confirmDelete": "[Are you sure you want to delete this analytics record?]",
+      "viewDetails": "[View Details]",
+      "delete": "[Delete]",
+      "showing": "[Showing]",
+      "of": "[of]",
+      "results": "[results]",
+      "previous": "[Previous]",
+      "next": "[Next]"
+    },
+    "settings": {
+      "general": "[General Settings]",
+      "trackingSettings": "[Tracking Settings]",
+      "chartSettings": "[Chart Settings]",
+      "exportSettings": "[Export Settings]",
+      "security": "[Security Settings]",
+      "dataRetention": "[Data Retention]",
+      "accessControl": "[Access Control]"
+    },
+    "summary": {
+      "totalUsers": "[Total Users]",
+      "activeProperties": "[Active Properties]",
+      "revenue": "[Revenue]",
+      "bookings": "[Bookings]"
+    },
+    "user": {
+      "error": "[Error]",
+      "loginRequired": "[Login Required]",
+      "title": "[Title]",
+      "totalUsers": "[Total Users]",
+      "activeUsers": "[Active Users]",
+      "newUsers": "[New Users]",
+      "avgSession": "[Avg Session]",
+      "topPages": "[Top Pages]",
+      "views": "[Views]",
+      "noData": "[No Data]"
+    },
+    "property": {
+      "error": "[Error]",
+      "loginRequired": "[Login Required]",
+      "title": "[Title]",
+      "count": "[Count]",
+      "avgPrice": "[Avg Price]",
+      "views": "[Views]",
+      "inquiries": "[Inquiries]"
+    },
+    "performance": {
+      "title": "[Title]",
+      "metric": {
+        "responseTime": "[Response Time]",
+        "uptime": "[Uptime]"
+      }
+    },
+    "testData": {
+      "title": "[Title]",
+      "status": "[Status]",
+      "generating": "[Generating]",
+      "generate": "[Generate]"
+    },
+    "errorLoading": "[Error Loading]",
+    "tryAgain": "[Try Again]",
+    "loginRequired": "[Login Required]",
+    "last30days": "[Last 30 Days]",
+    "trend": {
+      "up": "[Trending Up]",
+      "down": "[Trending Down]",
+      "stable": "[Stable]"
+    },
+    "noData": "[No Data]",
+    "details": "[Details]",
+    "share": "[Share]"
+  }
+}

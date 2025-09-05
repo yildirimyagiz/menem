@@ -1,0 +1,24 @@
+{
+  "language": {
+    "title": "[Language]",
+    "noCurrencies": "[No currencies available.]"
+  },
+  "currency": {
+    "title": "[Currency]"
+  },
+  "languages": {
+    "en": "[English]",
+    "tr": "[Turkish]",
+    "zh": "[Chinese]",
+    "es": "[Spanish]",
+    "ar": "[Arabic]",
+    "hi": "[Hindi]",
+    "fr": "[French]",
+    "fa": "[Persian]",
+    "de": "[German]",
+    "ja": "[Japanese]",
+    "it": "[Italian]",
+    "ru": "[Russian]",
+    "th": "[Thai]"
+  }
+}

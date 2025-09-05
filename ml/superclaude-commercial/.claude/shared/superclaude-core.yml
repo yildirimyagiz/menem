@@ -1,0 +1,11 @@
+# Core philosophy, standards, and workflows
+philosophy: |
+  Evidence-based development with security, performance, and quality as core principles.
+standards:
+  - Clean code
+  - Test-driven development
+  - Continuous integration
+workflows:
+  - MVP-first
+  - Persona-driven AI
+  - Automated analysis

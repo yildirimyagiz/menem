@@ -1,0 +1,74 @@
+{
+  "context": {
+    "language": {
+      "title": "Language Selection",
+      "description": "Choose your preferred language",
+      "currentLanguage": "Current Language",
+      "changeLanguage": "Change Language",
+      "languages": {
+        "en": "English",
+        "zh": "中文",
+        "es": "Español",
+        "ar": "العربية",
+        "hi": "हिन्दी",
+        "fr": "Français",
+        "tr": "Türkçe",
+        "fa": "فارسی",
+        "de": "Deutsch",
+        "ja": "日本語",
+        "it": "Italiano",
+        "ru": "Русский"
+      }
+    },
+    "currency": {
+      "title": "Currency Selection",
+      "description": "Choose your preferred currency",
+      "currentCurrency": "Current Currency",
+      "changeCurrency": "Change Currency",
+      "currencies": {
+        "USD": "US Dollar",
+        "EUR": "Euro",
+        "GBP": "British Pound",
+        "CAD": "Canadian Dollar",
+        "AUD": "Australian Dollar",
+        "JPY": "Japanese Yen",
+        "CNY": "Chinese Yuan",
+        "INR": "Indian Rupee"
+      }
+    },
+    "chat": {
+      "title": "Chat System",
+      "description": "Real-time messaging and support",
+      "openChat": "Open Chat",
+      "closeChat": "Close Chat",
+      "minimizeChat": "Minimize Chat",
+      "maximizeChat": "Maximize Chat",
+      "unreadMessages": "Unread Messages",
+      "online": "Online",
+      "offline": "Offline",
+      "away": "Away",
+      "typing": "typing...",
+      "lastSeen": "Last seen",
+      "sendMessage": "Send Message",
+      "messagePlaceholder": "Type your message...",
+      "connecting": "Connecting...",
+      "connected": "Connected",
+      "disconnected": "Disconnected",
+      "reconnecting": "Reconnecting...",
+      "connectionError": "Connection Error",
+      "supportAgent": "Support Agent",
+      "startConversation": "Start Conversation",
+      "endConversation": "End Conversation"
+    },
+    "sidebar": {
+      "title": "Sidebar Navigation",
+      "description": "Navigation and layout controls",
+      "collapse": "Collapse Sidebar",
+      "expand": "Expand Sidebar",
+      "toggle": "Toggle Sidebar",
+      "mobileMenu": "Mobile Menu",
+      "closeMobileMenu": "Close Mobile Menu",
+      "openMobileMenu": "Open Mobile Menu"
+    }
+  }
+} 

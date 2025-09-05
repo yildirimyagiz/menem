@@ -1,14 +1,13 @@
-import { randomUUID } from "crypto";
-import type { Prisma } from "@prisma/client";
-import type { TRPCRouterRecord } from "@trpc/server";
-import { TRPCError } from "@trpc/server";
-import { z } from "zod";
-
+import { Prisma } from "@prisma/client";
 import {
   CreateEventSchema,
   EventFilterSchema,
   UpdateEventSchema,
-} from "@acme/validators";
+} from "@reservatior/validators";
+import type { TRPCRouterRecord } from "@trpc/server";
+import { TRPCError } from "@trpc/server";
+import { randomUUID } from "crypto";
+import { z } from "zod";
 
 import { getPaginationParams } from "../helpers/pagination";
 import { withCacheAndFormat } from "../helpers/withCacheAndFormat";
@@ -74,9 +73,9 @@ const sanitizeEvent = (
     createdAt,
     updatedAt,
     deletedAt,
-    Property: Property ?? null,
+    Property,
     createdBy: createdBy ?? null,
-    attendees: attendees ?? [],
+    attendees,
   };
 };
 
@@ -110,11 +109,8 @@ export const eventRouter = {
       if (scheduledAtTo !== undefined)
         cacheKeyParts.push(`scheduledAtTo=${scheduledAtTo.toISOString()}`);
       if (isActive !== undefined) cacheKeyParts.push(`isActive=${isActive}`);
-      if (deletedAt !== undefined && deletedAt !== null) {
-        // Handle null specifically if it means "not deleted" vs "any"
+      if (deletedAt !== undefined) {
         cacheKeyParts.push(`deletedAt=${deletedAt.toISOString()}`);
-      } else if (deletedAt === null) {
-        cacheKeyParts.push(`deletedAt=null`);
       }
       if (sortBy !== undefined) cacheKeyParts.push(`sortBy=${sortBy}`);
       if (sortOrder !== undefined) cacheKeyParts.push(`sortOrder=${sortOrder}`);
@@ -123,7 +119,7 @@ export const eventRouter = {
       const cacheKey = `events:${dynamicCacheKeyPart}`;
 
       return withCacheAndFormat(cacheKey, async () => {
-        const where = {
+        const where: Prisma.EventWhereInput = {
           propertyId: input?.propertyId,
           eventType: input?.eventType,
           createdById: input?.createdById,
@@ -137,7 +133,7 @@ export const eventRouter = {
           isActive: input?.isActive,
           // If input.deletedAt is undefined, we might want to filter for non-deleted items by default.
           // If input.deletedAt is null, it means explicitly filter for non-deleted.
-          deletedAt: input?.deletedAt === undefined ? null : input.deletedAt,
+          deletedAt: input?.deletedAt ?? null,
         };
         const [events, total] = await Promise.all([
           ctx.db.event.findMany({
@@ -258,10 +254,8 @@ export const eventRouter = {
         return sanitizeEvent(event);
       } catch (error: unknown) {
         if (
-          typeof error === "object" &&
-          error !== null &&
-          "code" in error &&
-          error.code === "P2025" // Prisma error: "Record to update not found."
+          error instanceof Prisma.PrismaClientKnownRequestError &&
+          error.code === "P2025"
         ) {
           throw new TRPCError({
             code: "NOT_FOUND",
@@ -304,10 +298,8 @@ export const eventRouter = {
         return sanitizeEvent(event);
       } catch (error: unknown) {
         if (
-          typeof error === "object" &&
-          error !== null &&
-          "code" in error &&
-          error.code === "P2025" // Prisma error: "Record to update/delete not found."
+          error instanceof Prisma.PrismaClientKnownRequestError &&
+          error.code === "P2025"
         ) {
           throw new TRPCError({
             code: "NOT_FOUND",

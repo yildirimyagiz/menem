@@ -1,0 +1,211 @@
+{
+  "Admin": {
+    "agencies": {
+      "loading": "Loading agencies...",
+
+      "retry": "Retry",
+      "title": "Agency Management",
+      "description": "Manage and monitor all agencies in the system",
+      "refresh": "Refresh",
+      "filters": "Filters",
+      "export": "Export",
+      "exporting": "Exporting...",
+      "addAgency": "Add Agency",
+      "totalAgencies": "Total Agencies",
+      "activeAgencies": "Active Agencies",
+      "pendingAgencies": "Pending Agencies",
+      "suspendedAgencies": "Suspended Agencies",
+      "overview": "Overview",
+      "agencies": "Agencies",
+      "analytics": "Analytics",
+      "settings": "Settings",
+      "recentActivity": "Recent Activity",
+      "recentActivityDescription": "Latest agency activities and changes",
+      "unknownAgency": "Unknown Agency",
+      "inactive": "Inactive",
+      "quickActions": "Quick Actions",
+      "createNewAgency": "Create New Agency",
+      "exportData": "Export Data",
+      "refreshData": "Refresh Data",
+      "agencyManagement": "Agency Management",
+      "agencyManagementDescription": "Manage all agencies in the system",
+      "analyticsDashboard": "Analytics Dashboard",
+      "analyticsDashboardDescription": "Comprehensive analytics and insights",
+      "agencyGrowth": "Agency Growth",
+      "statusDistribution": "Status Distribution",
+      "monthlyGrowth": "Monthly Growth",
+      "newAgencies": "New Agencies",
+      "trendAnalysis": "Trend Analysis",
+      "agencySettings": "Agency Settings",
+      "agencySettingsDescription": "Configure agency management settings",
+      "generalSettings": "General Settings",
+      "autoApproval": "Auto Approval",
+      "disabled": "Disabled",
+      "enabled": "Enabled",
+      "emailNotifications": "Email Notifications",
+      "dataRetentionPeriod": "Data Retention Period",
+      "days": "days",
+      "securitySettings": "Security Settings",
+      "twoFactorAuthentication": "Two-Factor Authentication",
+      "required": "Required",
+      "sessionTimeout": "Session Timeout",
+      "minutes": "minutes",
+      "apiRateLimiting": "API Rate Limiting",
+      "success": "Success",
+      "agencyCreated": "Agency created successfully",
+      "agencyUpdated": "Agency updated successfully",
+      "agencyDeleted": "Agency deleted successfully",
+      "filterAgencies": "Filter Agencies",
+      "filterDescription": "Apply filters to narrow down the agency list",
+      "table": {
+        "search": {
+          "placeholder": "Search agencies..."
+        },
+        "columns": {
+          "selectAll": "Select all rows",
+          "name": "Name",
+          "description": "Description",
+          "noDescription": "No description",
+          "email": "Email",
+          "noEmail": "No email",
+          "phone": "Phone",
+          "noPhone": "No phone",
+          "status": "Status",
+          "statusOptions": {
+            "PENDING": "Pending",
+            "ACTIVE": "Active",
+            "SUSPENDED": "Suspended"
+          },
+          "active": "Active",
+          "inactive": "Inactive",
+          "agents": "Agents",
+          "properties": "Properties",
+          "users": "Users",
+          "subscriptions": "Subscriptions",
+          "createdAt": "Created At",
+          "unknownDate": "Unknown",
+          "actions": "Actions"
+        },
+        "toolbar": {
+          "filters": "Filters",
+          "export": "Export",
+          "reset": "Reset"
+        },
+        "pagination": {
+          "showing": "Showing",
+          "of": "of",
+          "results": "results",
+          "firstPage": "First page",
+          "previousPage": "Previous page",
+          "page": "Page",
+          "nextPage": "Next page",
+          "lastPage": "Last page"
+        }
+      },
+      "createModal": {
+        "title": "Create New Agency",
+        "description": "Add a new agency to the system. Fill in the required information below.",
+        "fields": {
+          "name": "Name",
+          "namePlaceholder": "Enter agency name",
+          "description": "Description",
+          "descriptionPlaceholder": "Enter agency description",
+          "email": "Email",
+          "emailPlaceholder": "Enter email address",
+          "phone": "Phone",
+          "phonePlaceholder": "Enter phone number",
+          "address": "Address",
+          "addressPlaceholder": "Enter address",
+          "website": "Website",
+          "websitePlaceholder": "Enter website URL",
+          "logoUrl": "Logo URL",
+          "logoUrlPlaceholder": "Enter logo URL",
+          "status": "Status",
+          "statusOptions": {
+            "PENDING": "Pending",
+            "ACTIVE": "Active",
+            "SUSPENDED": "Suspended"
+          },
+          "isActive": "Active Status",
+          "active": "Active",
+          "inactive": "Inactive"
+        },
+        "errors": {
+          "nameRequired": "Name is required.",
+          "invalidEmail": "Invalid email address."
+        },
+        "success": {
+          "title": "Agency Created",
+          "description": "The agency was created successfully."
+        },
+        "error": {
+          "title": "Error",
+          "description": "Failed to create agency."
+        },
+        "cancel": "Cancel",
+        "creating": "Creating...",
+        "create": "Create Agency"
+      },
+      "editModal": {
+        "success": {
+          "title": "Agency Updated",
+          "description": "The agency was updated successfully."
+        },
+        "error": {
+          "title": "Error",
+          "description": "Failed to update agency."
+        }
+      },
+      "deleteModal": {
+        "title": "Delete Agency",
+        "description": "Are you sure you want to delete this agency? This action cannot be undone.",
+        "warning": {
+          "title": "This action is irreversible",
+          "description": "This will permanently remove the agency from the system. All associated data will be marked as deleted but may be retained for audit purposes."
+        },
+        "success": {
+          "title": "Agency Deleted",
+          "description": "The agency was deleted successfully."
+        },
+        "error": {
+          "title": "Error",
+          "description": "Failed to delete agency."
+        },
+        "cancel": "Cancel",
+        "deleting": "Deleting...",
+        "delete": "Delete Agency"
+      },
+      "filterForm": {
+        "activeFilters": "Active Filters",
+        "clearAll": "Clear All",
+        "badges": {
+          "search": "Search",
+          "status": "Status",
+          "activeStatus": "Active Status",
+          "active": "Active",
+          "inactive": "Inactive"
+        },
+        "searchLabel": "Search",
+        "searchPlaceholder": "Search agencies...",
+        "statusLabel": "Status",
+        "statusPlaceholder": "Select status",
+        "allStatuses": "All Statuses",
+        "statusOptions": {
+          "PENDING": "Pending",
+          "ACTIVE": "Active",
+          "SUSPENDED": "Suspended"
+        },
+        "activeStatusLabel": "Active Status",
+        "activeStatusPlaceholder": "Select active status",
+        "allAgencies": "All Agencies",
+        "active": "Active",
+        "inactive": "Inactive",
+        "reset": "Reset",
+        "apply": "Apply Filters"
+      },
+      "errorLoading": "Error loading data",
+      "noData": "No data available",
+      "noDataDescription": "No records found matching your criteria"
+    }
+  }
+}

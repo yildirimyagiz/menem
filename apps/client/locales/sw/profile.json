@@ -1,0 +1,15 @@
+{
+  "Profile": {
+    "title": "[Profile]",
+    "description": "[Manage your profile information]",
+    "personalInfo": "[Personal Information]",
+    "accountSettings": "[Account Settings]",
+    "security": "[Security]",
+    "preferences": "[Preferences]",
+    "saveChanges": "[Save Changes]",
+    "cancel": "[Cancel]",
+    "loading": "[Loading...]",
+    "success": "[Profile updated successfully]",
+    "error": "[Failed to update profile]"
+  }
+}

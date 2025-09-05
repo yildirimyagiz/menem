@@ -1,0 +1,27 @@
+{
+  "Welcome": {
+    "category": {
+      "discover": {
+        "step1": "1. Adım",
+        "step2": "2. Adım",
+        "step3": "3. Adım"
+      },
+      "connect": {
+        "step1": "1. Adım",
+        "step2": "2. Adım",
+        "step3": "3. Adım"
+      },
+      "manage": {
+        "step1": "1. Adım",
+        "step2": "2. Adım",
+        "step3": "3. Adım"
+      }
+    },
+    "title": "Hoşgeldiniz",
+    "intro": "Hoşgeldiniz",
+    "signIn": "Giriş Yap",
+    "signUp": "Kayıt Ol",
+    "exploreGuest": "Keşfedin",
+    "copyright": "Telif Hakkı"
+  }
+}

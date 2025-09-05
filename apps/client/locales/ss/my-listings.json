@@ -1,0 +1,38 @@
+{
+  "title": "[My Listings]",
+  "description": "[Your property listings.]",
+  "stats": {
+    "activeListings": "[Active Listings]",
+    "featuredListings": "[Featured Listings]",
+    "averageRating": "[Average Rating]",
+    "totalViews": "[Total Views]"
+  },
+  "filters": {
+    "searchPlaceholder": "[Search listings by title, location, or type...]",
+    "status": "[Status]",
+    "propertyType": "[Property Type]",
+    "all": "[All]",
+    "active": "[Active]",
+    "inactive": "[Inactive]",
+    "featured": "[Featured]"
+  },
+  "property": {
+    "view": "[View]",
+    "edit": "[Edit]",
+    "bathrooms": "[baths]",
+    "bedrooms": "[beds]",
+    "size": "[sqft]",
+    "rating": "[rating]"
+  },
+  "pagination": {
+    "previous": "[Previous]",
+    "next": "[Next]"
+  },
+  "empty": {
+    "noListings": "[No listings found.]",
+    "noResults": "[No results match your search.]"
+  },
+  "error": {
+    "loadFailed": "[Failed to load listings. Please try again.]"
+  }
+}

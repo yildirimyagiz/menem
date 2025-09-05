@@ -1,14 +1,21 @@
 import type {
+  Account,
   DefaultSession,
-  NextAuthConfig,
+  NextAuthOptions,
   Session as NextAuthSession,
+  Profile,
+  User,
 } from "next-auth";
+import type { AdapterUser } from "next-auth/adapters";
 import { skipCSRFCheck } from "@auth/core";
-import Google from "next-auth/providers/google";
-import type { Provider } from "next-auth/providers";
-import { CustomPrismaAdapter } from "./adapter";
+import * as jwt from "jsonwebtoken";
+import GoogleProviderImport from "next-auth/providers/google";
 
 import { env } from "../env";
+import { CustomPrismaAdapter } from "./adapter";
+
+const GoogleProvider =
+  (GoogleProviderImport as any).default || GoogleProviderImport;
 
 declare module "next-auth" {
   interface Session {
@@ -18,13 +25,15 @@ declare module "next-auth" {
   }
 }
 
+// Add explicit types to all destructured callback parameters below (if any exist in the rest of the file).
+
 const adapter = CustomPrismaAdapter();
 
 export const isSecureContext = env.NODE_ENV !== "development";
 
 export const authConfig = {
   adapter,
-  // In development, we need to skip checks to allow Expo to work
+  // In development, we need to skip checks to allow mobile apps to work
   ...(!isSecureContext
     ? {
         skipCSRFCheck: skipCSRFCheck,
@@ -33,28 +42,55 @@ export const authConfig = {
     : {}),
   secret: env.AUTH_SECRET,
   pages: {
-    signIn: "/login",
-    error: "/auth/error",
+    signIn: "/[locale]/auth/login",
+    error: "/[locale]/auth/error",
   },
   events: {
-    async linkAccount({ user, account, profile }) {
+    async linkAccount({
+      user,
+      account,
+      profile,
+    }: {
+      user: User | AdapterUser;
+      account: Account;
+      profile: User | AdapterUser;
+    }) {
+      if (!account || !profile) return;
       // Handle account linking when signing in with a provider
       // that's already linked to another account
       if (account.provider === "google") {
         // You can add custom logic here if needed
-        console.log("Account linked:", { userId: user.id, provider: account.provider });
+        console.log("Account linked:", {
+          userId: user.id,
+          provider: account.provider,
+        });
       }
     },
   },
   providers: [
-    Google({
-      clientId: env.AUTH_GOOGLE_ID,
-      clientSecret: env.AUTH_GOOGLE_SECRET,
-      allowDangerousEmailAccountLinking: true, // Allow linking accounts with the same email
-    }),
+    // Only enable Google OAuth if credentials are provided
+    ...(env.AUTH_GOOGLE_ID && env.AUTH_GOOGLE_SECRET
+      ? [
+          GoogleProvider({
+            clientId: env.AUTH_GOOGLE_ID,
+            clientSecret: env.AUTH_GOOGLE_SECRET,
+            allowDangerousEmailAccountLinking: true,
+          }),
+        ]
+      : []),
   ],
   callbacks: {
-    async signIn({ user: _user, account, profile: _profile }) {
+    async signIn({
+      user,
+      account,
+      profile,
+    }: {
+      user: User | AdapterUser;
+      account: Account | null;
+      profile?: Profile;
+    }) {
+      if (!user) return false; // Add null check for user
+      // Optionally add null checks for account/profile if you use them
       // Allow sign in if it's a Google OAuth account
       if (account?.provider === "google") {
         return true;
@@ -62,7 +98,11 @@ export const authConfig = {
       // For other providers or email/password, proceed with normal sign in
       return true;
     },
-    session: (opts) => {
+    session: (opts: {
+      session: NextAuthSession;
+      user?: User | AdapterUser;
+    }) => {
+      if (!opts.user) throw new Error("unreachable with session strategy");
       if (!("user" in opts))
         throw new Error("unreachable with session strategy");
 
@@ -71,29 +111,70 @@ export const authConfig = {
         user: {
           ...opts.session.user,
           id: opts.user.id,
-      role: (opts.user as any).role, // Add role from the database if present
+          role: (opts.user as any).role, // Add role from the database if present
         },
       };
     },
   },
-} satisfies NextAuthConfig;
+} satisfies NextAuthOptions;
 
+/**
+ * Validates a session token by first verifying its JWT signature and then checking the database.
+ * @param token The JWT token to validate (with or without 'Bearer ' prefix)
+ * @returns The session if valid, null otherwise
+ */
 export const validateToken = async (
   token: string,
 ): Promise<NextAuthSession | null> => {
-  const sessionToken = token.slice("Bearer ".length);
-  const session = await adapter.getSessionAndUser?.(sessionToken);
-  return session
-    ? {
-        user: {
-          ...session.user,
-        },
-        expires: session.session.expires.toISOString(),
-      }
-    : null;
+  try {
+    // Remove 'Bearer ' prefix if present
+    const sessionToken = token.startsWith("Bearer ") ? token.slice(7) : token;
+
+    // First verify the JWT signature
+    const secret = env.AUTH_SECRET ?? "dev-secret";
+
+    try {
+      // This will throw if the token is invalid or expired
+      jwt.verify(sessionToken, secret, { ignoreExpiration: false });
+    } catch (error) {
+      console.warn("JWT verification failed:", error);
+      return null;
+    }
+
+    // Then check the session in the database
+    const session = await adapter.getSessionAndUser?.(sessionToken);
+
+    if (!session) {
+      return null;
+    }
+
+    // Verify the session hasn't expired
+    if (new Date(session.session.expires) < new Date()) {
+      await adapter.deleteSession?.(sessionToken);
+      return null;
+    }
+
+    return {
+      user: {
+        ...session.user,
+      },
+      expires: session.session.expires.toISOString(),
+    };
+  } catch (error) {
+    console.warn("Token validation failed:", error);
+    return null;
+  }
 };
 
+/**
+ * Invalidates a session token by removing it from the database
+ * @param token The JWT token to invalidate (with or without 'Bearer ' prefix)
+ */
 export const invalidateSessionToken = async (token: string) => {
-  const sessionToken = token.slice("Bearer ".length);
-  await adapter.deleteSession?.(sessionToken);
+  try {
+    const sessionToken = token.startsWith("Bearer ") ? token.slice(7) : token;
+    await adapter.deleteSession?.(sessionToken);
+  } catch (error) {
+    console.warn("Failed to invalidate session token:", error);
+  }
 };

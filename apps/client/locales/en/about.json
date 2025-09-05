@@ -1,0 +1,26 @@
+{
+  "About": {
+    "heading": "👋 About Us.",
+    "heroButton": "Learn More",
+    "subHeading": "We're impartial and independent, and every day we create distinctive, world-class programmes and content which inform, educate and entertain millions of people in the around the world."
+  },
+  "about": {
+    "hero": {
+      "title": "About Us",
+      "subtitle": "We're impartial and independent, and every day we create distinctive, world-class programmes and content which inform, educate and entertain millions of people in the around the world.",
+      "button": "Learn More"
+    },
+    "founder": {
+      "title": "Our Founders",
+      "description": "Meet the team behind Reservatior"
+    },
+    "statistics": {
+      "title": "Our Impact",
+      "description": "Numbers that tell our story"
+    },
+    "testimonials": {
+      "title": "What Our Clients Say",
+      "description": "Real feedback from real people"
+    }
+  }
+} 

@@ -1,0 +1,28 @@
+{
+  "dashboard": {
+    "welcome": {
+      "title": "[Welcome to the Admin Dashboard]",
+      "description": "[Here you can manage properties, users, tasks, and view analytics at a glance.]"
+    },
+    "stats": {
+      "totalProperties": "[Total Properties]",
+      "activeUsers": "[Active Users]",
+      "payments": "[Payments]",
+      "openTasks": "[Open Tasks]",
+      "weeklyChange": "[+{count} this week]",
+      "weeklyDecrease": "[-{count} this week]"
+    },
+    "quickLinks": {
+      "title": "[Quick Links]",
+      "manageProperties": "[Manage Properties]",
+      "userManagement": "[User Management]",
+      "viewTasks": "[View Tasks]",
+      "analytics": "[Analytics]"
+    },
+    "systemStatus": {
+      "title": "[System Status]",
+      "operational": "[All systems operational]",
+      "lastChecked": "[Last checked: {time} ago]"
+    }
+  }
+}

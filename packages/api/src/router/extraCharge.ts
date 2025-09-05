@@ -1,19 +1,17 @@
 import type { Prisma } from "@prisma/client";
-import type { TRPCRouterRecord } from "@trpc/server";
-import { TRPCError } from "@trpc/server";
-import { z } from "zod";
-
 import {
   CreateExtraChargeSchema,
   ExtraChargeFilterSchema,
   UpdateExtraChargeSchema,
-} from "@acme/validators";
+} from "@reservatior/validators";
+import { TRPCError } from "@trpc/server";
+import { z } from "zod";
 
 import { getPaginationParams } from "../helpers/pagination";
 import { withCacheAndFormat } from "../helpers/withCacheAndFormat";
-import { protectedProcedure } from "../trpc";
+import { createTRPCRouter, protectedProcedure } from "../trpc";
 
-export const extraChargeRouter: TRPCRouterRecord = {
+export const extraChargeRouter = createTRPCRouter({
   all: protectedProcedure
     .input(ExtraChargeFilterSchema.optional())
     .query(async ({ ctx, input }) => {
@@ -35,10 +33,8 @@ export const extraChargeRouter: TRPCRouterRecord = {
       if (name !== undefined) cacheKeyParts.push(`name=${name}`);
       if (facilityId !== undefined)
         cacheKeyParts.push(`facilityId=${facilityId}`);
-      if (deletedAt !== undefined && deletedAt !== null) {
+      if (deletedAt !== undefined) {
         cacheKeyParts.push(`deletedAt=${deletedAt.toISOString()}`);
-      } else if (deletedAt === null) {
-        cacheKeyParts.push(`deletedAt=null`);
       }
       if (createdAtFrom !== undefined)
         cacheKeyParts.push(`createdAtFrom=${createdAtFrom.toISOString()}`);
@@ -59,7 +55,7 @@ export const extraChargeRouter: TRPCRouterRecord = {
           const where: Prisma.ExtraChargeWhereInput = {
             name: name ? { contains: name, mode: "insensitive" } : undefined,
             facilityId: facilityId ?? undefined,
-            deletedAt: deletedAt === undefined ? null : deletedAt, // Default to not deleted if not specified
+            deletedAt: deletedAt ?? null, // Default to not deleted if not specified
             createdAt:
               createdAtFrom || createdAtTo
                 ? {
@@ -117,6 +113,15 @@ export const extraChargeRouter: TRPCRouterRecord = {
         });
       }
       return extraCharge; // No sanitization needed as per current structure
+    }),
+
+  byContract: protectedProcedure
+    .input(z.object({ contractId: z.string() }))
+    .query(() => {
+      // Since ExtraCharge model doesn't have contractId, we'll return empty array
+      // In a real implementation, you might want to add contractId to the ExtraCharge model
+      // or create a separate ContractExtraCharge model
+      return [] as const;
     }),
 
   create: protectedProcedure
@@ -215,4 +220,44 @@ export const extraChargeRouter: TRPCRouterRecord = {
         });
       }
     }),
-};
+
+  byFacility: protectedProcedure
+    .input(z.object({ facilityId: z.string() }))
+    .query(async ({ ctx, input }) => {
+      const charges = await ctx.db.extraCharge.findMany({
+        where: { facilityId: input.facilityId, deletedAt: null },
+        orderBy: { createdAt: "desc" },
+      });
+      return charges;
+    }),
+
+  byFacilityId: protectedProcedure
+    .input(z.object({ facilityId: z.string() }))
+    .query(async ({ ctx, input }) => {
+      const { skip, take, page, limit } = getPaginationParams({
+        page: 1,
+        limit: 10,
+      });
+
+      const [charges, total] = await Promise.all([
+        ctx.db.extraCharge.findMany({
+          where: { facilityId: input.facilityId, deletedAt: null },
+          orderBy: { createdAt: "desc" },
+          skip,
+          take,
+        }),
+        ctx.db.extraCharge.count({
+          where: { facilityId: input.facilityId, deletedAt: null },
+        }),
+      ]);
+
+      return {
+        data: {
+          items: charges,
+          total,
+          page,
+          limit,
+        },
+      };
+    }),
+});

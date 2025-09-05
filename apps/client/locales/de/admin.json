@@ -1,0 +1,24 @@
+{
+  "admin": {
+    "dashboard": "Admin Dashboard",
+    "userManagement": "User Management",
+    "agencyManagement": "Agency Management",
+    "reportsAnalytics": "Reports & Analytics",
+    "systemLogs": "System Logs",
+    "databaseManagement": "Database Management",
+    "notifications": "Notifications"
+  },
+  "Admin": {
+    "dashboard": "Dashboard",
+    "properties": "Immobilien",
+    "agents": "Makler",
+    "agencies": "Agenturen",
+    "owners": "Eigentümer",
+    "tenants": "Mieter",
+    "settings": "Einstellungen",
+    "notifications": "Benachrichtigungen",
+    "messages": "Nachrichten",
+    "reports": "Berichte",
+    "analytics": "Analytik"
+  }
+}

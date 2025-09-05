@@ -1,0 +1,14 @@
+{
+  "name": "@reservatior/tsconfig",
+  "private": true,
+  "version": "0.1.0",
+  "files": [
+    "*.json"
+  ],
+  "dependencies": {
+    "stripe": "^18.1.0"
+  },
+  "devDependencies": {
+    "@types/stripe": "^8.0.417"
+  }
+}

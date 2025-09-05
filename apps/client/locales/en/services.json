@@ -1,0 +1,153 @@
+{
+  "services": {
+    "admin": {
+      "title": "Admin Services",
+      "dashboard": {
+        "title": "Admin Dashboard",
+        "stats": {
+          "totalUsers": "Total Users",
+          "activeProperties": "Active Properties",
+          "revenue": "Revenue",
+          "systemHealth": "System Health",
+          "pendingTasks": "Pending Tasks",
+          "totalTenants": "Total Tenants",
+          "monthlyCashflow": "Monthly Cashflow",
+          "occupancyRate": "Occupancy Rate"
+        },
+        "activities": {
+          "title": "Recent Activities",
+          "noActivities": "No recent activities",
+          "loading": "Loading activities..."
+        },
+        "systemStatus": {
+          "title": "System Status",
+          "online": "Online",
+          "offline": "Offline",
+          "database": "Database",
+          "apiServices": "API Services",
+          "storage": "Storage Usage"
+        }
+      },
+      "sections": {
+        "userManagement": "User Management",
+        "propertyManagement": "Property Management",
+        "financials": "Financials",
+        "operationsAnalytics": "Operations & Analytics",
+        "settingsMisc": "Settings & Misc"
+      },
+      "quickActions": {
+        "title": "Quick Actions",
+        "addUser": "Add User",
+        "addProperty": "Add Property",
+        "generateReport": "Generate Report",
+        "viewAnalytics": "View Analytics"
+      }
+    },
+    "ml": {
+      "title": "Machine Learning Services",
+      "analysis": {
+        "title": "Property Analysis",
+        "loading": "Analyzing property...",
+        "success": "Analysis complete",
+        "error": "Analysis failed",
+        "processing": "Processing images...",
+        "uploading": "Uploading images..."
+      },
+      "features": {
+        "propertyType": "Property Type",
+        "detectedRooms": "Detected Rooms",
+        "detectedAmenities": "Detected Amenities",
+        "interiorQuality": "Interior Quality",
+        "exteriorCondition": "Exterior Condition",
+        "modernityScore": "Modernity Score",
+        "spaceUtilization": "Space Utilization",
+        "lightingQuality": "Lighting Quality",
+        "cleanliness": "Cleanliness",
+        "maintenanceLevel": "Maintenance Level",
+        "aestheticAppeal": "Aesthetic Appeal"
+      },
+      "location": {
+        "neighborhoodQuality": "Neighborhood Quality",
+        "accessibilityScore": "Accessibility Score",
+        "transportationRating": "Transportation Rating",
+        "safetyScore": "Safety Score",
+        "noiseLevel": "Noise Level",
+        "walkability": "Walkability"
+      },
+      "settings": {
+        "title": "Analysis Settings",
+        "autoTagging": "Auto Tagging",
+        "qualityThreshold": "Quality Threshold",
+        "confidenceThreshold": "Confidence Threshold",
+        "locationAnalysis": "Location Analysis",
+        "priceEstimation": "Price Estimation"
+      },
+      "health": {
+        "title": "ML Service Health",
+        "status": "Status",
+        "modelLoaded": "Model Loaded",
+        "labelsLoaded": "Labels Loaded",
+        "checking": "Checking ML service...",
+        "healthy": "Service healthy",
+        "unhealthy": "Service unhealthy"
+      }
+    },
+    "payment": {
+      "title": "Payment Services",
+      "createIntent": "Creating payment intent...",
+      "confirmPayment": "Confirming payment...",
+      "processing": "Processing payment...",
+      "success": "Payment successful",
+      "failed": "Payment failed",
+      "error": "Payment error",
+      "cancelled": "Payment cancelled",
+      "pending": "Payment pending",
+      "refunded": "Payment refunded"
+    },
+    "reservation": {
+      "title": "Reservation Services",
+      "validation": {
+        "propertyRequired": "Property ID is required",
+        "guestRequired": "Guest ID is required",
+        "userRequired": "User ID is required",
+        "startDateRequired": "Start date is required",
+        "endDateRequired": "End date is required",
+        "invalidDateRange": "End date must be after start date",
+        "invalidGuests": "Number of guests must be greater than 0",
+        "invalidPrice": "Total price must be greater than 0",
+        "currencyRequired": "Currency ID is required",
+        "paymentAmountRequired": "Payment amount must be greater than 0",
+        "paymentMethodRequired": "Payment method is required"
+      },
+      "status": {
+        "pending": "Pending",
+        "confirmed": "Confirmed",
+        "cancelled": "Cancelled",
+        "completed": "Completed",
+        "failed": "Failed"
+      },
+      "paymentStatus": {
+        "unpaid": "Unpaid",
+        "paid": "Paid",
+        "pending": "Pending",
+        "failed": "Failed",
+        "refunded": "Refunded"
+      },
+      "actions": {
+        "create": "Create Reservation",
+        "update": "Update Reservation",
+        "cancel": "Cancel Reservation",
+        "confirm": "Confirm Reservation",
+        "refund": "Refund Payment"
+      },
+      "calculations": {
+        "nights": "nights",
+        "totalPrice": "Total Price",
+        "perNight": "per night",
+        "fees": "Fees",
+        "taxes": "Taxes",
+        "discount": "Discount"
+      }
+    }
+  }
+} 

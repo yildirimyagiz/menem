@@ -1,0 +1,313 @@
+{
+  "app": {
+    "layout": {
+      "metadata": {
+        "title": "Reservatior",
+        "titleTemplate": "%s | Reservatior",
+        "description": "Gayrimenkul Yönetim Sistemi",
+        "favicon": "Favicon",
+        "metadataBase": "Meta Veri Taban URL'si"
+      },
+      "viewport": {
+        "themeColor": "Tema Rengi",
+        "light": "Açık Tema",
+        "dark": "Koyu Tema",
+        "width": "Görünüm Alanı Genişliği",
+        "initialScale": "Başlangıç Ölçeği"
+      },
+      "html": {
+        "lang": "Dil",
+        "suppressHydrationWarning": "Hidrasyon Uyarısını Bastır"
+      },
+      "body": {
+        "className": "Gövde Sınıf Adı",
+        "minHeight": "Minimum Yükseklik",
+        "background": "Arka Plan",
+        "font": "Yazı Tipi",
+        "antialiased": "Kenarlıkları Yumuşatılmış Metin"
+      },
+      "providers": {
+        "locale": "Yerel Ayar",
+        "messages": "Mesajlar",
+        "children": "Çocuklar"
+      },
+      "toaster": {
+        "useToast": "Toast Kancasını Kullan"
+      }
+    },
+    "page": {
+      "main": "Ana İçerik",
+      "flex": "Esnek Düzen",
+      "minHeight": "Minimum Yükseklik",
+      "flexCol": "Esnek Sütun",
+      "background": "Arka Plan"
+    },
+    "mainPageClient": {
+      "dashboard": {
+        "title": "Gösterge Paneli",
+        "welcome": "Gayrimenkul yönetim gösterge panelinize hoş geldiniz",
+        "overview": "Genel Bakış Kartları",
+        "properties": {
+          "title": "Mülkler",
+          "count": "5",
+          "description": "Aktif mülkler"
+        },
+        "tenants": {
+          "title": "Kiracılar",
+          "count": "12",
+          "description": "Toplam kiracı"
+        },
+        "payments": {
+          "title": "Ödemeler",
+          "amount": "$8,540",
+          "description": "Bu ay"
+        },
+        "tasks": {
+          "title": "Görevler",
+          "count": "7",
+          "description": "Bekleyen görevler"
+        }
+      },
+      "userInfo": {
+        "title": "Kullanıcı Bilgileri",
+        "username": "Kullanıcı Adı",
+        "email": "E-posta",
+        "role": "Rol"
+      },
+      "quickActions": {
+        "title": "Hızlı İşlemler",
+        "properties": "Mülkler",
+        "adminDashboard": "Yönetici Gösterge Paneli",
+        "tenants": "Kiracılar",
+        "payments": "Ödemeler"
+      },
+      "welcomeScreen": {
+        "hero": {
+          "title": "Reservatior",
+          "description": "Sahipler, kiracılar ve danışmanlar için kapsamlı mülk yönetim çözümünüz",
+          "getStarted": "Başlayın",
+          "exploreFeatures": "Özellikleri Keşfedin"
+        },
+        "features": {
+          "title": "Kapsamlı Gayrimenkul Yönetimi",
+          "description": "Gayrimenkul portföyünüzü verimli bir şekilde yönetmek için ihtiyacınız olan her şey",
+          "propertyManagement": {
+            "title": "Gayrimenkul Yönetimi",
+            "description": "Detaylı analizler ve raporlamalarla mülkleri, üniteleri ve tesisleri verimli bir şekilde yönetin."
+          },
+          "tenantManagement": {
+            "title": "Kiracı Yönetimi",
+            "description": "Kiracı işe alımı, bakım talepleri, kira sözleşmeleri ve ödemeleri yönetin."
+          },
+          "financialTools": {
+            "title": "Finansal Araçlar",
+            "description": "Giderleri takip edin, ödemeleri yönetin ve mülkleriniz için finansal raporlar oluşturun."
+          },
+          "mapIntegration": {
+            "title": "Harita Entegrasyonu",
+            "description": "Mahalle içgörüler ve analizlerle mülklerinizi etkileşimli haritalarda görselleştirin."
+          },
+          "analyticsInsights": {
+            "title": "Analizler ve İçgörüler",
+            "description": "Kapsamlı analizler ve mülk performans metrikleriyle veriye dayalı kararlar verin."
+          },
+          "communicationTools": {
+            "title": "İletişim Araçları",
+            "description": "Herkesin bilgilendirilmesi ve bağlantılı kalması için yerleşik mesajlaşma sistemi ve bildirimler."
+          }
+        },
+        "cta": {
+          "title": "Gayrimenkul yönetiminizi kolaylaştırmaya hazır mısınız?",
+          "description": "Gayrimenkul ihtiyaçlarınız için Reservatior'a güvenen binlerce mülk sahibi, yöneticisi ve kiracıya katılın.",
+          "signUpNow": "Şimdi Kaydolun",
+          "learnMore": "Daha Fazla Bilgi Edinin"
+        },
+        "footer": {
+          "features": "Özellikler",
+          "pricing": "Fiyatlandırma",
+          "testimonials": "Referanslar",
+          "faq": "SSS",
+          "copyright": "© {year} Reservatior. Tüm hakları saklıdır."
+        }
+      }
+    },
+    "components": {
+      "footer": {
+        "title": "Altbilgi",
+        "navigation": "Altbilgi Navigasyonu",
+        "links": "Altbilgi Bağlantıları",
+        "copyright": "Telif Hakkı",
+        "social": "Sosyal Medya"
+      },
+      "header": {
+        "title": "Üstbilgi",
+        "navigation": "Ana Navigasyon",
+        "logo": "Logo",
+        "menu": "Menü",
+        "mobileMenu": "Mobil Menü",
+        "userMenu": "Kullanıcı Menüsü",
+        "themeToggle": "Tema Geçişi",
+        "languageSwitcher": "Dil Değiştirici",
+        "auth": "Kimlik Doğrulama",
+        "login": "Giriş",
+        "register": "Kayıt Ol",
+        "logout": "Çıkış",
+        "profile": "Profil",
+        "dashboard": "Gösterge Paneli",
+        "admin": "Yönetici",
+        "settings": "Ayarlar",
+        "notifications": "Bildirimler",
+        "messages": "Mesajlar",
+        "help": "Yardım",
+        "support": "Destek",
+        "context": "Bağlam Sağlayıcıları"
+      },
+      "authShowcase": {
+        "title": "Kimlik Doğrulama Vitrini",
+        "login": "Giriş",
+        "register": "Kayıt Ol",
+        "logout": "Çıkış",
+        "profile": "Profil"
+      },
+      "posts": {
+        "title": "Gönderiler",
+        "create": "Gönderi Oluştur",
+        "edit": "Gönderiyi Düzenle",
+        "delete": "Gönderiyi Sil",
+        "publish": "Gönderiyi Yayınla",
+        "draft": "Taslak Gönderi"
+      },
+      "priceRangeSlider": {
+        "title": "Fiyat Aralığı Kaydırıcısı",
+        "minPrice": "Minimum Fiyat",
+        "maxPrice": "Maksimum Fiyat",
+        "priceRange": "Fiyat Aralığı",
+        "currency": "Para Birimi",
+        "thousands": "Binlik Ayırıcı",
+        "decimals": "Ondalık Basamaklar"
+      },
+      "tasks": {
+        "title": "Görevler",
+        "create": "Görev Oluştur",
+        "edit": "Görevi Düzenle",
+        "delete": "Görevi Sil",
+        "complete": "Görevi Tamamla",
+        "pending": "Bekleyen Görev"
+      }
+    },
+    "home": {
+      "heroSearchSection": {
+        "title": "Ana Arama Bölümü",
+        "search": "Ara",
+        "location": "Konum",
+        "dates": "Tarihler",
+        "guests": "Misafirler",
+        "searchButton": "Mülkleri Ara"
+      },
+      "statsSection": {
+        "title": "İstatistikler Bölümü",
+        "properties": "Mülkler",
+        "tenants": "Kiracılar",
+        "revenue": "Gelir",
+        "satisfaction": "Memnuniyet"
+      },
+      "exploreDestinations": {
+        "title": "Destinasyonları Keşfedin",
+        "destinations": "Destinasyonlar",
+        "popular": "Popüler Destinasyonlar",
+        "trending": "Trend Destinasyonlar",
+        "viewAll": "Tümünü Görüntüle"
+      },
+      "quickBrowseLinks": {
+        "title": "Hızlı Gezinti Bağlantıları",
+        "browse": "Gezinti",
+        "quickLinks": "Hızlı Bağlantılar",
+        "categories": "Kategoriler"
+      },
+      "featuredProperties": {
+        "title": "Öne Çıkan Mülkler",
+        "featured": "Öne Çıkan",
+        "properties": "Mülkler",
+        "viewAll": "Tüm Mülkleri Görüntüle",
+        "property": "Gayrimenkul",
+        "price": "Fiyat",
+        "location": "Konum",
+        "rating": "Puan"
+      },
+      "marketTrendsSection": {
+        "title": "Pazar Trendleri Bölümü",
+        "trends": "Pazar Trendleri",
+        "analysis": "Pazar Analizi",
+        "insights": "Pazar İçgörileri"
+      },
+      "howItWorksSection": {
+        "title": "Nasıl Çalışır Bölümü",
+        "steps": "Adımlar",
+        "process": "Süreç",
+        "guide": "Nasıl Çalışır"
+      },
+      "neighborhoodHighlights": {
+        "title": "Mahalle Öne Çıkanları",
+        "neighborhoods": "Mahalleler",
+        "highlights": "Öne Çıkanlar",
+        "local": "Yerel Alan"
+      },
+      "getStartedBanner": {
+        "title": "Başlayın Banner'ı",
+        "cta": "Eylem Çağrısı",
+        "signUp": "Kaydolun",
+        "learnMore": "Daha Fazla Bilgi Edinin"
+      },
+      "enhancedHeroSection": {
+        "title": "Geliştirilmiş Ana Bölüm",
+        "hero": "Ana",
+        "mainTitle": "Ana Başlık",
+        "subtitle": "Alt Başlık",
+        "search": "Ara"
+      },
+      "enhancedMakeMoneySection": {
+        "title": "Geliştirilmiş Para Kazanma Bölümü",
+        "makeMoney": "Para Kazanın",
+        "earnings": "Kazançlar",
+        "income": "Gelir",
+        "revenue": "Gelir"
+      },
+      "enhancedStatsSection": {
+        "title": "Geliştirilmiş İstatistikler Bölümü",
+        "statistics": "İstatistikler",
+        "metrics": "Metrikler",
+        "numbers": "Sayılar"
+      },
+      "locationAutocomplete": {
+        "title": "Konum Otomatik Tamamlama",
+        "location": "Konum",
+        "search": "Konum Ara",
+        "autocomplete": "Otomatik Tamamlama",
+        "suggestions": "Öneriler"
+      }
+    },
+    "navigation": {
+      "redirect": "Yönlendirme",
+      "authenticated": "Kimliği Doğrulanmış",
+      "unauthenticated": "Kimliği Doğrulanmamış",
+      "auth": "Kimlik Doğrulama",
+      "home": "Ana Sayfa",
+      "admin": "Yönetici",
+      "dashboard": "Gösterge Paneli"
+    },
+    "responsive": {
+      "mobile": "Mobil",
+      "tablet": "Tablet",
+      "desktop": "Masaüstü",
+      "responsive": "Duyarlı",
+      "breakpoint": "Kırılma Noktası"
+    },
+    "accessibility": {
+      "ariaLabel": "ARIA Etiketi",
+      "accessibility": "Erişilebilirlik",
+      "screenReader": "Ekran Okuyucu",
+      "focus": "Odak",
+      "keyboard": "Klavye Navigasyonu"
+    }
+  }
+}

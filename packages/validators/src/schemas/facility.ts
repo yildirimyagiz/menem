@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-// Enum for FacilityType
+// Enum for FacilityType - matches Prisma schema exactly
 export const FacilityType = z.enum([
   "RESIDENTIAL",
   "COMMERCIAL",
@@ -30,8 +30,31 @@ export const FacilityType = z.enum([
   "PARK",
 ]);
 export const FacilityStatus = z.enum(["ACTIVE", "INACTIVE"]);
+
+export const LocationAmenities = z.enum([
+  "CITY_CENTER",
+  "BEACH",
+  "PARK",
+  "SHOPPING_MALL",
+  "HOSPITAL",
+  "SCHOOL",
+  "UNIVERSITY",
+  "POLICE_STATION",
+  "FIRE_STATION",
+  "PUBLIC_TRANSPORT",
+  "SUBWAY_STATION",
+  "BUS_STOP",
+  "AIRPORT",
+  "RESTAURANT_DISTRICT",
+  "ENTERTAINMENT_ZONE",
+  "BUSINESS_DISTRICT",
+  "CULTURAL_CENTER",
+  "MUSEUM",
+  "LIBRARY",
+  "SPORTS_COMPLEX",
+]);
+
 export const FacilityAmenities = z.array(z.string());
-export const LocationAmenities = z.array(z.string());
 
 export const FacilitySchema = z.object({
   id: z.string(),
@@ -52,8 +75,8 @@ export const FacilitySchema = z.object({
   users: z.array(z.any()).optional(),
   tasks: z.array(z.any()).optional(),
   reports: z.array(z.any()).optional(),
-  FacilityAmenities: FacilityAmenities.array().optional(),
-  locationAmenities: LocationAmenities.array().optional(),
+  FacilityAmenities: FacilityAmenities.optional(),
+  locationAmenities: z.array(LocationAmenities).optional(),
   expenses: z.array(z.any()).optional(),
   includedServices: z.array(z.any()).optional(),
   extraCharges: z.array(z.any()).optional(),

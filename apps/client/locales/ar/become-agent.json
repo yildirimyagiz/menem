@@ -1,0 +1,243 @@
+{
+  "becomeAgent": {
+    "title": "[Become an Agent]",
+    "subtitle": "[Join our platform as a real estate agent]",
+    "description": "[Start your career as a real estate agent with our comprehensive platform. Manage properties, connect with clients, and grow your business.]",
+    "steps": {
+      "title": "[Registration Steps]",
+      "step1": "[Fill out the form]",
+      "step2": "[Choose a subscription plan]",
+      "step3": "[Complete payment]",
+      "step4": "[Start using the platform]"
+    },
+    "form": {
+      "title": "[Agent Information]",
+      "subtitle": "[Tell us about yourself]",
+      "name": {
+        "label": "[Full Name]",
+        "placeholder": "[Your name]",
+        "required": "[Name is required]",
+        "invalid": "[Please enter a valid name]"
+      },
+      "email": {
+        "label": "[Email Address]",
+        "placeholder": "[you@email.com]",
+        "required": "[Email is required]",
+        "invalid": "[Please enter a valid email address]"
+      },
+      "phone": {
+        "label": "[Phone Number]",
+        "placeholder": "[Phone number]",
+        "required": "[Phone is required]",
+        "invalid": "[Please enter a valid phone number]"
+      },
+      "agency": {
+        "label": "[Agency (Optional)]",
+        "placeholder": "[Your agency name]",
+        "description": "[If you're part of an agency, enter the agency name]"
+      },
+      "experience": {
+        "label": "[Years of Experience]",
+        "placeholder": "[Select experience level]",
+        "options": {
+          "new": "[New to real estate]",
+          "1to3": "[1-3 years]",
+          "3to5": "[3-5 years]",
+          "5to10": "[5-10 years]",
+          "10plus": "[10+ years]"
+        }
+      },
+      "specialization": {
+        "label": "[Specialization (Optional)]",
+        "placeholder": "[Your specialization]",
+        "options": {
+          "residential": "[Residential]",
+          "commercial": "[Commercial]",
+          "luxury": "[Luxury]",
+          "investment": "[Investment]",
+          "rental": "[Rental]",
+          "newConstruction": "[New Construction]"
+        }
+      },
+      "bio": {
+        "label": "[Bio (Optional)]",
+        "placeholder": "[Tell us about yourself and your experience]",
+        "maxLength": "[Maximum 500 characters]"
+      },
+      "submit": "[Continue to Subscription]",
+      "submitting": "[Submitting...]",
+      "cancel": "[Cancel]"
+    },
+    "packages": {
+      "title": "[Choose Your Plan]",
+      "subtitle": "[Select the perfect plan for your needs]",
+      "starter": {
+        "title": "[Starter]",
+        "price": "[$19]",
+        "period": "[per month]",
+        "description": "[Perfect for new agents]",
+        "features": [
+          "[Basic property management]",
+          "[Client database]",
+          "[Email support]",
+          "[Standard reports]",
+          "[Mobile app access]"
+        ]
+      },
+      "professional": {
+        "title": "[Professional]",
+        "price": "[$49]",
+        "period": "[per month]",
+        "description": "[Ideal for active agents]",
+        "features": [
+          "[Advanced property management]",
+          "[CRM integration]",
+          "[Priority support]",
+          "[Advanced analytics]",
+          "[Custom branding]",
+          "[Lead generation tools]"
+        ]
+      },
+      "premium": {
+        "title": "[Premium]",
+        "price": "[$99]",
+        "period": "[per month]",
+        "description": "[For top-performing agents]",
+        "features": [
+          "[Full property management]",
+          "[Advanced CRM]",
+          "[24/7 support]",
+          "[Custom integrations]",
+          "[White-label options]",
+          "[Dedicated account manager]",
+          "[Marketing tools]"
+        ]
+      },
+      "select": "[Select Plan]",
+      "selected": "[Selected]",
+      "change": "[Change Plan]"
+    },
+    "benefits": {
+      "title": "[Why Become an Agent?]",
+      "subtitle": "[Join thousands of successful agents]",
+      "propertyManagement": {
+        "title": "[Property Management]",
+        "description": "[Easily manage your property listings with advanced tools and analytics]"
+      },
+      "clientManagement": {
+        "title": "[Client Management]",
+        "description": "[Build and maintain relationships with clients through our integrated CRM]"
+      },
+      "leadGeneration": {
+        "title": "[Lead Generation]",
+        "description": "[Generate and nurture leads with our advanced marketing tools]"
+      },
+      "analytics": {
+        "title": "[Performance Analytics]",
+        "description": "[Track your performance with detailed reports and insights]"
+      },
+      "support": {
+        "title": "[24/7 Support]",
+        "description": "[Get help whenever you need it with our dedicated support team]"
+      },
+      "training": {
+        "title": "[Training & Resources]",
+        "description": "[Access training materials and resources to grow your skills]"
+      }
+    },
+    "success": {
+      "title": "[Welcome to Reservatior!]",
+      "subtitle": "[Your agent account has been created successfully]",
+      "description": "[You can now start managing properties, connecting with clients, and growing your business. Check your email for login instructions.]",
+      "dashboard": "[Go to Dashboard]",
+      "setup": "[Complete Setup]",
+      "email": "[Check Email]"
+    },
+    "validation": {
+      "required": "[This field is required]",
+      "invalidEmail": "[Please enter a valid email address]",
+      "invalidPhone": "[Please enter a valid phone number]",
+      "minLength": "[Must be at least {min} characters]",
+      "maxLength": "[Must be no more than {max} characters]",
+      "uniqueEmail": "[Email address must be unique]",
+      "selectPackage": "[Please select a subscription package]",
+      "nameRequired": "[Name is required]",
+      "emailRequired": "[Email is required]",
+      "phoneRequired": "[Phone is required]"
+    },
+    "notifications": {
+      "applicationSubmitted": "[Application submitted! Redirecting to subscription...]",
+      "agentCreated": "[Agent Created]",
+      "agentCreatedDesc": "[Your agent account has been created successfully!]",
+      "error": "[Error]",
+      "agentCreateFailed": "[Failed to create agent account]",
+      "networkError": "[Network error]",
+      "tryAgain": "[Try again]"
+    },
+    "faq": {
+      "title": "[Frequently Asked Questions]",
+      "subtitle": "[Everything you need to know about becoming an agent]",
+      "questions": [
+        {
+          "question": "[How much does it cost to become an agent?]",
+          "answer": "[We offer flexible pricing plans starting from $19/month. Choose the plan that best fits your needs.]"
+        },
+        {
+          "question": "[Can I change my subscription plan later?]",
+          "answer": "[Yes, you can upgrade or downgrade your subscription plan at any time from your dashboard.]"
+        },
+        {
+          "question": "[Do I need to be licensed to join?]",
+          "answer": "[Yes, you need to have a valid real estate license to become an agent on our platform.]"
+        },
+        {
+          "question": "[Is there a free trial available?]",
+          "answer": "[Yes, we offer a 14-day free trial for all new agents. No credit card required to start.]"
+        },
+        {
+          "question": "[What support is available?]",
+          "answer": "[We provide email support for all plans, with priority support and dedicated account managers for Professional and Premium plans.]"
+        },
+        {
+          "question": "[Can I work with an agency?]",
+          "answer": "[Yes, you can work independently or as part of an agency. You can specify your agency during registration.]"
+        }
+      ]
+    },
+    "requirements": {
+      "title": "[Requirements]",
+      "subtitle": "[What you need to become an agent]",
+      "license": {
+        "title": "[Real Estate License]",
+        "description": "[You must have a valid real estate license in your jurisdiction]"
+      },
+      "experience": {
+        "title": "[Experience]",
+        "description": "[While not required, some experience in real estate is beneficial]"
+      },
+      "commitment": {
+        "title": "[Commitment]",
+        "description": "[Dedication to providing excellent service to clients]"
+      },
+      "technology": {
+        "title": "[Technology]",
+        "description": "[Basic computer skills and access to internet]"
+      }
+    },
+    "loading": {
+      "title": "[Loading]",
+      "creating": "[Creating agent account...]",
+      "processing": "[Processing...]",
+      "redirecting": "[Redirecting...]",
+      "loading": "[Loading...]"
+    },
+    "errors": {
+      "title": "[Error]",
+      "formError": "[Please check your form and try again]",
+      "networkError": "[Network error. Please check your connection]",
+      "serverError": "[Server error. Please try again later]",
+      "tryAgain": "[Try again]",
+      "contactSupport": "[Contact support]"
+    }
+  }
+}

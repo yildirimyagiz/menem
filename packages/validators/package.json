@@ -1,5 +1,5 @@
 {
-  "name": "@acme/validators",
+  "name": "@reservatior/validators",
   "private": true,
   "version": "0.1.0",
   "type": "module",
@@ -23,13 +23,13 @@
     "zod": "catalog:"
   },
   "devDependencies": {
-    "@acme/eslint-config": "workspace:*",
-    "@acme/prettier-config": "workspace:*",
-    "@acme/tsconfig": "workspace:*",
+    "@reservatior/eslint-config": "workspace:*",
+    "@reservatior/prettier-config": "workspace:*",
+    "@reservatior/tsconfig": "workspace:*",
     "@types/stripe": "^8.0.417",
     "eslint": "catalog:",
     "prettier": "catalog:",
     "typescript": "catalog:"
   },
-  "prettier": "@acme/prettier-config"
+  "prettier": "@reservatior/prettier-config"
 }

@@ -1,5 +1,5 @@
 {
-  "name": "@acme/eslint-config",
+  "name": "@reservatior/eslint-config",
   "private": true,
   "version": "0.3.0",
   "type": "module",
@@ -16,22 +16,22 @@
   "dependencies": {
     "@eslint/compat": "^1.2.5",
     "@next/eslint-plugin-next": "^14.2.23",
-    "typescript-eslint": "^8.21.0",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-turbo": "^2.3.4",
-    "stripe": "^18.1.0"
+    "stripe": "^18.1.0",
+    "typescript-eslint": "^8.21.0"
   },
   "devDependencies": {
-    "@acme/prettier-config": "workspace:*",
-    "@acme/tsconfig": "workspace:*",
+    "@reservatior/prettier-config": "workspace:*",
+    "@reservatior/tsconfig": "workspace:*",
     "@types/eslint__js": "8.42.3",
+    "@types/stripe": "^8.0.417",
     "eslint": "catalog:",
     "prettier": "catalog:",
-    "typescript": "catalog:",
-    "@types/stripe": "^8.0.417"
+    "typescript": "catalog:"
   },
-  "prettier": "@acme/prettier-config"
+  "prettier": "@reservatior/prettier-config"
 }

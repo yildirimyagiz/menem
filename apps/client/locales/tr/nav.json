@@ -1,0 +1,25 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "dashboard": "Gösterge Paneli",
+    "profile": "Profil",
+    "settings": "Ayarlar",
+    "logout": "Çıkış",
+    "login": "Giriş",
+    "register": "Kayıt Ol",
+    "search": "Ara",
+    "notifications": "Bildirimler",
+    "messages": "Mesajlar",
+    "help": "Yardım",
+    "support": "Destek",
+    "about": "Hakkında",
+    "contact": "İletişim",
+    "privacy": "Gizlilik",
+    "terms": "Şartlar",
+    "language": "Dil",
+    "theme": "Tema",
+    "darkMode": "Karanlık Mod",
+    "lightMode": "Aydınlık Mod",
+    "systemMode": "Sistem Modu"
+  }
+}

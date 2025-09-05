@@ -1,5 +1,33 @@
-import { NotificationType } from "@prisma/client";
 import { z } from "zod";
+
+// Define NotificationType locally since import is not working
+const NotificationType = {
+  MENTION: "MENTION" as const,
+  TASK_ASSIGNED: "TASK_ASSIGNED" as const,
+  BOOKING_CONFIRMED: "BOOKING_CONFIRMED" as const,
+  REVIEW_RECEIVED: "REVIEW_RECEIVED" as const,
+  PRICE_CHANGE: "PRICE_CHANGE" as const,
+  SYSTEM_UPDATE: "SYSTEM_UPDATE" as const,
+  COMPLIANCE_ALERT: "COMPLIANCE_ALERT" as const,
+  COMMUNICATION_RECEIVED: "COMMUNICATION_RECEIVED" as const,
+  RENT_DUE: "RENT_DUE" as const,
+  RENT_PAID: "RENT_PAID" as const,
+  LEASE_EXPIRING: "LEASE_EXPIRING" as const,
+  MAINTENANCE_REQUEST: "MAINTENANCE_REQUEST" as const,
+  LEASE_RENEWAL: "LEASE_RENEWAL" as const,
+  LATE_PAYMENT_WARNING: "LATE_PAYMENT_WARNING" as const,
+  LEASE_TERMINATION: "LEASE_TERMINATION" as const,
+  RENT_INCREASE: "RENT_INCREASE" as const,
+  COMMUNITY_NOTICE: "COMMUNITY_NOTICE" as const,
+  POLICY_UPDATE: "POLICY_UPDATE" as const,
+  LIKE: "LIKE" as const,
+  COMMENT: "COMMENT" as const,
+  FOLLOW: "FOLLOW" as const,
+  AVAILABILITY: "AVAILABILITY" as const,
+  OTHER: "OTHER" as const,
+} as const;
+
+type NotificationType = typeof NotificationType[keyof typeof NotificationType];
 
 export const NotificationTypeEnum = z.nativeEnum(NotificationType);
 

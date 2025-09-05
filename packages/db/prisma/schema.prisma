@@ -2,7 +2,6 @@ generator client {
   provider = "prisma-client-js"
 }
 
-
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
@@ -35,26 +34,26 @@ model Account {
 }
 
 model Agency {
-  id               String             @id @default(cuid()) // Assuming cuid for new agencies
-  name             String
-  description      String?
-  email            String?
-  phoneNumber      String?
-  address          String?
-  website          String?
-  logoUrl          String?
-  status           SharedStatus       @default(PENDING) // Using consolidated status
-  createdAt        DateTime           @default(now())
-  deletedAt        DateTime?
-  updatedAt        DateTime           @updatedAt
-  Agent            Agent[]
-  Analytics        Analytics[]
-  CommunicationLog CommunicationLog[]
-  ComplianceRecord ComplianceRecord[]
-  Expense          Expense[]
-  Hashtag          Hashtag[]
-  Language         Language[]
-
+  id                String             @id @default(cuid()) // Assuming cuid for new agencies
+  name              String
+  description       String?
+  email             String?
+  phoneNumber       String?
+  address           String?
+  website           String?
+  logoUrl           String?
+  status            SharedStatus       @default(PENDING) // Using consolidated status
+  createdAt         DateTime           @default(now())
+  deletedAt         DateTime?
+  updatedAt         DateTime           @updatedAt
+  Agent             Agent[]
+  Analytics         Analytics[]
+  CommunicationLog  CommunicationLog[]
+  ComplianceRecord  ComplianceRecord[]
+  Expense           Expense[]
+  Hashtag           Hashtag[]
+  Language          Language[]
+  location          Location[]
   Mention           Mention[]
   Notification      Notification[]
   Photo             Photo[]
@@ -66,18 +65,18 @@ model Agency {
   Task              Task[]
   User              User[]
   Property          Property[]
-  Facility          Facility?        @relation(fields: [facilityId], references: [id])
+  Facility          Facility?          @relation(fields: [facilityId], references: [id])
   facilityId        String?
-  IncludedService   IncludedService? @relation(fields: [includedServiceId], references: [id])
+  IncludedService   IncludedService?   @relation(fields: [includedServiceId], references: [id])
   includedServiceId String?
-  ExtraCharge       ExtraCharge?     @relation(fields: [extraChargeId], references: [id])
+  ExtraCharge       ExtraCharge?       @relation(fields: [extraChargeId], references: [id])
   extraChargeId     String?
-  isActive          Boolean          @default(true)
+  isActive          Boolean            @default(true)
   ownerId           String?
-  Owner             User?            @relation("AgencyOwner", fields: [ownerId], references: [id])
+  Owner             User?              @relation("AgencyOwner", fields: [ownerId], references: [id])
   settings          Json?
   theme             String?
-  externalId        String?          @unique
+  externalId        String?            @unique
   integration       Json?
   Guest             Guest[]
   Contract          Contract[]
@@ -97,11 +96,15 @@ enum AgentSpecialities {
 }
 
 model Agent {
-  id               String              @id @default(cuid()) // Assuming cuid for new agents
-  name             String
-  email            String?
-  phoneNumber      String?
-  bio              String?
+  id          String     @id @default(cuid()) // Assuming cuid for new agents
+  name        String
+  email       String?
+  phoneNumber String?
+  bio         String?
+  locationId  String?
+  Location    Location?  @relation(fields: [locationId], references: [id])
+  language    Language[]
+
   address          String?
   website          String?
   logoUrl          String?
@@ -167,6 +170,8 @@ model Analytics {
   Reservation   Reservation? @relation(fields: [reservationId], references: [id], onDelete: Cascade)
   taskId        String?
   Task          Task?        @relation(fields: [taskId], references: [id], onDelete: Cascade)
+  taxRecordId   String?
+  TaxRecord     TaxRecord?   @relation(fields: [taxRecordId], references: [id], onDelete: Cascade)
 
   @@index([entityId, entityType])
   @@index([type])
@@ -175,6 +180,7 @@ model Analytics {
   @@index([userId])
   @@index([agentId])
   @@index([agencyId])
+  @@index([taxRecordId])
 }
 
 model Availability {
@@ -279,6 +285,10 @@ model Ticket {
   closedAt          DateTime?
   deletedAt         DateTime?
   CommunicationLogs CommunicationLog[]
+  userId            String // Ticket creator
+  agentId           String? // Assigned agent (optional)
+  User              User               @relation("TicketUser", fields: [userId], references: [id])
+  Agent             User?              @relation("TicketAgent", fields: [agentId], references: [id])
 
   @@index([status])
 }
@@ -352,6 +362,12 @@ model CommunicationLog {
   ticketId    String?
   createdAt   DateTime           @default(now())
   updatedAt   DateTime
+  isEdited    Boolean            @default(false)
+  editedAt    DateTime?
+  deletedById String?
+  reactions   Json?
+  attachments Json?
+  readBy      Json?
 
   @@index([deletedAt])
   @@index([entityId, entityType])
@@ -407,6 +423,8 @@ model Currency {
   Reservation  Reservation[]
   Property     Property[]
   PricingRule  PricingRule[]
+  users        User[] // Users who have selected this as their preferred currency
+  TaxRecord    TaxRecord[]
 }
 
 enum Gender {
@@ -453,6 +471,7 @@ model CommissionRule {
   createdAt  DateTime           @default(now())
   updatedAt  DateTime           @updatedAt
   deletedAt  DateTime?
+  Payment    Payment[]
 
   @@unique([providerId, ruleType])
   @@index([providerId])
@@ -558,6 +577,7 @@ model Expense {
   includedServiceId String?
   ExtraCharge       ExtraCharge?     @relation(fields: [extraChargeId], references: [id])
   extraChargeId     String?
+  Payment           Payment[]
 
   @@index([agencyId])
   @@index([deletedAt])
@@ -620,6 +640,10 @@ model Language {
   deletedAt  DateTime?
   agencyId   String?
   Agency     Agency?   @relation(fields: [agencyId], references: [id])
+  Agent      Agent?    @relation(fields: [agentId], references: [id])
+  agentId    String?
+  User       User?     @relation(fields: [userId], references: [id])
+  userId     String?
 }
 
 model Mention {
@@ -732,14 +756,38 @@ model Payment {
   stripeStatus          String?
   stripeError           String?
 
-  Currency Currency @relation(fields: [currencyId], references: [id])
-  Tenant   Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  // Contextual links (all optional, only one should be set per payment)
+  propertyId        String?
+  expenseId         String?
+  reservationId     String?
+  subscriptionId    String?
+  commissionRuleId  String?
+  includedServiceId String?
+  extraChargeId     String?
+
+  // Relations
+  Currency        Currency         @relation(fields: [currencyId], references: [id])
+  Tenant          Tenant           @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  Property        Property?        @relation(fields: [propertyId], references: [id])
+  Expense         Expense?         @relation(fields: [expenseId], references: [id])
+  Reservation     Reservation?     @relation(fields: [reservationId], references: [id])
+  Subscription    Subscription?    @relation(fields: [subscriptionId], references: [id])
+  CommissionRule  CommissionRule?  @relation(fields: [commissionRuleId], references: [id])
+  IncludedService IncludedService? @relation(fields: [includedServiceId], references: [id])
+  ExtraCharge     ExtraCharge?     @relation(fields: [extraChargeId], references: [id])
 
   @@index([deletedAt])
   @@index([dueDate])
   @@index([paymentDate])
   @@index([tenantId])
   @@index([stripePaymentIntentId])
+  @@index([propertyId])
+  @@index([expenseId])
+  @@index([reservationId])
+  @@index([subscriptionId])
+  @@index([commissionRuleId])
+  @@index([includedServiceId])
+  @@index([extraChargeId])
 }
 
 model Permission {
@@ -814,6 +862,7 @@ model Post {
 model Provider {
   id             String           @id @default(cuid())
   name           String
+  logo           String?
   apiKey         String? // Optional: Store API key if needed for integration
   apiSecret      String? // Optional: Store API secret if needed for integration
   baseUrl        String? // Optional: Base URL for API requests (for dynamic providers)
@@ -842,27 +891,32 @@ enum BookingSource {
 }
 
 model Property {
-  id                 String              @id @default(cuid())
-  propertyNumber     String              @unique @default(uuid())
-  title              String
-  description        String
-  propertyType       PropertyType        @default(SingleFamily)
-  propertyStatus     PropertyStatus      @default(AVAILABLE)
-  category           PropertyCategory    @default(APARTMENT)
-  locationId         String?
-  Location           Location?           @relation(fields: [locationId], references: [id])
-  size               Float // in square meters
-  bedrooms           Int?
-  bathrooms          Int?
-  floors             Int?
-  yearBuilt          Int?
-  condition          PropertyCondition   @default(GOOD)
-  features           PropertyFeatures[]
-  amenities          PropertyAmenities[]
+  id                String              @id @default(cuid())
+  propertyNumber    String              @unique @default(uuid())
+  title             String
+  description       String
+  propertyType      PropertyType        @default(APARTMENT)
+  propertyStatus    PropertyStatus      @default(AVAILABLE)
+  category          PropertyCategory    @default(RESIDENTIAL)
+  locationId        String?
+  Location          Location?           @relation(fields: [locationId], references: [id])
+  size              Float // in square meters
+  bedrooms          Int?
+  bathrooms         Int?
+  floors            Int?
+  yearBuilt         Int?
+  condition         PropertyCondition   @default(GOOD)
+  features          PropertyFeatures[]
+  amenities         PropertyAmenities[]
+  locationAmenities LocationAmenities[]
+
   constructionType   ConstructionType?
   buildingClass      BuildingClass?      @default(CLASS_A)
   energyRating       EnergyRating?       @default(B)
   parkingSpaces      Int                 @default(0)
+  parkingType        ParkingType?
+  heatingType        HeatingType?
+  greenCertification GreenCertification?
   cancellationPolicy String?
   checkInTime        DateTime?
   checkOutTime       DateTime?
@@ -944,6 +998,7 @@ model Property {
   guestId           String?
   Contract          Contract[]
   Report            Report[]
+  Payment           Payment[]
 
   @@index([propertyNumber])
   @@index([propertyType, category])
@@ -1015,7 +1070,7 @@ model Facility {
   users             User[]
   tasks             Task[]
   reports           Report[]
-  FacilityAmenities FacilityAmenities[]
+  facilityAmenities FacilityAmenities[]
   locationAmenities LocationAmenities[]
   expenses          Expense[]
   includedServices  IncludedService[]
@@ -1077,12 +1132,13 @@ model IncludedService {
   users             User[]
   tasks             Task[]
   reports           Report[]
-  FacilityAmenities FacilityAmenities[]
+  facilityAmenities FacilityAmenities[]
   locationAmenities LocationAmenities[]
   expenses          Expense[]
   extraCharges      ExtraCharge[]
   Facility          Facility?           @relation(fields: [facilityId], references: [id])
   facilityId        String?
+  Payment           Payment[]
 
   @@index([name])
   @@index([description])
@@ -1106,7 +1162,7 @@ model ExtraCharge {
   users             User[]
   tasks             Task[]
   reports           Report[]
-  FacilityAmenities FacilityAmenities[]
+  facilityAmenities FacilityAmenities[]
   locationAmenities LocationAmenities[]
   expenses          Expense[] // This relation seems fine
   // includedServices  IncludedService[] // This was likely a typo or misconfiguration if it was meant to be a self-relation or link back.
@@ -1116,6 +1172,7 @@ model ExtraCharge {
   facilityId        String?
   IncludedService   IncludedService?    @relation(fields: [includedServiceId], references: [id])
   includedServiceId String?
+  Payment           Payment[]
 
   @@index([name])
   @@index([description])
@@ -1193,6 +1250,9 @@ model Location {
   deletedAt DateTime?
   User      User[]
   Facility  Facility[]
+  Agent     Agent[]
+  Agency    Agency?    @relation(fields: [agencyId], references: [id])
+  agencyId  String?
 
   @@index([deletedAt])
   @@index([country])
@@ -1242,6 +1302,7 @@ model Reservation {
 
   providerId String?
   Provider   Provider? @relation("ReservationProvider", fields: [providerId], references: [id])
+  Payment    Payment[]
 
   @@index([deletedAt])
   @@index([propertyId])
@@ -1250,20 +1311,73 @@ model Reservation {
 }
 
 model TaxRecord {
-  id         String    @id @default(uuid())
-  propertyId String
-  year       Int
-  amount     Float
-  percentage Float
-  paid       Boolean   @default(false)
-  dueDate    DateTime?
-  paidDate   DateTime?
-  notes      String?
-  Property   Property  @relation(fields: [propertyId], references: [id])
-  createdAt  DateTime  @default(now())
-  updatedAt  DateTime  @updatedAt
+  id            String         @id @default(uuid())
+  propertyId    String
+  year          Int
+  amount        Float
+  percentage    Float?
+  taxType       TaxType        @default(PROPERTY_TAX)
+  paid          Boolean        @default(false)
+  paidAmount    Float          @default(0)
+  dueDate       DateTime
+  paidDate      DateTime?
+  notes         String?
+  status        TaxStatus      @default(PENDING)
+  paymentMethod PaymentMethod?
+  transactionId String?
+  receiptNumber String?
+  invoiceNumber String?
+  clientId      String
+  createdById   String
+  updatedById   String
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  deletedAt     DateTime?
+
+  // Additional fields for enhanced functionality
+  lateFees           Float               @default(0)
+  interestRate       Float               @default(0)
+  gracePeriod        Int                 @default(0)
+  isRecurring        Boolean             @default(false)
+  recurringFrequency RecurringFrequency?
+  nextDueDate        DateTime?
+  reminderSent       Boolean             @default(false)
+  reminderDate       DateTime?
+
+  // Related records
+  parentTaxRecordId String?
+  relatedTaxRecords String[] @default([])
+
+  // Metadata
+  tags        String[] @default([])
+  priority    Priority @default(MEDIUM)
+  category    String?
+  subcategory String?
+
+  // Currency and financial tracking
+  currencyId String?
+  Currency   Currency? @relation(fields: [currencyId], references: [id])
+
+  // Audit and tracking fields
+  auditTrail  Json?    // Store audit trail as JSON
+  attachments Json?    // Store attachments as JSON
+
+  // Relations
+  Property        Property    @relation(fields: [propertyId], references: [id])
+  Client          User        @relation("TaxRecordClient", fields: [clientId], references: [id])
+  CreatedBy       User        @relation("TaxRecordCreatedBy", fields: [createdById], references: [id])
+  UpdatedBy       User        @relation("TaxRecordUpdatedBy", fields: [updatedById], references: [id])
+  ParentTaxRecord TaxRecord?  @relation("TaxRecordParent", fields: [parentTaxRecordId], references: [id])
+  ChildTaxRecords TaxRecord[] @relation("TaxRecordParent")
+  Analytics       Analytics[]
 
   @@index([propertyId, year])
+  @@index([clientId])
+  @@index([status])
+  @@index([taxType])
+  @@index([dueDate])
+  @@index([deletedAt])
+  @@index([currencyId])
 }
 
 model Mortgage {
@@ -1351,20 +1465,23 @@ model Subscription {
   paymentStatus    PaymentStatus      @default(UNPAID)
   pricingRuleId    String?
   PricingRule      PricingRule?       @relation(fields: [pricingRuleId], references: [id])
+  Payment          Payment[]
 
   @@index([deletedAt])
 }
 
 model Task {
-  id           String       @id @default(cuid())
-  title        String
-  description  String?
-  status       TaskStatus   @default(TODO)
-  type         TaskType
-  priority     TaskPriority @default(MEDIUM)
-  createdById  String?
-  assignedToId String?
+  id          String        @id @default(cuid())
+  title       String
+  description String?
+  status      TaskStatus    @default(TODO)
+  type        TaskType
+  priority    TaskPriority  @default(MEDIUM)
+  category    TaskCategory?
+  labels      TaskLabel[]
 
+  createdById       String?
+  assignedToId      String?
   propertyId        String?
   agentId           String?
   agencyId          String?
@@ -1373,21 +1490,35 @@ model Task {
   createdAt         DateTime         @default(now())
   updatedAt         DateTime         @updatedAt
   deletedAt         DateTime?
+  facilityId        String?
+  includedServiceId String?
+  extraChargeId     String?
+  followers         Json?            @default("[]") // Array of user IDs
   Analytics         Analytics[]
   Mention           Mention[]
   Agency            Agency?          @relation(fields: [agencyId], references: [id])
   Agent             Agent?           @relation(fields: [agentId], references: [id])
+  Property          Property?        @relation(fields: [propertyId], references: [id])
   createdBy         User?            @relation("TasksCreatedByUser", fields: [createdById], references: [id])
   assignedTo        User?            @relation("TasksAssignedToUser", fields: [assignedToId], references: [id])
-  Property          Property?        @relation(fields: [propertyId], references: [id])
   Facility          Facility?        @relation(fields: [facilityId], references: [id])
-  facilityId        String?
   IncludedService   IncludedService? @relation(fields: [includedServiceId], references: [id])
-  includedServiceId String?
   ExtraCharge       ExtraCharge?     @relation(fields: [extraChargeId], references: [id])
-  extraChargeId     String?
 
   @@index([deletedAt])
+  @@index([status])
+  @@index([type])
+  @@index([priority])
+  @@index([category])
+  @@index([createdById])
+  @@index([assignedToId])
+  @@index([propertyId])
+  @@index([agentId])
+  @@index([agencyId])
+  @@index([dueDate])
+  @@index([completedAt])
+  @@index([createdAt])
+  @@index([updatedAt])
 }
 
 model Tenant {
@@ -1437,6 +1568,7 @@ model User {
   phoneNumber    String?
   profilePicture String?
   image          String?
+  language       Language[]
   role           Role        @default(USER)
   type           AccountType @default(OAUTH)
   isActive       Boolean     @default(true)
@@ -1444,13 +1576,21 @@ model User {
   emailVerified  DateTime?
   responseTime   String?
   createdAt      DateTime    @default(now())
-  updatedAt      DateTime
+  updatedAt      DateTime    @updatedAt
   deletedAt      DateTime?
   locale         String?
   timezone       String?
   preferences    Json?
   agencyId       String?
   status         UserStatus  @default(ACTIVE)
+  lastSeen       DateTime?
+  isOnline       Boolean?
+  currencyId     String? // Preferred currency for the user
+  Currency       Currency?   @relation(fields: [currencyId], references: [id])
+
+  // Ticket relations
+  ticketsCreated  Ticket[] @relation("TicketUser")
+  ticketsAssigned Ticket[] @relation("TicketAgent")
 
   Account             Account[]
   Analytics           Analytics[]
@@ -1491,6 +1631,11 @@ model User {
   Favorite            Favorite[]
   Report              Report[]
 
+  // TaxRecord relations
+  TaxRecordsAsClient TaxRecord[] @relation("TaxRecordClient")
+  TaxRecordsCreated  TaxRecord[] @relation("TaxRecordCreatedBy")
+  TaxRecordsUpdated  TaxRecord[] @relation("TaxRecordUpdatedBy")
+
   @@index([agencyId])
   @@index([deletedAt])
   @@index([email])
@@ -1516,6 +1661,14 @@ enum AnalyticsType {
   PERFORMANCE
   AGENT_PERFORMANCE
   AGENCY_PERFORMANCE
+  TAX_PAYMENT
+  TAX_OVERDUE
+  TAX_COMPLIANCE
+  TAX_REVENUE
+  TAX_PERFORMANCE
+  TAX_REMINDER
+  TAX_AUDIT
+  TAX_REPORT
 }
 
 enum ArchitecturalStyle {
@@ -1634,23 +1787,12 @@ enum ExpenseType {
 }
 
 enum FacilityAmenities {
-  SWIMMING_POOL
-  FITNESS_CENTER
-  SAUNA
-  JACUZZI
-  TENNIS_COURT
-  BASKETBALL_COURT
-  PLAYGROUND
   COMMUNITY_CENTER
-  GAME_ROOM
   CO_WORKING_SPACE
   BIKE_STORAGE
   PARKING_GARAGE
   EV_CHARGING
   SECURITY_DESK
-  CONCIERGE
-  ELEVATOR
-  LAUNDRY_ROOM
   PACKAGE_ROOM
   BBQ_AREA
   ROOFTOP_TERRACE
@@ -1776,6 +1918,7 @@ enum PaymentStatus {
   REFUNDED
   OVERDUE
   CANCELLED
+  PENDING
 }
 
 enum PhotoType {
@@ -1814,7 +1957,7 @@ enum PropertyFeatures {
   SOLAR_PANELS
   EARTHQUAKE_RESISTANT // Corrected typo
   SOUNDPROOF
-  WHEELCHAIR_ACCESSIBLear
+  WHEELCHAIR_ACCESSIBLE
   PET_FRIENDLY
   HOME_OFFICE
   WALK_IN_CLOSET
@@ -1853,7 +1996,6 @@ enum ReservationStatus {
 
 enum ReviewType {
   PROPERTY
-
   AGENT
   AGENCY
   SERVICE
@@ -1913,6 +2055,26 @@ enum TaskType {
   COMMUNICATION_FOLLOW_UP
 }
 
+enum TaskCategory {
+  CLEANING
+  REPAIR
+  DECORATION
+  SERVICE
+  MOVING
+}
+
+enum TaskLabel {
+  CLEANING
+  DOOR
+  WINDOW
+  ELECTRICITY
+  PLUMPING
+  ROOF
+  GATES
+  FURNITURE
+  WARDROBE
+}
+
 enum PropertyStatus {
   AVAILABLE
   UNDER_CONTRACT
@@ -1924,38 +2086,47 @@ enum PropertyStatus {
   FORECLOSURE
 }
 
-enum PropertyType {
-  SingleFamily
-  TOWNHOUSE
-  CONDO
-  APARTMENT
-  DUPLEX
-  TRIPLEX
-  QUADPLEX
-  OFFICE_BUILDING
-  RETAIL_SPACE
-  WAREHOUSE
-  INDUSTRIAL_COMPLEX
-  MIXED_USE
-  MULTI_FAMILY
-  MOBILE_HOME
-  MANUFACTURED_HOME
-  FARM
-  RANCH
+enum PropertyCategory {
+  RESIDENTIAL
+  COMMERCIAL
+  LAND
+  INDUSTRIAL
+  OTHER
 }
 
-enum PropertyCategory {
+enum PropertyType {
   APARTMENT
   HOUSE
   VILLA
+  DUPLEX
+  PENTHOUSE
+  STUDIO
+  CONDO
+  TOWNHOUSE
+  LOFT
+  COTTAGE
+  BUNGALOW
+  CHALET
+  CABIN
+  MANSION
+  RANCH
+  FARM
   OFFICE
+  SHOP
   RETAIL
   WAREHOUSE
+  HOTEL
+  HOSTEL
+  GUESTHOUSE
+  BEDANDBREAKFAST
+  RESORT
+  GARAGE
+  PARKING
+  AGRICULTURAL
+  DEVELOPMENT
   FACTORY
-  LAND_PLOT
-  FARM
-  SHOP
-  BUILDING
+  PLANT
+  OTHER
 }
 
 enum PropertyCondition {
@@ -1976,8 +2147,29 @@ enum PropertyAmenities {
   STORAGE
   BALCONY
   TERRACE
-  FURNISHED
-  
+  AIR_CONDITIONING
+  HEATING
+  WIFI
+  SAUNA
+  JACUZZI
+  FIREPLACE
+  BBQ
+  PET_FRIENDLY
+  WHEELCHAIR_ACCESS
+  LAUNDRY
+  DISHWASHER
+  SMART_HOME
+  SOLAR_PANELS
+  CONCIERGE
+  PLAYGROUND
+  TENNIS_COURT
+  BASKETBALL_COURT
+  CINEMA_ROOM
+  GAME_ROOM
+  ROOFTOP
+  SEA_VIEW
+  MOUNTAIN_VIEW
+  CITY_VIEW
 }
 
 enum BuildingClass {
@@ -2025,6 +2217,65 @@ enum ContactMethod {
   ANY
 }
 
+enum TaxType {
+  PROPERTY_TAX
+  INCOME_TAX
+  SALES_TAX
+  OCCUPANCY_TAX
+  CITY_TAX
+  STATE_TAX
+  FEDERAL_TAX
+  UTILITY_TAX
+  MAINTENANCE_TAX
+  LUXURY_TAX
+  TRANSFER_TAX
+  STAMP_DUTY
+  VAT
+  MUNICIPALITY_TAX
+  COMMISSION_TAX
+  AGENCY_TAX
+  AGENT_TAX
+  OTHER
+}
+
+enum TaxStatus {
+  PENDING
+  PAID
+  OVERDUE
+  CANCELLED
+  DISPUTED
+  PARTIALLY_PAID
+  WAIVED
+  EXTENDED
+}
+
+enum PaymentMethod {
+  CASH
+  BANK_TRANSFER
+  CREDIT_CARD
+  DEBIT_CARD
+  PAYPAL
+  STRIPE
+  CHECK
+  MONEY_ORDER
+  CRYPTO
+  OTHER
+}
+
+enum Priority {
+  LOW
+  MEDIUM
+  HIGH
+  URGENT
+}
+
+enum RecurringFrequency {
+  MONTHLY
+  QUARTERLY
+  YEARLY
+  CUSTOM
+}
+
 model Favorite {
   id         String    @id @default(cuid())
   userId     String
@@ -2043,10 +2294,16 @@ model Favorite {
 }
 
 model MLConfiguration {
-  id                String   @id @default("singleton") // Ensures only one configuration record
+  id                String   @id @default("singleton") // Singleton pattern
   enableAutoTagging Boolean  @default(true)
   qualityThreshold  Float    @default(0.75)
-  // Add other ML-specific settings here as defined in AnalysisSettings type
+  enableMLFeatures  Boolean  @default(true) // Master ML toggle
+  maxTagsPerImage   Int      @default(5)
+  analysisMode      String   @default("standard") // e.g., "standard", "advanced"
+  allowedModels     String[] @default(["default"]) // e.g., ["default", "large", "fast"]
+  customSettings    Json? // For future extensibility
+  updatedBy         String? // User/admin who last updated
+  version           Int      @default(1)
   createdAt         DateTime @default(now())
   updatedAt         DateTime @updatedAt
 }

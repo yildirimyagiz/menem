@@ -1,0 +1,202 @@
+{
+  "Analytics": {
+    "title": "Analitik",
+    "subtitle": "Kapsamlı içgörüler ve performans metrikleri",
+    "description": "Platformunuz için kapsamlı analitik ve içgörüler",
+    "loading": "Analitik yükleniyor...",
+    "error": {
+      "loading": "Analitik yüklenirken hata"
+    },
+    "retry": "Tekrar Deneyin",
+    "refresh": "Yenile",
+    "refreshing": "Yenileniyor...",
+    "refresh_tooltip": "Analitik verilerini yenile",
+    "refresh_success": "Veriler başarıyla yenilendi!",
+    "refresh_error": "Yenileme başarısız. Lütfen tekrar deneyin.",
+    "export": "Dışa Aktar",
+    "exporting": "Dışa aktarılıyor...",
+    "export_tooltip": "Genel bakış verilerini dışa aktar",
+    "export_success": "Başarıyla dışa aktarıldı",
+    "export_error": "Dışa aktarma başarısız. Lütfen tekrar deneyin.",
+    "export_data": "veri",
+    "share": "Paylaş",
+    "sharing": "Paylaşılıyor...",
+    "share_tooltip": "Genel bakış verilerini paylaş",
+    "share_success": "Paylaşılabilir bağlantı panoya kopyalandı!",
+    "share_error": "Paylaşım başarısız. Lütfen tekrar deneyin.",
+    "overview": "Genel Bakış",
+    "status": {
+      "live": "Canlı Veri"
+    },
+    "settingsLabel": "Ayarlar",
+    "settingsDescription": "Analitik ayarlarını ve tercihlerini yapılandırın",
+    "quickActions": "Hızlı İşlemler",
+    "quickActions_success": "Filtreler başarıyla güncellendi!",
+    "quickActions_last7Days": "Son 7 Gün",
+    "quickActions_last30Days": "Son 30 Gün",
+    "quickActions_last90Days": "Son 90 Gün",
+    "quickActions_clearFilters": "Filtreleri Temizle",
+    "filters": {
+      "title": "Filtreler ve Tarih Aralığı",
+      "search": "Ara",
+      "searchPlaceholder": "Analitik ara...",
+      "type": "Tür",
+      "allTypes": "Tüm Türler",
+      "analyticsType": "Analitik Türü",
+      "type_all": "Tüm Türler",
+      "type_listingView": "İlan Görüntüleme",
+      "type_bookingConversion": "Rezervasyon Dönüşümü",
+      "type_mlPropertyScore": "ML Gayrimenkul Puanı",
+      "type_userEngagement": "Kullanıcı Katılımı",
+      "type_revenue": "Gelir",
+      "type_performance": "Performans",
+      "type_agentPerformance": "Acente Performansı",
+      "type_agencyPerformance": "Acente Performansı",
+      "entityType": "Varlık Türü",
+      "allEntities": "Tüm Varlıklar",
+      "entity_all": "Tüm Varlıklar",
+      "entity_property": "Gayrimenkul",
+      "entity_user": "Kullanıcı",
+      "entity_agent": "Acente",
+      "entity_agency": "Acente",
+      "entity_reservation": "Rezervasyon",
+      "entity_task": "Görev",
+      "dateRange": "Tarih Aralığı",
+      "startDate": "Başlangıç Tarihi",
+      "endDate": "Bitiş Tarihi"
+    },
+    "types": {
+      "LISTING_VIEW": "İlan Görüntüleme",
+      "BOOKING_CONVERSION": "Rezervasyon Dönüşümü",
+      "ML_PROPERTY_SCORE": "ML Gayrimenkul Puanı",
+      "USER_ENGAGEMENT": "Kullanıcı Katılımı",
+      "REVENUE": "Gelir",
+      "PERFORMANCE": "Performans",
+      "AGENT_PERFORMANCE": "Acente Performansı",
+      "AGENCY_PERFORMANCE": "Acente Performansı"
+    },
+    "entityTypes": {
+      "property": "Gayrimenkul",
+      "user": "Kullanıcı",
+      "agent": "Acente",
+      "agency": "Acente",
+      "reservation": "Rezervasyon",
+      "task": "Görev"
+    },
+    "metrics": {
+      "totalRecords": "Toplam Kayıt",
+      "averagePerDay": "Günlük Ortalama",
+      "uniqueTypes": "Benzersiz Türler",
+      "growthRate": "Büyüme Oranı"
+    },
+    "chart": {
+      "title": "Analitik Grafikleri",
+      "description": "Analitik verilerin görsel temsili",
+      "noData": "Veri mevcut değil",
+      "analyticsOverTime": "Zaman İçinde Analitik",
+      "totalRecords": "Toplam Kayıt",
+      "uniqueTypes": "Benzersiz Türler",
+      "avgPerDay": "Günlük Ortalama",
+      "totalAnalytics": "Toplam Analitik",
+      "inDateRange": "tarih aralığında",
+      "differentAnalyticsTypes": "farklı analitik türleri",
+      "averageDailyRecords": "günlük ortalama kayıt"
+    },
+    "table": {
+      "title": "Analitik Verileri",
+      "description": "Detaylı analitik kayıtları",
+      "totalRecords": "toplam kayıt",
+      "type": "Tür",
+      "entity": "Varlık",
+      "relatedTo": "İlgili",
+      "timestamp": "Zaman Damgası",
+      "data": "Veri",
+      "actions": "İşlemler",
+      "noData": "Analitik verisi bulunamadı",
+      "confirmDelete": "Bu analitik kaydını silmek istediğinizden emin misiniz?",
+      "viewDetails": "Detayları Görüntüle",
+      "delete": "Sil",
+      "showing": "Gösteriliyor",
+      "of": "/",
+      "results": "sonuç",
+      "previous": "Önceki",
+      "next": "Sonraki"
+    },
+    "settings": {
+      "general": "Genel Ayarlar",
+      "trackingSettings": "İzleme Ayarları",
+      "chartSettings": "Grafik Ayarları",
+      "exportSettings": "Dışa Aktarma Ayarları",
+      "security": "Güvenlik Ayarları",
+      "dataRetention": "Veri Saklama",
+      "accessControl": "Erişim Kontrolü"
+    },
+    "summary": {
+      "totalUsers": "Toplam Kullanıcı",
+      "activeProperties": "Aktif Mülkler",
+      "revenue": "Gelir",
+      "bookings": "Rezervasyonlar",
+      "agents": "Aktif Acenteler",
+      "fromLastMonth": "geçen aydan"
+    },
+    "tabs": {
+      "overview": "Genel Bakış",
+      "revenue": "Gelir",
+      "properties": "Mülkler",
+      "users": "Kullanıcılar",
+      "agents": "Acenteler",
+      "performance": "Performans"
+    },
+    "dashboard": {
+      "overview": "Analitik Genel Bakış"
+    },
+    "revenue": {
+      "title": "Gelir Analitiği"
+    },
+    "user": {
+      "error": "Hata",
+      "loginRequired": "Giriş Gerekli",
+      "title": "Başlık",
+      "totalUsers": "Toplam Kullanıcı",
+      "activeUsers": "Aktif Kullanıcı",
+      "newUsers": "Yeni Kullanıcı",
+      "avgSession": "Ortalama Oturum",
+      "topPages": "En İyi Sayfalar",
+      "views": "Görüntülemeler",
+      "noData": "Veri Yok"
+    },
+    "property": {
+      "error": "Hata",
+      "loginRequired": "Giriş Gerekli",
+      "title": "Başlık",
+      "count": "Sayı",
+      "avgPrice": "Ortalama Fiyat",
+      "views": "Görüntülemeler",
+      "inquiries": "Sorgular"
+    },
+    "performance": {
+      "title": "Başlık",
+      "metric": {
+        "responseTime": "Yanıt Süresi",
+        "uptime": "Çalışma Süresi"
+      }
+    },
+    "testData": {
+      "title": "Test Verisi Oluşturucu",
+      "status": "Dashboard bileşenlerini test etmek için örnek analitik verileri oluşturun.",
+      "generating": "Oluşturuluyor...",
+      "generate": "Test Verisi Oluştur"
+    },
+    "errorLoading": "Yükleme Hatası",
+    "tryAgain": "Tekrar Deneyin",
+    "loginRequired": "Giriş Gerekli",
+    "last30days": "Son 30 Gün",
+    "trend": {
+      "up": "Yükselen Trend",
+      "down": "Düşen Trend",
+      "stable": "Stabil"
+    },
+    "noData": "Veri Yok",
+    "details": "Detaylar"
+  }
+}

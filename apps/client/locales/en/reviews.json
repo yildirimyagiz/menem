@@ -1,0 +1,70 @@
+{
+  "_meta": {
+    "description": "User-facing strings for the reviews module. Fill with extracted and translated keys from reviews UI."
+  },
+  "page": {
+    "title": "My Reviews",
+    "subtitle": "View and manage your property reviews",
+    "writeReview": "Write Review",
+    "writeAReview": "Write a Review"
+  },
+  "stats": {
+    "totalReviews": "Total Reviews",
+    "averageRating": "Average Rating",
+    "published": "Published",
+    "totalHelpful": "Total Helpful",
+    "outOf5Stars": "out of 5 stars"
+  },
+  "reviews": {
+    "title": "Property Reviews",
+    "reviewsFound": "{count} reviews found",
+    "noReviewsFound": "No reviews found",
+    "noReviewsDescription": "Start reviewing properties to help other users make informed decisions"
+  },
+  "tabs": {
+    "allReviews": "All Reviews",
+    "published": "Published",
+    "pending": "Pending",
+    "rejected": "Rejected"
+  },
+  "reviewCard": {
+    "rating": "{rating}/5",
+    "helpful": "{count} helpful",
+    "replies": "{count} replies",
+    "viewProperty": "View Property",
+    "editReview": "Edit Review",
+    "deleteReview": "Delete Review"
+  },
+  "status": {
+    "published": "PUBLISHED",
+    "pending": "PENDING",
+    "rejected": "REJECTED"
+  },
+  "actions": {
+    "filter": "Filter",
+    "search": "Search",
+    "edit": "Edit",
+    "delete": "Delete",
+    "view": "View"
+  },
+  "property": {
+    "type": "Property Type",
+    "location": "Location",
+    "date": "Date"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "close": "Close",
+    "view": "View",
+    "edit": "Edit",
+    "confirm": "Confirm",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous"
+  }
+} 

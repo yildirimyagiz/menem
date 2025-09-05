@@ -1,0 +1,34 @@
+{
+  "title": "Search Properties",
+  "description": "Find your perfect property with advanced search and filters",
+  "filters": {
+    "title": "Search & Filters",
+    "search": "Ara",
+    "searchPlaceholder": "Search properties...",
+    "location": "Location",
+    "locationPlaceholder": "Enter location...",
+    "propertyType": "Property Type",
+    "propertyTypePlaceholder": "Select type",
+    "allTypes": "All Types",
+    "apartment": "Apartment",
+    "house": "House",
+    "villa": "Villa",
+    "studio": "Studio",
+    "priceRange": "Price Range",
+    "priceRangePlaceholder": "Select range",
+    "allPrices": "All Prices",
+    "applyFilters": "Apply Filters"
+  },
+  "results": {
+    "title": "Search Results",
+    "propertiesFound": "{count} properties found",
+    "gridView": "Grid View",
+    "listView": "List View",
+    "forRent": "For Rent",
+    "forSale": "For Sale",
+    "viewDetails": "View Details",
+    "beds": "{count} beds",
+    "baths": "{count} baths",
+    "rating": "{rating}"
+  }
+}

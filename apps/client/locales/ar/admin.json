@@ -1,0 +1,24 @@
+{
+  "admin": {
+    "dashboard": "Admin Dashboard",
+    "userManagement": "User Management",
+    "agencyManagement": "Agency Management",
+    "reportsAnalytics": "Reports & Analytics",
+    "systemLogs": "System Logs",
+    "databaseManagement": "Database Management",
+    "notifications": "Notifications"
+  },
+  "Admin": {
+    "dashboard": "لوحة التحكم",
+    "properties": "العقارات",
+    "agents": "الوكلاء",
+    "agencies": "الوكالات",
+    "owners": "المالكون",
+    "tenants": "المستأجرون",
+    "settings": "الإعدادات",
+    "notifications": "الإشعارات",
+    "messages": "الرسائل",
+    "reports": "التقارير",
+    "analytics": "التحليلات"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "SuperClaude Architect": {
+    "prefix": "sc-architect",
+    "body": [
+      "python3 superclaude_cli.py --persona architect --implement \"$1\""
+    ],
+    "description": "SuperClaude Architect persona"
+  },
+  "SuperClaude Frontend": {
+    "prefix": "sc-frontend",
+    "body": [
+      "python3 superclaude_cli.py --persona frontend --design \"$1\""
+    ],
+    "description": "SuperClaude Frontend persona"
+  },
+  "SuperClaude Backend": {
+    "prefix": "sc-backend",
+    "body": [
+      "python3 superclaude_cli.py --persona backend --implement \"$1\""
+    ],
+    "description": "SuperClaude Backend persona"
+  },
+  "SuperClaude Analyzer": {
+    "prefix": "sc-analyzer",
+    "body": [
+      "python3 superclaude_cli.py --persona analyzer --troubleshoot \"$1\""
+    ],
+    "description": "SuperClaude Analyzer persona"
+  },
+  "SuperClaude Security": {
+    "prefix": "sc-security",
+    "body": [
+      "python3 superclaude_cli.py --persona security --analyze \"$1\""
+    ],
+    "description": "SuperClaude Security persona"
+  },
+  "SuperClaude Scribe": {
+    "prefix": "sc-scribe",
+    "body": [
+      "python3 superclaude_cli.py --persona scribe --document \"$1\""
+    ],
+    "description": "SuperClaude Scribe persona"
+  }
+}

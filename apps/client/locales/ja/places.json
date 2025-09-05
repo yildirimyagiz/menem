@@ -1,0 +1,62 @@
+{
+  "places": {
+    "advices": {
+      "title": "[Local Advices]",
+      "authorPrefix": "[— ]"
+    },
+    "categoryFilters": {
+      "title": "[Categories]"
+    },
+    "placeCard": {
+      "viewDetails": "[View Details]",
+      "featured": "[Featured]"
+    },
+    "reviews": {
+      "title": "[Reviews]",
+      "by": "[by]",
+      "stars": "[stars]"
+    },
+    "interactiveMap": {
+      "title": "[Map View]",
+      "placesFound": "[{count} places found]",
+      "locationEnabled": "[Location enabled]"
+    },
+    "locationControls": {
+      "title": "[Location Controls]",
+      "getMyLocation": "[Get My Location]",
+      "startTracking": "[Start Tracking]",
+      "stopTracking": "[Stop Tracking]",
+      "tracking": "[Tracking...]",
+      "locationActive": "[Location is active]",
+      "yourLocation": "[Your Location]",
+      "locationDenied": "[Location permission denied]",
+      "accuracy": "[Accuracy: {accuracy}m]"
+    },
+    "mapLegend": {
+      "title": "[Legend]",
+      "restaurant": "[Restaurant]",
+      "school": "[School]",
+      "facility": "[Facility]",
+      "sportCenter": "[Sport Center]",
+      "yourLocation": "[Your Location]"
+    },
+    "placesGrid": {
+      "featuredPlaces": "[Featured Places]",
+      "activateMap": "[Activate Map]"
+    },
+    "searchAndFilter": {
+      "listView": "[List View]",
+      "mapView": "[Map View]",
+      "searchPlaceholder": "[Search places...]",
+      "filterBy": "[Filter by]"
+    },
+    "categories": {
+      "all": "[All Places]",
+      "restaurant": "[Restaurants]",
+      "school": "[Schools]",
+      "facility": "[Facilities]",
+      "sport": "[Sports Centers]"
+    },
+    "resultsSummary": "[{showing} / {total} places shown]"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "auth": {
+    "error": {
+      "title": "[Authentication Error]",
+      "default": "[An error occurred during authentication. Please try again.]",
+      "OAuthAccountNotLinked": "[This account is already linked to another authentication method.]",
+      "OAuthCallback": "[There was an error during the OAuth callback process.]",
+      "OAuthCreateAccount": "[There was an error creating your account with OAuth.]",
+      "OAuthSignin": "[There was an error signing in with OAuth.]",
+      "backToLogin": "[Back to Login]"
+    }
+  }
+}

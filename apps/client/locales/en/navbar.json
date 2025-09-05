@@ -1,0 +1,20 @@
+{
+  "nav": {
+    "listings": "Listings",
+    "agents": "Agents",
+    "agencies": "Agencies",
+    "facilities": "Facilities",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "auth": {
+    "login": "Login",
+    "signup": "Sign Up"
+  },
+  "brand": {
+    "name": "Reservatior"
+  },
+  "search": {
+    "placeholder": "Search..."
+  }
+} 

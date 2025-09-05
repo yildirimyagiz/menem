@@ -1,43 +1,48 @@
 {
-  "name": "@acme/db",
+  "name": "@reservatior/db",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "type": "module",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "default": "./src/index.ts"
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
     }
   },
-  "license": "MIT",
-  "prisma": {
-    "schema": "./prisma/schema.prisma"
-  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "prisma"
+  ],
   "scripts": {
     "build": "tsc",
     "clean": "git clean -xdf .cache .turbo dist node_modules",
-    "dev": "tsc",
-    "seed": "tsx prisma/seed.ts",
-    "format": "prettier --check . --ignore-path ../../.gitignore",
-    "lint": "eslint",
     "db:generate": "pnpm run generate",
+    "dev": "tsc",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
     "generate": "pnpm with-env prisma generate",
+    "lint": "eslint",
     "push": "pnpm with-env prisma db push --skip-generate",
+    "seed": "tsx prisma/seed.ts",
     "studio": "pnpm with-env prisma studio --port 5556",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false",
     "with-env": "dotenv -e ../../.env --"
   },
+  "prettier": "@reservatior/prettier-config",
   "dependencies": {
+    "@faker-js/faker": "^9.9.0",
     "@prisma/client": "^6.3.1",
     "@t3-oss/env-core": "^0.12.0",
     "stripe": "^18.1.0",
     "zod": "catalog:"
   },
   "devDependencies": {
-    "@acme/eslint-config": "workspace:*",
-    "@acme/prettier-config": "workspace:*",
-    "@acme/tsconfig": "workspace:*",
-    "@acme/validators": "workspace:*",
+    "@reservatior/eslint-config": "workspace:*",
+    "@reservatior/prettier-config": "workspace:*",
+    "@reservatior/tsconfig": "workspace:*",
+    "@reservatior/validators": "workspace:*",
     "@types/node": "^22.13.10",
     "@types/stripe": "^8.0.417",
     "dotenv-cli": "^8.0.0",
@@ -46,9 +51,11 @@
     "faker-js": "^1.0.0",
     "prettier": "catalog:",
     "prisma": "^6.3.1",
-    "tsx": "^4.19.3",
     "prisma-generator-typescript-interfaces": "^1.2.0",
+    "tsx": "^4.19.3",
     "typescript": "catalog:"
   },
-  "prettier": "@acme/prettier-config"
+  "prisma": {
+    "schema": "./prisma/schema.prisma"
+  }
 }

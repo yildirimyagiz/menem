@@ -1,0 +1,35 @@
+{
+  "form": {
+    "title": "Randevu",
+    "add": "Randevu Ekle",
+    "edit": "Randevu Düzenle",
+    "delete": "Randevu Sil",
+    "eventName": "Randevu Adı",
+    "scheduledAt": "Planlanan Tarih",
+    "actions": "İşlemler",
+    "submit": "Gönder",
+    "cancel": "İptal"
+  },
+  "toast": {
+    "added": {
+      "title": "Randevu Eklendi",
+      "description": "Randevu başarıyla eklendi."
+    },
+    "updated": {
+      "title": "Randevu Güncellendi",
+      "description": "Randevu başarıyla güncellendi."
+    },
+    "deleted": {
+      "title": "Randevu Silindi",
+      "description": "Randevu başarıyla silindi."
+    },
+    "error": {
+      "title": "Hata",
+      "description": "Bir hata oluştu. Lütfen tekrar deneyin."
+    }
+  },
+  "list": {
+    "empty": "Randevu bulunamadı.",
+    "loading": "Randevular yükleniyor..."
+  }
+}

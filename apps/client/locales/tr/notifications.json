@@ -1,0 +1,74 @@
+{
+  "notifications": {
+    "title": "Bildirimler",
+    "description": "Bildirimlerinizi yönetin ve güncel kalın",
+    "all": "Tümü",
+    "unread": "Okunmamış",
+    "read": "Okunmuş",
+    "high": "Yüksek Öncelik",
+    "medium": "Orta Öncelik",
+    "low": "Düşük Öncelik",
+    "new": "Yeni",
+    "createdAt": "{date}",
+    "markAsRead": "Okundu Olarak İşaretle",
+    "unreadCount": "{count} okunmamış",
+    "markAllAsRead": "Tümünü Okundu Olarak İşaretle",
+    "searchPlaceholder": "Bildirimlerde ara...",
+    "searchAriaLabel": "Bildirimlerde ara",
+    "loadFailed": "Bildirimler yüklenemedi.",
+    "noNotifications": "Henüz bildirim yok",
+    "noMentions": "Henüz bahsetme yok",
+    "loadingHashtags": "Etiketler yükleniyor...",
+    "noHashtagNotifications": "Henüz etiket bildirimi yok",
+    "trackHashtags": "Bildirim almak için etiketleri takip edin.",
+    "search": {
+      "placeholder": "Bildirimlerde ara...",
+      "noResults": "Bildirim bulunamadı"
+    },
+    "filters": {
+      "title": "Filtreler",
+      "type": "Tür",
+      "priority": "Öncelik",
+      "date": "Tarih",
+      "clear": "Filtreleri Temizle"
+    },
+    "actions": {
+      "markAsRead": "Okundu Olarak İşaretle",
+      "markAsUnread": "Okunmadı Olarak İşaretle",
+      "delete": "Sil",
+      "markAllAsRead": "Tümünü Okundu Olarak İşaretle",
+      "refresh": "Yenile"
+    },
+    "types": {
+      "mention": "Bahsetme",
+      "taskAssigned": "Görev Atandı",
+      "bookingConfirmed": "Rezervasyon Onaylandı",
+      "reviewReceived": "Değerlendirme Alındı",
+      "priceChange": "Fiyat Değişikliği",
+      "systemUpdate": "Sistem Güncellemesi",
+      "complianceAlert": "Uyumluluk Uyarısı",
+      "communicationReceived": "İletişim Alındı",
+      "rentDue": "Kira Vadesi",
+      "rentPaid": "Kira Ödendi",
+      "leaseExpiring": "Kira Sözleşmesi Sona Eriyor",
+      "maintenanceRequest": "Bakım Talebi",
+      "leaseRenewal": "Kira Sözleşmesi Yenileme",
+      "latePaymentWarning": "Geç Ödeme Uyarısı",
+      "leaseTermination": "Kira Sözleşmesi Feshi",
+      "rentIncrease": "Kira Artışı",
+      "communityNotice": "Topluluk Duyurusu",
+      "policyUpdate": "Politika Güncellemesi",
+      "like": "Beğeni",
+      "comment": "Yorum",
+      "follow": "Takip",
+      "availability": "Müsaitlik",
+      "other": "Diğer"
+    },
+    "empty": {
+      "title": "Bildirim yok",
+      "description": "Hepsini gördünüz! Yeni güncellemeler için daha sonra tekrar kontrol edin."
+    },
+    "loading": "Bildirimler yükleniyor...",
+    "error": "Bildirimler yüklenirken hata oluştu"
+  }
+} 

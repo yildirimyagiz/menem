@@ -1,5 +1,13 @@
-import { HashtagType } from "@prisma/client";
 import { z } from "zod";
+
+// Define HashtagType locally since import is not working
+const HashtagType = {
+  GENERAL: "GENERAL" as const,
+  PROPERTY: "PROPERTY" as const,
+  AGENT: "AGENT" as const,
+} as const;
+
+type HashtagType = typeof HashtagType[keyof typeof HashtagType];
 
 // Hashtag Schema
 export const HashtagSchema = z.object({

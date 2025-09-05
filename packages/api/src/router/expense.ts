@@ -1,13 +1,12 @@
 import type { Expense as PrismaExpense } from "@prisma/client";
 import type { TRPCRouterRecord } from "@trpc/server";
-import { TRPCError } from "@trpc/server";
-import { z } from "zod";
-
 import {
   CreateExpenseSchema,
   ExpenseFilterSchema,
   UpdateExpenseSchema,
-} from "@acme/validators";
+} from "@reservatior/validators";
+import { TRPCError } from "@trpc/server";
+import { z } from "zod";
 
 import { getPaginationParams } from "../helpers/pagination";
 import { withCacheAndFormat } from "../helpers/withCacheAndFormat";
@@ -141,6 +140,15 @@ export const expenseRouter = {
       return sanitizeExpense(expense);
     }),
 
+  byContract: protectedProcedure
+    .input(z.object({ contractId: z.string() }))
+    .query(() => {
+      // Since Expense model doesn't have contractId, we'll return empty array
+      // In a real implementation, you might want to add contractId to the Expense model
+      // or create a separate ContractExpense model
+      return [] as const;
+    }),
+
   create: protectedProcedure
     .input(CreateExpenseSchema)
     .mutation(async ({ ctx, input }) => {
@@ -252,5 +260,82 @@ export const expenseRouter = {
           cause: originalError,
         });
       }
+    }),
+
+  byProperty: protectedProcedure
+    .input(z.object({ propertyId: z.string() }))
+    .query(async ({ ctx, input }) => {
+      const expenses = await ctx.db.expense.findMany({
+        where: { propertyId: input.propertyId, deletedAt: null },
+        include: {
+          Property: true,
+          Tenant: true,
+          Agency: true,
+          Currency: true,
+        },
+        orderBy: { createdAt: "desc" },
+      });
+      return expenses.map((e) => sanitizeExpense(e));
+    }),
+
+  byFacilityId: protectedProcedure
+    .input(z.object({ facilityId: z.string() }))
+    .query(async ({ ctx, input }) => {
+      const { skip, take, page, limit } = getPaginationParams({
+        page: 1,
+        limit: 10,
+      });
+
+      const [expenses, total] = await Promise.all([
+        ctx.db.expense.findMany({
+          where: {
+            facilityId: input.facilityId,
+            deletedAt: null,
+          },
+          orderBy: { createdAt: "desc" },
+          skip,
+          take,
+          include: {
+            Property: true,
+            Tenant: true,
+            Agency: true,
+            Currency: true,
+          },
+        }),
+        ctx.db.expense.count({
+          where: {
+            facilityId: input.facilityId,
+            deletedAt: null,
+          },
+        }),
+      ]);
+
+      return {
+        data: {
+          items: expenses.map((expense) => sanitizeExpense(expense)),
+          total,
+          page,
+          limit,
+        },
+      };
+    }),
+
+  byFacility: protectedProcedure
+    .input(z.object({ facilityId: z.string() }))
+    .query(async ({ ctx, input }) => {
+      const expenses = await ctx.db.expense.findMany({
+        where: {
+          facilityId: input.facilityId,
+          deletedAt: null,
+        },
+        orderBy: { createdAt: "desc" },
+        include: {
+          Property: true,
+          Tenant: true,
+          Agency: true,
+          Currency: true,
+        },
+      });
+      return expenses.map((expense) => sanitizeExpense(expense));
     }),
 } satisfies TRPCRouterRecord;

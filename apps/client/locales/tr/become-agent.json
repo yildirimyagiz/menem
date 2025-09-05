@@ -1,0 +1,254 @@
+{
+  "becomeAgent": {
+    "title": "Danışman Olun",
+    "subtitle": "Emlak danışmanı olarak platformumuza katılın",
+    "description": "Kapsamlı platformumuzla emlak danışmanı olarak kariyerinize başlayın. Mülkleri yönetin, müşterilerle bağlantı kurun ve işinizi büyütün.",
+    "joinDescription": "Profesyonel danışmanlar ağına katılın ve emlak yönetimi yolculuğunuza başlayın",
+    "steps": {
+      "title": "Kayıt Adımları",
+      "step1": "Formu doldurun",
+      "step2": "Bir abonelik planı seçin",
+      "step3": "Ödemeyi tamamlayın",
+      "step4": "Platformu kullanmaya başlayın"
+    },
+    "form": {
+      "title": "Danışman Bilgileri",
+      "subtitle": "Bize kendinizden bahsedin",
+      "name": {
+        "label": "Ad Soyad",
+        "placeholder": "Adınız",
+        "required": "Ad zorunludur",
+        "invalid": "Lütfen geçerli bir ad girin"
+      },
+      "email": {
+        "label": "E-posta Adresi",
+        "placeholder": "eposta@adres.com",
+        "required": "E-posta zorunludur",
+        "invalid": "Lütfen geçerli bir e-posta adresi girin"
+      },
+      "phone": {
+        "label": "Telefon Numarası",
+        "placeholder": "Telefon numarası",
+        "required": "Telefon zorunludur",
+        "invalid": "Lütfen geçerli bir telefon numarası girin"
+      },
+      "agency": {
+        "label": "Acente (İsteğe Bağlı)",
+        "placeholder": "Acente adınız",
+        "description": "Bir acentenin parçasıysanız, acente adını girin"
+      },
+      "experience": {
+        "label": "Deneyim Yılı",
+        "placeholder": "Deneyim seviyesini seçin",
+        "options": {
+          "new": "Emlak sektöründe yeni",
+          "1to3": "1-3 yıl",
+          "3to5": "3-5 yıl",
+          "5to10": "5-10 yıl",
+          "10plus": "10+ yıl"
+        }
+      },
+      "specialization": {
+        "label": "Uzmanlık Alanı (İsteğe Bağlı)",
+        "placeholder": "Uzmanlık alanınız",
+        "options": {
+          "residential": "Konut",
+          "commercial": "Ticari",
+          "luxury": "Lüks",
+          "investment": "Yatırım",
+          "rental": "Kiralama",
+          "newConstruction": "Yeni İnşaat"
+        }
+      },
+      "bio": {
+        "label": "Biyografi (İsteğe Bağlı)",
+        "placeholder": "Kendinizden ve deneyiminizden bahsedin",
+        "maxLength": "Maksimum 500 karakter"
+      },
+      "submit": "Aboneliğe Devam Et",
+      "submitting": "Gönderiliyor...",
+      "cancel": "İptal"
+    },
+    "packages": {
+      "title": "Planınızı Seçin",
+      "subtitle": "İhtiyaçlarınıza uygun mükemmel planı seçin",
+      "free": "Ücretsiz",
+      "starter": {
+        "title": "Başlangıç",
+        "price": "19$",
+        "period": "aylık",
+        "description": "Yeni danışmanlar için mükemmel",
+        "features": [
+          "Temel mülk yönetimi",
+          "Müşteri veritabanı",
+          "E-posta desteği",
+          "Standart raporlar",
+          "Mobil uygulama erişimi"
+        ]
+      },
+      "professional": {
+        "title": "Profesyonel",
+        "price": "49$",
+        "period": "aylık",
+        "description": "Aktif danışmanlar için ideal",
+        "features": [
+          "Gelişmiş mülk yönetimi",
+          "CRM entegrasyonu",
+          "Öncelikli destek",
+          "Gelişmiş analizler",
+          "Özel markalama",
+          "Potansiyel müşteri oluşturma araçları"
+        ]
+      },
+      "premium": {
+        "title": "Premium",
+        "price": "99$",
+        "period": "aylık",
+        "description": "En iyi performans gösteren danışmanlar için",
+        "features": [
+          "Tam mülk yönetimi",
+          "Gelişmiş CRM",
+          "7/24 destek",
+          "Özel entegrasyonlar",
+          "Beyaz etiket seçenekleri",
+          "Özel hesap yöneticisi",
+          "Pazarlama araçları"
+        ]
+      },
+      "select": "Plan Seç",
+      "selected": "Seçildi",
+      "change": "Planı Değiştir",
+      "bestValue": "En İyi Fiyat"
+    },
+    "benefits": {
+      "title": "Neden Danışman Olmalısınız?",
+      "subtitle": "Binlerce başarılı danışmana katılın",
+      "professionalGrowth": {
+        "title": "Profesyonel Gelişim",
+        "description": "Kariyerinizi ilerletmek için eğitimlere, araçlara ve kaynaklara erişim"
+      },
+      "networkAccess": {
+        "title": "Ağ Erişimi",
+        "description": "Oluşturulmuş ağımız aracılığıyla acenteler ve müşterilerle bağlantı kurun"
+      },
+      "flexibleWork": {
+        "title": "Esnek Çalışma",
+        "description": "Bağımsız olarak esnek saatlerle ve komisyon bazlı kazançlarla çalışın"
+      },
+      "propertyManagement": {
+        "title": "Gayrimenkul Yönetimi",
+        "description": "Gelişmiş araçlar ve analizlerle mülk listelerinizi kolayca yönetin"
+      },
+      "clientManagement": {
+        "title": "Müşteri Yönetimi",
+        "description": "Entegre CRM'miz aracılığıyla müşterilerle ilişkiler kurun ve sürdürülebilirlik sağlayın"
+      },
+      "marketAccess": {
+        "title": "Pazar Erişimi",
+        "description": "Özel listelemelere ve pazar içgörülerine erişin"
+      },
+      "support": {
+        "title": "7/24 Destek",
+        "description": "Özel destek ekibimizle ihtiyacınız olduğunda yardım alın"
+      },
+      "training": {
+        "title": "Eğitim ve Kaynaklar",
+        "description": "Yeteneklerinizi geliştirmek için eğitim materyallerine ve kaynaklara erişin"
+      }
+    },
+    "success": {
+      "title": "Reservatior'a Hoş Geldiniz!",
+      "subtitle": "Danışman hesabınız başarıyla oluşturuldu",
+      "description": "Artık mülkleri yönetmeye, müşterilerle bağlantı kurmaya ve işinizi büyütmeye başlayabilirsiniz. Giriş talimatları için e-postanızı kontrol edin.",
+      "dashboard": "Gösterge Paneline Git",
+      "setup": "Kurulumu Tamamla",
+      "email": "E-postayı Kontrol Et"
+    },
+    "validation": {
+      "required": "Bu alan zorunludur",
+      "invalidEmail": "Lütfen geçerli bir e-posta adresi girin",
+      "invalidPhone": "Lütfen geçerli bir telefon numarası girin",
+      "minLength": "En az {min} karakter olmalıdır",
+      "maxLength": "En fazla {max} karakter olmalıdır",
+      "uniqueEmail": "E-posta adresi benzersiz olmalıdır",
+      "selectPackage": "Lütfen bir abonelik paketi seçin",
+      "nameRequired": "Ad zorunludur",
+      "emailRequired": "E-posta zorunludur",
+      "phoneRequired": "Telefon zorunludur"
+    },
+    "notifications": {
+      "applicationSubmitted": "Başvuru gönderildi! Aboneliğe yönlendiriliyor...",
+      "agentCreated": "Danışman Oluşturuldu",
+      "agentCreatedDesc": "Danışman hesabınız başarıyla oluşturuldu!",
+      "error": "Hata",
+      "agentCreateFailed": "Danışman hesabı oluşturulamadı",
+      "networkError": "Ağ hatası",
+      "tryAgain": "Tekrar dene"
+    },
+    "faq": {
+      "title": "Sıkça Sorulan Sorular",
+      "subtitle": "Danışman olmakla ilgili bilmeniz gereken her şey",
+      "questions": [
+        {
+          "question": "Danışman olmak ne kadar ücretlidir?",
+          "answer": "Aylık 19$'dan başlayan esnek fiyatlandırma planları sunuyoruz. İhtiyaçlarınıza en uygun planı seçin."
+        },
+        {
+          "question": "Abonelik planımı daha sonra değiştirebilir miyim?",
+          "answer": "Evet, abonelik planınızı istediğiniz zaman gösterge panelinizden yükseltebilir veya düşürebilirsiniz."
+        },
+        {
+          "question": "Katılmak için lisanslı olmam gerekiyor mu?",
+          "answer": "Evet, platformumuzda danışman olmak için geçerli bir emlak lisansına sahip olmanız gerekir."
+        },
+        {
+          "question": "Ücretsiz deneme sürümü mevcut mu?",
+          "answer": "Evet, tüm yeni danışmanlar için 14 günlük ücretsiz deneme sürümü sunuyoruz. Başlamak için kredi kartı gerekmez."
+        },
+        {
+          "question": "Ne tür destek mevcuttur?",
+          "answer": "Tüm planlar için e-posta desteği sağlıyoruz, Profesyonel ve Premium planlarda öncelikli destek ve özel hesap yöneticileri sunuyoruz."
+        },
+        {
+          "question": "Bir acentayla çalışabilir miyim?",
+          "answer": "Evet, bağımsız olarak veya bir acentenin parçası olarak çalışabilirsiniz. Kayıt sırasında acentenizi belirtebilirsiniz."
+        }
+      ]
+    },
+    "requirements": {
+      "title": "Gereksinimler",
+      "subtitle": "Danışman olmak için ihtiyacınız olanlar",
+      "license": {
+        "title": "Emlak Lisansı",
+        "description": "Bulunduğunuz bölgede geçerli bir emlak lisansına sahip olmanız gerekir"
+      },
+      "experience": {
+        "title": "Deneyim",
+        "description": "Gerekli olmasa da, emlak sektöründe bazı deneyimler faydalıdır"
+      },
+      "commitment": {
+        "title": "Kararlılık",
+        "description": "Müşterilere mükemmel hizmet sunmaya adanmışlık"
+      },
+      "technology": {
+        "title": "Teknoloji",
+        "description": "Temel bilgisayar becerileri ve internet erişimi"
+      }
+    },
+    "loading": {
+      "title": "Yükleniyor",
+      "creating": "Danışman hesabı oluşturuluyor...",
+      "processing": "İşleniyor...",
+      "redirecting": "Yönlendiriliyor...",
+      "loading": "Yükleniyor..."
+    },
+    "errors": {
+      "title": "Hata",
+      "formError": "Lütfen formunuzu kontrol edin ve tekrar deneyin",
+      "networkError": "Ağ hatası. Lütfen bağlantınızı kontrol edin",
+      "serverError": "Sunucu hatası. Lütfen daha sonra tekrar deneyin",
+      "tryAgain": "Tekrar dene",
+      "contactSupport": "Destek ile iletişime geç"
+    }
+  }
+}

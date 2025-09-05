@@ -1,0 +1,38 @@
+{
+  "sections": {
+    "social": "Social",
+    "product": "Product",
+    "company": "Company",
+    "legal": "Legal"
+  },
+  "social": {
+    "linkedin": "LinkedIn",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "twitter": "Twitter"
+  },
+  "product": {
+    "features": "Features",
+    "pricing": "Pricing",
+    "testimonials": "Testimonials",
+    "faq": "FAQ"
+  },
+  "company": {
+    "about": "About",
+    "blog": "Blog",
+    "careers": "Careers",
+    "contact": "Contact"
+  },
+  "legal": {
+    "terms": "Terms",
+    "privacy": "Privacy",
+    "cookies": "Cookies",
+    "licenses": "Licenses"
+  },
+  "brand": {
+    "name": "Reservatior",
+    "description": "Transforming property management with innovative technology and a focus on building positive relationships between property owners, managers, and tenants.",
+    "copyright": "© {year} Reservatior, Inc.",
+    "rights": "All rights reserved."
+  }
+} 

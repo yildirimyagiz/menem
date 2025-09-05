@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const TicketStatusEnum = z.enum([
+export const TicketStatus = z.enum([
   "OPEN",
   "IN_PROGRESS",
   "RESOLVED",
@@ -13,32 +13,51 @@ export const TicketSchema = z.object({
   cuid: z.string(),
   subject: z.string(),
   description: z.string().optional(),
-  status: TicketStatusEnum.default("OPEN"),
-  createdAt: z.date().optional(),
-  updatedAt: z.date().optional(),
-  closedAt: z.date().optional(),
-  deletedAt: z.date().optional(),
+  status: TicketStatus.default("OPEN"),
+  createdAt: z.date(),
+  updatedAt: z.date(),
+  closedAt: z.date().nullable(),
+  deletedAt: z.date().nullable(),
   CommunicationLogs: z.array(z.any()).optional(),
+  userId: z.string(),
+  agentId: z.string().nullable(),
+  User: z.object({
+    id: z.string(),
+    name: z.string().optional(),
+    firstName: z.string().optional(),
+    lastName: z.string().optional(),
+    email: z.string().email().optional(),
+  }).optional(),
+  Agent: z.object({
+    id: z.string(),
+    name: z.string().optional(),
+    firstName: z.string().optional(),
+    lastName: z.string().optional(),
+    email: z.string().email().optional(),
+  }).nullable().optional(),
 });
 
 export const CreateTicketSchema = z.object({
   subject: z.string(),
   description: z.string().optional(),
-  status: TicketStatusEnum.optional(),
+  status: TicketStatus.optional(),
+  agentId: z.string().optional(),
 });
 
 export const UpdateTicketSchema = z.object({
   id: z.string(),
   subject: z.string().optional(),
   description: z.string().optional(),
-  status: TicketStatusEnum.optional(),
+  status: TicketStatus.optional(),
   closedAt: z.date().optional(),
   deletedAt: z.date().optional(),
 });
 
 export const TicketFilterSchema = z.object({
-  status: TicketStatusEnum.optional(),
+  status: TicketStatus.optional(),
   subject: z.string().optional(),
+  userId: z.string().optional(),
+  agentId: z.string().optional(),
   createdAtFrom: z.date().optional(),
   createdAtTo: z.date().optional(),
   updatedAtFrom: z.date().optional(),

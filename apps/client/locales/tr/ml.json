@@ -1,0 +1,11 @@
+{
+  "title": "ML",
+  "description": "Machine learning features and results.",
+  "main": {
+    "analyticsDashboard": "Analytics Dashboard",
+    "photoAnalytics": "Per-Photo ML Analytics",
+    "mlConfig": "ML Configuration (Admin)",
+    "userFeedback": "User Feedback on ML Results",
+    "smartSearch": "ML-Powered Smart Search"
+  }
+}

@@ -32,7 +32,7 @@ export type UserStatus = "ACTIVE" | "INACTIVE" | "SUSPENDED";
 
 export type AccountType = "OAUTH" | "EMAIL" | "OIDC" | "CREDENTIALS" | "GOOGLE" | "FACEBOOK";
 
-export type AnalyticsType = "LISTING_VIEW" | "BOOKING_CONVERSION" | "ML_PROPERTY_SCORE" | "USER_ENGAGEMENT" | "REVENUE" | "PERFORMANCE" | "AGENT_PERFORMANCE" | "AGENCY_PERFORMANCE";
+export type AnalyticsType = "LISTING_VIEW" | "BOOKING_CONVERSION" | "ML_PROPERTY_SCORE" | "USER_ENGAGEMENT" | "REVENUE" | "PERFORMANCE" | "AGENT_PERFORMANCE" | "AGENCY_PERFORMANCE" | "TAX_PAYMENT" | "TAX_OVERDUE" | "TAX_COMPLIANCE" | "TAX_REVENUE" | "TAX_PERFORMANCE" | "TAX_REMINDER" | "TAX_AUDIT" | "TAX_REPORT";
 
 export type ArchitecturalStyle = "MODERN" | "CONTEMPORARY" | "TRADITIONAL" | "COLONIAL" | "VICTORIAN" | "CRAFTSMAN" | "MID_CENTURY" | "MEDITERRANEAN" | "FARMHOUSE" | "RANCH" | "SPANISH" | "TUDOR";
 
@@ -56,7 +56,7 @@ export type ExpenseStatus = "PENDING" | "PAID" | "OVERDUE" | "CANCELLED";
 
 export type ExpenseType = "MAINTENANCE" | "CLEANING" | "UTILITIES" | "MANAGEMENT_FEE" | "TAX" | "INSURANCE" | "REPAIR" | "SECURITY" | "OTHER";
 
-export type FacilityAmenities = "SWIMMING_POOL" | "FITNESS_CENTER" | "SAUNA" | "JACUZZI" | "TENNIS_COURT" | "BASKETBALL_COURT" | "PLAYGROUND" | "COMMUNITY_CENTER" | "GAME_ROOM" | "CO_WORKING_SPACE" | "BIKE_STORAGE" | "PARKING_GARAGE" | "EV_CHARGING" | "SECURITY_DESK" | "CONCIERGE" | "ELEVATOR" | "LAUNDRY_ROOM" | "PACKAGE_ROOM" | "BBQ_AREA" | "ROOFTOP_TERRACE";
+export type FacilityAmenities = "COMMUNITY_CENTER" | "CO_WORKING_SPACE" | "BIKE_STORAGE" | "PARKING_GARAGE" | "EV_CHARGING" | "SECURITY_DESK" | "PACKAGE_ROOM" | "BBQ_AREA" | "ROOFTOP_TERRACE";
 
 export type GreenCertification = "ENERGY_STAR" | "LEED" | "WELL" | "BREEAM" | "GREEN_GLOBES";
 
@@ -78,13 +78,13 @@ export type OfferType = "STANDARD" | "PROMOTIONAL" | "LAST_MINUTE" | "GROUP" | "
 
 export type ParkingType = "STREET" | "DRIVEWAY" | "GARAGE" | "CARPORT" | "UNDERGROUND" | "ASSIGNED_PARKING";
 
-export type PaymentStatus = "UNPAID" | "PARTIALLY_PAID" | "PAID" | "REFUNDED" | "OVERDUE" | "CANCELLED";
+export type PaymentStatus = "UNPAID" | "PARTIALLY_PAID" | "PAID" | "REFUNDED" | "OVERDUE" | "CANCELLED" | "PENDING";
 
 export type PhotoType = "COVER" | "GALLERY" | "PROFILE" | "DOCUMENT" | "INTERIOR" | "EXTERIOR" | "AERIAL" | "FLOOR_PLAN";
 
 export type PricingRuleType = "SEASONAL" | "LONG_TERM" | "EARLY_BOOKING" | "LAST_MINUTE" | "SPECIAL_EVENT";
 
-export type PropertyFeatures = "FURNISHED" | "PARTIALLY_FURNISHED" | "UNFURNISHED" | "OPEN_FLOOR_PLAN" | "HIGH_CEILING" | "BALCONY" | "TERRACE" | "GARDEN" | "SEA_VIEW" | "MOUNTAIN_VIEW" | "CITY_VIEW" | "SMART_HOME" | "ENERGY_EFFICIENT" | "SOLAR_PANELS" | "EARTHQUAKE_RESISTANT" | "SOUNDPROOF" | "WHEELCHAIR_ACCESSIBLear" | "PET_FRIENDLY" | "HOME_OFFICE" | "WALK_IN_CLOSET";
+export type PropertyFeatures = "FURNISHED" | "PARTIALLY_FURNISHED" | "UNFURNISHED" | "OPEN_FLOOR_PLAN" | "HIGH_CEILING" | "BALCONY" | "TERRACE" | "GARDEN" | "SEA_VIEW" | "MOUNTAIN_VIEW" | "CITY_VIEW" | "SMART_HOME" | "ENERGY_EFFICIENT" | "SOLAR_PANELS" | "EARTHQUAKE_RESISTANT" | "SOUNDPROOF" | "WHEELCHAIR_ACCESSIBLE" | "PET_FRIENDLY" | "HOME_OFFICE" | "WALK_IN_CLOSET";
 
 export type ReportStatus = "GENERATED" | "IN_PROGRESS" | "COMPLETED" | "FAILED" | "ARCHIVED";
 
@@ -106,15 +106,19 @@ export type TaskStatus = "TODO" | "IN_PROGRESS" | "COMPLETED" | "CANCELLED";
 
 export type TaskType = "PROPERTY_MAINTENANCE" | "LISTING_REVIEW" | "CLIENT_FOLLOW_UP" | "DOCUMENT_PROCESSING" | "MARKETING_TASK" | "SALES_ACTIVITY" | "COMPLIANCE_CHECK" | "COMMUNICATION_FOLLOW_UP";
 
+export type TaskCategory = "CLEANING" | "REPAIR" | "DECORATION" | "SERVICE" | "MOVING";
+
+export type TaskLabel = "CLEANING" | "DOOR" | "WINDOW" | "ELECTRICITY" | "PLUMPING" | "ROOF" | "GATES" | "FURNITURE" | "WARDROBE";
+
 export type PropertyStatus = "AVAILABLE" | "UNDER_CONTRACT" | "SOLD" | "RENTED" | "PENDING_APPROVAL" | "OFF_MARKET" | "MAINTENANCE" | "FORECLOSURE";
 
-export type PropertyType = "SingleFamily" | "TOWNHOUSE" | "CONDO" | "APARTMENT" | "DUPLEX" | "TRIPLEX" | "QUADPLEX" | "OFFICE_BUILDING" | "RETAIL_SPACE" | "WAREHOUSE" | "INDUSTRIAL_COMPLEX" | "MIXED_USE" | "MULTI_FAMILY" | "MOBILE_HOME" | "MANUFACTURED_HOME" | "FARM" | "RANCH";
+export type PropertyCategory = "RESIDENTIAL" | "COMMERCIAL" | "LAND" | "INDUSTRIAL" | "OTHER";
 
-export type PropertyCategory = "APARTMENT" | "HOUSE" | "VILLA" | "OFFICE" | "RETAIL" | "WAREHOUSE" | "FACTORY" | "LAND_PLOT" | "FARM" | "SHOP" | "BUILDING";
+export type PropertyType = "APARTMENT" | "HOUSE" | "VILLA" | "DUPLEX" | "PENTHOUSE" | "STUDIO" | "CONDO" | "TOWNHOUSE" | "LOFT" | "COTTAGE" | "BUNGALOW" | "CHALET" | "CABIN" | "MANSION" | "RANCH" | "FARM" | "OFFICE" | "SHOP" | "RETAIL" | "WAREHOUSE" | "HOTEL" | "HOSTEL" | "GUESTHOUSE" | "BEDANDBREAKFAST" | "RESORT" | "GARAGE" | "PARKING" | "AGRICULTURAL" | "DEVELOPMENT" | "FACTORY" | "PLANT" | "OTHER";
 
 export type PropertyCondition = "EXCELLENT" | "GOOD" | "FAIR" | "NEEDS_RENOVATION" | "UNDER_CONSTRUCTION";
 
-export type PropertyAmenities = "POOL" | "GYM" | "GARDEN" | "PARKING" | "SECURITY" | "ELEVATOR" | "STORAGE" | "BALCONY" | "TERRACE" | "FURNISHED";
+export type PropertyAmenities = "POOL" | "GYM" | "GARDEN" | "PARKING" | "SECURITY" | "ELEVATOR" | "STORAGE" | "BALCONY" | "TERRACE" | "AIR_CONDITIONING" | "HEATING" | "WIFI" | "SAUNA" | "JACUZZI" | "FIREPLACE" | "BBQ" | "PET_FRIENDLY" | "WHEELCHAIR_ACCESS" | "LAUNDRY" | "DISHWASHER" | "SMART_HOME" | "SOLAR_PANELS" | "CONCIERGE" | "PLAYGROUND" | "TENNIS_COURT" | "BASKETBALL_COURT" | "CINEMA_ROOM" | "GAME_ROOM" | "ROOFTOP" | "SEA_VIEW" | "MOUNTAIN_VIEW" | "CITY_VIEW";
 
 export type BuildingClass = "CLASS_A" | "CLASS_B" | "CLASS_C" | "CLASS_D" | "LUXURY" | "HISTORIC";
 
@@ -125,6 +129,16 @@ export type OwnershipType = "FREEHOLD" | "LEASEHOLD" | "COMMONHOLD" | "COOPERATI
 export type OwnershipCategory = "PERSONAL" | "COMPANY" | "BANK" | "CONSTRUCTION_COMPANY" | "INVESTMENT_FUND" | "GOVERNMENT" | "TRUST";
 
 export type ContactMethod = "EMAIL" | "PHONE" | "MESSAGE" | "ANY";
+
+export type TaxType = "PROPERTY_TAX" | "INCOME_TAX" | "SALES_TAX" | "OCCUPANCY_TAX" | "CITY_TAX" | "STATE_TAX" | "FEDERAL_TAX" | "UTILITY_TAX" | "MAINTENANCE_TAX" | "LUXURY_TAX" | "TRANSFER_TAX" | "STAMP_DUTY" | "VAT" | "MUNICIPALITY_TAX" | "COMMISSION_TAX" | "AGENCY_TAX" | "AGENT_TAX" | "OTHER";
+
+export type TaxStatus = "PENDING" | "PAID" | "OVERDUE" | "CANCELLED" | "DISPUTED" | "PARTIALLY_PAID" | "WAIVED" | "EXTENDED";
+
+export type PaymentMethod = "CASH" | "BANK_TRANSFER" | "CREDIT_CARD" | "DEBIT_CARD" | "PAYPAL" | "STRIPE" | "CHECK" | "MONEY_ORDER" | "CRYPTO" | "OTHER";
+
+export type Priority = "LOW" | "MEDIUM" | "HIGH" | "URGENT";
+
+export type RecurringFrequency = "MONTHLY" | "QUARTERLY" | "YEARLY" | "CUSTOM";
 
 export interface Account {
   id: string;
@@ -165,6 +179,7 @@ export interface Agency {
   Expense?: Expense[];
   Hashtag?: Hashtag[];
   Language?: Language[];
+  location?: Location[];
   Mention?: Mention[];
   Notification?: Notification[];
   Photo?: Photo[];
@@ -199,6 +214,9 @@ export interface Agent {
   email: string | null;
   phoneNumber: string | null;
   bio: string | null;
+  locationId: string | null;
+  Location?: Location | null;
+  language?: Language[];
   address: string | null;
   website: string | null;
   logoUrl: string | null;
@@ -248,6 +266,8 @@ export interface Analytics {
   Reservation?: Reservation | null;
   taskId: string | null;
   Task?: Task | null;
+  taxRecordId: string | null;
+  TaxRecord?: TaxRecord | null;
 }
 
 export interface Availability {
@@ -315,6 +335,10 @@ export interface Ticket {
   closedAt: Date | null;
   deletedAt: Date | null;
   CommunicationLogs?: CommunicationLog[];
+  userId: string;
+  agentId: string | null;
+  User?: User;
+  Agent?: User | null;
 }
 
 export interface Contract {
@@ -366,6 +390,12 @@ export interface CommunicationLog {
   ticketId: string | null;
   createdAt: Date;
   updatedAt: Date;
+  isEdited: boolean;
+  editedAt: Date | null;
+  deletedById: string | null;
+  reactions: JsonValue | null;
+  attachments: JsonValue | null;
+  readBy: JsonValue | null;
 }
 
 export interface ComplianceRecord {
@@ -405,6 +435,8 @@ export interface Currency {
   Reservation?: Reservation[];
   Property?: Property[];
   PricingRule?: PricingRule[];
+  users?: User[];
+  TaxRecord?: TaxRecord[];
 }
 
 export interface Guest {
@@ -444,6 +476,7 @@ export interface CommissionRule {
   createdAt: Date;
   updatedAt: Date;
   deletedAt: Date | null;
+  Payment?: Payment[];
 }
 
 export interface Discount {
@@ -520,6 +553,7 @@ export interface Expense {
   includedServiceId: string | null;
   ExtraCharge?: ExtraCharge | null;
   extraChargeId: string | null;
+  Payment?: Payment[];
 }
 
 export interface Hashtag {
@@ -571,6 +605,10 @@ export interface Language {
   deletedAt: Date | null;
   agencyId: string | null;
   Agency?: Agency | null;
+  Agent?: Agent | null;
+  agentId: string | null;
+  User?: User | null;
+  userId: string | null;
 }
 
 export interface Mention {
@@ -660,8 +698,22 @@ export interface Payment {
   stripeClientSecret: string | null;
   stripeStatus: string | null;
   stripeError: string | null;
+  propertyId: string | null;
+  expenseId: string | null;
+  reservationId: string | null;
+  subscriptionId: string | null;
+  commissionRuleId: string | null;
+  includedServiceId: string | null;
+  extraChargeId: string | null;
   Currency?: Currency;
   Tenant?: Tenant;
+  Property?: Property | null;
+  Expense?: Expense | null;
+  Reservation?: Reservation | null;
+  Subscription?: Subscription | null;
+  CommissionRule?: CommissionRule | null;
+  IncludedService?: IncludedService | null;
+  ExtraCharge?: ExtraCharge | null;
 }
 
 export interface Permission {
@@ -724,6 +776,7 @@ export interface Post {
 export interface Provider {
   id: string;
   name: string;
+  logo: string | null;
   apiKey: string | null;
   apiSecret: string | null;
   baseUrl: string | null;
@@ -756,10 +809,14 @@ export interface Property {
   condition: PropertyCondition;
   features: PropertyFeatures[];
   amenities: PropertyAmenities[];
+  locationAmenities: LocationAmenities[];
   constructionType: ConstructionType | null;
   buildingClass: BuildingClass | null;
   energyRating: EnergyRating | null;
   parkingSpaces: number;
+  parkingType: ParkingType | null;
+  heatingType: HeatingType | null;
+  greenCertification: GreenCertification | null;
   cancellationPolicy: string | null;
   checkInTime: Date | null;
   checkOutTime: Date | null;
@@ -828,6 +885,7 @@ export interface Property {
   guestId: string | null;
   Contract?: Contract[];
   Report?: Report[];
+  Payment?: Payment[];
 }
 
 export interface Event {
@@ -866,7 +924,7 @@ export interface Facility {
   users?: User[];
   tasks?: Task[];
   reports?: Report[];
-  FacilityAmenities: FacilityAmenities[];
+  facilityAmenities: FacilityAmenities[];
   locationAmenities: LocationAmenities[];
   expenses?: Expense[];
   includedServices?: IncludedService[];
@@ -887,12 +945,13 @@ export interface IncludedService {
   users?: User[];
   tasks?: Task[];
   reports?: Report[];
-  FacilityAmenities: FacilityAmenities[];
+  facilityAmenities: FacilityAmenities[];
   locationAmenities: LocationAmenities[];
   expenses?: Expense[];
   extraCharges?: ExtraCharge[];
   Facility?: Facility | null;
   facilityId: string | null;
+  Payment?: Payment[];
 }
 
 export interface ExtraCharge {
@@ -909,13 +968,14 @@ export interface ExtraCharge {
   users?: User[];
   tasks?: Task[];
   reports?: Report[];
-  FacilityAmenities: FacilityAmenities[];
+  facilityAmenities: FacilityAmenities[];
   locationAmenities: LocationAmenities[];
   expenses?: Expense[];
   Facility?: Facility | null;
   facilityId: string | null;
   IncludedService?: IncludedService | null;
   includedServiceId: string | null;
+  Payment?: Payment[];
 }
 
 export interface Report {
@@ -979,6 +1039,9 @@ export interface Location {
   deletedAt: Date | null;
   User?: User[];
   Facility?: Facility[];
+  Agent?: Agent[];
+  Agency?: Agency | null;
+  agencyId: string | null;
 }
 
 export interface Reservation {
@@ -1019,6 +1082,7 @@ export interface Reservation {
   Availability?: Availability[];
   providerId: string | null;
   Provider?: Provider | null;
+  Payment?: Payment[];
 }
 
 export interface TaxRecord {
@@ -1026,14 +1090,49 @@ export interface TaxRecord {
   propertyId: string;
   year: number;
   amount: number;
-  percentage: number;
+  percentage: number | null;
+  taxType: TaxType;
   paid: boolean;
-  dueDate: Date | null;
+  paidAmount: number;
+  dueDate: Date;
   paidDate: Date | null;
   notes: string | null;
-  Property?: Property;
+  status: TaxStatus;
+  paymentMethod: PaymentMethod | null;
+  transactionId: string | null;
+  receiptNumber: string | null;
+  invoiceNumber: string | null;
+  clientId: string;
+  createdById: string;
+  updatedById: string;
   createdAt: Date;
   updatedAt: Date;
+  deletedAt: Date | null;
+  lateFees: number;
+  interestRate: number;
+  gracePeriod: number;
+  isRecurring: boolean;
+  recurringFrequency: RecurringFrequency | null;
+  nextDueDate: Date | null;
+  reminderSent: boolean;
+  reminderDate: Date | null;
+  parentTaxRecordId: string | null;
+  relatedTaxRecords: string[];
+  tags: string[];
+  priority: Priority;
+  category: string | null;
+  subcategory: string | null;
+  currencyId: string | null;
+  Currency?: Currency | null;
+  auditTrail: JsonValue | null;
+  attachments: JsonValue | null;
+  Property?: Property;
+  Client?: User;
+  CreatedBy?: User;
+  UpdatedBy?: User;
+  ParentTaxRecord?: TaxRecord | null;
+  ChildTaxRecords?: TaxRecord[];
+  Analytics?: Analytics[];
 }
 
 export interface Mortgage {
@@ -1107,6 +1206,7 @@ export interface Subscription {
   paymentStatus: PaymentStatus;
   pricingRuleId: string | null;
   PricingRule?: PricingRule | null;
+  Payment?: Payment[];
 }
 
 export interface Task {
@@ -1116,6 +1216,8 @@ export interface Task {
   status: TaskStatus;
   type: TaskType;
   priority: TaskPriority;
+  category: TaskCategory | null;
+  labels: TaskLabel[];
   createdById: string | null;
   assignedToId: string | null;
   propertyId: string | null;
@@ -1126,19 +1228,20 @@ export interface Task {
   createdAt: Date;
   updatedAt: Date;
   deletedAt: Date | null;
+  facilityId: string | null;
+  includedServiceId: string | null;
+  extraChargeId: string | null;
+  followers: JsonValue | null;
   Analytics?: Analytics[];
   Mention?: Mention[];
   Agency?: Agency | null;
   Agent?: Agent | null;
+  Property?: Property | null;
   createdBy?: User | null;
   assignedTo?: User | null;
-  Property?: Property | null;
   Facility?: Facility | null;
-  facilityId: string | null;
   IncludedService?: IncludedService | null;
-  includedServiceId: string | null;
   ExtraCharge?: ExtraCharge | null;
-  extraChargeId: string | null;
 }
 
 export interface Tenant {
@@ -1176,6 +1279,7 @@ export interface User {
   phoneNumber: string | null;
   profilePicture: string | null;
   image: string | null;
+  language?: Language[];
   role: Role;
   type: AccountType;
   isActive: boolean;
@@ -1190,6 +1294,12 @@ export interface User {
   preferences: JsonValue | null;
   agencyId: string | null;
   status: UserStatus;
+  lastSeen: Date | null;
+  isOnline: boolean | null;
+  currencyId: string | null;
+  Currency?: Currency | null;
+  ticketsCreated?: Ticket[];
+  ticketsAssigned?: Ticket[];
   Account?: Account[];
   Analytics?: Analytics[];
   CommunicationLog?: CommunicationLog[];
@@ -1227,6 +1337,9 @@ export interface User {
   locationId: string | null;
   Favorite?: Favorite[];
   Report?: Report[];
+  TaxRecordsAsClient?: TaxRecord[];
+  TaxRecordsCreated?: TaxRecord[];
+  TaxRecordsUpdated?: TaxRecord[];
 }
 
 export interface Favorite {
@@ -1244,6 +1357,13 @@ export interface MLConfiguration {
   id: string;
   enableAutoTagging: boolean;
   qualityThreshold: number;
+  enableMLFeatures: boolean;
+  maxTagsPerImage: number;
+  analysisMode: string;
+  allowedModels: string[];
+  customSettings: JsonValue | null;
+  updatedBy: string | null;
+  version: number;
   createdAt: Date;
   updatedAt: Date;
 }

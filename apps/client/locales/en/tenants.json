@@ -1,0 +1,41 @@
+{
+  "Tenants": {
+    "title": "Tenants",
+    "description": "Manage tenant information and leases across your properties",
+    "addTenant": "Add Tenant",
+    "propertyFilter": "Property",
+    "allProperties": "All Properties",
+    "paymentStatusFilter": "Payment Status",
+    "allStatuses": "All Statuses",
+    "tenantColumn": "Tenant",
+    "statusColumn": "Status",
+    "propertyUnitColumn": "Property / Unit",
+    "contactColumn": "Contact",
+    "leasePeriodColumn": "Lease Period",
+    "actionsColumn": "Actions",
+    "idLabel": "ID",
+    "notAssigned": "Not assigned",
+    "notAvailable": "N/A",
+    "leaseFrom": "From",
+    "leaseTo": "To",
+    "viewDetails": "View Details",
+    "edit": "Edit",
+    "delete": "Delete",
+    "noTenantsFound": "No tenants found",
+    "getStartedAddTenant": "Get started by adding a new tenant",
+    "confirmDeletionTitle": "Confirm Deletion",
+    "confirmDeletionDesc": "Are you sure you want to delete the tenant {tenant}? This action cannot be undone.",
+    "cancel": "Cancel",
+    "deleting": "Deleting...",
+    "previous": "Previous",
+    "next": "Next",
+    "status": {
+      "UNPAID": "Unpaid",
+      "PARTIALLY_PAID": "Partially Paid",
+      "PAID": "Paid",
+      "REFUNDED": "Refunded",
+      "OVERDUE": "Overdue",
+      "CANCELLED": "Cancelled"
+    }
+  }
+} 

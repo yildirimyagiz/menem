@@ -1,0 +1,213 @@
+{
+  "becomeAgency": {
+    "title": "[Become an Agency]",
+    "subtitle": "[Join our platform as a real estate agency]",
+    "description": "[Create your agency profile and start managing properties, agents, and clients on our comprehensive real estate platform.]",
+    "steps": {
+      "title": "[Registration Steps]",
+      "step1": "[Fill out the form]",
+      "step2": "[Choose a subscription plan]",
+      "step3": "[Complete payment]",
+      "step4": "[Start using the platform]"
+    },
+    "form": {
+      "title": "[Agency Information]",
+      "subtitle": "[Tell us about your agency]",
+      "name": {
+        "label": "[Agency Name]",
+        "placeholder": "[Enter your agency name]",
+        "required": "[Agency name is required]",
+        "invalid": "[Please enter a valid agency name]"
+      },
+      "email": {
+        "label": "[Email Address]",
+        "placeholder": "[Enter your email address]",
+        "required": "[Email address is required]",
+        "invalid": "[Please enter a valid email address]"
+      },
+      "phone": {
+        "label": "[Phone Number]",
+        "placeholder": "[Enter your phone number]",
+        "required": "[Phone number is required]",
+        "invalid": "[Please enter a valid phone number]"
+      },
+      "website": {
+        "label": "[Website (Optional)]",
+        "placeholder": "[Enter your website URL]",
+        "invalid": "[Please enter a valid website URL]"
+      },
+      "description": {
+        "label": "[Description (Optional)]",
+        "placeholder": "[Tell us about your agency]",
+        "maxLength": "[Maximum 500 characters]"
+      },
+      "submit": "[Continue to Payment]",
+      "submitting": "[Submitting...]",
+      "cancel": "[Cancel]"
+    },
+    "packages": {
+      "title": "[Choose Your Plan]",
+      "subtitle": "[Select the perfect plan for your agency]",
+      "basic": {
+        "title": "[Basic]",
+        "price": "[$29]",
+        "period": "[per month]",
+        "description": "[Perfect for small agencies]",
+        "features": [
+          "[Up to 10 agents]",
+          "[Basic property management]",
+          "[Email support]",
+          "[Standard reports]"
+        ]
+      },
+      "professional": {
+        "title": "[Professional]",
+        "price": "[$79]",
+        "period": "[per month]",
+        "description": "[Ideal for growing agencies]",
+        "features": [
+          "[Up to 50 agents]",
+          "[Advanced property management]",
+          "[Priority support]",
+          "[Advanced analytics]",
+          "[Custom branding]"
+        ]
+      },
+      "enterprise": {
+        "title": "[Enterprise]",
+        "price": "[$199]",
+        "period": "[per month]",
+        "description": "[For large agencies]",
+        "features": [
+          "[Unlimited agents]",
+          "[Full property management]",
+          "[24/7 support]",
+          "[Custom integrations]",
+          "[White-label options]",
+          "[Dedicated account manager]"
+        ]
+      },
+      "select": "[Select Plan]",
+      "selected": "[Selected]",
+      "change": "[Change Plan]"
+    },
+    "payment": {
+      "title": "[Payment Information]",
+      "subtitle": "[Complete your registration]",
+      "cardNumber": "[Card Number]",
+      "expiryDate": "[Expiry Date]",
+      "cvv": "[CVV]",
+      "cardholderName": "[Cardholder Name]",
+      "billingAddress": "[Billing Address]",
+      "city": "[City]",
+      "state": "[State]",
+      "zipCode": "[ZIP Code]",
+      "country": "[Country]",
+      "pay": "[Pay Now]",
+      "processing": "[Processing Payment...]",
+      "secure": "[Secure Payment]",
+      "encrypted": "[Your payment information is encrypted and secure]"
+    },
+    "success": {
+      "title": "[Welcome to Reservatior!]",
+      "subtitle": "[Your agency has been created successfully]",
+      "description": "[You can now start managing your properties, agents, and clients. Check your email for login instructions.]",
+      "dashboard": "[Go to Dashboard]",
+      "setup": "[Complete Setup]",
+      "email": "[Check Email]"
+    },
+    "validation": {
+      "required": "[This field is required]",
+      "invalidEmail": "[Please enter a valid email address]",
+      "invalidPhone": "[Please enter a valid phone number]",
+      "invalidUrl": "[Please enter a valid website URL]",
+      "minLength": "[Must be at least {min} characters]",
+      "maxLength": "[Must be no more than {max} characters]",
+      "uniqueName": "[Agency name must be unique]",
+      "uniqueEmail": "[Email address must be unique]",
+      "selectPackage": "[Please select a subscription package]"
+    },
+    "notifications": {
+      "agencyCreated": "[Agency Created]",
+      "agencyCreatedDesc": "[Your agency has been created successfully!]",
+      "paymentIntentCreated": "[Payment Intent Created]",
+      "paymentIntentCreatedDesc": "[Payment intent created successfully]",
+      "error": "[Error]",
+      "agencyCreateFailed": "[Failed to create agency]",
+      "paymentError": "[Payment Error]",
+      "paymentFailed": "[Failed to process payment]",
+      "networkError": "[Network error]",
+      "tryAgain": "[Try again]"
+    },
+    "benefits": {
+      "title": "[Why Choose Reservatior?]",
+      "subtitle": "[Join thousands of successful agencies]",
+      "propertyManagement": {
+        "title": "[Property Management]",
+        "description": "[Easily manage your property portfolio with advanced tools and analytics]"
+      },
+      "agentManagement": {
+        "title": "[Agent Management]",
+        "description": "[Manage your team of agents with comprehensive tools and performance tracking]"
+      },
+      "clientManagement": {
+        "title": "[Client Management]",
+        "description": "[Build and maintain relationships with clients through our integrated CRM]"
+      },
+      "analytics": {
+        "title": "[Advanced Analytics]",
+        "description": "[Get insights into your performance with detailed reports and analytics]"
+      },
+      "support": {
+        "title": "[24/7 Support]",
+        "description": "[Get help whenever you need it with our dedicated support team]"
+      },
+      "security": {
+        "title": "[Enterprise Security]",
+        "description": "[Your data is protected with enterprise-grade security measures]"
+      }
+    },
+    "faq": {
+      "title": "[Frequently Asked Questions]",
+      "subtitle": "[Everything you need to know about becoming an agency]",
+      "questions": [
+        {
+          "question": "[How much does it cost to become an agency?]",
+          "answer": "[We offer flexible pricing plans starting from $29/month. Choose the plan that best fits your agency's needs.]"
+        },
+        {
+          "question": "[Can I change my subscription plan later?]",
+          "answer": "[Yes, you can upgrade or downgrade your subscription plan at any time from your dashboard.]"
+        },
+        {
+          "question": "[How many agents can I have on my account?]",
+          "answer": "[The number of agents depends on your subscription plan. Basic plans allow up to 10 agents, while Enterprise plans have unlimited agents.]"
+        },
+        {
+          "question": "[Is there a free trial available?]",
+          "answer": "[Yes, we offer a 14-day free trial for all new agencies. No credit card required to start.]"
+        },
+        {
+          "question": "[What support is available?]",
+          "answer": "[We provide email support for all plans, with priority support and dedicated account managers for Professional and Enterprise plans.]"
+        }
+      ]
+    },
+    "loading": {
+      "title": "[Loading]",
+      "creating": "[Creating agency...]",
+      "processing": "[Processing payment...]",
+      "redirecting": "[Redirecting...]",
+      "loading": "[Loading...]"
+    },
+    "errors": {
+      "title": "[Error]",
+      "formError": "[Please check your form and try again]",
+      "paymentError": "[Payment failed. Please try again]",
+      "networkError": "[Network error. Please check your connection]",
+      "serverError": "[Server error. Please try again later]",
+      "tryAgain": "[Try again]",
+      "contactSupport": "[Contact support]"
+    }
+  }
+}

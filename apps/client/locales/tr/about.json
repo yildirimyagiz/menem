@@ -1,0 +1,26 @@
+{
+  "About": {
+    "heading": "👋 Hakkımızda.",
+    "heroButton": "Daha Fazla Bilgi",
+    "subHeading": "Tarafsız ve bağımsızız, her gün dünya çapında milyonlarca insanı bilgilendiren, eğiten ve eğlendiren ayırt edici, dünya standartlarında programlar ve içerikler yaratıyoruz."
+  },
+  "about": {
+    "hero": {
+      "title": "Hakkımızda",
+      "subtitle": "Tarafsız ve bağımsızız, her gün dünya çapında milyonlarca insanı bilgilendiren, eğiten ve eğlendiren ayırt edici, dünya standartlarında programlar ve içerikler yaratıyoruz.",
+      "button": "Daha Fazla Bilgi"
+    },
+    "founder": {
+      "title": "Kurucularımız",
+      "description": "Reservatior'ın arkasındaki ekiple tanışın"
+    },
+    "statistics": {
+      "title": "Etkimiz",
+      "description": "Rakamlarla hikayemiz"
+    },
+    "testimonials": {
+      "title": "Müşterilerimiz Ne Diyor",
+      "description": "Gerçek insanlardan gerçek geri bildirimler"
+    }
+  }
+} 

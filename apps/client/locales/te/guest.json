@@ -1,0 +1,105 @@
+{
+  "title": "[Guest]",
+  "description": "[Guest user features and settings.]",
+  "stats": {
+    "totalGuests": "[Total Guests]",
+    "maleGuests": "[Male Guests]",
+    "femaleGuests": "[Female Guests]",
+    "guestsLoadedText": "[Guests loaded]",
+    "malePercentageText": "[% Male]",
+    "femalePercentageText": "[% Female]",
+    "vsLastMonth": "[vs last month]"
+  },
+  "modals": {
+    "addNewGuestTooltip": "[Add New Guest]",
+    "deleteGuestTitle": "[Delete Guest]",
+    "deleteGuestDescription": "[Are you sure you want to delete this guest? This action cannot be undone.]",
+    "deleteGuestConfirmation": "[Are you sure you want to delete {name}?]",
+    "editGuestTitle": "[Edit Guest]",
+    "createGuest": "[Create Guest]",
+    "updateGuest": "[Update Guest]",
+    "cancel": "[Cancel]",
+    "save": "[Save]",
+    "deleting": "[Deleting...]",
+    "delete": "[Delete]",
+    "saving": "[Saving...]",
+    "creating": "[Creating...]",
+    "updating": "[Updating...]"
+  },
+  "form": {
+    "namePlaceholder": "[Full Name]",
+    "emailPlaceholder": "[Email Address]",
+    "phonePlaceholder": "[Phone Number]",
+    "nationalityPlaceholder": "[Nationality]",
+    "passportNumberPlaceholder": "[Passport Number]",
+    "city": "[City]",
+    "cityRequired": "[City is required]",
+    "enterCity": "[Enter city]",
+    "country": "[Country]",
+    "countryRequired": "[Country is required]",
+    "enterCountry": "[Enter country]",
+    "zipCode": "[ZIP Code]",
+    "zipCodeRequired": "[ZIP code is required]",
+    "enterZipCode": "[Enter ZIP code]"
+  },
+  "filters": {
+    "advancedFilters": "[Advanced Filters]",
+    "advancedFiltersDescription": "[Filter guests by gender, nationality, date, and more.]",
+    "clearAll": "[Clear All]",
+    "applyFilters": "[Apply Filters]",
+    "sortOrder": "[Sort Order]",
+    "descending": "[Descending]",
+    "ascending": "[Ascending]",
+    "itemsPerPage": "[Items per page]",
+    "fiveItems": "[5 items]",
+    "tenItems": "[10 items]",
+    "twentyItems": "[20 items]",
+    "fiftyItems": "[50 items]",
+    "filter": "[filter]",
+    "applied": "[applied]",
+    "createdDate": "[Created Date]",
+    "updatedDate": "[Updated Date]",
+    "name": "[Name]",
+    "email": "[Email]"
+  },
+  "list": {
+    "view": "[View]",
+    "edit": "[Edit]",
+    "delete": "[Delete]",
+    "guestDeletedTitle": "[Guest Deleted]",
+    "guestDeletedDescription": "[The guest has been deleted successfully.]",
+    "deleteFailedTitle": "[Delete Failed]",
+    "deleteFailedDescription": "[Failed to delete the guest. Please try again.]",
+    "noGuests": "[No guests found.]",
+    "searchPlaceholder": "[Search guests by name, email, phone, or passport number...]"
+  },
+  "toasts": {
+    "success": "[Success]",
+    "guestCreatedTitle": "[Guest Created]",
+    "guestCreatedDescription": "[The guest has been created successfully.]",
+    "guestUpdatedTitle": "[Guest Updated]",
+    "guestUpdatedDescription": "[The guest has been updated successfully.]",
+    "guestDeleteSuccessDescription": "[The guest has been deleted successfully.]",
+    "guestDeleteErrorDescription": "[Failed to delete the guest.]",
+    "creationFailedTitle": "[Creation Failed]",
+    "creationFailedDescription": "[Failed to create guest.]",
+    "updateFailedTitle": "[Update Failed]",
+    "updateFailedDescription": "[Failed to update guest.]",
+    "deleteFailed": "[Delete Failed]"
+  },
+  "errors": {
+    "guestLoadErrorTitle": "[Failed to load guests]",
+    "guestLoadErrorDescription": "[There was an error loading the guests. Please try again.]",
+    "retryButton": "[Retry]",
+    "deleteGuestError": "[Failed to delete guest.]",
+    "updateGuestError": "[Failed to update guest.]"
+  },
+  "validation": {
+    "required": "[This field is required]"
+  },
+  "gender": {
+    "male": "[Male]",
+    "female": "[Female]",
+    "other": "[Other]"
+  }
+}

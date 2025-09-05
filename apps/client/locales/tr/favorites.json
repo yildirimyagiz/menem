@@ -1,0 +1,30 @@
+{
+  "title": "Favoriler",
+  "description": "Favori ilanlarınız ve mülkleriniz.",
+  "empty": {
+    "title": "Henüz favori yok",
+    "description": "Mülkleri keşfetmeye başlayın ve favorilerinize ekleyin"
+  },
+  "buttons": {
+    "explore": "Mülkleri Keşfet",
+    "remove": "Favorilerden Kaldır",
+    "viewDetails": "Detayları Görüntüle"
+  },
+  "stats": {
+    "totalFavorites": "Toplam Favori",
+    "averagePrice": "Ortalama Fiyat",
+    "averageRating": "Ortalama Puan"
+  },
+  "propertyTypes": {
+    "apartment": "Daire",
+    "house": "Ev",
+    "villa": "Villa",
+    "land": "Arazi",
+    "commercial": "Ticari"
+  },
+  "labels": {
+    "priceOnRequest": "Fiyat talep üzerine",
+    "locationNotSpecified": "Konum belirtilmemiş",
+    "ratingNotAvailable": "Mevcut değil"
+  }
+}

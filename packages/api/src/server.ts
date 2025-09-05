@@ -7,6 +7,7 @@ import { WebSocketServer } from "ws";
 
 import { createContext } from "./context";
 import { appRouter } from "./root";
+import { scheduledReportService } from "./services/scheduledReports";
 
 const prisma = new PrismaClient();
 
@@ -73,12 +74,21 @@ const wss = new WebSocketServer({ port: wsPort });
 applyWSSHandler({ wss, router: combinedRouter, createContext });
 console.log(`tRPC WebSocket Server running on port ${wsPort}`);
 
+// Initialize scheduled report service
+console.log("Initializing scheduled report service...");
+// The service is automatically initialized when imported
+
 // Handle graceful shutdown
 const shutdown = (reason?: string | Error) => {
   if (reason) {
     console.error("Shutdown triggered:", reason);
   }
   console.log("Shutting down servers...");
+
+  // Stop all scheduled reports
+  scheduledReportService.stopAllSchedules();
+  console.log("Stopped all scheduled reports");
+
   server.close();
   if (secondaryServer) secondaryServer.close();
   wss.close();

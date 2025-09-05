@@ -1,0 +1,120 @@
+{
+  "Index": {
+    "title": "Reservatior - Gayrimenkul Yönetim Platformu",
+    "description": "Reservatior'ın kapsamlı gayrimenkul yönetim platformuyla modern ve çözüm odaklı hizmetler."
+  },
+  "hero": {
+    "title": "Bütçe ve ihtiyaçlarınıza en uygun seçenekler için ",
+    "description": "Kapsamlı arama ve rezervasyon platformumuzla favori lokasyonlarınızda harika deneyimler yaşayın."
+  },
+  "search": {
+    "location": "Konum girin...",
+    "budget": "Bütçe belirtin...",
+    "checkIn": "Giriş tarihi belirtin...",
+    "checkOut": "Çıkış tarihi belirtin...",
+    "guests": "Misafir sayısı belirtin...",
+    "searchButton": "Ara",
+    "advancedSearch": "Gelişmiş Arama"
+  },
+  "features": {
+    "title": "Neden Reservatior?",
+    "description": "Bizi önde gelen gayrimenkul yönetim platformu yapan özellikleri keşfedin",
+    "search": {
+      "title": "Gelişmiş Arama",
+      "description": "Güçlü arama filtrelerimizle aradığınız sonuçlara ulaşın"
+    },
+    "booking": {
+      "title": "Kolay Rezervasyon",
+      "description": "Rezervasyon ihtiyaçlarınıza en uygun yanıtlar"
+    },
+    "management": {
+      "title": "Gayrimenkul Yönetimi",
+      "description": "Platformumuzla gayrimenkullerinizi verimli bir şekilde yönetin"
+    },
+    "support": {
+      "title": "7/24 Destek",
+      "description": "Destek ekibimiz her an hizmetinizde"
+    }
+  },
+  "testimonials": {
+    "title": "Kullanıcılarımız Ne Diyor",
+    "description": "Gerçek kullanıcıların  geri bildirimleri"
+  },
+  "newsletter": {
+    "title": "Güncel Kalın",
+    "description": "Gayrimenkul ve sektör trendlerini takip edin, son güncellemeleri ve teklifleri alın",
+    "placeholder": "E-posta adresinizi girin",
+    "button": "Abone Ol"
+  },
+  "Common": {
+    "unknownError": "Bilinmeyen bir hata oluştu."
+  },
+  "Property": {
+    "loadingTitle": "İlanlar yükleniyor...",
+    "loadErrorTitle": "İlanlar yüklenirken hata oluştu",
+    "noDataTitle": "Henüz ilan yok",
+    "noDataDescription": "Başlamak için ilk ilanınızı ekleyin.",
+    "search": "Ara",
+    "searchPlaceholder": "İlanlarda ara...",
+    "filters": {
+      "open": "Filtreleri aç",
+      "label": "Filtreler",
+      "tooltip": "Filtreleri aç"
+    },
+    "metrics": {
+      "total": "Toplam İlan",
+      "totalHint": "Sistemdeki tüm ilanlar",
+      "available": "Uygun",
+      "availableHint": "Yayınlamaya veya kiralamaya hazır",
+      "recent": "Son Güncellenenler",
+      "recentHint": "Son 30 günde güncellenenler",
+      "pending": "Onay Bekleyen",
+      "pendingHint": "Yönetici onayı bekliyor"
+    }
+  },
+  "ClientPropertyDetail": {
+    "size": "Büyüklük",
+    "sizeUnit": "ft²",
+    "bedrooms": "Yatak Odası",
+    "bathrooms": "Banyo",
+    "amenities": "Özellikler",
+    "about": "Bu mülk hakkında",
+    "mapsKeyMissing": "Google Maps API anahtarı eksik.",
+    "loadFailed": "Mülk yüklenemedi.",
+    "notFound": "Mülk bulunamadı veya mevcut değil.",
+    "alt": {
+      "property": "Mülk: {title}",
+      "propertyImage": "Mülk görseli: {title}"
+    },
+    "availability": {
+      "title": "Müsaitlik",
+      "book": "Rezervasyon Yap",
+      "reserve": "Ayırt",
+      "moveIn": "Taşın",
+      "rent": "Kirala",
+      "date": "Tarih",
+      "units": "Birim",
+      "processing": "İşleniyor...",
+      "requestMoveIn": "Taşınma Talebi",
+      "updateFailed": "Müsaitlik güncellenemedi: {error}",
+      "calendarTitle": "Müsaitlik Takvimi",
+      "calendarPlaceholder": "Bu mülke ait müsaitlik takvimi burada görünecek. Kullanıcılar müsait, rezerve veya engellenmiş tarihleri görebilir ve rezervasyon, ayırtma ya da taşınma gibi işlemleri yapabilir.",
+      "ctaBookReserveMoveIn": "Rezervasyon / Ayırt / Taşın"
+    },
+    "event": {
+      "defaultTitle": "Görüntüleme Talebi",
+      "arrangeViewing": "Görüntüleme Ayarla",
+      "titleLabel": "Etkinlik Başlığı",
+      "datetimeLabel": "Tercih Edilen Tarih ve Saat",
+      "messageLabel": "Mesaj (opsiyonel)",
+      "messagePlaceholder": "Özel istekleriniz veya sorularınız var mı?",
+      "requesting": "İstek gönderiliyor...",
+      "requestViewing": "Görüntüleme Talep Et",
+      "createFailedDefault": "Etkinlik oluşturulamadı",
+      "createFailedWithReason": "Etkinlik oluşturulamadı: {error}"
+    },
+    "common": {
+      "closeSidebar": "Kenar çubuğunu kapat"
+    }
+  }
+}

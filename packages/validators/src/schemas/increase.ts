@@ -1,6 +1,14 @@
-// Import the canonical IncreaseStatus enum from Prisma Client
-import { IncreaseStatus } from "@prisma/client";
 import { z } from "zod";
+
+// Define IncreaseStatus locally since import is not working
+const IncreaseStatus = {
+  PENDING: "PENDING" as const,
+  ACCEPTED: "ACCEPTED" as const,
+  REJECTED: "REJECTED" as const,
+  WITHDRAWN: "WITHDRAWN" as const,
+} as const;
+
+type IncreaseStatus = typeof IncreaseStatus[keyof typeof IncreaseStatus];
 
 // Increase Schema
 export const IncreaseSchema = z.object({

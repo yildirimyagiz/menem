@@ -1,0 +1,181 @@
+{
+  "_meta": {
+    "description": "Gayrimenkul modülü için kullanıcıya yönelik dizeler. Gayrimenkul UI'sından çıkarılan ve çevrilen anahtarlarla doldurun."
+  },
+  "filters": {
+    "price": {
+      "section": "Fiyat",
+      "minLabel": "Min Kira",
+      "maxLabel": "Max Kira",
+      "minPlaceholder": "Min",
+      "maxPlaceholder": "Max",
+      "dropdownLabel": "Fiyat Aralığı",
+      "applyButton": "Uygula"
+    },
+    "beds": {
+      "section": "Yatak Odası",
+      "subtitle": "Min/max aralık için iki karo seçin",
+      "options": {
+        "any": "Herhangi",
+        "studio_plus": "Stüdyo+",
+        "1_plus": "1+",
+        "2_plus": "2+",
+        "3_plus": "3+",
+        "4_plus": "4+"
+      }
+    },
+    "baths": {
+      "section": "Banyo",
+      "options": {
+        "any": "Herhangi",
+        "1_plus": "1+",
+        "2_plus": "2+",
+        "3_plus": "3+"
+      }
+    },
+    "homeType": {
+      "section": "Ev Türü",
+      "apartment": "Daireler",
+      "house": "Evler",
+      "condo": "Kondolar",
+      "townhouse": "Müstakil Evler"
+    },
+    "allFilters": "Tüm Filtreler",
+    "listingType": "İlan Türü",
+    "searchPlaceholder": "Gayrimenkul ara...",
+    "clearAll": "Tümünü Temizle",
+    "saveSearch": "Aramayı Kaydet",
+    "seeResults": "Sonuçları Gör"
+  },
+  "card": {
+    "badges": {
+      "featured": "Öne Çıkan",
+      "new": "Yeni",
+      "inactive": "Pasif"
+    },
+    "price": {
+      "uponRequest": "Fiyat talep üzerine",
+      "perMonth": "aylık"
+    },
+    "features": {
+      "beds": "yatak odası",
+      "baths": "banyo",
+      "sqft": "m²",
+      "parking": "otopark",
+      "na": "Yok"
+    },
+    "actions": {
+      "view": "Detayları Gör"
+    },
+    "agency": {
+      "independent": "Bağımsız"
+    },
+    "fallback": {
+      "addressNotAvailable": "Adres mevcut değil",
+      "propertyInCity": "{type} in {city}"
+    }
+  },
+  "hero": {
+    "heading": "Mükemmel Evinizi Bulun",
+    "subtitle": "Detaylı filtreler ve uzman rehberliği ile {total} mülk keşfedin",
+    "searchPlaceholder": "Konum, mülk türü veya anahtar kelimelerle arayın...",
+    "searchButton": "Ara",
+    "stats": {
+      "totalProperties": "Toplam Gayrimenkul",
+      "averagePrice": "Ort. Fiyat",
+      "featured": "Öne Çıkan",
+      "active": "Aktif"
+    }
+  },
+  "emptyState": {
+    "title": "Gayrimenkul bulunamadı",
+    "description": "Daha fazla mülk bulmak için arama kriterlerinizi veya filtrelerinizi ayarlamayı deneyin.",
+    "clearFilters": "Tüm filtreleri temizle"
+  },
+  "pagination": {
+    "showingResults": "{start} ile {end} arası / {total} sonuç gösteriliyor",
+    "previous": "Önceki",
+    "next": "Sonraki"
+  },
+  "viewModes": {
+    "list": "Liste",
+    "grid": "Izgara",
+    "map": "Harita"
+  },
+  "loading": {
+    "title": "Mülkler yükleniyor...",
+    "description": "En son mülkleri sizin için getirirken lütfen bekleyin."
+  },
+  "error": {
+    "title": "Hata",
+    "description": "Mülkler yüklenirken bir hata oluştu. Lütfen tekrar deneyin.",
+    "retry": "Tekrar Dene"
+  },
+  "details": {
+    "title": "Başlık",
+    "description": "Açıklama",
+    "price": "Fiyat",
+    "location": "Konum",
+    "features": "Özellikler",
+    "amenities": "Olanaklar",
+    "contact": "İletişim",
+    "photos": "Fotoğraflar",
+    "map": "Harita",
+    "reviews": "Yorumlar",
+    "similar": "Benzer Mülkler"
+  },
+  "search": {
+    "title": "Gayrimenkul Ara",
+    "subtitle": "Kiralık ve Satılık Mülkler",
+    "description": "Mükemmel mülkünüzü bulun. Detaylı filtreler ve gelişmiş arama seçenekleriyle binlerce kiralık ve satılık mülkü göz atın.",
+    "placeholder": "Konum, mülk türü veya özelliklerle arayın...",
+    "advancedSearch": "Gelişmiş Arama",
+    "noResultsDescription": "Arama kriterlerinizi veya filtrelerinizi ayarlamayı deneyin",
+    "clearSearch": "Aramayı Temizle",
+    "savedSearches": "Kaydedilen Aramalar",
+    "saveSearch": "Aramayı Kaydet"
+  },
+  "create": {
+    "title": "Yeni Gayrimenkul Oluştur",
+    "subtitle": "Gayrimenkul bilgilerinizi girin",
+    "description": "Yeni bir mülk ekleyin ve yönetmeye başlayın"
+  },
+  "credits": {
+    "title": "Mevcut Krediler ve İpotekler",
+    "subtitle": "Finansal seçeneklerinizi keşfedin"
+  },
+  "allFiltersModal": {
+    "allFilters": "Tüm Filtreler",
+    "close": "Kapat",
+    "clearAll": "Tümünü Temizle",
+    "saveSearch": "Aramayı Kaydet",
+    "seeResults": "Sonuçları Gör"
+  },
+  "viewModeToggle": {
+    "gridView": "Izgara Görünümü",
+    "listView": "Liste Görünümü",
+    "mapView": "Harita Görünümü"
+  },
+  "list": {
+    "sort": {
+      "recommended": "Önerilen",
+      "priceLow": "En Düşük Fiyat",
+      "priceHigh": "En Yüksek Fiyat",
+      "recent": "En Yeniler",
+      "ariaLabel": "Sırala"
+    },
+    "results": "{count} sonuç",
+    "showMap": "Haritayı göster",
+    "hideMap": "Haritayı gizle",
+    "filtersDisabled": "Hata ayıklama için filtreler devre dışı",
+    "type": "Tür",
+    "status": "Durum",
+    "category": "Kategori",
+    "rooms": "Odalar",
+    "bedrooms": "Yatak Odası",
+    "bathrooms": "Banyo"
+  },
+  "common": {
+    "any": "Herhangi"
+  }
+}

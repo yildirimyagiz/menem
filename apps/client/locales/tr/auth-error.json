@@ -1,0 +1,13 @@
+{
+  "auth": {
+    "error": {
+      "title": "Kimlik Doğrulama Hatası",
+      "default": "Kimlik doğrulama sırasında bir hata oluştu. Lütfen tekrar deneyin.",
+      "OAuthAccountNotLinked": "Bu hesap zaten başka bir kimlik doğrulama yöntemine bağlı.",
+      "OAuthCallback": "OAuth geri çağırma işlemi sırasında bir hata oluştu.",
+      "OAuthCreateAccount": "OAuth ile hesabınızı oluştururken bir hata oluştu.",
+      "OAuthSignin": "OAuth ile giriş yaparken bir hata oluştu.",
+      "backToLogin": "Giriş Sayfasına Dön"
+    }
+  }
+} 

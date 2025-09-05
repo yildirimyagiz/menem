@@ -1,0 +1,21 @@
+# MCP server integration details
+servers:
+  sequential-thinking:
+    type: npx
+    package: "@modelcontextprotocol/server-sequential-thinking"
+    transport: stdio
+    enabled: true
+  context7:
+    type: http
+    url: "https://mcp.context7.com/mcp"
+    enabled: true
+  magic:
+    type: npx
+    package: "@21st-dev/magic@latest"
+    transport: stdio
+    enabled: true
+  puppeteer:
+    type: npx
+    package: "@modelcontextprotocol/server-puppeteer"
+    transport: stdio
+    enabled: true

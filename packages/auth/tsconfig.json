@@ -1,5 +1,12 @@
 {
-  "extends": "@acme/tsconfig/base.json",
+  "extends": "../../tooling/tsconfig/base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@reservatior/db": ["../../packages/db/src/index.ts"]
+    }
+  },
   "include": ["src", "*.ts"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "references": [{ "path": "../../packages/db" }]
 }

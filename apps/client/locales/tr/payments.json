@@ -1,0 +1,79 @@
+{
+  "title": "Payments",
+  "description": "Payment methods and transactions.",
+  "summary": {
+    "totalPaid": "Total Paid",
+    "unpaid": "Unpaid",
+    "overdue": "Overdue",
+    "upcoming": "Upcoming"
+  },
+  "actions": {
+    "makePayment": "Make a Payment",
+    "paymentHistory": "Payment History",
+    "payNow": "Pay Now",
+    "refund": "Refund",
+    "cancel": "İptal",
+    "continue": "Devam Et",
+    "close": "Kapat"
+  },
+  "history": {
+    "title": "Payment History",
+    "noPayments": "No payments found.",
+    "authenticationRequired": "Authentication Required",
+    "pleaseLogin": "Please log in to view your payment history.",
+    "errorLoading": "Error loading payments",
+    "showing": "Showing {from} to {to} of {total} payments"
+  },
+  "statuses": {
+    "UNPAID": "Unpaid",
+    "PARTIALLY_PAID": "Partially Paid",
+    "PAID": "Paid",
+    "REFUNDED": "Refunded",
+    "OVERDUE": "Overdue",
+    "CANCELLED": "Cancelled",
+    "PENDING": "Beklemede"
+  },
+  "methods": {
+    "card": "Credit Card",
+    "bank_transfer": "Bank Transfer",
+    "digital_wallet": "Digital Wallet"
+  },
+  "currency": {
+    "usd": "US Dollar",
+    "eur": "Euro",
+    "gbp": "British Pound",
+    "jpy": "Japanese Yen",
+    "cad": "Canadian Dollar",
+    "aud": "Australian Dollar"
+  },
+  "toast": {
+    "success": "Payment created successfully",
+    "refunded": "Payment refunded successfully.",
+    "refundFailed": "Refund failed",
+    "error": "Failed to create payment",
+    "processing": "Processing..."
+  },
+  "form": {
+    "amount": "Amount",
+    "currency": "Currency",
+    "paymentMethod": "Payment Method",
+    "reference": "Reference",
+    "notes": "Notes",
+    "agencyName": "Agency Name",
+    "email": "E-posta",
+    "phone": "Telefon",
+    "website": "Website",
+    "description": "Açıklama",
+    "createAgency": "Create Agency & Continue",
+    "securePayment": "Secure Payment",
+    "securePaymentDesc": "Your payment will be processed securely using industry-standard encryption.",
+    "creating": "Creating...",
+    "processing": "Processing...",
+    "created": "Agency Created Successfully!",
+    "active": "Your agency has been created and your subscription is active."
+  },
+  "pagination": {
+    "previous": "Önceki",
+    "next": "İleri"
+  }
+}

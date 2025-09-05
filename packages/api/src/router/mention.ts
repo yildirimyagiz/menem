@@ -1,12 +1,11 @@
 import type { MentionType, Prisma } from "@prisma/client";
 import type { TRPCRouterRecord } from "@trpc/server";
-import { z } from "zod";
-
 import {
   CreateMentionSchema,
   MentionFilterSchema,
   UpdateMentionSchema,
-} from "@acme/validators";
+} from "@reservatior/validators";
+import { z } from "zod";
 
 import {
   getPaginationParams,

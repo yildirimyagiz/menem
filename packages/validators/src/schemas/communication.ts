@@ -7,8 +7,14 @@ export const CommunicationTypeEnum = z.enum([
   "ADVICE",
   "INFORMATION",
   "FEEDBACK",
+  "CHAT",
+  "SYSTEM",
 ]);
 
+/**
+ * Communication Metadata Schema
+ * Extensible metadata for communication (sender info, attachments, etc).
+ */
 export const CommunicationMetadataSchema = z
   .object({
     senderName: z.string().optional(),
@@ -27,10 +33,15 @@ export const CommunicationMetadataSchema = z
         }),
       )
       .optional(),
-    // Only extensible fields here, all core fields are in the main model
+    // Extensible fields for future-proofing
+    extra: z.record(z.unknown()).optional(),
   })
   .optional();
 
+/**
+ * Create Communication Input
+ * Used for creating a new communication/message.
+ */
 export const CreateCommunicationSchema = z.object({
   senderId: z.string(),
   receiverId: z.string(),
@@ -50,8 +61,45 @@ export const CreateCommunicationSchema = z.object({
   timestamp: z.date().optional(),
   channelId: z.string().optional(),
   ticketId: z.string().optional(),
+  isEdited: z.boolean().optional(),
+  editedAt: z.date().optional(),
+  deletedById: z.string().optional(),
+  reactions: z.record(z.array(z.string())).optional(),
+  attachments: z
+    .array(
+      z.object({
+        id: z.string(),
+        type: z.string(),
+        url: z.string(),
+        name: z.string().optional(),
+        size: z.number().optional(),
+        mimeType: z.string().optional(),
+      }),
+    )
+    .optional(),
+  readBy: z
+    .array(
+      z.object({
+        userId: z.string(),
+        readAt: z.date(),
+      }),
+    )
+    .optional(),
+  receipts: z
+    .array(
+      z.object({
+        userId: z.string(),
+        deliveredAt: z.date().optional(),
+        readAt: z.date().optional(),
+      }),
+    )
+    .optional(),
 });
 
+/**
+ * Update Communication Input
+ * Used for updating a communication (e.g., marking as read).
+ */
 export const UpdateCommunicationSchema = z.object({
   id: z.string(),
   isRead: z.boolean().optional(),
@@ -64,6 +112,39 @@ export const UpdateCommunicationSchema = z.object({
   replyToId: z.string().optional(),
   channelId: z.string().optional(),
   ticketId: z.string().optional(),
+  isEdited: z.boolean().optional(),
+  editedAt: z.date().optional(),
+  deletedById: z.string().optional(),
+  reactions: z.record(z.array(z.string())).optional(),
+  attachments: z
+    .array(
+      z.object({
+        id: z.string(),
+        type: z.string(),
+        url: z.string(),
+        name: z.string().optional(),
+        size: z.number().optional(),
+        mimeType: z.string().optional(),
+      }),
+    )
+    .optional(),
+  readBy: z
+    .array(
+      z.object({
+        userId: z.string(),
+        readAt: z.date(),
+      }),
+    )
+    .optional(),
+  receipts: z
+    .array(
+      z.object({
+        userId: z.string(),
+        deliveredAt: z.date().optional(),
+        readAt: z.date().optional(),
+      }),
+    )
+    .optional(),
 });
 
 // Base schemas for related entities
@@ -93,6 +174,10 @@ const BaseCommunicationSchema = z.object({
   content: z.string(),
 });
 
+/**
+ * Communication Schema
+ * Represents a message or communication, with support for threads, replies, and receipts.
+ */
 export const CommunicationSchema = z.object({
   id: z.string(),
   senderId: z.string(),
@@ -119,8 +204,43 @@ export const CommunicationSchema = z.object({
   replies: z.array(BaseCommunicationSchema).optional(),
   Channel: BaseChannelSchema.optional(),
   Ticket: BaseTicketSchema.optional(),
+  // Delivery/read receipts
+  receipts: z
+    .array(
+      z.object({
+        userId: z.string(),
+        deliveredAt: z.date().optional(),
+        readAt: z.date().optional(),
+      }),
+    )
+    .optional(),
+  isEdited: z.boolean().optional(),
+  editedAt: z.date().optional(),
+  deletedById: z.string().optional(),
+  reactions: z.record(z.array(z.string())).optional(),
+  attachments: z
+    .array(
+      z.object({
+        id: z.string(),
+        type: z.string(),
+        url: z.string(),
+        name: z.string().optional(),
+        size: z.number().optional(),
+        mimeType: z.string().optional(),
+      }),
+    )
+    .optional(),
+  readBy: z
+    .array(
+      z.object({
+        userId: z.string(),
+        readAt: z.date(),
+      }),
+    )
+    .optional(),
 });
 
+// Zod Type Inference for TypeScript
 export type Communication = z.infer<typeof CommunicationSchema>;
 export type CreateCommunicationInput = z.infer<
   typeof CreateCommunicationSchema

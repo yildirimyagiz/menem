@@ -1,11 +1,27 @@
 // Generic memoization for pure functions (per-process)
-export function memoize<T extends (...args: unknown[]) => unknown>(fn: T): T {
-  const cache = new Map<string, unknown>();
-  return ((...args: unknown[]) => {
+export function memoize<TArgs extends readonly unknown[], R>(
+  fn: (...args: TArgs) => R,
+): (...args: TArgs) => R {
+  const cache = new Map<string, { value: R }>();
+  return (...args: TArgs): R => {
     const key = JSON.stringify(args);
-    if (cache.has(key)) return cache.get(key);
+    const cached = cache.get(key);
+    if (cached) return cached.value;
     const result = fn(...args);
-    cache.set(key, result);
+    cache.set(key, { value: result });
     return result;
-  }) as T;
+  };
+}
+
+// Type-safe memoization for single parameter functions
+export function memoizeSingle<T, R>(fn: (arg: T) => R): (arg: T) => R {
+  const cache = new Map<string, { value: R }>();
+  return (arg: T): R => {
+    const key = JSON.stringify(arg);
+    const cached = cache.get(key);
+    if (cached) return cached.value;
+    const result = fn(arg);
+    cache.set(key, { value: result });
+    return result;
+  };
 }

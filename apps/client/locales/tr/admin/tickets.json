@@ -1,0 +1,60 @@
+{
+  "title": "Talepleri Yönet",
+  "subtitle": "Tüm destek taleplerini takip edin, filtreleyin ve yönetin.",
+  "create": "Talep Oluştur",
+  "empty": "Talep bulunamadı. Filtreleri değiştirin veya yeni bir talep oluşturun.",
+  "filters": {
+    "searchPlaceholder": "Konuya göre ara...",
+    "searchAria": "Talepleri konuya göre ara",
+    "status": {
+      "aria": "Duruma göre filtrele",
+      "all": "Tümü",
+      "open": "Açık",
+      "inProgress": "Devam Ediyor",
+      "resolved": "Çözüldü",
+      "closed": "Kapalı",
+      "archived": "Arşivlendi"
+    }
+  },
+  "table": {
+    "subject": "Konu",
+    "status": "Durum",
+    "requester": "Talep Sahibi",
+    "agent": "Yetkili",
+    "createdAt": "Oluşturulma",
+    "actions": "İşlemler"
+  },
+  "loading": "Talepler yükleniyor...",
+  "view": "Görüntüle",
+  "pagination": {
+    "showing": "Gösterilen {from}-{to} / {total}",
+    "previous": "Önceki",
+    "next": "Sonraki"
+  },
+  
+  "statusLabels": {
+    "open": "Açık",
+    "inProgress": "Devam Ediyor",
+    "resolved": "Çözüldü",
+    "closed": "Kapalı",
+    "archived": "Arşivlendi"
+  },
+  "createModal": {
+    "title": "Talep Oluştur",
+    "description": "Yeni bir destek talebi oluşturmak için aşağıdaki bilgileri doldurun.",
+    "fields": {
+      "subject": "Konu",
+      "description": "Açıklama",
+      "status": "Durum",
+      "agent": "Yetkili Ata",
+      "agentPlaceholder": "Opsiyonel"
+    },
+    "none": "Yok",
+    "cancel": "İptal",
+    "create": "Oluştur",
+    "creating": "Oluşturuluyor...",
+    "errors": {
+      "subjectRequired": "Konu zorunludur"
+    }
+  }
+}

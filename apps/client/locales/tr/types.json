@@ -1,0 +1,179 @@
+{
+  "types": {
+    "chat": {
+      "message": {
+        "id": "Mesaj ID",
+        "senderId": "Gönderen ID",
+        "receiverId": "Alıcı ID",
+        "type": "Mesaj Tipi",
+        "content": "Mesaj İçeriği",
+        "timestamp": "Zaman Damgası",
+        "user": "Kullanıcı",
+        "isRead": "Okundu",
+        "isEdited": "Düzenlendi",
+        "editHistory": "Düzenleme Geçmişi",
+        "reactions": "Tepkiler",
+        "replyTo": "Cevapla",
+        "userId": "Kullanıcı ID",
+        "entityId": "Varlık ID",
+        "entityType": "Varlık Tipi",
+        "threadId": "Konuşma ID",
+        "channelId": "Kanal ID",
+        "replyToId": "Cevapla ID",
+        "metadata": "Meta Veri",
+        "agency": "Ajans"
+      },
+      "conversation": {
+        "id": "Konuşma ID",
+        "user": "Kullanıcı",
+        "messages": "Mesajlar",
+        "lastMessage": "Son Mesaj",
+        "unreadCount": "Okunmamış Sayısı",
+        "active": "Aktif Durum"
+      },
+      "sendMessage": {
+        "content": "Mesaj İçeriği",
+        "receiverId": "Alıcı ID",
+        "threadId": "Konuşma ID",
+        "type": "Mesaj Tipi",
+        "entityId": "Varlık ID",
+        "entityType": "Varlık Tipi",
+        "channelId": "Kanal ID",
+        "replyToId": "Cevapla ID",
+        "metadata": "Meta Veri",
+        "name": "Konuşma Adı",
+        "email": "Konuşma Email"
+      },
+      "editMessage": {
+        "messageId": "Mesaj ID",
+        "content": "Yeni İçerik"
+      },
+      "deleteMessage": {
+        "messageId": "Mesaj ID"
+      },
+      "addReaction": {
+        "messageId": "Mesaj ID",
+        "emoji": "Emoji"
+      },
+      "typingIndicator": {
+        "userId": "Kullanıcı ID",
+        "userName": "Kullanıcı Adı",
+        "threadId": "Konuşma ID",
+        "isTyping": "Yazıyor Durum",
+        "timestamp": "Zaman Damgası"
+      },
+      "supportAgent": {
+        "id": "Danışman ID",
+        "name": "Ajans Adı",
+        "avatar": "Avatar",
+        "role": "Rol",
+        "displayName": "Görünen Adı",
+        "agencyId": "Ajans ID",
+        "online": "Çevrimiçi Durum",
+        "agency": "Ajans"
+      },
+      "conversationStats": {
+        "totalMessages": "Total Messages",
+        "sentMessages": "Sent Messages",
+        "receivedMessages": "Received Messages",
+        "unreadCount": "Okunmamış Sayısı",
+        "averageResponseTime": "Ortalama Yanıt Süresi"
+      }
+    },
+    "property": {
+      "propertyType": {
+        "apartment": "Apartment",
+        "villa": "Villa",
+        "residence": "Residence",
+        "condo": "Condo",
+        "mansion": "Mansion",
+        "building": "Building",
+        "shop": "Shop",
+        "sharedRoom": "Shared Room",
+        "sharedPlace": "Shared Place",
+        "singleHouse": "Single House",
+        "dublexHouse": "Duplex House",
+        "penthouse": "Penthouse",
+        "restaurant": "Restaurant",
+        "warehouse": "Warehouse",
+        "industrial": "Industrial"
+      },
+      "propertyStatus": {
+        "available": "Mevcut",
+        "owner": "Owner",
+        "rented": "Rented",
+        "underConstruction": "Under Construction",
+        "newProject": "New Project",
+        "reserved": "Reserved",
+        "sold": "Sold",
+        "empty": "Empty"
+      },
+      "listingType": {
+        "forSale": "For Sale",
+        "forRent": "For Rent",
+        "booking": "Booking"
+      },
+      "propertyTypeOption": {
+        "name": "Property Type Name",
+        "description": "Açıklama",
+        "checked": "Selected"
+      },
+      "propertyFilters": {
+        "propertyType": "Property Type",
+        "status": "Durum",
+        "listingType": "Listing Type",
+        "priceRange": "Price Range",
+        "amenities": "Amenities",
+        "location": "Location",
+        "dates": "Dates",
+        "guests": "Guests"
+      }
+    },
+    "guest": {
+      "guestComposition": {
+        "adultCount": "Adult Count",
+        "childCount": "Child Count"
+      },
+      "guestData": {
+        "adults": "Adults",
+        "children": "Children",
+        "infants": "Infants",
+        "specialRequests": "Special Requests",
+        "loyaltyPoints": "Loyalty Points",
+        "isVIP": "VIP Status"
+      },
+      "guestsObject": {
+        "guestAdults": "Adult Guests",
+        "guestChildren": "Child Guests",
+        "guestInfants": "Infant Guests",
+        "composition": "Guest Composition"
+      }
+    },
+    "search": {
+      "staySearchFormFields": {
+        "location": "Location",
+        "guests": "Guests",
+        "dates": "Dates",
+        "price": "Fiyat",
+        "propertyType": "Property Type"
+      },
+      "dateRange": "Date Range"
+    },
+    "route": {
+      "route": "Route",
+      "pathname": "Pathname",
+      "path": "Path",
+      "query": "Query Parameters",
+      "hash": "Hash",
+      "nextRoute": "Next.js Route",
+      "dynamicRoute": "Dynamic Route",
+      "href": "Href",
+      "pageComponent": "Page Component",
+      "nextPage": "Next.js Page",
+      "dynamicParams": "Dynamic Parameters",
+      "appRouteConfig": "App Route Configuration",
+      "routeLiteral": "Route Literal",
+      "routeHelper": "Route Helper"
+    }
+  }
+}

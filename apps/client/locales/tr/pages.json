@@ -1,0 +1,29 @@
+{
+  "title": "Sayfalar",
+  "description": "Statik ve dinamik sayfalar.",
+  "propertyListingsLink": {
+    "view": "Gayrimenkul İlanlarını Görüntüle"
+  },
+  "welcome": {
+    "title": "Reservatior'a Hoşgeldiniz",
+    "intro": "Mülkleri, acenteleri ve kiraları keşfetmek, bağlantı kurmak ve yönetmek için tek platformunuz—profesyoneller ve kiracılar tarafından güvenilir.",
+    "signIn": "Giriş Yap",
+    "signUp": "Kayıt Ol",
+    "exploreGuest": "Misafir Olarak Keşfet",
+    "copyright": "Tüm hakları saklıdır.",
+    "category": {
+      "discover": "Keşfet",
+      "connect": "Bağlantı Kur",
+      "manage": "Yönet",
+      "discover_step1": "Şehrinizdeki veya dünya çapındaki mülkleri göz atın.",
+      "discover_step2": "Tür, fiyat ve özelliklere göre filtreleyin.",
+      "discover_step3": "Gerçek fotoğrafları ve şehir vurgularını görün.",
+      "connect_step1": "Güvenilir acenteler ve acentelerle iletişime geçin.",
+      "connect_step2": "Doğrulanmış yorumları ve puanları okuyun.",
+      "connect_step3": "Sorular sorun ve uzman tavsiyesi alın.",
+      "manage_step1": "Konaklamalarınızı rezervasyon yapın, ayırın ve takip edin.",
+      "manage_step2": "Görevleri, sözleşmeleri ve ödemeleri yönetin.",
+      "manage_step3": "Geri bildirim bırakın ve başkalarının karar vermesine yardım edin."
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "quickActions": {
+    "title": "Hızlı İşlemler",
+    "description": "Yaygın görevleri hızlıca gerçekleştirin.",
+    "loading": "Kullanıcı verileri yükleniyor...",
+    "addProperty": "Yeni Gayrimenkul Ekle",
+    "findTenants": "Kiracı Bul"
+  }
+} 

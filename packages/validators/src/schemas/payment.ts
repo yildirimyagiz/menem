@@ -8,6 +8,7 @@ export const PaymentStatusEnum = z.enum([
   "REFUNDED",
   "OVERDUE",
   "CANCELLED",
+  "PENDING",
 ]);
 
 // Payment Schema
@@ -33,13 +34,30 @@ export const PaymentSchema = z.object({
   stripeStatus: z.string().nullable().optional(),
   stripeError: z.string().nullable().optional(),
 
-  Currency: z.any().optional(), // Consider typing this if you know the structure
+  // Contextual foreign keys
+  propertyId: z.string().optional(),
+  expenseId: z.string().optional(),
+  reservationId: z.string().optional(),
+  subscriptionId: z.string().optional(),
+  commissionRuleId: z.string().optional(),
+  includedServiceId: z.string().optional(),
+  extraChargeId: z.string().optional(),
+
+  // Relations (for output)
+  Currency: z.any().optional(),
   Tenant: z.any().optional(),
+  Property: z.any().optional(),
+  Expense: z.any().optional(),
+  Reservation: z.any().optional(),
+  Subscription: z.any().optional(),
+  CommissionRule: z.any().optional(),
+  IncludedService: z.any().optional(),
+  ExtraCharge: z.any().optional(),
 });
 
 // Create Payment Schema
 export const CreatePaymentSchema = z.object({
-  tenantId: z.string(),
+  tenantId: z.string().optional(),
   amount: z.number().positive(),
   currencyId: z.string(),
   paymentDate: z.coerce.date(),
@@ -53,6 +71,15 @@ export const CreatePaymentSchema = z.object({
   stripeClientSecret: z.string().nullable().optional(),
   stripeStatus: z.string().nullable().optional(),
   stripeError: z.string().nullable().optional(),
+
+  // Contextual foreign keys
+  propertyId: z.string().optional(),
+  expenseId: z.string().optional(),
+  reservationId: z.string().optional(),
+  subscriptionId: z.string().optional(),
+  commissionRuleId: z.string().optional(),
+  includedServiceId: z.string().optional(),
+  extraChargeId: z.string().optional(),
 });
 
 // Update Payment Schema
@@ -71,6 +98,15 @@ export const UpdatePaymentSchema = z.object({
   stripeClientSecret: z.string().nullable().optional(),
   stripeStatus: z.string().nullable().optional(),
   stripeError: z.string().nullable().optional(),
+
+  // Contextual foreign keys
+  propertyId: z.string().optional(),
+  expenseId: z.string().optional(),
+  reservationId: z.string().optional(),
+  subscriptionId: z.string().optional(),
+  commissionRuleId: z.string().optional(),
+  includedServiceId: z.string().optional(),
+  extraChargeId: z.string().optional(),
 });
 
 // Payment Filter Schema

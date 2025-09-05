@@ -1,0 +1,67 @@
+{
+  "help": {
+    "title": "Yardım ve Destek",
+    "description": "Sık sorulan sorulara yanıt bulun ve destek alın",
+    "searchPlaceholder": "Yardım makalelerinde arayın...",
+    "email": "E-posta Desteği",
+    "emailAddress": "support@reservatior.com",
+    "phone": "Telefon Desteği",
+    "phoneNumber": "+1 (555) 123-4567",
+    "chat": "Canlı Sohbet",
+    "availability": "7/24 hizmetimiz var",
+    "faq": "Sıkça Sorulan Sorular",
+    "subject": "Konu",
+    "subjectPlaceholder": "Konuyu girin",
+
+    "descriptionLabel": "Açıklama",
+    "descriptionPlaceholder": "Sorununuzu açıklayın",
+    "liveChat": {
+      "title": "Canlı Sohbet Desteği",
+      "subtitle": "Destek ekibimizden anında yardım alın"
+    },
+    "faqItems": {
+      "1": {
+        "q": "Mülkleri nasıl arayabilirim?",
+        "a": "Ana sayfadaki arama çubuğunu kullanarak konum, fiyat aralığı ve diğer kriterlere göre mülkleri bulun. Aramanızı daraltmak için gelişmiş filtreleri de kullanabilirsiniz."
+      },
+      "2": {
+        "q": "Bir mülk sahibine nasıl ulaşabilirim?",
+        "a": "Herhangi bir mülkün detaylarını görüntülemek için üzerine tıklayın, ardından iletişim formunu kullanın veya verilen telefon numarasını arayarak sahibi ya da danışmanla iletişime geçin."
+      },
+      "3": {
+        "q": "Hangi ödeme yöntemleri kabul ediliyor?",
+        "a": "Kredi kartları, banka havalesi ve dijital cüzdanlar dahil çeşitli ödeme yöntemlerini kabul ediyoruz. Ödeme seçenekleri mülke göre değişebilir."
+      },
+      "4": {
+        "q": "Bir mülkle ilgili sorunu nasıl bildiririm?",
+        "a": "Bir ilanla ilgili herhangi bir sorunla karşılaşırsanız, yardım bölümünden destek ekibimizle iletişime geçin veya bir talep oluşturun."
+      },
+      "5": {
+        "q": "Mülkleri daha sonra görüntülemek için kaydedebilir miyim?",
+        "a": "Evet! Herhangi bir mülkü favorilerinize eklemek için kalp simgesine tıklayın. Tüm kaydedilmiş mülklerinizi Favoriler bölümünde görebilirsiniz."
+      }
+    },
+    "submitTicket": "Talep Gönder"
+  },
+  "tickets": {
+    "header": "Destek Talepleri",
+    "title": "Taleplerim",
+    "none": "Talep bulunamadı",
+    "noneDescription": "Henüz herhangi bir destek talebi oluşturmadınız.",
+    "createdOn": "Oluşturulma: {date}",
+    "status": {
+      "open": "Açık",
+      "inProgress": "Devam Ediyor",
+      "resolved": "Çözüldü",
+      "closed": "Kapalı",
+      "archived": "Arşivlendi"
+    }
+  },
+  "ticket": {
+    "number": "Talep #{id}",
+    "replySubject": "Talebe yanıt"
+  },
+  "back": "Geri",
+  "send": "Gönder",
+  "messagePlaceholder": "Mesajınızı yazın..."
+}

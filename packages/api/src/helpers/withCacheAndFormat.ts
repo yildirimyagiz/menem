@@ -1,6 +1,6 @@
 import { globalCache } from "./cache";
 import { apiError } from "./error";
-import { logError, logInfo } from "./logger";
+import { logger } from "./logger";
 import { formatResponse } from "./response";
 
 // Unified helper for cache, logging, error, and response formatting
@@ -12,15 +12,15 @@ export async function withCacheAndFormat<T>(
   try {
     const cached = globalCache.get<T>(cacheKey);
     if (cached) {
-      logInfo("Cache hit:", cacheKey);
+      logger.info("Cache hit:", { cacheKey });
       return formatResponse(cached, { cached: true });
     }
-    logInfo("Cache miss:", cacheKey);
+    logger.info("Cache miss:", { cacheKey });
     const result = await fn();
     globalCache.set(cacheKey, result, ttlMs);
     return formatResponse(result, { cached: false });
   } catch (e: unknown) {
-    logError("Error in withCacheAndFormat:", e);
+    logger.error("Error in withCacheAndFormat:", e instanceof Error ? e : undefined, { cacheKey });
     let message = "Unknown error";
     // Use type guard for error
     if (isErrorWithMessage(e)) {

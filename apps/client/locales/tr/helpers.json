@@ -1,0 +1,86 @@
+{
+  "helpers": {
+    "dropdowns": {
+      "country": {
+        "title": "Ülke Seçimi",
+        "placeholder": "Bir ülke seçin",
+        "searchPlaceholder": "Ülke ara...",
+        "noResults": "Ülke bulunamadı",
+        "loading": "Ülkeler yükleniyor...",
+        "error": "Ülkeler yüklenirken hata oluştu"
+      },
+      "state": {
+        "title": "Eyalet/İl Seçimi",
+        "placeholder": "Bir eyalet/il seçin",
+        "searchPlaceholder": "Eyalet ara...",
+        "noResults": "Eyalet bulunamadı",
+        "loading": "Eyaletler yükleniyor...",
+        "error": "Eyaletler yüklenirken hata oluştu"
+      },
+      "city": {
+        "title": "Şehir Seçimi",
+        "placeholder": "Bir şehir seçin",
+        "searchPlaceholder": "Şehir ara...",
+        "noResults": "Şehir bulunamadı",
+        "loading": "Şehirler yükleniyor...",
+        "error": "Şehirler yüklenirken hata oluştu"
+      },
+      "location": {
+        "title": "Konum Seçimi",
+        "placeholder": "Bir konum seçin",
+        "searchPlaceholder": "Konum ara...",
+        "noResults": "Konum bulunamadı",
+        "loading": "Konumlar yükleniyor...",
+        "error": "Konumlar yüklenirken hata oluştu"
+      },
+      "phone": {
+        "title": "Telefon Numarası",
+        "placeholder": "Telefon numarası girin",
+        "countryCode": "Ülke Kodu",
+        "phoneNumber": "Telefon Numarası",
+        "invalidPhone": "Geçersiz telefon numarası",
+        "required": "Telefon numarası gereklidir",
+        "formatError": "Lütfen geçerli bir telefon numarası girin"
+      }
+    },
+    "validation": {
+      "required": "Bu alan gereklidir",
+      "email": "Lütfen geçerli bir e-posta adresi girin",
+      "phone": "Lütfen geçerli bir telefon numarası girin",
+      "minLength": "En az {min} karakter olmalıdır",
+      "maxLength": "En fazla {max} karakter olmalıdır",
+      "pattern": "Lütfen geçerli bir format girin",
+      "unique": "Bu değer benzersiz olmalıdır",
+      "password": "Şifre en az 8 karakter olmalıdır",
+      "confirmPassword": "Şifreler eşleşmelidir"
+    },
+    "common": {
+      "loading": "Yükleniyor...",
+      "error": "Bir hata oluştu",
+      "success": "Başarılı",
+      "cancel": "İptal",
+      "confirm": "Onayla",
+      "save": "Kaydet",
+      "delete": "Sil",
+      "edit": "Düzenle",
+      "add": "Ekle",
+      "remove": "Kaldır",
+      "close": "Kapat",
+      "back": "Geri",
+      "next": "İleri",
+      "previous": "Önceki",
+      "submit": "Gönder",
+      "reset": "Sıfırla",
+      "clear": "Temizle",
+      "search": "Ara",
+      "filter": "Filtrele",
+      "sort": "Sırala",
+      "refresh": "Yenile",
+      "retry": "Tekrar Dene",
+      "download": "İndir",
+      "upload": "Yükle",
+      "export": "Dışa Aktar",
+      "import": "İçe Aktar"
+    }
+  }
+} 

@@ -1,23 +1,22 @@
 import type { Prisma } from "@prisma/client";
-import type { TRPCRouterRecord } from "@trpc/server";
-import { TRPCError } from "@trpc/server";
-import { z } from "zod";
-
 import type {
   CreateIncludedServiceInput,
   UpdateIncludedServiceInput,
-} from "@acme/validators";
+} from "@reservatior/validators";
+import type { TRPCRouterRecord } from "@trpc/server";
 import {
   CreateIncludedServiceSchema,
   IncludedServiceFilterSchema,
   UpdateIncludedServiceSchema,
-} from "@acme/validators";
+} from "@reservatior/validators";
+import { TRPCError } from "@trpc/server";
+import { z } from "zod";
 
 import { getPaginationParams } from "../helpers/pagination";
 import { withCacheAndFormat } from "../helpers/withCacheAndFormat";
-import { protectedProcedure } from "../trpc";
+import { createTRPCRouter, protectedProcedure } from "../trpc";
 
-export const includedServiceRouter: TRPCRouterRecord = {
+export const includedServiceRouter = createTRPCRouter({
   all: protectedProcedure
     .input(IncludedServiceFilterSchema.optional())
     .query(async ({ ctx, input }) => {
@@ -121,6 +120,25 @@ export const includedServiceRouter: TRPCRouterRecord = {
         });
       }
       return includedService;
+    }),
+
+  byContract: protectedProcedure
+    .input(z.object({ contractId: z.string() }))
+    .query(async ({ ctx, input }) => {
+      try {
+        // Since IncludedService model doesn't have contractId, we'll return empty array
+        // In a real implementation, you might want to add contractId to the IncludedService model
+        // or create a separate ContractIncludedService model
+        return [];
+      } catch (error: unknown) {
+        const originalError =
+          error instanceof Error ? error : new Error(String(error));
+        throw new TRPCError({
+          code: "INTERNAL_SERVER_ERROR",
+          message: `Failed to fetch included services by contract: ${originalError.message}`,
+          cause: originalError,
+        });
+      }
     }),
 
   create: protectedProcedure
@@ -229,4 +247,44 @@ export const includedServiceRouter: TRPCRouterRecord = {
         });
       }
     }),
-};
+
+  byFacility: protectedProcedure
+    .input(z.object({ facilityId: z.string() }))
+    .query(async ({ ctx, input }) => {
+      const services = await ctx.db.includedService.findMany({
+        where: { facilityId: input.facilityId, deletedAt: null },
+        orderBy: { createdAt: "desc" },
+      });
+      return services;
+    }),
+
+  byFacilityId: protectedProcedure
+    .input(z.object({ facilityId: z.string() }))
+    .query(async ({ ctx, input }) => {
+      const { skip, take, page, limit } = getPaginationParams({
+        page: 1,
+        limit: 10,
+      });
+
+      const [services, total] = await Promise.all([
+        ctx.db.includedService.findMany({
+          where: { facilityId: input.facilityId, deletedAt: null },
+          orderBy: { createdAt: "desc" },
+          skip,
+          take,
+        }),
+        ctx.db.includedService.count({
+          where: { facilityId: input.facilityId, deletedAt: null },
+        }),
+      ]);
+
+      return {
+        data: {
+          items: services,
+          total,
+          page,
+          limit,
+        },
+      };
+    }),
+});

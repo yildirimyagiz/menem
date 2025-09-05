@@ -1,0 +1,292 @@
+{
+  "author": {
+    "title": "Author Profile",
+    "subtitle": "User Profile and Dashboard",
+    "profile": {
+      "title": "Profile",
+      "defaultName": "User",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "bio": "Biography",
+      "avatar": "Avatar",
+      "cover": "Cover Photo",
+      "location": "Location",
+      "website": "Website",
+      "social": "Social Media",
+      "joined": "Joined",
+      "lastActive": "Last Active",
+      "verified": "Verified",
+      "unverified": "Unverified"
+    },
+    "roles": {
+      "tenant": {
+        "title": "Tenant",
+        "description": "Active rental property tenant",
+        "longDescription": "Experienced tenant managing rental properties with a focus on quality living spaces and community engagement.",
+        "features": ["Rental Management", "Property Reviews", "Payment History", "Maintenance Requests"]
+      },
+      "guest": {
+        "title": "Guest",
+        "description": "Platform guest user",
+        "longDescription": "Exploring our platform to discover properties and connect with the real estate community.",
+        "features": ["Property Discovery", "Favorites Collection", "Community Reviews", "Market Insights"]
+      },
+      "buyer": {
+        "title": "Buyer",
+        "description": "Property buyer",
+        "longDescription": "Active property buyer with a keen eye for investment opportunities and market trends.",
+        "features": ["Property Search", "Investment Analysis", "Market Research", "Negotiation Support"]
+      },
+      "seller": {
+        "title": "Seller",
+        "description": "Property seller",
+        "longDescription": "Experienced property seller with a track record of successful transactions and market expertise.",
+        "features": ["Property Listings", "Market Analysis", "Transaction History", "Client Management"]
+      },
+      "agent": {
+        "title": "Agent",
+        "description": "Real estate agent",
+        "longDescription": "Professional real estate agent with expertise in property transactions and client relationships.",
+        "features": ["Client Management", "Property Listings", "Market Analysis", "Transaction Support"]
+      },
+      "agency": {
+        "title": "Agency",
+        "description": "Real estate agency",
+        "longDescription": "Established real estate agency with a team of professionals and comprehensive property services.",
+        "features": ["Team Management", "Property Portfolio", "Client Services", "Market Leadership"]
+      }
+    },
+    "tabs": {
+      "properties": "Properties",
+      "rentals": "Rentals",
+      "favorites": "Favorites",
+      "reviews": "Reviews",
+      "analytics": "Analytics",
+      "activity": "Activity",
+      "settings": "Settings",
+      "team": "Team",
+      "listings": "Listings",
+      "savedSearches": "Saved Searches"
+    },
+    "stats": {
+      "title": "Statistics",
+      "properties": "Properties",
+      "rentals": "Rentals",
+      "favorites": "Favorites",
+      "reviews": "Reviews",
+      "listings": "Listings",
+      "transactions": "Transactions",
+      "revenue": "Revenue",
+      "clients": "Clients",
+      "teamMembers": "Team Members",
+      "savedSearches": "Saved Searches"
+    },
+    "properties": {
+      "title": "Properties",
+      "subtitle": "Manage your properties",
+      "add": "Add Property",
+      "edit": "Edit Property",
+      "delete": "Delete Property",
+      "view": "View Property",
+      "feature": "Feature Property",
+      "unfeature": "Unfeature Property",
+      "status": {
+        "active": "Active",
+        "inactive": "Inactive",
+        "pending": "Pending",
+        "sold": "Sold",
+        "rented": "Rented"
+      },
+      "type": {
+        "apartment": "Apartment",
+        "house": "House",
+        "condo": "Condo",
+        "villa": "Villa",
+        "commercial": "Commercial"
+      }
+    },
+    "rentals": {
+      "title": "Rentals",
+      "subtitle": "Your rental properties",
+      "current": "Current Rentals",
+      "past": "Past Rentals",
+      "upcoming": "Upcoming Rentals",
+      "add": "Add Rental",
+      "edit": "Edit Rental",
+      "cancel": "Cancel Rental",
+      "extend": "Extend Rental",
+      "status": {
+        "active": "Active",
+        "expired": "Expired",
+        "cancelled": "Cancelled",
+        "pending": "Pending"
+      }
+    },
+    "favorites": {
+      "title": "Favorites",
+      "subtitle": "Your favorite properties",
+      "add": "Add to Favorites",
+      "remove": "Remove from Favorites",
+      "clear": "Clear All",
+      "export": "Export Favorites",
+      "share": "Share Favorites",
+      "empty": "No favorites yet",
+      "emptyDescription": "Start adding properties to your favorites list"
+    },
+    "reviews": {
+      "title": "Reviews",
+      "subtitle": "Property and service reviews",
+      "write": "Write Review",
+      "edit": "Edit Review",
+      "delete": "Delete Review",
+      "rating": "Rating",
+      "comment": "Comment",
+      "date": "Date",
+      "property": "Property",
+      "service": "Service",
+      "overall": "Overall Rating",
+      "communication": "Communication",
+      "cleanliness": "Cleanliness",
+      "value": "Value for Money",
+      "location": "Location",
+      "accuracy": "Accuracy"
+    },
+    "analytics": {
+      "title": "Analytics",
+      "subtitle": "Performance insights",
+      "overview": "Overview",
+      "performance": "Performance",
+      "engagement": "Engagement",
+      "revenue": "Revenue",
+      "views": "Views",
+      "clicks": "Clicks",
+      "conversions": "Conversions",
+      "period": {
+        "last7Days": "Last 7 Days",
+        "last30Days": "Last 30 Days",
+        "last90Days": "Last 90 Days",
+        "lastYear": "Last Year"
+      }
+    },
+    "activity": {
+      "title": "Activity",
+      "subtitle": "Recent activity",
+      "all": "All Activity",
+      "properties": "Property Activity",
+      "reviews": "Review Activity",
+      "transactions": "Transaction Activity",
+      "messages": "Message Activity",
+      "date": "Date",
+      "type": "Type",
+      "description": "Description",
+      "empty": "No activity yet",
+      "emptyDescription": "Your activity will appear here"
+    },
+    "settings": {
+      "title": "Settings",
+      "subtitle": "Manage your account",
+      "profile": "Profile Settings",
+      "privacy": "Privacy Settings",
+      "notifications": "Notification Settings",
+      "security": "Security Settings",
+      "billing": "Billing Settings",
+      "preferences": "Preferences",
+      "language": "Language",
+      "timezone": "Timezone",
+      "currency": "Currency",
+      "save": "Save Changes",
+      "cancel": "Cancel",
+      "reset": "Reset to Default"
+    },
+    "team": {
+      "title": "Team",
+      "subtitle": "Manage your team",
+      "members": "Team Members",
+      "invite": "Invite Member",
+      "remove": "Remove Member",
+      "role": "Role",
+      "permissions": "Permissions",
+      "admin": "Administrator",
+      "member": "Member",
+      "viewer": "Viewer",
+      "pending": "Pending",
+      "accepted": "Accepted",
+      "declined": "Declined"
+    },
+    "contact": {
+      "title": "Contact",
+      "message": "Send Message",
+      "call": "Call",
+      "email": "Email",
+      "website": "Visit Website",
+      "social": "Social Media",
+      "phone": "Phone",
+      "address": "Address",
+      "hours": "Business Hours",
+      "availability": "Availability"
+    },
+    "actions": {
+      "edit": "Edit",
+      "delete": "Delete",
+      "view": "View",
+      "share": "Share",
+      "favorite": "Favorite",
+      "unfavorite": "Unfavorite",
+      "contact": "Contact",
+      "follow": "Follow",
+      "unfollow": "Unfollow",
+      "block": "Block",
+      "report": "Report",
+      "verify": "Verify",
+      "unverify": "Unverify"
+    },
+    "notifications": {
+      "title": "Notifications",
+      "all": "All Notifications",
+      "unread": "Unread",
+      "read": "Read",
+      "markAsRead": "Mark as Read",
+      "markAllAsRead": "Mark All as Read",
+      "delete": "Delete",
+      "empty": "No notifications",
+      "emptyDescription": "You're all caught up!"
+    },
+    "messages": {
+      "title": "Messages",
+      "inbox": "Inbox",
+      "sent": "Sent",
+      "drafts": "Drafts",
+      "trash": "Trash",
+      "compose": "Compose",
+      "reply": "Reply",
+      "forward": "Forward",
+      "delete": "Delete",
+      "markAsRead": "Mark as Read",
+      "markAsUnread": "Mark as Unread",
+      "empty": "No messages",
+      "emptyDescription": "Start a conversation"
+    },
+    "loading": {
+      "title": "Loading",
+      "loading": "Loading...",
+      "loadingProfile": "Loading profile...",
+      "loadingProperties": "Loading properties...",
+      "loadingReviews": "Loading reviews...",
+      "loadingAnalytics": "Loading analytics...",
+      "saving": "Saving...",
+      "updating": "Updating...",
+      "deleting": "Deleting..."
+    },
+    "errors": {
+      "title": "Error",
+      "loadFailed": "Failed to load profile",
+      "saveFailed": "Failed to save changes",
+      "deleteFailed": "Failed to delete",
+      "updateFailed": "Failed to update",
+      "networkError": "Network error",
+      "tryAgain": "Try again",
+      "contactSupport": "Contact support"
+    }
+  }
+}

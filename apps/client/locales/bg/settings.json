@@ -1,0 +1,64 @@
+{
+  "_meta": {
+    "description": "[User-facing strings for the settings module. Fill with extracted and translated keys from settings UI.]"
+  },
+  "page": {
+    "title": "[Account Settings]",
+    "description": "[Manage your account preferences and notification settings]"
+  },
+  "userNotFound": {
+    "title": "[User not found]",
+    "description": "[Please log in to view your settings.]"
+  },
+  "profileInformation": {
+    "title": "[Profile Information]",
+    "name": "[Name]",
+    "email": "[Email]",
+    "language": "[Language]",
+    "timezone": "[Timezone]"
+  },
+  "notificationSettings": {
+    "title": "[Notification Settings]",
+    "emailNotifications": {
+      "title": "[Email Notifications]",
+      "description": "[Receive notifications via email]"
+    },
+    "inAppNotifications": {
+      "title": "[In-App Notifications]",
+      "description": "[Receive notifications within the app]"
+    },
+    "smsNotifications": {
+      "title": "[SMS Notifications]",
+      "description": "[Receive notifications via SMS]"
+    }
+  },
+  "actions": {
+    "saveSettings": "[Save Settings]",
+    "saving": "[Saving...]"
+  },
+  "toast": {
+    "settingsUpdated": {
+      "title": "[Settings updated]",
+      "description": "[Your settings have been saved.]"
+    },
+    "updateFailed": {
+      "title": "[Update failed]",
+      "description": "[Could not update settings.]"
+    }
+  },
+  "common": {
+    "loading": "[Loading...]",
+    "error": "[Error]",
+    "success": "[Success]",
+    "cancel": "[Cancel]",
+    "save": "[Save]",
+    "delete": "[Delete]",
+    "close": "[Close]",
+    "view": "[View]",
+    "edit": "[Edit]",
+    "confirm": "[Confirm]",
+    "back": "[Back]",
+    "next": "[Next]",
+    "previous": "[Previous]"
+  }
+}

@@ -14,9 +14,10 @@ const { handlers, auth: defaultAuth, signIn, signOut } = NextAuth(authConfig);
 const auth = cache(defaultAuth);
 
 export { handlers, auth, signIn, signOut };
+export { authConfig } from "./config";
 
 export {
   invalidateSessionToken,
-  validateToken,
+  validateToken, 
   isSecureContext,
 } from "./config";

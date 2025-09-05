@@ -1,0 +1,9 @@
+{
+  "quickActions": {
+    "title": "Quick Actions",
+    "description": "Perform common tasks quickly.",
+    "loading": "Loading user data...",
+    "addProperty": "Add New Property",
+    "findTenants": "Find Tenants"
+  }
+} 

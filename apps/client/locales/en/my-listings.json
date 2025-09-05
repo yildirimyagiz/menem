@@ -1,0 +1,97 @@
+{
+  "myListings": {
+    "title": "My Listings",
+    "description": "Your property listings.",
+    "pageTitle": "My Property Portfolio",
+    "pageDescription": "Manage and showcase your real estate listings with professional tools and insights",
+    "stats": {
+      "activeListings": "Active Listings",
+      "featuredListings": "Featured Listings",
+      "averageRating": "Average Rating",
+      "totalViews": "Total Views",
+      "totalListings": "Total Listings",
+      "activeProperties": "Active Properties",
+      "featured": "Featured",
+      "avgRating": "Avg Rating"
+    },
+    "filters": {
+      "searchPlaceholder": "Search listings by title, location, or type...",
+      "status": "Status",
+      "propertyType": "Property Type",
+      "all": "All",
+      "active": "Active",
+      "inactive": "Inactive",
+      "featured": "Featured",
+      "filterAndSearch": "Filter & Search",
+      "searchProperties": "Search Properties",
+      "searchByTitle": "Search by title...",
+      "allStatus": "All Status",
+      "allTypes": "All Types",
+      "applyFilters": "Apply Filters"
+    },
+    "property": {
+      "view": "View",
+      "edit": "Edit",
+      "bathrooms": "baths",
+      "bedrooms": "beds",
+      "size": "sqft",
+      "rating": "rating"
+    },
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next"
+    },
+    "empty": {
+      "noListings": "No listings yet",
+      "noResults": "No results match your search.",
+      "noListingsDescription": "Start by creating your first property listing",
+      "createFirstListing": "Create First Listing"
+    },
+    "error": {
+      "loadFailed": "Failed to load listings. Please try again.",
+      "loadError": "Error loading listings. Please try again."
+    },
+    "loading": {
+      "loadingListings": "Loading your listings..."
+    },
+    "actions": {
+      "createListing": "Create Listing",
+      "editListing": "Edit Listing",
+      "deleteListing": "Delete Listing",
+      "viewListing": "View Listing",
+      "featureListing": "Feature Listing",
+      "unfeatureListing": "Unfeature Listing"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive",
+      "draft": "Draft",
+      "pending": "Pending",
+      "published": "Published",
+      "archived": "Archived"
+    },
+    "propertyTypes": {
+      "apartment": "Apartment",
+      "house": "House",
+      "villa": "Villa",
+      "condo": "Condo",
+      "townhouse": "Townhouse",
+      "land": "Land",
+      "commercial": "Commercial",
+      "office": "Office",
+      "retail": "Retail",
+      "industrial": "Industrial"
+    },
+    "details": {
+      "title": "Property Details",
+      "location": "Location",
+      "price": "Price",
+      "type": "Type",
+      "status": "Status",
+      "createdAt": "Created At",
+      "updatedAt": "Updated At",
+      "views": "Views",
+      "favorites": "Favorites"
+    }
+  }
+}

@@ -7,14 +7,13 @@ import type {
   Reservation,
 } from "@prisma/client";
 import type { TRPCRouterRecord } from "@trpc/server";
-import { TRPCError } from "@trpc/server";
-import { z } from "zod";
-
 import {
   CreateProviderSchema,
   ProviderFilterSchema,
   UpdateProviderSchema,
-} from "@acme/validators";
+} from "@reservatior/validators";
+import { TRPCError } from "@trpc/server";
+import { z } from "zod";
 
 // Import Prisma
 

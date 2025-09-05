@@ -1,0 +1,16 @@
+{
+  "Posts": {
+    "errorUnauthorized": "[Unauthorized]",
+    "errorCreatePost": "[Error Create Post]",
+    "title": "[Title]",
+    "content": "[Content]",
+    "create": "[Create]",
+    "noPostsYet": "[No Posts Yet]",
+    "errorDeleting": "[Error Deleting]",
+    "errorUpdatePost": "[Error Update Post]",
+    "save": "[Save]",
+    "cancel": "[Cancel]",
+    "edit": "[Edit]",
+    "delete": "[Delete]"
+  }
+}

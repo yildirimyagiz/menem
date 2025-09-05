@@ -1,0 +1,153 @@
+{
+  "hero": {
+    "title": "Find Your Perfect",
+    "subtitle": "Dream Home",
+    "description": "Discover amazing properties in your favorite neighborhoods with our comprehensive property management platform"
+  },
+  "search": {
+    "location": "Where do you want to live?",
+    "budget": "Budget",
+    "button": "Search",
+    "quickFilters": "Quick filters:",
+    "propertyType": "Property Type",
+    "propertyTypes": {
+      "apartment": "Apartment",
+      "house": "House",
+      "condo": "Condo",
+      "studio": "Studio"
+    }
+  },
+  "filters": {
+    "studio": "Studio",
+    "1bed": "1 Bed",
+    "2bed": "2 Bed",
+    "petFriendly": "Pet Friendly"
+  },
+  "stats": {
+    "availableProperties": "Available Properties",
+    "neighborhoods": "Neighborhoods",
+    "support": "Support Available",
+    "rating": "Average Rating",
+    "properties": "Properties",
+    "propertiesDescription": "Available listings",
+    "happyClients": "Happy Clients",
+    "happyClientsDescription": "Satisfied customers",
+    "averageRating": "Average Rating",
+    "averageRatingDescription": "Out of 5 stars",
+    "growth": "Growth",
+    "growthDescription": "Year over year",
+    "neighborhoodsDescription": "Covered areas",
+    "satisfaction": "Satisfaction",
+    "satisfactionDescription": "Client satisfaction",
+    "whyChoose": "Why Choose",
+    "trustedBy": "Trusted by thousands of users worldwide for finding their perfect homes"
+  },
+  "properties": {
+    "title": "Featured Properties",
+    "description": "Discover the best properties in your area",
+    "perMonth": "/mo",
+    "noTitle": "Untitled Property",
+    "beds": "beds",
+    "baths": "baths",
+    "sqft": "sqft"
+  },
+  "amenities": {
+    "gym": "Gym",
+    "pool": "Pool",
+    "parking": "Parking"
+  },
+  "neighborhoods": {
+    "title": "Neighborhood Highlights",
+    "readGuide": "Read Guide",
+    "downtown": {
+      "name": "Downtown",
+      "desc": "Vibrant city living with shopping, dining, and entertainment."
+    },
+    "beachfront": {
+      "name": "Beachfront",
+      "desc": "Relax by the ocean in beautiful beachfront communities."
+    },
+    "uptown": {
+      "name": "Uptown",
+      "desc": "Trendy area with cafes, boutiques, and nightlife."
+    }
+  },
+  "quickBrowse": {
+    "title": "Browse Homes by City",
+    "city": {
+      "san-francisco": "San Francisco",
+      "new-york": "New York",
+      "miami": "Miami",
+      "chicago": "Chicago",
+      "los-angeles": "Los Angeles",
+      "seattle": "Seattle"
+    }
+  },
+  "getStarted": {
+    "title": "Ready to find your next place?",
+    "subtitle": "Sign up to save your favorite listings, schedule tours, and more.",
+    "button": "Get Started"
+  },
+  "howItWork": {
+    "title": "How it works",
+    "subtitle": "Keep calm & travel on",
+    "steps": {
+      "book": {
+        "title": "Book & relax",
+        "desc": "Let each trip be an inspirational journey, each room a peaceful space"
+      },
+      "checklist": {
+        "title": "Smart checklist",
+        "desc": "Let each trip be an inspirational journey, each room a peaceful space"
+      },
+      "save": {
+        "title": "Save more",
+        "desc": "Let each trip be an inspirational journey, each room a peaceful space"
+      }
+    }
+  },
+  "features": {
+    "lightningFast": "Lightning Fast",
+    "lightningFastDescription": "Find properties in seconds with our optimized search",
+    "trustedPlatform": "Trusted Platform",
+    "trustedPlatformDescription": "Verified properties and trusted agents only",
+    "bestPrices": "Best Prices",
+    "bestPricesDescription": "Competitive pricing and transparent fees"
+  },
+  "makeMoney": {
+    "title": "Make Money with",
+    "description": "Choose your path to financial success in real estate. Multiple opportunities available for different skill levels and time commitments.",
+    "becomeAgent": {
+      "title": "Become an Agent",
+      "description": "Start your real estate career with comprehensive training and support",
+      "features": {
+        "training": "Comprehensive Training",
+        "support": "Ongoing Support",
+        "tools": "Professional Tools"
+      }
+    },
+    "becomeAgency": {
+      "title": "Start an Agency",
+      "description": "Build your own real estate business with our platform",
+      "features": {
+        "management": "Team Management",
+        "marketing": "Marketing Tools",
+        "analytics": "Advanced Analytics"
+      }
+    },
+    "referral": {
+      "title": "Referral Program",
+      "description": "Earn commissions by referring clients to our platform",
+      "features": {
+        "commission": "High Commission Rates",
+        "tracking": "Easy Tracking",
+        "payouts": "Quick Payouts"
+      }
+    }
+  },
+  "difficulty": {
+    "easy": "Easy",
+    "medium": "Medium",
+    "hard": "Hard"
+  }
+} 

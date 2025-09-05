@@ -1,0 +1,61 @@
+{
+  "title": "[Welcome to the Admin Dashboard]",
+  "description": "[Here you can manage properties, users, tasks, and view analytics at a glance.]",
+  "systemOnline": "[System Online]",
+  "refresh": "[Refresh]",
+  "statistics": {
+    "totalProperties": "[Total Properties]",
+    "activeUsers": "[Active Users]",
+    "payments": "[Payments]",
+    "openTasks": "[Open Tasks]",
+    "thisWeek": "[{change} this week]"
+  },
+  "quickActions": {
+    "title": "[Quick Links]",
+    "manageProperties": "[Manage Properties]",
+    "userManagement": "[User Management]",
+    "viewTasks": "[View Tasks]",
+    "analytics": "[Analytics]"
+  },
+  "systemStatus": {
+    "operational": "[All systems operational]",
+    "lastChecked": "[Last checked: {time} ago]"
+  },
+  "floatingActions": {
+    "add": "[Add]",
+    "dashboard": "[Dashboard]",
+    "notifications": "[Notifications]",
+    "userManagementDescription": "[Manage and view all your users]",
+    "addNewUser": "[Add New User]",
+    "addFirstUser": "[Add First User]",
+    "searchUsers": "[Search users...]",
+    "noUsersFound": "[No users found. Get started by adding your first user!]",
+    "showingResults": "[Showing {start}-{end} of {total} results]",
+    "name": "[Name]",
+    "role": "[Role]",
+    "viewDetails": "[View Details]",
+    "editUser": "[Edit User]",
+    "deleteUser": "[Delete User]",
+    "owners": "[Owners]",
+    "messages": "[Messages]",
+    "reports": "[Reports]",
+    "subscriptionPackages": "[Subscription Packages]",
+    "reviews": "[Reviews]",
+    "extraCharges": "[Extra Charges]",
+    "languages": "[Languages]",
+    "increases": "[Increases]",
+    "includedServices": "[Included Services]",
+    "expenses": "[Expenses]",
+    "locations": "[Locations]",
+    "mentions": "[Mentions]",
+    "mortgages": "[Mortgages]",
+    "offers": "[Offers]",
+    "payments": "[Payments]",
+    "permissions": "[Permissions]",
+    "photos": "[Photos]",
+    "posts": "[Posts]",
+    "pricingRules": "[Pricing Rules]",
+    "tickets": "[Tickets]",
+    "tasks": "[Tasks]"
+  }
+}

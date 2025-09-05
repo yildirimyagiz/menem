@@ -1,0 +1,160 @@
+{
+  "Chat": {
+    "loading": "Loading chat & channels...",
+    "header": {
+      "title": "Chat & Channels",
+      "description": "Connect with agents and communities"
+    },
+    "footer": {
+      "title": "Reservatior Chat",
+      "description": "Connect with agents and communities for better property management",
+      "support": "Support Available",
+      "activeUsers": "Active Users",
+      "rating": "Rating",
+      "copyright": "© 2024 Reservatior. All rights reserved. | Privacy Policy | Terms of Service"
+    },
+    "channels": {
+      "title": "Channels",
+      "createChannel": "Create Channel",
+      "joinChannel": "Join Channel",
+      "leaveChannel": "Leave Channel",
+      "deleteChannel": "Delete Channel",
+      "editChannel": "Edit Channel",
+      "channelName": "Channel Name",
+      "channelDescription": "Channel Description",
+      "channelType": "Channel Type",
+      "public": "Public",
+      "private": "Private",
+      "direct": "Direct Message"
+    },
+    "messages": {
+      "sendMessage": "Send Message",
+      "messagePlaceholder": "Type your message...",
+      "noMessages": "No messages yet",
+      "startConversation": "Start a conversation",
+      "typing": "typing...",
+      "online": "online",
+      "offline": "offline",
+      "lastSeen": "Last seen",
+      "messageSent": "Message sent",
+      "messageFailed": "Failed to send message"
+    },
+    "users": {
+      "online": "Online Users",
+      "offline": "Offline Users",
+      "searchUsers": "Search users...",
+      "inviteUser": "Invite User",
+      "blockUser": "Block User",
+      "unblockUser": "Unblock User"
+    },
+    "settings": {
+      "title": "Chat Settings",
+      "notifications": "Notifications",
+      "sound": "Sound",
+      "theme": "Theme",
+      "language": "Language",
+      "privacy": "Privacy"
+    },
+    "sidebar": {
+      "noConversations": "No conversations yet."
+    },
+    "chatInput": {
+      "sendAria": "Send message form",
+      "sendButton": "Send message",
+      "sending": "Sending...",
+      "placeholder": "Message...",
+      "inputAria": "Message input"
+    },
+    "conversation": {
+      "unreadOverflow": "9+"
+    },
+    "conversationList": {
+      "yesterday": "Yesterday"
+    },
+    "messageList": {
+      "copy": "Copy"
+    },
+    "typingIndicator": {
+      "isTyping": "{userName} is typing..."
+    },
+    "messageSearch": {
+      "type": {
+        "all": "All",
+        "unread": "Unread",
+        "sent": "Sent",
+        "received": "Received",
+        "system": "System",
+        "problem": "Problem",
+        "request": "Request",
+        "advice": "Advice",
+        "information": "Information",
+        "feedback": "Feedback",
+        "chat": "Chat"
+      }
+    },
+    "errorBoundary": {
+      "title": "Something went wrong",
+      "description": "An unexpected error occurred",
+      "retry": "Retry"
+    },
+    "adminActions": {
+      "archive": "Archive",
+      "mute": "Mute",
+      "delete": "Delete",
+      "ban": "Ban",
+      "unban": "Unban"
+    },
+    "notifications": {
+      "newMessage": "New message from {sender}",
+      "messageRead": "Message read",
+      "userOnline": "{user} is now online",
+      "userOffline": "{user} is now offline"
+    },
+    "search": {
+      "placeholder": "Search messages...",
+      "noResults": "No messages found",
+      "searchInChannels": "Search in channels",
+      "searchInDirectMessages": "Search in direct messages"
+    },
+    "emoji": {
+      "picker": "Emoji picker",
+      "recent": "Recent",
+      "smileys": "Smileys",
+      "animals": "Animals",
+      "food": "Food",
+      "activities": "Activities",
+      "travel": "Travel",
+      "objects": "Objects",
+      "symbols": "Symbols",
+      "flags": "Flags"
+    },
+    "attachments": {
+      "upload": "Upload file",
+      "image": "Image",
+      "video": "Video",
+      "audio": "Audio",
+      "document": "Document",
+      "maxSize": "Maximum file size: {size}",
+      "uploading": "Uploading...",
+      "uploadFailed": "Upload failed"
+    },
+    "voice": {
+      "startRecording": "Start recording",
+      "stopRecording": "Stop recording",
+      "recording": "Recording...",
+      "play": "Play",
+      "pause": "Pause",
+      "stop": "Stop"
+    },
+    "video": {
+      "startCall": "Start video call",
+      "endCall": "End call",
+      "joinCall": "Join call",
+      "leaveCall": "Leave call",
+      "cameraOn": "Camera on",
+      "cameraOff": "Camera off",
+      "microphoneOn": "Microphone on",
+      "microphoneOff": "Microphone off"
+    }
+  }
+} 

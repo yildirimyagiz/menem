@@ -1,0 +1,210 @@
+{
+  "dashboard": {
+    "title": "Welcome to the Admin Dashboard",
+    "description": "Here you can manage properties, users, tasks, and view analytics at a glance.",
+    "systemOnline": "System Online",
+    "refresh": "Refresh",
+    "statistics": {
+      "totalUsers": "Total Users",
+      "activeUsers": "Active Users",
+      "activeProperties": "Active Properties",
+      "revenue": "Revenue",
+      "systemHealth": "System Health",
+      "changeVsLastMonth": "vs last month",
+      "activeUsersThisMonth": "Active users this month",
+      "propertiesAvailable": "Properties available",
+      "thisMonthsRevenue": "This month's revenue",
+      "uptimeThisMonth": "Uptime this month"
+    },
+    "quickActions": {
+      "title": "Quick Actions",
+      "description": "Common tasks and shortcuts",
+      "addUser": "Add New User",
+      "addUserDesc": "Create a new user account",
+      "addProperty": "Add Property",
+      "addPropertyDesc": "Add a new property listing",
+      "viewAnalytics": "View Analytics",
+      "viewAnalyticsDesc": "Check performance metrics",
+      "createTask": "Create Task",
+      "createTaskDesc": "Create a new task"
+    },
+    "recentActivities": {
+      "title": "Recent Activities",
+      "liveUpdates": "Live updates",
+      "userRegistered": "{name} registered",
+      "propertyAdded": "Property {property} added",
+      "paymentReceived": "Payment {amount} received",
+      "systemAlert": "System alert triggered",
+      "timeMinutesAgo": "{minutes} minutes ago"
+    },
+    "systemStatus": {
+      "operational": "All systems operational",
+      "lastChecked": "Last checked: {time} ago",
+      "used": "{percent}% used"
+    },
+    "managementSections": {
+      "title": "Management Sections",
+      "view": "View",
+      "clickToManage": "Click to manage",
+      "collapseAll": "Collapse All",
+      "expandAll": "Expand All"
+    },
+    "sectionGroups": {
+      "userManagement": {
+        "title": "User Management",
+        "description": "Manage users, agents, agencies, and tenants",
+        "users": {
+          "title": "Users",
+          "description": "Manage user accounts and permissions",
+          "badge": "Active"
+        },
+        "agents": {
+          "title": "Agents",
+          "description": "Manage real estate agents",
+          "badge": "Active"
+        },
+        "agencies": {
+          "title": "Agencies",
+          "description": "Manage real estate agencies",
+          "badge": "Active"
+        },
+        "tenants": {
+          "title": "Tenants",
+          "description": "Manage tenant information",
+          "badge": "Active"
+        }
+      },
+      "propertyManagement": {
+        "title": "Property Management",
+        "description": "Manage properties, facilities, and providers",
+        "properties": {
+          "title": "Properties",
+          "description": "Manage property listings",
+          "badge": "Active"
+        },
+        "facilities": {
+          "title": "Facilities",
+          "description": "Manage property facilities",
+          "badge": "Active"
+        },
+        "providers": {
+          "title": "Providers",
+          "description": "Manage service providers",
+          "badge": "Active"
+        },
+        "availability": {
+          "title": "Availability",
+          "description": "Manage property availability",
+          "badge": "Active"
+        }
+      },
+      "financials": {
+        "title": "Financials",
+        "description": "Manage payments, currency, and subscriptions",
+        "payment": {
+          "title": "Payment",
+          "description": "Manage payment processing",
+          "badge": "Active"
+        },
+        "currency": {
+          "title": "Currency",
+          "description": "Manage currency settings",
+          "badge": "Active"
+        },
+        "subscription": {
+          "title": "Subscription",
+          "description": "Manage subscription plans",
+          "badge": "Active"
+        },
+        "subscriptions": {
+          "title": "Subscriptions",
+          "description": "Manage user subscriptions",
+          "badge": "Active"
+        }
+      },
+      "operationsAnalytics": {
+        "title": "Operations & Analytics",
+        "description": "Manage analytics, tasks, events, and reports",
+        "analytics": {
+          "title": "Analytics",
+          "description": "View performance analytics",
+          "badge": "Active"
+        },
+        "tasks": {
+          "title": "Tasks",
+          "description": "Manage tasks and assignments",
+          "badge": "Active"
+        },
+        "events": {
+          "title": "Events",
+          "description": "Manage events and schedules",
+          "badge": "Active"
+        },
+        "report": {
+          "title": "Report",
+          "description": "Generate and view reports",
+          "badge": "Active"
+        }
+      },
+      "settingsMisc": {
+        "title": "Settings & Misc",
+        "description": "Manage profile, settings, and notifications",
+        "profile": {
+          "title": "Profile",
+          "description": "Manage user profile",
+          "badge": "Active"
+        },
+        "settings": {
+          "title": "Settings",
+          "description": "Manage system settings",
+          "badge": "Active"
+        },
+        "notifications": {
+          "title": "Notifications",
+          "description": "Manage notifications",
+          "badge": "Active"
+        }
+      }
+    },
+    "floatingActions": {
+      "add": "Add",
+      "dashboard": "Dashboard",
+      "notifications": "Notifications",
+      "userManagementDescription": "Manage and view all your users",
+      "addNewUser": "Add New User",
+      "addFirstUser": "Add First User",
+      "addNewProperty": "Add New Property",
+      "searchUsers": "Search users...",
+      "noUsersFound": "No users found. Get started by adding your first user!",
+      "showingResults": "Showing {start}-{end} of {total} results",
+      "name": "Name",
+      "role": "Role",
+      "viewDetails": "View Details",
+      "editUser": "Edit User",
+      "deleteUser": "Delete User",
+      "viewAnalytics": "View Analytics",
+      "owners": "Owners",
+      "messages": "Messages",
+      "reports": "Reports",
+      "subscriptionPackages": "Subscription Packages",
+      "reviews": "Reviews",
+      "extraCharges": "Extra Charges",
+      "languages": "Languages",
+      "increases": "Increases",
+      "includedServices": "Included Services",
+      "expenses": "Expenses",
+      "locations": "Locations",
+      "mentions": "Mentions",
+      "mortgages": "Mortgages",
+      "offers": "Offers",
+      "payments": "Payments",
+      "permissions": "Permissions",
+      "photos": "Photos",
+      "posts": "Posts",
+      "pricingRules": "Pricing Rules",
+      "tickets": "Tickets",
+      "tasks": "Tasks"
+    }
+  }
+}
+

@@ -1,0 +1,119 @@
+{
+  "notification": {
+    "title": "Notifications",
+    "description": "User notifications and alerts.",
+    "pageTitle": "Notifications",
+    "pageDescription": "Stay updated with your latest notifications and alerts",
+    "types": {
+      "BOOKING_CONFIRMED": "Booking Confirmed",
+      "REVIEW_RECEIVED": "Review Received",
+      "RENT_DUE": "Rent Due",
+      "SYSTEM_UPDATE": "System Update",
+      "MENTION": "Mention",
+      "TASK_ASSIGNED": "Task Assigned",
+      "COMPLIANCE_ALERT": "Compliance Alert",
+      "COMMUNICATION_RECEIVED": "Communication Received",
+      "RENT_PAID": "Rent Paid",
+      "LEASE_EXPIRING": "Lease Expiring",
+      "MAINTENANCE_REQUEST": "Maintenance Request",
+      "LEASE_RENEWAL": "Lease Renewal",
+      "LATE_PAYMENT_WARNING": "Late Payment Warning",
+      "LEASE_TERMINATION": "Lease Termination",
+      "RENT_INCREASE": "Rent Increase",
+      "COMMUNITY_NOTICE": "Community Notice",
+      "POLICY_UPDATE": "Policy Update",
+      "LIKE": "Like",
+      "COMMENT": "Comment",
+      "FOLLOW": "Follow",
+      "AVAILABILITY": "Availability",
+      "OTHER": "Other",
+      "PRICE_CHANGE": "Price Change"
+    },
+    "actions": {
+      "markAsRead": "Mark as read",
+      "markAsUnread": "Mark as unread",
+      "delete": "Delete",
+      "markAllAsRead": "Mark all as read",
+      "refresh": "Refresh",
+      "view": "View",
+      "reply": "Reply",
+      "dismiss": "Dismiss"
+    },
+    "empty": {
+      "noNotifications": "No notifications",
+      "allCaughtUp": "You're all caught up!",
+      "noNotificationsFound": "No notifications found",
+      "noNotificationsDescription": "You're all caught up with your notifications"
+    },
+    "toast": {
+      "deleted": "Notification deleted",
+      "markedRead": "Marked as read",
+      "markedUnread": "Marked as unread",
+      "allMarkedRead": "All notifications marked as read",
+      "deleteFailed": "Failed to delete notification",
+      "markReadFailed": "Failed to mark as read",
+      "markUnreadFailed": "Failed to mark as unread"
+    },
+    "timestamp": {
+      "justNow": "Just now",
+      "minutesAgo": "{count} minutes ago",
+      "hoursAgo": "{count} hours ago",
+      "daysAgo": "{count} days ago",
+      "weeksAgo": "{count} weeks ago",
+      "monthsAgo": "{count} months ago",
+      "yearsAgo": "{count} years ago"
+    },
+    "filters": {
+      "search": "Search notifications",
+      "searchPlaceholder": "Search notifications...",
+      "type": "Type",
+      "status": "Status",
+      "priority": "Priority",
+      "dateRange": "Date Range",
+      "all": "All",
+      "read": "Read",
+      "unread": "Unread",
+      "high": "High",
+      "medium": "Medium",
+      "low": "Low",
+      "applyFilters": "Apply Filters",
+      "clearFilters": "Clear Filters"
+    },
+    "priority": {
+      "high": "High",
+      "medium": "Medium",
+      "low": "Low",
+      "urgent": "Urgent"
+    },
+    "status": {
+      "read": "Read",
+      "unread": "Unread",
+      "archived": "Archived"
+    },
+    "details": {
+      "title": "Notification Details",
+      "type": "Type",
+      "priority": "Priority",
+      "status": "Status",
+      "createdAt": "Created At",
+      "updatedAt": "Updated At",
+      "content": "Content",
+      "sender": "Sender",
+      "recipient": "Recipient"
+    },
+    "loading": {
+      "loadingNotifications": "Loading notifications...",
+      "markingAsRead": "Marking as read...",
+      "markingAsUnread": "Marking as unread...",
+      "deleting": "Deleting..."
+    },
+    "errors": {
+      "loadFailed": "Failed to load notifications",
+      "loadFailedDescription": "There was an error loading your notifications. Please try again.",
+      "deleteFailed": "Failed to delete notification",
+      "markReadFailed": "Failed to mark as read",
+      "markUnreadFailed": "Failed to mark as unread",
+      "retryButton": "Retry"
+    }
+  }
+}

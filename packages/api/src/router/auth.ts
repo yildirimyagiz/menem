@@ -1,19 +1,64 @@
-import type { TRPCRouterRecord } from "@trpc/server";
+import { invalidateSessionToken } from "@reservatior/auth";
+import { db } from "@reservatior/db";
+import { CreateUserSchema } from "@reservatior/validators";
 import { TRPCError } from "@trpc/server";
 import bcrypt from "bcryptjs";
 import { z } from "zod";
-
-import { invalidateSessionToken } from "@acme/auth";
-import { db } from "@acme/db";
-import { CreateUserSchema } from "@acme/validators";
+import type { Prisma } from "@prisma/client";
 
 import { protectedProcedure, publicProcedure } from "../trpc";
+import { createJWT } from "../utils/jwt";
+
+// Google login is now handled by NextAuth.js. Do not import google-auth-library here.
 
 export const authRouter = {
+  login: publicProcedure
+    .input(z.object({ email: z.string().email(), password: z.string().min(1) }))
+    .mutation(async ({ input }) => {
+      const user = await db.user.findUnique({ where: { email: input.email } });
+      if (!user) {
+        throw new TRPCError({ code: "NOT_FOUND", message: "User not found" });
+      }
+      // Find credentials account
+      const account = await db.account.findFirst({
+        where: { userId: user.id, provider: "credentials" },
+      });
+      if (!account) {
+        throw new TRPCError({
+          code: "UNAUTHORIZED",
+          message: "No credentials account",
+        });
+      }
+      // Compare password
+      const valid = await bcrypt.compare(
+        input.password,
+        account.access_token ?? "",
+      );
+      if (!valid) {
+        throw new TRPCError({
+          code: "UNAUTHORIZED",
+          message: "Invalid password",
+        });
+      }
+      // Issue JWT
+      const token = createJWT({ userId: user.id });
+      return {
+        token,
+        user: {
+          id: user.id,
+          email: user.email,
+          name: user.name,
+        },
+      };
+    }),
   deleteAccount: protectedProcedure.mutation(async ({ ctx }) => {
-    const userId = ctx.session?.user?.id;
+    // protectedProcedure guarantees session and user exist
+    const userId = ctx.session.user.id;
     if (!userId) {
-      throw new TRPCError({ code: "UNAUTHORIZED", message: "Not authenticated" });
+      throw new TRPCError({
+        code: "UNAUTHORIZED",
+        message: "Not authenticated",
+      });
     }
 
     // Delete all related accounts
@@ -51,28 +96,36 @@ export const authRouter = {
       }),
     )
     .mutation(async ({ input }) => {
-      // Map frontend fields to backend and clean up data for Prisma
-      const { userName, phone, password, agencyId, ...rest } = input;
-      const data: any = {
-        ...rest,
-        username: userName ?? input.username,
-        phoneNumber: phone ?? input.phoneNumber,
+      // Map frontend fields to backend and build a typed Prisma payload
+      const { userName, phone, agencyId, ...rest } = input;
+      const username = userName ?? input.username;
+      const phoneNumber = phone ?? input.phoneNumber;
+      const emailForCheck = rest.email;
+      const phoneForCheck = phoneNumber;
+
+      const userData: Prisma.UserCreateInput = {
+        email: rest.email,
+        ...(rest.name ? { name: rest.name } : {}),
+        ...(username ? { username } : {}),
+        ...(phoneNumber ? { phoneNumber } : {}),
+        ...(rest.preferences !== undefined
+          ? { preferences: rest.preferences as unknown as Prisma.InputJsonValue }
+          : {}),
+        ...(agencyId
+          ? ({ Agency: { connect: { id: agencyId } } } as unknown as Pick<
+              Prisma.UserCreateInput,
+              "Agency"
+            >)
+          : {}),
       };
-      // Remove undefined fields
-      Object.keys(data).forEach((key) => data[key] === undefined && delete data[key]);
-      // Remove userName and agencyId if present
-      delete data.userName;
-      delete data.agencyId;
-      // Handle agency relation
-      if (agencyId) {
-        data.Agency = { connect: { id: agencyId } };
-      }
 
       // Check if user exists by email or phone
       // Build OR conditions for Prisma
-      const orConditions: { email?: string; phoneNumber?: string }[] = [{ email: data.email }];
-      if (data.phoneNumber) {
-        orConditions.push({ phoneNumber: data.phoneNumber });
+      const orConditions: { email?: string; phoneNumber?: string }[] = [
+        { email: emailForCheck },
+      ];
+      if (phoneForCheck) {
+        orConditions.push({ phoneNumber: phoneForCheck });
       }
       const existingUser = await db.user.findFirst({
         where: {
@@ -91,7 +144,7 @@ export const authRouter = {
 
       // Create the user (without password)
       const user = await db.user.create({
-        data,
+        data: userData,
       });
 
       // Create the credentials Account
@@ -113,7 +166,17 @@ export const authRouter = {
         },
       });
 
-      return { success: true, userId: user.id };
+      // Issue JWT
+      const token = createJWT({ userId: user.id });
+      return {
+        token,
+        user: {
+          id: user.id,
+          email: user.email,
+          name: user.name,
+          // ...any other fields you want to expose
+        },
+      };
     }),
 
   getUserById: publicProcedure
@@ -127,4 +190,15 @@ export const authRouter = {
       }
       return user;
     }),
-} satisfies TRPCRouterRecord;
+  getUserByEmail: publicProcedure
+    .input(z.object({ email: z.string().email() }))
+    .query(async ({ input }) => {
+      const user = await db.user.findUnique({
+        where: { email: input.email },
+      });
+      if (!user) {
+        throw new TRPCError({ code: "NOT_FOUND", message: "User not found" });
+      }
+      return user;
+    }),
+};

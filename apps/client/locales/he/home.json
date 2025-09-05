@@ -1,0 +1,469 @@
+{
+  "Index": {
+    "hero": {
+      "title": "[Find Your Dream Home]",
+      "subtitle": "[Dream Home]",
+      "description": "[Discover the perfect place to call home with our comprehensive property search platform]"
+    },
+    "search": {
+      "location": "[Enter location]",
+      "budget": "[Budget]",
+      "button": "[Search]",
+      "propertyType": "[Property Type]",
+      "propertyTypes": {
+        "apartment": "[Apartment]",
+        "house": "[House]",
+        "condo": "[Condo]",
+        "studio": "[Studio]"
+      },
+      "quickFilters": "[Quick filters:]"
+    },
+    "filters": {
+      "studio": "[Studio]",
+      "1bed": "[1 Bed]",
+      "2bed": "[2 Bed]",
+      "petFriendly": "[Pet Friendly]"
+    },
+    "stats": {
+      "availableProperties": "[Available Properties]",
+      "neighborhoods": "[Neighborhoods]",
+      "support": "[Support Available]",
+      "rating": "[Average Rating]",
+      "properties": "[Properties]",
+      "propertiesDescription": "[Available listings]",
+      "happyClients": "[Happy Clients]",
+      "happyClientsDescription": "[Satisfied customers]",
+      "averageRating": "[Average Rating]",
+      "averageRatingDescription": "[Out of 5 stars]",
+      "growth": "[Growth]",
+      "growthDescription": "[Year over year]",
+      "neighborhoodsDescription": "[Covered areas]",
+      "satisfaction": "[Satisfaction]",
+      "satisfactionDescription": "[Client satisfaction]",
+      "whyChoose": "[Why Choose]",
+      "trustedBy": "[Trusted by thousands of users worldwide for finding their perfect homes]"
+    },
+    "features": {
+      "lightningFast": "[Lightning Fast]",
+      "lightningFastDescription": "[Find properties in seconds with our optimized search]",
+      "trustedPlatform": "[Trusted Platform]",
+      "trustedPlatformDescription": "[Verified properties and trusted agents only]",
+      "bestPrices": "[Best Prices]",
+      "bestPricesDescription": "[Competitive pricing and transparent fees]"
+    },
+    "makeMoney": {
+      "title": "[Make Money with]",
+      "description": "[Choose your path to financial success in real estate. Multiple opportunities available for different skill levels and time commitments.]",
+      "becomeAgent": {
+        "title": "[Become an Agent]",
+        "description": "[Start earning by helping others find their perfect home]",
+        "features": {
+          "flexible": "[Flexible hours]",
+          "commission": "[Commission-based]",
+          "training": "[Training provided]"
+        },
+        "earnings": "[$2,000 - $15,000/month]"
+      },
+      "becomeAgency": {
+        "title": "[Become an Agency]",
+        "description": "[Scale your business and manage multiple agents]",
+        "features": {
+          "team": "[Team management]",
+          "commissions": "[Higher commissions]",
+          "tools": "[Business tools]"
+        },
+        "earnings": "[$10,000 - $50,000/month]"
+      },
+      "referral": {
+        "title": "[Referral Program]",
+        "description": "[Earn rewards by referring friends and family]",
+        "features": {
+          "easy": "[Easy to start]",
+          "noExperience": "[No experience needed]",
+          "instant": "[Instant rewards]"
+        },
+        "earnings": "[$100 - $1,000/month]"
+      },
+      "difficulty": {
+        "easy": "[Easy]",
+        "medium": "[Medium]",
+        "hard": "[Hard]"
+      },
+      "potentialEarnings": "[Potential Earnings]",
+      "keyBenefits": "[Key Benefits]",
+      "getStarted": "[Get Started]",
+      "readyToStart": "[Ready to Start Earning?]",
+      "joinThousands": "[Join thousands of successful agents and agencies who have built their careers with Reservatior.]",
+      "contactUs": "[Contact Us]",
+      "learnMore": "[Learn More]"
+    },
+    "getStarted": {
+      "title": "[Ready to find your next place?]",
+      "subtitle": "[Sign up to save your favorite listings, schedule tours, and more.]",
+      "button": "[Get Started]"
+    },
+    "properties": {
+      "title": "[Featured Properties]"
+    },
+    "common": {
+      "loading": "[Loading...]",
+      "error": {
+        "generic": "[Failed to load properties.]"
+      }
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "[Find Your Next Home]",
+      "subtitle": "[Search thousands of listings, agencies, and agents.]",
+      "search": {
+        "placeholder": "[Enter a location]",
+        "button": "[Search Properties]",
+        "location": "[Location]",
+        "dates": "[Dates]",
+        "guests": "[Guests]",
+        "propertyType": "[Property Type]",
+        "priceRange": "[Price Range]",
+        "amenities": "[Amenities]",
+        "searchNow": "[Search Now]",
+        "advancedSearch": "[Advanced Search]",
+        "quickSearch": "[Quick Search]"
+      },
+      "suggestions": {
+        "loading": "[Loading suggestions...]",
+        "noResults": "[No results found]",
+        "recentSearches": "[Recent Searches]",
+        "popularLocations": "[Popular Locations]",
+        "clearHistory": "[Clear History]"
+      }
+    },
+    "stats": {
+      "title": "[Platform Statistics]",
+      "availableProperties": "[Available Properties]",
+      "neighborhoods": "[Neighborhoods]",
+      "support": "[Support]",
+      "properties": "[Properties]",
+      "tenants": "[Tenants]",
+      "agents": "[Agents]",
+      "cities": "[Cities]",
+      "countries": "[Countries]",
+      "satisfaction": "[Satisfaction Rate]",
+      "responseTime": "[Response Time]"
+    },
+    "exploreDestinations": {
+      "title": "[Let's go on an adventure]",
+      "subtitle": "[Explore the best places to stay in the world.]",
+      "popular": "[Popular Destinations]",
+      "trending": "[Trending Destinations]",
+      "featured": "[Featured Destinations]",
+      "viewAll": "[View All Destinations]",
+      "destinations": "[Destinations]",
+      "cities": "[Cities]",
+      "countries": "[Countries]",
+      "regions": "[Regions]",
+      "neighborhoods": "[Neighborhoods]"
+    },
+    "quickBrowseLinks": {
+      "title": "[Quick Browse]",
+      "subtitle": "[Find what you're looking for quickly]",
+      "browse": "[Browse]",
+      "quickLinks": "[Quick Links]",
+      "categories": "[Categories]",
+      "propertyTypes": "[Property Types]",
+      "locations": "[Locations]",
+      "amenities": "[Amenities]",
+      "priceRanges": "[Price Ranges]",
+      "filters": "[Filters]"
+    },
+    "featuredProperties": {
+      "title": "[Featured Properties]",
+      "subtitle": "[Handpicked properties for you]",
+      "viewAll": "[View All Properties]",
+      "property": "[Property]",
+      "properties": "[Properties]",
+      "featured": "[Featured]",
+      "new": "[New]",
+      "hot": "[Hot]",
+      "trending": "[Trending]",
+      "price": "[Price]",
+      "location": "[Location]",
+      "rating": "[Rating]",
+      "bedrooms": "[Bedrooms]",
+      "bathrooms": "[Bathrooms]",
+      "area": "[Area]",
+      "amenities": "[Amenities]",
+      "description": "[Description]",
+      "details": "[Details]",
+      "contact": "[Contact]",
+      "favorite": "[Favorite]",
+      "share": "[Share]",
+      "compare": "[Compare]",
+      "viewDetails": "[View Details]",
+      "bookNow": "[Book Now]",
+      "rentNow": "[Rent Now]",
+      "buyNow": "[Buy Now]"
+    },
+    "marketTrends": {
+      "title": "[Market Trends]",
+      "subtitle": "[Stay updated with the latest market insights]",
+      "trends": "[Market Trends]",
+      "analysis": "[Market Analysis]",
+      "insights": "[Market Insights]",
+      "reports": "[Market Reports]",
+      "statistics": "[Market Statistics]",
+      "forecasts": "[Market Forecasts]",
+      "comparison": "[Market Comparison]",
+      "growth": "[Market Growth]",
+      "decline": "[Market Decline]",
+      "stable": "[Market Stable]"
+    },
+    "trends": {
+      "title": "[Market Trends & Insights]",
+      "avgPrice": "[Avg. Price (Rent)]",
+      "newListings": "[New Listings This Month]",
+      "avgDaysOnMarket": "[Avg. Days on Market]",
+      "totalCities": "[Cities Covered]"
+    },
+    "howItWorks": {
+      "title": "[How It Works]",
+      "subtitle": "[Simple steps to find your perfect property]",
+      "steps": "[Steps]",
+      "process": "[Process]",
+      "guide": "[How It Works]",
+      "search": "[Search Properties]",
+      "searchDesc": "[Find homes, apartments, and investments in your area.]",
+      "tour": "[Schedule Tours]",
+      "tourDesc": "[Book in-person or virtual tours easily.]",
+      "apply": "[Apply Online]",
+      "applyDesc": "[Submit applications and documents securely.]",
+      "moveIn": "[Move In!]",
+      "moveInDesc": "[Sign your lease and get the keys.]",
+      "step1": {
+        "title": "[Search]",
+        "description": "[Browse through thousands of properties]"
+      },
+      "step2": {
+        "title": "[Compare]",
+        "description": "[Compare properties side by side]"
+      },
+      "step3": {
+        "title": "[Contact]",
+        "description": "[Get in touch with agents or owners]"
+      },
+      "step4": {
+        "title": "[Book]",
+        "description": "[Book your preferred property]"
+      }
+    },
+    "neighborhoodHighlights": {
+      "title": "[Neighborhood Highlights]",
+      "subtitle": "[Discover what makes each area special]",
+      "neighborhoods": "[Neighborhoods]",
+      "highlights": "[Highlights]",
+      "local": "[Local Area]",
+      "amenities": "[Local Amenities]",
+      "schools": "[Schools]",
+      "hospitals": "[Hospitals]",
+      "shopping": "[Shopping]",
+      "restaurants": "[Restaurants]",
+      "transportation": "[Transportation]",
+      "parks": "[Parks]",
+      "crime": "[Crime Rate]",
+      "walkability": "[Walkability]",
+      "transit": "[Transit Score]"
+    },
+    "getStartedBanner": {
+      "title": "[Ready to Get Started?]",
+      "subtitle": "[Join thousands of satisfied users]",
+      "cta": "[Call to Action]",
+      "signUp": "[Sign Up Now]",
+      "learnMore": "[Learn More]",
+      "explore": "[Explore Features]",
+      "demo": "[Request Demo]",
+      "contact": "[Contact Us]"
+    },
+    "enhancedHeroSection": {
+      "title": "[Enhanced Hero Section]",
+      "hero": "[Hero]",
+      "mainTitle": "[Find Your Dream Property]",
+      "subtitle": "[Discover the perfect place to call home]",
+      "search": "[Search]",
+      "advancedSearch": "[Advanced Search]",
+      "quickSearch": "[Quick Search]",
+      "filters": "[Filters]",
+      "sortBy": "[Sort By]",
+      "viewMode": "[View Mode]",
+      "mapView": "[Map View]",
+      "listView": "[List View]",
+      "gridView": "[Grid View]"
+    },
+    "enhancedMakeMoneySection": {
+      "title": "[Make Money with Your Property]",
+      "subtitle": "[Turn your property into a source of income]",
+      "makeMoney": "[Make Money]",
+      "earnings": "[Earnings]",
+      "income": "[Income]",
+      "revenue": "[Revenue]",
+      "profit": "[Profit]",
+      "investment": "[Investment]",
+      "roi": "[Return on Investment]",
+      "rental": "[Rental Income]",
+      "leasing": "[Leasing]",
+      "hosting": "[Hosting]",
+      "management": "[Property Management]",
+      "services": "[Services]",
+      "opportunities": "[Opportunities]"
+    },
+    "enhancedStatsSection": {
+      "title": "[Enhanced Statistics]",
+      "subtitle": "[Comprehensive platform statistics]",
+      "statistics": "[Statistics]",
+      "metrics": "[Metrics]",
+      "numbers": "[Numbers]",
+      "data": "[Data]",
+      "analytics": "[Analytics]",
+      "insights": "[Insights]",
+      "performance": "[Performance]",
+      "growth": "[Growth]",
+      "trends": "[Trends]",
+      "comparison": "[Comparison]"
+    },
+    "locationAutocomplete": {
+      "title": "[Location Search]",
+      "placeholder": "[Search for a location...]",
+      "search": "[Search Location]",
+      "autocomplete": "[Autocomplete]",
+      "suggestions": "[Suggestions]",
+      "recent": "[Recent Searches]",
+      "popular": "[Popular Locations]",
+      "nearby": "[Nearby]",
+      "cities": "[Cities]",
+      "neighborhoods": "[Neighborhoods]",
+      "landmarks": "[Landmarks]",
+      "addresses": "[Addresses]",
+      "coordinates": "[Coordinates]",
+      "clear": "[Clear Search]",
+      "noResults": "[No results found]",
+      "loading": "[Loading suggestions...]"
+    },
+    "filters": {
+      "title": "[Filters]",
+      "apply": "[Apply Filters]",
+      "clear": "[Clear Filters]",
+      "reset": "[Reset Filters]",
+      "save": "[Save Filters]",
+      "load": "[Load Saved Filters]",
+      "propertyType": "[Property Type]",
+      "priceRange": "[Price Range]",
+      "bedrooms": "[Bedrooms]",
+      "bathrooms": "[Bathrooms]",
+      "amenities": "[Amenities]",
+      "location": "[Location]",
+      "dateAvailable": "[Date Available]",
+      "petFriendly": "[Pet Friendly]",
+      "furnished": "[Furnished]",
+      "parking": "[Parking]",
+      "garden": "[Garden]",
+      "balcony": "[Balcony]",
+      "elevator": "[Elevator]",
+      "security": "[Security]",
+      "pool": "[Pool]",
+      "gym": "[Gym]"
+    },
+    "sorting": {
+      "title": "[Sort By]",
+      "price": "[Price]",
+      "date": "[Date]",
+      "rating": "[Rating]",
+      "distance": "[Distance]",
+      "relevance": "[Relevance]",
+      "popularity": "[Popularity]",
+      "newest": "[Newest]",
+      "oldest": "[Oldest]",
+      "priceLowToHigh": "[Price: Low to High]",
+      "priceHighToLow": "[Price: High to Low]",
+      "ratingHighToLow": "[Rating: High to Low]",
+      "distanceNearest": "[Distance: Nearest First]"
+    },
+    "pagination": {
+      "previous": "[Previous]",
+      "next": "[Next]",
+      "page": "[Page]",
+      "of": "[of]",
+      "showing": "[Showing]",
+      "to": "[to]",
+      "results": "[results]",
+      "perPage": "[per page]",
+      "loadMore": "[Load More]",
+      "showAll": "[Show All]"
+    },
+    "loading": {
+      "title": "[Loading]",
+      "properties": "[Loading properties...]",
+      "suggestions": "[Loading suggestions...]",
+      "search": "[Searching...]",
+      "filters": "[Applying filters...]",
+      "results": "[Loading results...]"
+    },
+    "errors": {
+      "title": "[Error]",
+      "generic": "[Something went wrong]",
+      "noResults": "[No results found]",
+      "searchFailed": "[Search failed]",
+      "loadFailed": "[Failed to load data]",
+      "networkError": "[Network error]",
+      "tryAgain": "[Try again]",
+      "contactSupport": "[Contact support]"
+    },
+    "actions": {
+      "search": "[Search]",
+      "filter": "[Filter]",
+      "sort": "[Sort]",
+      "view": "[View]",
+      "contact": "[Contact]",
+      "favorite": "[Favorite]",
+      "share": "[Share]",
+      "compare": "[Compare]",
+      "book": "[Book]",
+      "rent": "[Rent]",
+      "buy": "[Buy]",
+      "save": "[Save]",
+      "load": "[Load]",
+      "clear": "[Clear]",
+      "reset": "[Reset]",
+      "apply": "[Apply]",
+      "cancel": "[Cancel]",
+      "confirm": "[Confirm]",
+      "back": "[Back]",
+      "next": "[Next]",
+      "previous": "[Previous]"
+    }
+  },
+  "neighborhoods": {
+    "title": "[Neighborhood Highlights]",
+    "downtown": {
+      "name": "[Downtown]",
+      "desc": "[Vibrant city living with shopping, dining, and entertainment.]"
+    },
+    "beachfront": {
+      "name": "[Beachfront]",
+      "desc": "[Relax by the ocean in beautiful beachfront communities.]"
+    },
+    "uptown": {
+      "name": "[Uptown]",
+      "desc": "[Trendy area with cafes, boutiques, and nightlife.]"
+    },
+    "readGuide": "[Read Guide]"
+  },
+  "quickBrowse": {
+    "title": "[Browse Homes by City]",
+    "city": {
+      "san-francisco": "[San Francisco]",
+      "new-york": "[New York]",
+      "miami": "[Miami]",
+      "chicago": "[Chicago]",
+      "los-angeles": "[Los Angeles]",
+      "seattle": "[Seattle]"
+    }
+  }
+}

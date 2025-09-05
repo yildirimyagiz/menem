@@ -7,14 +7,13 @@ import type {
   Property,
   User,
 } from "@prisma/client";
-import { z } from "zod";
-
-import type { ReviewFilterInput } from "@acme/validators";
+import type { ReviewFilterInput } from "@reservatior/validators";
 import {
   CreateReviewSchema,
   ReviewFilterSchema,
   UpdateReviewSchema,
-} from "@acme/validators";
+} from "@reservatior/validators";
+import { z } from "zod";
 
 import { createTRPCRouter, protectedProcedure } from "../trpc";
 
@@ -74,7 +73,7 @@ const sanitizeReview = (
     deletedAt: review.deletedAt,
     Agency: review.Agency ?? null,
     Agent: review.Agent ?? null,
-Property: review.Property,  // This can now be null
+    Property: review.Property, // This can now be null
 
     User: review.User,
     Review: review.Review ?? null,

@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allowAllCommands": true,
+    "allowMCP": true
+  },
+  "defaultPersonas": [
+    "frontend", "backend", "architect", "analyzer", "security", "qa", "performance", "refactorer", "mentor"
+  ],
+  "enabledMCPs": [
+    "sequential-thinking", "context7", "magic", "puppeteer"
+  ]
+}

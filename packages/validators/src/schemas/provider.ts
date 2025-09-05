@@ -7,13 +7,14 @@ export const BookingSourceEnum = z.enum([
   "Expedia",
   "Other",
   "Agency",
-  "Provider"
+  "Provider",
 ]);
 export type BookingSource = z.infer<typeof BookingSourceEnum>;
 
 export const ProviderSchema = z.object({
   id: z.string(),
   name: z.string(),
+  logo: z.string().optional(),
   apiKey: z.string().optional(),
   apiSecret: z.string().optional(),
   baseUrl: z.string().optional(),
@@ -31,6 +32,7 @@ export const ProviderSchema = z.object({
 
 export const CreateProviderSchema = z.object({
   name: z.string(),
+  logo: z.string().optional(),
   apiKey: z.string().optional(),
   apiSecret: z.string().optional(),
   baseUrl: z.string().optional(),
@@ -42,6 +44,7 @@ export const CreateProviderSchema = z.object({
 export const UpdateProviderSchema = z.object({
   id: z.string(),
   name: z.string().optional(),
+  logo: z.string().optional(),
   apiKey: z.string().optional(),
   apiSecret: z.string().optional(),
   baseUrl: z.string().optional(),

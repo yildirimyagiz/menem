@@ -1,0 +1,67 @@
+{
+  "help": {
+    "title": "Help & Support",
+    "description": "Find answers to common questions and get support",
+    "searchPlaceholder": "Search help articles...",
+    "email": "Email Support",
+    "emailAddress": "support@reservatior.com",
+    "phone": "Phone Support",
+    "phoneNumber": "+1 (555) 123-4567",
+    "chat": "Live Chat",
+    "availability": "Available 24/7",
+    "faq": "Frequently Asked Questions",
+    "subject": "Subject",
+    "subjectPlaceholder": "Enter subject",
+
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Describe your issue",
+    "liveChat": {
+      "title": "Live Chat Support",
+      "subtitle": "Get instant help from our support team"
+    },
+    "faqItems": {
+      "1": {
+        "q": "How do I search for properties?",
+        "a": "Use the search bar on the homepage to find properties by location, price range, and other criteria. You can also use advanced filters to narrow down your search."
+      },
+      "2": {
+        "q": "How do I contact a property owner?",
+        "a": "Click on any property to view its details, then use the contact form or call the provided phone number to get in touch with the owner or agent."
+      },
+      "3": {
+        "q": "What payment methods are accepted?",
+        "a": "We accept various payment methods including credit cards, bank transfers, and digital wallets. Payment options may vary by property."
+      },
+      "4": {
+        "q": "How do I report an issue with a property?",
+        "a": "If you encounter any issues with a property listing, please contact our support team through the help section or submit a ticket."
+      },
+      "5": {
+        "q": "Can I save properties to view later?",
+        "a": "Yes! Click the heart icon on any property to add it to your favorites. You can view all your saved properties in the Favorites section."
+      }
+    },
+    "submitTicket": "Submit Ticket"
+  },
+  "tickets": {
+    "header": "Support Tickets",
+    "title": "My Tickets",
+    "none": "No tickets found",
+    "noneDescription": "You haven't created any support tickets yet.",
+    "createdOn": "Created {date}",
+    "status": {
+      "open": "Open",
+      "inProgress": "In Progress",
+      "resolved": "Resolved",
+      "closed": "Closed",
+      "archived": "Archived"
+    }
+  },
+  "ticket": {
+    "number": "Ticket #{id}",
+    "replySubject": "Reply to ticket"
+  },
+  "back": "Back",
+  "send": "Send",
+  "messagePlaceholder": "Type your message..."
+}

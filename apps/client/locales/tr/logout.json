@@ -1,0 +1,8 @@
+{
+  "logout": {
+    "title": "Çıkış yap",
+    "description": "Çıkış yapmak istediğinizden emin misiniz?",
+    "confirmButton": "Çıkış yap",
+    "cancelButton": "İptal"
+  }
+} 

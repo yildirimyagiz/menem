@@ -1,0 +1,85 @@
+{
+  "places": {
+    "title": "{city} Yerleri",
+    "subtitle": "Şehrin en iyi yerlerini keşfedin",
+    "advices": {
+      "title": "Yerel Tavsiyeler",
+      "authorPrefix": "— "
+    },
+    "categoryFilters": {
+      "title": "Kategoriler"
+    },
+    "placeCard": {
+      "viewDetails": "Detayları Gör",
+      "featured": "Öne Çıkan",
+      "rating": "Puan"
+    },
+    "reviews": {
+      "title": "Yorumlar",
+      "by": "tarafından",
+      "stars": "yıldız"
+    },
+    "interactiveMap": {
+      "title": "Harita Görünümü",
+      "placesFound": "{count} yer bulundu",
+      "locationEnabled": "Konum etkin"
+    },
+    "locationControls": {
+      "title": "Konum Kontrolleri",
+      "getMyLocation": "Konumumu Al",
+      "startTracking": "Takibi Başlat",
+      "stopTracking": "Takibi Durdur",
+      "tracking": "Takip ediliyor...",
+      "locationActive": "Konum aktif",
+      "yourLocation": "Konumunuz",
+      "locationDenied": "Konum izni reddedildi",
+      "accuracy": "Doğruluk: {accuracy}m"
+    },
+    "mapLegend": {
+      "title": "Lejant",
+      "restaurant": "Restoran",
+      "school": "Okul",
+      "facility": "Tesis",
+      "sportCenter": "Spor Merkezi",
+      "yourLocation": "Konumunuz"
+    },
+    "placesGrid": {
+      "featuredPlaces": "Öne Çıkan Yerler",
+      "activateMap": "Haritayı Aktifleştir"
+    },
+    "searchAndFilter": {
+      "listView": "Liste Görünümü",
+      "mapView": "Harita Görünümü",
+      "searchPlaceholder": "Yerlerde ara...",
+      "filterBy": "Filtrele"
+    },
+    "categories": {
+      "all": "Tüm Yerler",
+      "restaurant": "Restoranlar",
+      "school": "Okullar",
+      "facility": "Tesisler",
+      "sport": "Spor Merkezleri"
+    },
+    "goldenGateRestaurant": {
+      "name": "Golden Gate Restoranı",
+      "description": "Şehrin en popüler restoranlarından biri, geleneksel ve modern mutfak sunuyor.",
+      "address": "Golden Gate Caddesi, San Francisco"
+    },
+    "sanFranciscoHighSchool": {
+      "name": "San Francisco Lisesi",
+      "description": "Mükemmel eğitim standartları ve modern tesislerle prestijli bir okul.",
+      "address": "Eğitim Caddesi, San Francisco"
+    },
+    "downtownFitnessCenter": {
+      "name": "Şehir Merkezi Spor Salonu",
+      "description": "En son ekipmanlarla donatılmış, profesyonel antrenörlerle tam donanımlı spor merkezi.",
+      "address": "Spor Caddesi, San Francisco"
+    },
+    "marinaSportsComplex": {
+      "name": "Marina Spor Kompleksi",
+      "description": "Çeşitli spor aktiviteleri için geniş alanlar ve olimpik standartlarda tesisler.",
+      "address": "Marina Bölgesi, San Francisco"
+    },
+    "resultsSummary": "{showing} / {total} yer gösteriliyor"
+  }
+}

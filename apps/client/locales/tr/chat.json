@@ -1,0 +1,160 @@
+{
+  "Chat": {
+    "loading": "Sohbet ve kanallar yükleniyor...",
+    "header": {
+      "title": "Sohbet ve Kanallar",
+      "description": "Acenteler ve topluluklarla bağlantı kurun"
+    },
+    "footer": {
+      "title": "Reservatior Sohbet",
+      "description": "Daha iyi mülk yönetimi için acenteler ve topluluklarla bağlantı kurun",
+      "support": "Destek Mevcut",
+      "activeUsers": "Aktif Kullanıcı",
+      "rating": "Değerlendirme",
+      "copyright": "© 2024 Reservatior. Tüm hakları saklıdır. | Gizlilik Politikası | Hizmet Şartları"
+    },
+    "channels": {
+      "title": "Kanallar",
+      "createChannel": "Kanal Oluştur",
+      "joinChannel": "Kanala Katıl",
+      "leaveChannel": "Kanaldan Ayrıl",
+      "deleteChannel": "Kanalı Sil",
+      "editChannel": "Kanalı Düzenle",
+      "channelName": "Kanal Adı",
+      "channelDescription": "Kanal Açıklaması",
+      "channelType": "Kanal Türü",
+      "public": "Herkese Açık",
+      "private": "Özel",
+      "direct": "Doğrudan Mesaj"
+    },
+    "messages": {
+      "sendMessage": "Mesaj Gönder",
+      "messagePlaceholder": "Mesajınızı yazın...",
+      "noMessages": "Henüz mesaj yok",
+      "startConversation": "Bir konuşma başlatın",
+      "typing": "yazıyor...",
+      "online": "çevrimiçi",
+      "offline": "çevrimdışı",
+      "lastSeen": "Son görülme",
+      "messageSent": "Mesaj gönderildi",
+      "messageFailed": "Mesaj gönderilemedi"
+    },
+    "users": {
+      "online": "Çevrimiçi Kullanıcılar",
+      "offline": "Çevrimdışı Kullanıcılar",
+      "searchUsers": "Kullanıcı ara...",
+      "inviteUser": "Kullanıcı Davet Et",
+      "blockUser": "Kullanıcıyı Engelle",
+      "unblockUser": "Kullanıcının Engelini Kaldır"
+    },
+    "settings": {
+      "title": "Sohbet Ayarları",
+      "notifications": "Bildirimler",
+      "sound": "Ses",
+      "theme": "Tema",
+      "language": "Dil",
+      "privacy": "Gizlilik"
+    },
+    "sidebar": {
+      "noConversations": "Henüz konuşma yok."
+    },
+    "chatInput": {
+      "sendAria": "Mesaj gönderme formu",
+      "sendButton": "Mesaj gönder",
+      "sending": "Gönderiliyor...",
+      "placeholder": "Mesaj...",
+      "inputAria": "Mesaj girişi"
+    },
+    "conversation": {
+      "unreadOverflow": "9+"
+    },
+    "conversationList": {
+      "yesterday": "Dün"
+    },
+    "messageList": {
+      "copy": "Kopyala"
+    },
+    "typingIndicator": {
+      "isTyping": "{userName} yazıyor..."
+    },
+    "messageSearch": {
+      "type": {
+        "all": "Tümü",
+        "unread": "Okunmamış",
+        "sent": "Gönderilen",
+        "received": "Alınan",
+        "system": "Sistem",
+        "problem": "Sorun",
+        "request": "İstek",
+        "advice": "Tavsiye",
+        "information": "Bilgi",
+        "feedback": "Geri Bildirim",
+        "chat": "Sohbet"
+      }
+    },
+    "errorBoundary": {
+      "title": "Bir şeyler yanlış gitti",
+      "description": "Beklenmeyen bir hata oluştu",
+      "retry": "Tekrar Dene"
+    },
+    "adminActions": {
+      "archive": "Arşivle",
+      "mute": "Sustur",
+      "delete": "Sil",
+      "ban": "Yasakla",
+      "unban": "Yasağı Kaldır"
+    },
+    "notifications": {
+      "newMessage": "{sender} adlı kullanıcıdan yeni mesaj",
+      "messageRead": "Mesaj okundu",
+      "userOnline": "{user} artık çevrimiçi",
+      "userOffline": "{user} artık çevrimdışı"
+    },
+    "search": {
+      "placeholder": "Mesajlarda ara...",
+      "noResults": "Mesaj bulunamadı",
+      "searchInChannels": "Kanallarda ara",
+      "searchInDirectMessages": "Doğrudan mesajlarda ara"
+    },
+    "emoji": {
+      "picker": "Emoji seçici",
+      "recent": "Son Kullanılan",
+      "smileys": "Gülümsemeler",
+      "animals": "Hayvanlar",
+      "food": "Yemek",
+      "activities": "Aktiviteler",
+      "travel": "Seyahat",
+      "objects": "Nesneler",
+      "symbols": "Semboller",
+      "flags": "Bayraklar"
+    },
+    "attachments": {
+      "upload": "Dosya yükle",
+      "image": "Resim",
+      "video": "Video",
+      "audio": "Ses",
+      "document": "Belge",
+      "maxSize": "Maksimum dosya boyutu: {size}",
+      "uploading": "Yükleniyor...",
+      "uploadFailed": "Yükleme başarısız"
+    },
+    "voice": {
+      "startRecording": "Kayıt başlat",
+      "stopRecording": "Kayıt durdur",
+      "recording": "Kaydediliyor...",
+      "play": "Oynat",
+      "pause": "Duraklat",
+      "stop": "Durdur"
+    },
+    "video": {
+      "startCall": "Video araması başlat",
+      "endCall": "Aramayı sonlandır",
+      "joinCall": "Aramaya katıl",
+      "leaveCall": "Aramadan ayrıl",
+      "cameraOn": "Kamera açık",
+      "cameraOff": "Kamera kapalı",
+      "microphoneOn": "Mikrofon açık",
+      "microphoneOff": "Mikrofon kapalı"
+    }
+  }
+} 

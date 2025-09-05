@@ -1,0 +1,51 @@
+{
+  "title": "[Notifications]",
+  "description": "[User notifications and alerts.]",
+  "types": {
+    "BOOKING_CONFIRMED": "[Booking Confirmed]",
+    "REVIEW_RECEIVED": "[Review Received]",
+    "RENT_DUE": "[Rent Due]",
+    "SYSTEM_UPDATE": "[System Update]",
+    "MENTION": "[Mention]",
+    "TASK_ASSIGNED": "[Task Assigned]",
+    "COMPLIANCE_ALERT": "[Compliance Alert]",
+    "COMMUNICATION_RECEIVED": "[Communication Received]",
+    "RENT_PAID": "[Rent Paid]",
+    "LEASE_EXPIRING": "[Lease Expiring]",
+    "MAINTENANCE_REQUEST": "[Maintenance Request]",
+    "LEASE_RENEWAL": "[Lease Renewal]",
+    "LATE_PAYMENT_WARNING": "[Late Payment Warning]",
+    "LEASE_TERMINATION": "[Lease Termination]",
+    "RENT_INCREASE": "[Rent Increase]",
+    "COMMUNITY_NOTICE": "[Community Notice]",
+    "POLICY_UPDATE": "[Policy Update]",
+    "LIKE": "[Like]",
+    "COMMENT": "[Comment]",
+    "FOLLOW": "[Follow]",
+    "AVAILABILITY": "[Availability]",
+    "OTHER": "[Other]"
+  },
+  "actions": {
+    "markAsRead": "[Mark as read]",
+    "markAsUnread": "[Mark as unread]",
+    "delete": "[Delete]",
+    "markAllAsRead": "[Mark all as read]",
+    "refresh": "[Refresh]"
+  },
+  "empty": {
+    "noNotifications": "[No notifications]",
+    "allCaughtUp": "[You're all caught up!]"
+  },
+  "toast": {
+    "deleted": "[Notification deleted]",
+    "markedRead": "[Marked as read]",
+    "markedUnread": "[Marked as unread]",
+    "allMarkedRead": "[All notifications marked as read]"
+  },
+  "timestamp": {
+    "justNow": "[Just now]",
+    "minutesAgo": "[{count} minutes ago]",
+    "hoursAgo": "[{count} hours ago]",
+    "daysAgo": "[{count} days ago]"
+  }
+}

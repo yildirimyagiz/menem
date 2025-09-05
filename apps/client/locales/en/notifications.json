@@ -1,0 +1,74 @@
+{
+  "notifications": {
+    "title": "Notifications",
+    "description": "Manage your notifications and stay updated",
+    "all": "All",
+    "unread": "Unread",
+    "read": "Read",
+    "high": "High Priority",
+    "medium": "Medium Priority",
+    "low": "Low Priority",
+    "new": "New",
+    "createdAt": "{date}",
+    "markAsRead": "Mark as read",
+    "unreadCount": "{count} unread",
+    "markAllAsRead": "Mark All as Read",
+    "searchPlaceholder": "Search notifications...",
+    "searchAriaLabel": "Search notifications",
+    "loadFailed": "Failed to load notifications.",
+    "noNotifications": "No notifications yet",
+    "noMentions": "No mentions yet",
+    "loadingHashtags": "Loading hashtags...",
+    "noHashtagNotifications": "No hashtag notifications yet",
+    "trackHashtags": "Track hashtags to get notified here.",
+    "search": {
+      "placeholder": "Search notifications...",
+      "noResults": "No notifications found"
+    },
+    "filters": {
+      "title": "Filters",
+      "type": "Type",
+      "priority": "Priority",
+      "date": "Date",
+      "clear": "Clear Filters"
+    },
+    "actions": {
+      "markAsRead": "Mark as Read",
+      "markAsUnread": "Mark as Unread",
+      "delete": "Delete",
+      "markAllAsRead": "Mark All as Read",
+      "refresh": "Refresh"
+    },
+    "types": {
+      "mention": "Mention",
+      "taskAssigned": "Task Assigned",
+      "bookingConfirmed": "Booking Confirmed",
+      "reviewReceived": "Review Received",
+      "priceChange": "Price Change",
+      "systemUpdate": "System Update",
+      "complianceAlert": "Compliance Alert",
+      "communicationReceived": "Communication Received",
+      "rentDue": "Rent Due",
+      "rentPaid": "Rent Paid",
+      "leaseExpiring": "Lease Expiring",
+      "maintenanceRequest": "Maintenance Request",
+      "leaseRenewal": "Lease Renewal",
+      "latePaymentWarning": "Late Payment Warning",
+      "leaseTermination": "Lease Termination",
+      "rentIncrease": "Rent Increase",
+      "communityNotice": "Community Notice",
+      "policyUpdate": "Policy Update",
+      "like": "Like",
+      "comment": "Comment",
+      "follow": "Follow",
+      "availability": "Availability",
+      "other": "Other"
+    },
+    "empty": {
+      "title": "No notifications",
+      "description": "You're all caught up! Check back later for new updates."
+    },
+    "loading": "Loading notifications...",
+    "error": "Error loading notifications"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "pages": {
+    "title": "Pages",
+    "description": "Static and dynamic pages.",
+    "propertyListingsLink": {
+      "view": "View Property Listings"
+    },
+    "welcome": {
+      "title": "Welcome to Reservatior",
+      "intro": "Your all-in-one platform to discover, connect, and manage properties, agencies, and rentals—trusted by professionals and renters alike.",
+      "signIn": "Sign In",
+      "signUp": "Sign Up",
+      "exploreGuest": "Explore as Guest",
+      "copyright": "All rights reserved.",
+      "category": {
+        "discover": {
+          "label": "Discover",
+          "step1": "Browse properties in your city or worldwide.",
+          "step2": "Filter by type, price, and amenities.",
+          "step3": "See real photos and city highlights."
+        },
+        "connect": {
+          "label": "Connect",
+          "step1": "Contact trusted agencies and agents.",
+          "step2": "Read verified reviews and ratings.",
+          "step3": "Ask questions and get expert advice."
+        },
+        "manage": {
+          "label": "Manage",
+          "step1": "Book, reserve, and track your stays.",
+          "step2": "Manage tasks, contracts, and payments.",
+          "step3": "Leave feedback and help others decide."
+        }
+      }
+    },
+    "welcomeScreen": {
+      "title": "Welcome to Reservatior",
+      "intro": "Your all-in-one platform to discover, connect, and manage properties, agencies, and rentals—trusted by professionals and renters alike.",
+      "signIn": "Sign In",
+      "signUp": "Sign Up",
+      "exploreGuest": "Explore as Guest",
+      "copyright": "All rights reserved.",
+      "category": {
+        "discover": {
+          "label": "Discover",
+          "step1": "Browse properties in your city or worldwide.",
+          "step2": "Filter by type, price, and amenities.",
+          "step3": "See real photos and city highlights."
+        },
+        "connect": {
+          "label": "Connect",
+          "step1": "Contact trusted agencies and agents.",
+          "step2": "Read verified reviews and ratings.",
+          "step3": "Ask questions and get expert advice."
+        },
+        "manage": {
+          "label": "Manage",
+          "step1": "Book, reserve, and track your stays.",
+          "step2": "Manage tasks, contracts, and payments.",
+          "step3": "Leave feedback and help others decide."
+        }
+      }
+    },
+    "propertyListings": {
+      "title": "Property Listings",
+      "description": "Browse and search property listings",
+      "viewListings": "View Property Listings",
+      "searchPlaceholder": "Search properties...",
+      "filterBy": "Filter by",
+      "sortBy": "Sort by",
+      "viewAll": "View All"
+    },
+    "actions": {
+      "view": "View",
+      "edit": "Edit",
+      "delete": "Delete",
+      "create": "Create",
+      "save": "Save",
+      "cancel": "Cancel",
+      "close": "Close",
+      "back": "Back",
+      "next": "Next",
+      "previous": "Previous"
+    },
+    "navigation": {
+      "home": "Home",
+      "properties": "Properties",
+      "listings": "Listings",
+      "search": "Search",
+      "favorites": "Favorites",
+      "profile": "Profile",
+      "settings": "Settings",
+      "help": "Help",
+      "contact": "Contact"
+    },
+    "loading": {
+      "loading": "Loading...",
+      "loadingPage": "Loading page...",
+      "loadingContent": "Loading content..."
+    },
+    "errors": {
+      "pageNotFound": "Page not found",
+      "pageNotFoundDescription": "The page you're looking for doesn't exist.",
+      "loadError": "Failed to load page",
+      "loadErrorDescription": "There was an error loading this page. Please try again.",
+      "retryButton": "Retry"
+    }
+  }
+}

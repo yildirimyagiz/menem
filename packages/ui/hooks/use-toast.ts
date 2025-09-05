@@ -1,9 +1,8 @@
 "use client";
 
 // Inspired by react-hot-toast library
+import type { ToastActionElement, ToastProps } from "@reservatior/ui/toast";
 import * as React from "react";
-
-import type { ToastActionElement, ToastProps } from "@acme/ui/toast";
 
 const TOAST_LIMIT = 1;
 const TOAST_REMOVE_DELAY = 1000000;

@@ -1,0 +1,45 @@
+require_relative '../../../../node_modules/@capacitor/ios/scripts/pods_helpers'
+
+platform :ios, '14.0'
+# Prefer static frameworks to avoid dynamic embedding script issues on Xcode 15/16
+use_frameworks! :linkage => :static
+
+# workaround to avoid Xcode caching of Pods that requires
+# Product -> Clean Build Folder after new Cordova plugins installed
+# Requires CocoaPods 1.6 or newer
+# NOTE: Do not disable input/output paths on Xcode 15/16+.
+# Xcode's User Script Sandboxing requires accurate script inputs/outputs.
+# If you previously disabled them to workaround caching, keep them enabled now.
+install! 'cocoapods'
+
+def capacitor_pods
+  pod 'Capacitor', :path => '../../../../node_modules/@capacitor/ios'
+  pod 'CapacitorCordova', :path => '../../../../node_modules/@capacitor/ios'
+
+end
+
+target 'App' do
+  capacitor_pods
+  # Add your Pods here
+end
+
+post_install do |installer|
+  assertDeploymentTarget(installer)
+
+  # Workaround for Xcode 15/16 User Script Sandboxing causing
+  # sandbox denials in [CP] script phases (e.g., rsync in Embed Pods Frameworks)
+  # Apply to both Pods project and the user (App) project targets.
+  installer.pods_project.targets.each do |t|
+    t.build_configurations.each do |config|
+      config.build_settings['ENABLE_USER_SCRIPT_SANDBOXING'] = 'NO'
+    end
+  end
+
+  installer.aggregate_targets.each do |aggregate_target|
+    aggregate_target.user_project.native_targets.each do |native_target|
+      native_target.build_configurations.each do |config|
+        config.build_settings['ENABLE_USER_SCRIPT_SANDBOXING'] = 'NO'
+      end
+    end
+  end
+end

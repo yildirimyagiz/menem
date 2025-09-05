@@ -1,0 +1,25 @@
+{
+  "dashboard": {
+    "title": "Dashboard",
+    "overview": "Overview",
+    "analytics": "Analytics",
+    "recentActivity": "Recent Activity",
+    "quickActions": "Quick Actions",
+    "stats": {
+      "totalProperties": "Total Properties",
+      "activeListings": "Active Listings",
+      "pendingTasks": "Pending Tasks",
+      "unreadMessages": "Unread Messages",
+      "monthlyRevenue": "Monthly Revenue",
+      "occupancyRate": "Occupancy Rate"
+    },
+    "widgets": {
+      "properties": "Properties",
+      "tenants": "Tenants",
+      "payments": "Payments",
+      "tasks": "Tasks",
+      "messages": "Messages",
+      "notifications": "Notifications"
+    }
+  }
+}

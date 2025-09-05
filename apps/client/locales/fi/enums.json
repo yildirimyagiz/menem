@@ -1,0 +1,9 @@
+{
+  "Enums": {
+    "ListingType": {
+      "SALE": "[For Sale]",
+      "RENT": "[For Rent]",
+      "BOOKING": "[For Booking]"
+    }
+  }
+}

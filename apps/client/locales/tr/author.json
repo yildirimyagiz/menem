@@ -1,0 +1,323 @@
+{
+  "author": {
+    "title": "Yazar Profili",
+    "subtitle": "Kullanıcı Profili ve Gösterge Paneli",
+    "profile": {
+      "title": "Profil",
+      "defaultName": "Kullanıcı",
+      "name": "Ad",
+      "email": "E-posta",
+      "phone": "Telefon",
+      "bio": "Biyografi",
+      "avatar": "Avatar",
+      "cover": "Kapak Fotoğrafı",
+      "location": "Konum",
+      "website": "Website",
+      "social": "Sosyal Medya",
+      "joined": "Katıldı",
+      "lastActive": "Son Aktiflik",
+      "verified": "Doğrulanmış",
+      "unverified": "Doğrulanmamış"
+    },
+    "roles": {
+      "tenant": {
+        "title": "Kiracı",
+        "description": "Aktif kiralık mülk kiracısı",
+        "longDescription": "Kaliteli yaşam alanlarına ve topluluk katılımı odaklı kiralık mülkleri yöneten deneyimli kiracı.",
+        "features": [
+          "Kira Yönetimi",
+          "Gayrimenkul İncelemeleri",
+          "Ödeme Geçmişi",
+          "Bakım Talepleri"
+        ]
+      },
+      "guest": {
+        "title": "Misafir",
+        "description": "Platform misafir kullanıcısı",
+        "longDescription": "Mülkleri keşfetmek ve emlak topluluğuyla bağlantı kurmak için platformumuzu inceleyen kullanıcı.",
+        "features": [
+          "Gayrimenkul Keşfi",
+          "Favoriler Koleksiyonu",
+          "Topluluk İncelemeleri",
+          "Pazar İçgörüler"
+        ]
+      },
+      "buyer": {
+        "title": "Alıcı",
+        "description": "Gayrimenkul alıcısı",
+        "longDescription": "Yatırım fırsatları ve pazar trendlerine yönelik keskin gözünü olan aktif mülk alıcısı.",
+        "features": [
+          "Gayrimenkul Arama",
+          "Yatırım Analizi",
+          "Pazar Araştırması",
+          "Müzakere Desteği"
+        ]
+      },
+      "seller": {
+        "title": "Satıcı",
+        "description": "Gayrimenkul satıcısı",
+        "longDescription": "Başarılı işlemler ve pazar uzmanlığına sahip deneyimli mülk satıcısı.",
+        "features": [
+          "Gayrimenkul Listelemeleri",
+          "Pazar Analizi",
+          "İşlem Geçmişi",
+          "Müşteri Yönetimi"
+        ]
+      },
+      "agent": {
+        "title": "Danışman",
+        "description": "Emlak danışmanı",
+        "longDescription": "Gayrimenkul işlemleri ve müşteri ilişkileri konusunda uzmanlaşmış profesyonel emlak danışmanı.",
+        "features": [
+          "Müşteri Yönetimi",
+          "Gayrimenkul Listelemeleri",
+          "Pazar Analizi",
+          "İşlem Desteği"
+        ]
+      },
+      "agency": {
+        "title": "Acente",
+        "description": "Emlak acentesi",
+        "longDescription": "Profesyonel bir ekip ve kapsamlı mülk hizmetleri sunan kurumsal emlak acentesi.",
+        "features": [
+          "Ekip Yönetimi",
+          "Gayrimenkul Portföyü",
+          "Müşteri Hizmetleri",
+          "Pazar Liderliği"
+        ]
+      }
+    },
+    "tabs": {
+      "properties": "Mülkler",
+      "rentals": "Kiralamalar",
+      "favorites": "Favoriler",
+      "reviews": "İncelemeler",
+      "analytics": "Analizler",
+      "activity": "Aktiviteler",
+      "settings": "Ayarlar",
+      "team": "Ekip",
+      "listings": "Listelemeler",
+      "savedSearches": "Kaydedilen Aramalar"
+    },
+    "stats": {
+      "title": "İstatistikler",
+      "properties": "Mülkler",
+      "rentals": "Kiralamalar",
+      "favorites": "Favoriler",
+      "reviews": "İncelemeler",
+      "listings": "Listelemeler",
+      "transactions": "İşlemler",
+      "revenue": "Gelir",
+      "clients": "Müşteriler",
+      "teamMembers": "Ekip Üyeleri",
+      "savedSearches": "Kaydedilen Aramalar"
+    },
+    "properties": {
+      "title": "Mülkler",
+      "subtitle": "Mülklerinizi yönetin",
+      "add": "Gayrimenkul Ekle",
+      "edit": "Mülkü Düzenle",
+      "delete": "Mülkü Sil",
+      "view": "Mülkü Görüntüle",
+      "feature": "Mülkü Öne Çıkar",
+      "unfeature": "Mülkü Öne Çıkarma",
+      "status": {
+        "active": "Aktif",
+        "inactive": "Pasif",
+        "pending": "Beklemede",
+        "sold": "Satıldı",
+        "rented": "Kiralandı"
+      },
+      "type": {
+        "apartment": "Daire",
+        "house": "Ev",
+        "condo": "Kondominium",
+        "villa": "Villa",
+        "commercial": "Ticari"
+      }
+    },
+    "rentals": {
+      "title": "Kiralamalar",
+      "subtitle": "Kiralık mülkleriniz",
+      "current": "Mevcut Kiralamalar",
+      "past": "Geçmiş Kiralamalar",
+      "upcoming": "Yaklaşan Kiralamalar",
+      "add": "Kiralama Ekle",
+      "edit": "Kiralama Düzenle",
+      "delete": "Kiralama Sil",
+      "view": "Kiralama Görüntüle",
+      "status": {
+        "active": "Aktif",
+        "inactive": "Pasif",
+        "pending": "Beklemede",
+        "completed": "Tamamlandı",
+        "cancelled": "İptal Edildi"
+      }
+    },
+    "favorites": {
+      "title": "Favoriler",
+      "subtitle": "Kaydedilen mülkleriniz",
+      "empty": "Henüz favoriniz yok",
+      "emptyDescription": "Beğendiğiniz mülkleri kaydetmeye başlayın",
+      "remove": "Favorilerden Kaldır",
+      "added": "Favorilere Eklendi",
+      "removed": "Favorilerden Kaldırıldı"
+    },
+    "reviews": {
+      "title": "İncelemeler",
+      "subtitle": "Gayrimenkul incelemeleriniz",
+      "write": "İnceleme Yaz",
+      "edit": "İncelemeyi Düzenle",
+      "delete": "İncelemeyi Sil",
+      "view": "İncelemeyi Görüntüle",
+      "rating": "Puan",
+      "comment": "Yorum",
+      "date": "Tarih",
+      "property": "Gayrimenkul",
+      "reviewer": "İnceleyen",
+      "service": "Hizmet",
+      "overall": "Genel Puan",
+      "communication": "İletişim",
+      "cleanliness": "Temizlik",
+      "value": "Para Karşılığı",
+      "location": "Konum",
+      "accuracy": "Doğruluk"
+    },
+    "analytics": {
+      "title": "Analizler",
+      "subtitle": "Performans içgörüler",
+      "overview": "Genel Bakış",
+      "performance": "Performans",
+      "engagement": "Etkileşim",
+      "revenue": "Gelir",
+      "views": "Görüntülemeler",
+      "clicks": "Tıklamalar",
+      "conversions": "Dönüşümler",
+      "period": {
+        "last7Days": "Son 7 Gün",
+        "last30Days": "Son 30 Gün",
+        "last90Days": "Son 90 Gün",
+        "lastYear": "Geçen Yıl"
+      }
+    },
+    "activity": {
+      "title": "Aktiviteler",
+      "subtitle": "Son aktiviteler",
+      "all": "Tüm Aktiviteler",
+      "properties": "Gayrimenkul Aktiviteleri",
+      "reviews": "İnceleme Aktiviteleri",
+      "transactions": "İşlem Aktiviteleri",
+      "messages": "Mesaj Aktiviteleri",
+      "date": "Tarih",
+      "type": "Tür",
+      "description": "Açıklama",
+      "empty": "Henüz aktivite yok",
+      "emptyDescription": "Aktiviteleriniz burada görünecek"
+    },
+    "settings": {
+      "title": "Ayarlar",
+      "subtitle": "Hesabınızı yönetin",
+      "profile": "Profil Ayarları",
+      "privacy": "Gizlilik Ayarları",
+      "notifications": "Bildirim Ayarları",
+      "security": "Güvenlik Ayarları",
+      "billing": "Faturalandırma Ayarları",
+      "preferences": "Tercihler",
+      "language": "Dil",
+      "timezone": "Saat Dilimi",
+      "currency": "Para Birimi",
+      "save": "Değişiklikleri Kaydet",
+      "cancel": "İptal",
+      "reset": "Varsayılana Sıfırla"
+    },
+    "team": {
+      "title": "Ekip",
+      "subtitle": "Ekibinizi yönetin",
+      "members": "Ekip Üyeleri",
+      "invite": "Üye Davet Et",
+      "remove": "Üyeyi Kaldır",
+      "role": "Rol",
+      "permissions": "İzinler",
+      "admin": "Yönetici",
+      "member": "Üye",
+      "viewer": "Görüntüleyici",
+      "pending": "Beklemede",
+      "accepted": "Kabul Edildi",
+      "declined": "Reddedildi"
+    },
+    "contact": {
+      "title": "İletişim",
+      "message": "Mesaj Gönder",
+      "call": "Ara",
+      "email": "E-posta",
+      "website": "Websiteyi Ziyaret Et",
+      "social": "Sosyal Medya",
+      "phone": "Telefon",
+      "address": "Adres",
+      "hours": "Çalışma Saatleri",
+      "availability": "Uygunluk"
+    },
+    "actions": {
+      "edit": "Düzenle",
+      "delete": "Sil",
+      "view": "Görüntüle",
+      "share": "Paylaş",
+      "favorite": "Favorilere Ekle",
+      "unfavorite": "Favorilerden Kaldır",
+      "contact": "İletişim",
+      "follow": "Takip Et",
+      "unfollow": "Takibi Bırak",
+      "block": "Engelle",
+      "report": "Bildir",
+      "verify": "Doğrula",
+      "unverify": "Doğrulamayı Kaldır"
+    },
+    "notifications": {
+      "title": "Bildirimler",
+      "all": "Tüm Bildirimler",
+      "unread": "Okunmamış",
+      "read": "Okunmuş",
+      "markAsRead": "Okundu Olarak İşaretle",
+      "markAllAsRead": "Tümünü Okundu Olarak İşaretle",
+      "delete": "Sil",
+      "empty": "Bildirim yok",
+      "emptyDescription": "Tümünü tamamladınız!"
+    },
+    "messages": {
+      "title": "Mesajlar",
+      "inbox": "Gelen Kutusu",
+      "sent": "Gönderilen",
+      "drafts": "Taslaklar",
+      "trash": "Çöp",
+      "compose": "Oluştur",
+      "reply": "Yanıtla",
+      "forward": "İlet",
+      "delete": "Sil",
+      "markAsRead": "Okundu Olarak İşaretle",
+      "markAsUnread": "Okunmadı Olarak İşaretle",
+      "empty": "Mesaj yok",
+      "emptyDescription": "Bir görüşme başlatın"
+    },
+    "loading": {
+      "title": "Yükleniyor",
+      "loading": "Yükleniyor...",
+      "loadingProfile": "Profil yükleniyor...",
+      "loadingProperties": "Mülkler yükleniyor...",
+      "loadingReviews": "İncelemeler yükleniyor...",
+      "loadingAnalytics": "Analizler yükleniyor...",
+      "saving": "Kaydediliyor...",
+      "updating": "Güncelleniyor...",
+      "deleting": "Siliniyor..."
+    },
+    "errors": {
+      "title": "Hata",
+      "loadFailed": "Profil yüklenemedi",
+      "saveFailed": "Değişiklikler kaydedilemedi",
+      "deleteFailed": "Silinemedi",
+      "updateFailed": "Güncellenemedi",
+      "networkError": "Ağ hatası",
+      "tryAgain": "Tekrar dene",
+      "contactSupport": "Destek ile iletişime geç"
+    }
+  }
+}

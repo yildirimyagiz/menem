@@ -1,0 +1,31 @@
+{
+  "client": {
+    "searchProperties": "Search Properties",
+    "favorites": "Favorites",
+    "myProperties": "My Properties",
+    "appointments": "Appointments",
+    "messages": "Messages",
+    "savedSearches": "Saved Searches",
+    "myReviews": "My Reviews",
+    "documents": "Documents",
+    "billing": "Billing",
+    "notifications": "Notifications",
+    "favoritesTitle": "Meine Favoriten",
+    "favoritesLoading": "Lade Ihre Lieblingseigenschaften...",
+    "favoritesErrorTitle": "Fehler beim Laden der Favoriten",
+    "favoritesDescription": "Ihre gespeicherten Eigenschaften und Präferenzen",
+    "favoritesStatsTotal": "Gesamte Favoriten",
+    "favoritesStatsAveragePrice": "Durchschnittspreis",
+    "favoritesStatsAverageRating": "Durchschnittsbewertung",
+    "favoritesStatsPropertiesViewed": "Angesehene Eigenschaften",
+    "locationNotSpecified": "Standort nicht angegeben",
+    "favoritesEmptyTitle": "Noch keine Favoriten",
+    "favoritesEmptyDescription": "Beginnen Sie mit der Erkundung von Eigenschaften und fügen Sie sie zu Ihren Favoriten hinzu",
+    "exploreProperties": "Eigenschaften erkunden",
+    "propertyTypesApartment": "Wohnung",
+    "propertyTypesHouse": "Haus",
+    "propertyTypesVilla": "Villa",
+    "propertyTypesLand": "Grundstück",
+    "propertyTypesCommercial": "Gewerbe"
+  }
+}

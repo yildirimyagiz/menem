@@ -1,0 +1,138 @@
+{
+  "page": {
+    "title": "Görev Yönetimi",
+    "description": "Görev modülü için kullanıcıya yönelik dizeler. Görev UI'sından çıkarılan ve çevrilen anahtarlarla doldurun."
+  },
+  "filters": {
+    "taskType": "Görev Tipi",
+    "priority": "Öncelik",
+    "status": "Durum",
+    "dueDate": "Son Tarih",
+    "assignedTo": "Atanan",
+    "property": "Gayrimenkul",
+    "facility": "Tesis",
+    "cost": "Maliyet",
+    "estimatedTime": "Tahmini Süre",
+    "recurring": "Yinelenen",
+    "attachments": "Ekler",
+    "notes": "Notlar",
+    "taskStatus": "Görev Durumu",
+    "featured": "Öne Çıkan",
+    "locationInfo": "Konum Bilgisi",
+    "clearAll": "Tümünü Temizle",
+    "applyFilters": "Filtreleri Uygula",
+    "moreFilters": "Daha Fazla Filtre"
+  },
+  "status": {
+    "todo": {
+      "name": "Yapılacak",
+      "description": "Görev başlatılmayı bekliyor"
+    },
+    "inProgress": {
+      "name": "Devam Ediyor",
+      "description": "Görev şu an çalışılıyor"
+    },
+    "completed": {
+      "name": "Tamamlandı",
+      "description": "Görev tamamlandı"
+    },
+    "cancelled": {
+      "name": "İptal Edildi",
+      "description": "Görev iptal edildi"
+    }
+  },
+  "priority": {
+    "low": "Düşük",
+    "medium": "Orta",
+    "high": "Yüksek",
+    "urgent": "Acil"
+  },
+  "taskTypes": {
+    "maintenance": "Bakım",
+    "cleaning": "Temizlik",
+    "inspection": "İnceleme",
+    "repair": "Onarım",
+    "installation": "Kurulum",
+    "upgrade": "Güncelleme",
+    "emergency": "Acil",
+    "routine": "Düzenli"
+  },
+  "list": {
+    "loading": "Görevler yükleniyor...",
+    "noTasks": "Görev bulunamadı",
+    "noTasksDescription": "Başlamak için ilk görevi oluşturun",
+    "createTask": "Görev Oluştur"
+  },
+  "taskCard": {
+    "dueDate": "Son Tarih: {date}",
+    "assignedTo": "Atanan: {name}",
+    "priority": "Öncelik: {level}",
+    "status": "Durum: {status}",
+    "estimatedTime": "Tahmini Süre: {time}",
+    "cost": "Maliyet: ${amount}",
+    "viewDetails": "Detayları Görüntüle",
+    "edit": "Düzenle",
+    "delete": "Sil",
+    "markComplete": "Tamamla",
+    "markInProgress": "İleriye Al"
+  },
+  "modal": {
+    "createTask": "Görev Oluştur",
+    "editTask": "Görev Düzenle",
+    "taskDetails": "Görev Detayları",
+    "close": "Kapat",
+    "save": "Kaydet",
+    "cancel": "İptal"
+  },
+  "form": {
+    "title": "Başlık",
+    "description": "Açıklama",
+    "dueDate": "Son Tarih",
+    "priority": "Öncelik",
+    "status": "Durum",
+    "assignedTo": "Atanan",
+    "property": "Gayrimenkul",
+    "facility": "Tesis",
+    "estimatedTime": "Tahmini Süre (saat)",
+    "cost": "Maliyet",
+    "recurring": "Yinelenen",
+    "attachments": "Ekler",
+    "notes": "Notlar",
+    "validation": {
+      "titleRequired": "Başlık gerekli",
+      "descriptionRequired": "Açıklama gerekli",
+      "dueDateRequired": "Son tarih gerekli",
+      "priorityRequired": "Öncelik gerekli",
+      "statusRequired": "Durum gerekli"
+    }
+  },
+  "toast": {
+    "success": {
+      "created": "Görev başarıyla oluşturuldu",
+      "updated": "Görev başarıyla güncellendi",
+      "deleted": "Görev başarıyla silindi",
+      "statusUpdated": "Görev durumu başarıyla güncellendi"
+    },
+    "error": {
+      "create": "Görev oluşturulamadı",
+      "update": "Görev güncellenemedi",
+      "delete": "Görev silinemedi",
+      "statusUpdate": "Görev durumu güncellenemedi"
+    }
+  },
+  "common": {
+    "loading": "Yükleniyor...",
+    "error": "Hata",
+    "success": "Başarılı",
+    "cancel": "İptal",
+    "save": "Kaydet",
+    "delete": "Sil",
+    "close": "Kapat", 
+    "view": "Görüntüle",
+    "edit": "Düzenle",
+    "confirm": "Onayla",
+    "back": "Geri",
+    "next": "İleri",
+    "previous": "Önceki"
+  }
+}

@@ -1,0 +1,213 @@
+{
+  "_meta": {
+    "description": "[User-facing strings for the reports module. Fill with extracted and translated keys from reports UI.]"
+  },
+  "dashboard": {
+    "title": "[Reports Dashboard]",
+    "subtitle": "[Generate and manage your reports]",
+    "stats": {
+      "totalReports": "[Total Reports]",
+      "thisMonth": "[This Month]",
+      "successRate": "[Success Rate]",
+      "avgGeneration": "[Avg. Generation]",
+      "activeSchedules": "[Active Schedules]",
+      "reportsGenerated": "[Reports Generated]",
+      "nextGeneration": "[Next Generation]"
+    }
+  },
+  "views": {
+    "allReports": "[All Reports]",
+    "myReports": "[My Reports]",
+    "agencyReports": "[Agency Reports]",
+    "scheduled": "[Scheduled]"
+  },
+  "scheduled": {
+    "title": "[Scheduled Reports]",
+    "subtitle": "[Manage automated report generation]",
+    "automatedTitle": "[Automated Report Generation]",
+    "automatedDescription": "[Set up automated reports that generate automatically based on your schedule]",
+    "schedules": {
+      "daily": {
+        "title": "[Daily]",
+        "description": "[Financial summaries, occupancy updates]"
+      },
+      "weekly": {
+        "title": "[Weekly]",
+        "description": "[Performance reports, booking trends]"
+      },
+      "monthly": {
+        "title": "[Monthly]",
+        "description": "[Revenue analysis, market insights]"
+      },
+      "yearly": {
+        "title": "[Yearly]",
+        "description": "[Compliance reports, annual summaries]"
+      }
+    },
+    "info": "[Scheduled reports are automatically generated and stored in your reports library. You can also trigger reports manually at any time.]"
+  },
+  "generator": {
+    "title": "[Report Generator]",
+    "mode": "[Mode:]",
+    "enhanced": "[Enhanced]",
+    "classic": "[Classic]",
+    "showGenerator": "[Show Generator]",
+    "hideGenerator": "[Hide Generator]",
+    "showTable": "[Show Table]",
+    "hideTable": "[Hide Table]",
+    "collapsed": "[Generator collapsed.]",
+    "noTypeSelected": "[No type selected.]",
+    "lastType": "[Last: {type}]",
+    "refresh": "[Refresh]"
+  },
+  "table": {
+    "title": "[Generated Reports]",
+    "reportsFound": "[{count} reports found]",
+    "collapsed": "[Table collapsed. {count} reports in total.]",
+    "loading": "[Loading reports...]",
+    "noReports": "[No reports generated yet]",
+    "headers": {
+      "type": "[Type]",
+      "format": "[Format]",
+      "created": "[Created]",
+      "status": "[Status]",
+      "actions": "[Actions]"
+    },
+    "actions": {
+      "view": "[View]",
+      "download": "[Download]",
+      "delete": "[Delete]"
+    },
+    "pagination": {
+      "previous": "[Previous]",
+      "next": "[Next]",
+      "pageOf": "[Page {current} of {total}]"
+    }
+  },
+  "viewer": {
+    "title": "[{type} Report]",
+    "format": "[Generated in {format} format]",
+    "close": "[Close]",
+    "tabs": {
+      "summary": "[Summary]",
+      "data": "[Data]",
+      "charts": "[Charts]",
+      "tables": "[Tables]"
+    },
+    "noSummary": "[No summary available]",
+    "noData": "[No data available]",
+    "noCharts": "[No charts available]",
+    "noTables": "[No tables available]"
+  },
+  "deleteDialog": {
+    "title": "[Delete Report]",
+    "description": "[This action cannot be undone]",
+    "confirmMessage": "[Are you sure you want to delete \"{title}\"?]",
+    "cancel": "[Cancel]",
+    "delete": "[Delete]",
+    "deleting": "[Deleting...]"
+  },
+  "reportTypes": {
+    "financial": {
+      "label": "[Financial Report]",
+      "description": "[Revenue, expenses, and financial metrics]"
+    },
+    "performance": {
+      "label": "[Performance Report]",
+      "description": "[Occupancy rates and property performance]"
+    },
+    "compliance": {
+      "label": "[Compliance Report]",
+      "description": "[Regulatory compliance and legal requirements]"
+    },
+    "marketAnalysis": {
+      "label": "[Market Analysis]",
+      "description": "[Market trends and competitive analysis]"
+    },
+    "revenue": {
+      "label": "[Revenue Report]",
+      "description": "[Revenue trends and analysis]"
+    },
+    "occupancy": {
+      "label": "[Occupancy Report]",
+      "description": "[Occupancy tracking and analysis]"
+    },
+    "guestAnalysis": {
+      "label": "[Guest Analysis]",
+      "description": "[Guest behavior and preferences]"
+    },
+    "offerPerformance": {
+      "label": "[Offer Performance]",
+      "description": "[Offer success rates and metrics]"
+    },
+    "reservationSummary": {
+      "label": "[Reservation Summary]",
+      "description": "[Reservation patterns and trends]"
+    },
+    "expenseTracking": {
+      "label": "[Expense Tracking]",
+      "description": "[Expense monitoring and analysis]"
+    },
+    "taskManagement": {
+      "label": "[Task Management]",
+      "description": "[Task completion and productivity]"
+    }
+  },
+  "form": {
+    "title": "[Report Title]",
+    "titlePlaceholder": "[Enter report title...]",
+    "type": "[Report Type]",
+    "dateRange": "[Date Range]",
+    "startDate": "[Start Date]",
+    "endDate": "[End Date]",
+    "format": "[Format]",
+    "description": "[Description]",
+    "descriptionPlaceholder": "[Enter report description (optional)...]",
+    "filters": "[Filters]",
+    "generate": "[Generate Report]",
+    "generating": "[Generating...]",
+    "validation": {
+      "titleRequired": "[Title is required]",
+      "typeRequired": "[Report type is required]",
+      "dateRangeRequired": "[Date range is required]",
+      "invalidDateRange": "[End date must be after start date]"
+    }
+  },
+  "formats": {
+    "pdf": "[PDF]",
+    "csv": "[CSV]",
+    "excel": "[Excel]"
+  },
+  "status": {
+    "completed": "[COMPLETED]",
+    "inProgress": "[IN_PROGRESS]",
+    "failed": "[FAILED]",
+    "pending": "[PENDING]"
+  },
+  "toast": {
+    "success": {
+      "generated": "[Report generated successfully]",
+      "downloaded": "[Report downloaded successfully]",
+      "deleted": "[Report deleted successfully]"
+    },
+    "error": {
+      "generationFailed": "[Failed to generate report]",
+      "downloadFailed": "[Failed to download report]",
+      "deleteFailed": "[Failed to delete report]",
+      "networkError": "[Network error occurred]"
+    }
+  },
+  "common": {
+    "loading": "[Loading...]",
+    "error": "[Error]",
+    "success": "[Success]",
+    "cancel": "[Cancel]",
+    "save": "[Save]",
+    "delete": "[Delete]",
+    "close": "[Close]",
+    "download": "[Download]",
+    "view": "[View]",
+    "edit": "[Edit]",
+    "refresh": "[Refresh]"
+  }
+}

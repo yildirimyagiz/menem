@@ -1,7 +1,8 @@
 {
-  "name": "@acme/api",
+  "name": "@reservatior/api",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "type": "module",
   "exports": {
     ".": {
@@ -9,36 +10,45 @@
       "default": "./src/index.ts"
     }
   },
-  "license": "MIT",
   "scripts": {
     "build": "tsc",
+    "trpc:generate": "trpc generate --project ./src/root.ts --out ../../apps/client/src/trpc-types.d.ts",
     "clean": "git clean -xdf .cache .turbo dist node_modules",
-    "dev": "tsx src/server.ts",
+    "dev": "pnpm with-env tsx src/server.ts",
     "format": "prettier --check . --ignore-path ../../.gitignore",
     "lint": "eslint",
-    "typecheck": "tsc --noEmit --emitDeclarationOnly false"
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false",
+    "with-env": "dotenv -e ../../.env --"
   },
+  "prettier": "@reservatior/prettier-config",
   "dependencies": {
-    "@acme/auth": "workspace:*",
-    "@acme/db": "workspace:*",
-    "@acme/validators": "workspace:*",
+    "@reservatior/auth": "workspace:*",
+    "@reservatior/db": "workspace:*",
+    "@reservatior/validators": "workspace:*",
     "@trpc/server": "catalog:",
     "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",
+    "jsonwebtoken": "^9.0.2",
+    "node-cron": "^3.0.3",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
     "stripe": "^18.1.0",
     "superjson": "2.2.2",
     "ws": "^8.18.2",
     "zod": "catalog:"
   },
   "devDependencies": {
-    "@acme/eslint-config": "workspace:*",
-    "@acme/prettier-config": "workspace:*",
-    "@acme/tsconfig": "workspace:*",
+    "@reservatior/eslint-config": "workspace:*",
+    "@reservatior/prettier-config": "workspace:*",
+    "@reservatior/tsconfig": "workspace:*",
+    "@types/jsonwebtoken": "^9.0.2",
     "@types/stripe": "^8.0.417",
     "@types/ws": "^8.18.1",
     "eslint": "catalog:",
     "prettier": "catalog:",
     "typescript": "catalog:"
   },
-  "prettier": "@acme/prettier-config"
+  "peerDependencies": {
+    "@trpc/server": ""
+  }
 }

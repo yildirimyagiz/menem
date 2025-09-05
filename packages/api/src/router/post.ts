@@ -1,8 +1,8 @@
+import { Prisma } from "@prisma/client";
 import type { TRPCRouterRecord } from "@trpc/server";
+import { CreatePostSchema } from "@reservatior/validators";
 import { TRPCError } from "@trpc/server";
 import { z } from "zod";
-
-import { CreatePostSchema } from "@acme/validators";
 
 import {
   getPaginationParams,
@@ -11,19 +11,28 @@ import {
 import { withCacheAndFormat } from "../helpers/withCacheAndFormat";
 import { protectedProcedure, publicProcedure } from "../trpc";
 
+// Prisma include and payload type
+const postInclude = {
+  User: true,
+  Agency: true,
+  Agent: true,
+  Hashtag: true,
+  Photo: true,
+} satisfies Prisma.PostInclude;
+
+type FullPostFromPrisma = Prisma.PostGetPayload<{ include: typeof postInclude }>;
+
 // Utility to sanitize post data (customize as needed)
-function sanitizePost(post: any) {
+function sanitizePost(post: FullPostFromPrisma | null) {
   if (!post) return post;
   const { User, Agency, Agent, Hashtag, Photo, ...rest } = post;
   return {
     ...rest,
-    user: User
-      ? {
-          id: User.id,
-          name: User.name,
-          // Add only safe fields here
-        }
-      : null,
+    user: {
+      id: User.id,
+      name: User.name,
+      // Add only safe fields here
+    },
     Agency: Agency
       ? {
           id: Agency.id,
@@ -60,13 +69,7 @@ export const postRouter = {
             orderBy: { id: "desc" },
             skip,
             take,
-            include: {
-              User: true,
-              Agency: true,
-              Agent: true,
-              Hashtag: true,
-              Photo: true,
-            },
+            include: postInclude,
           }),
           ctx.db.post.count({ where: { deletedAt: null } }), // Ensure count respects soft deletion
         ]);
@@ -84,13 +87,7 @@ export const postRouter = {
     .query(async ({ ctx, input }) => {
       const post = await ctx.db.post.findFirst({
         where: { id: input.id },
-        include: {
-          User: true,
-          Agency: true,
-          Agent: true,
-          Hashtag: true,
-          Photo: true,
-        },
+        include: postInclude,
       });
       if (!post) {
         throw new TRPCError({ code: "NOT_FOUND", message: "Post not found" });
@@ -128,13 +125,7 @@ export const postRouter = {
         // Re-fetch with includes for sanitization if create doesn't return them by default or if relations are crucial
         const createdPostWithIncludes = await ctx.db.post.findUnique({
           where: { id: post.id },
-          include: {
-            User: true,
-            Agency: true,
-            Agent: true,
-            Hashtag: true,
-            Photo: true,
-          },
+          include: postInclude,
         });
         return sanitizePost(createdPostWithIncludes);
       } catch (err: unknown) {
@@ -172,13 +163,7 @@ export const postRouter = {
       // Re-fetch with includes for sanitization
       const updatedPostWithIncludes = await ctx.db.post.findUnique({
         where: { id: post.id },
-        include: {
-          User: true,
-          Agency: true,
-          Agent: true,
-          Hashtag: true,
-          Photo: true,
-        },
+        include: postInclude,
       });
       if (!updatedPostWithIncludes)
         throw new TRPCError({
@@ -198,7 +183,7 @@ export const postRouter = {
         // If sanitizePost(post) is needed, ensure `post` includes relations or handle it differently.
         return { id: post.id, success: true };
       } catch (error) {
-        if (error instanceof Error && (error as any).code === "P2025") {
+        if (error instanceof Prisma.PrismaClientKnownRequestError && error.code === "P2025") {
           throw new TRPCError({
             code: "NOT_FOUND",
             message: "Post not found or already deleted.",

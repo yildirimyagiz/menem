@@ -1,0 +1,30 @@
+{
+  "title": "[Favorites]",
+  "description": "[Your favorite listings and properties.]",
+  "empty": {
+    "title": "[No favorites yet]",
+    "description": "[Start exploring properties and add them to your favorites]"
+  },
+  "buttons": {
+    "explore": "[Explore Properties]",
+    "remove": "[Remove from Favorites]",
+    "viewDetails": "[View Details]"
+  },
+  "stats": {
+    "totalFavorites": "[Total Favorites]",
+    "averagePrice": "[Average Price]",
+    "averageRating": "[Average Rating]"
+  },
+  "propertyTypes": {
+    "apartment": "[Apartment]",
+    "house": "[House]",
+    "villa": "[Villa]",
+    "land": "[Land]",
+    "commercial": "[Commercial]"
+  },
+  "labels": {
+    "priceOnRequest": "[Price on request]",
+    "locationNotSpecified": "[Location not specified]",
+    "ratingNotAvailable": "[N/A]"
+  }
+}

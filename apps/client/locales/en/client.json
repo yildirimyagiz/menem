@@ -1,0 +1,206 @@
+{
+  "ClientDashboard": {
+    "title": "Client Dashboard",
+    "description": "Overview of your client dashboard",
+    "sections": {
+      "properties": "Properties",
+      "tenants": "Tenants",
+      "payments": "Payments",
+      "tasks": "Tasks",
+      "messages": "Messages"
+    },
+    "badges": {
+      "totalProperties": "Total Properties",
+      "totalTenants": "Total Tenants",
+      "totalPayments": "Total Payments",
+      "totalTasks": "Total Tasks",
+      "totalMessages": "Total Messages"
+    },
+    "quickActions": {
+      "addProperty": "Add Property",
+      "addTenant": "Add Tenant",
+      "makePayment": "Make Payment",
+      "createTask": "Create Task",
+      "sendMessage": "Send Message"
+    },
+    "systemStatus": {
+      "online": "Online",
+      "offline": "Offline",
+      "maintenance": "Maintenance"
+    },
+    "floatingActions": {
+      "add": "Add",
+      "dashboard": "Dashboard",
+      "notifications": "Notifications",
+      "userManagementDescription": "Manage and view all your users",
+      "addNewUser": "Add New User",
+      "addFirstUser": "Add First User",
+      "searchUsers": "Search users...",
+      "noUsersFound": "No users found. Get started by adding your first user!",
+      "showingResults": "Showing {start}-{end} of {total} results",
+      "name": "Name",
+      "role": "Role",
+      "viewDetails": "View Details",
+      "editUser": "Edit User",
+      "deleteUser": "Delete User",
+      "owners": "Owners",
+      "agencies": "Agencies",
+      "agents": "Agents",
+      "tenants": "Tenants",
+      "properties": "Properties",
+      "facilities": "Facilities",
+      "reservations": "Reservations",
+      "contracts": "Contracts",
+      "accounts": "Accounts",
+      "channels": "Channels",
+      "commissionRules": "Commission Rules",
+      "currencies": "Currencies",
+      "discounts": "Discounts",
+      "events": "Events",
+      "reports": "Reports",
+      "subscriptionPackages": "Subscription Packages",
+      "reviews": "Reviews",
+      "extraCharges": "Extra Charges",
+      "languages": "Languages",
+      "increases": "Increases",
+      "includedServices": "Included Services",
+      "expenses": "Expenses",
+      "locations": "Locations",
+      "mentions": "Mentions",
+      "mortgages": "Mortgages",
+      "offers": "Offers",
+      "payments": "Payments",
+      "permissions": "Permissions",
+      "photos": "Photos",
+      "posts": "Posts",
+      "pricingRules": "Pricing Rules",
+      "tickets": "Tickets",
+      "tasks": "Tasks",
+      "common": {
+        "search": "Search...",
+        "filter": "Filter",
+        "sort": "Sort",
+        "actions": "Actions",
+        "view": "View",
+        "edit": "Edit",
+        "delete": "Delete",
+        "create": "Create",
+        "save": "Save",
+        "cancel": "Cancel",
+        "confirm": "Confirm",
+        "back": "Back",
+        "next": "Next",
+        "previous": "Previous",
+        "loading": "Loading...",
+        "noData": "No data available",
+        "viewDetails": "View Details",
+        "error": "Error",
+        "success": "Success",
+        "warning": "Warning",
+        "info": "Information",
+        "hide": "Hide",
+        "show": "Show",
+        "manage": "Manage"
+      },
+      "dateTime": {
+        "timePicker": {
+          "label": "Time",
+          "placeholder": "Enter time",
+          "invalidTime": "Please enter a valid time",
+          "format": "Time format"
+        },
+        "datePicker": {
+          "label": "Date",
+          "placeholder": "Enter date",
+          "invalidDate": "Please enter a valid date",
+          "format": "Date format"
+        }
+      },
+      "places": {
+        "title": "Places in {city}",
+        "subtitle": "Discover the best places around you",
+        "resultsSummary": "{showing} of {total} places shown",
+        "page": {
+          "title": "City Guide: Notable Places",
+          "description": "Discover curated restaurants, bars, bakeries, and more in San Francisco, inspired by local guides."
+        },
+        "categories": {
+          "all": "All",
+          "restaurant": "Restaurants",
+          "school": "Schools",
+          "facility": "Facilities",
+          "sport": "Sports",
+          "featuredPlaces": "Featured Places"
+        },
+        "goldenGateRestaurant": {
+          "name": "Golden Gate Restaurant",
+          "description": "Fine dining with a view of the iconic Golden Gate Bridge.",
+          "address": "123 Bridge View Drive, San Francisco, CA"
+        },
+        "sanFranciscoHighSchool": {
+          "name": "San Francisco High School",
+          "description": "A prestigious educational institution with a rich history.",
+          "address": "456 Education Street, San Francisco, CA"
+        },
+        "downtownFitnessCenter": {
+          "name": "Downtown Fitness Center",
+          "description": "State-of-the-art fitness facilities in the heart of the city.",
+          "address": "789 Fitness Avenue, San Francisco, CA"
+        },
+        "marinaSportsComplex": {
+          "name": "Marina Sports Complex",
+          "description": "Multi-sport facilities with stunning marina views.",
+          "address": "321 Marina Boulevard, San Francisco, CA"
+        },
+        "searchAndFilter": {
+          "listView": "List View",
+          "mapView": "Map View",
+          "searchPlaceholder": "Search places...",
+          "filterBy": "Filter by:"
+        },
+        "placeCard": {
+          "noImage": "No image available",
+          "rating": "⭐ {rating}",
+          "distance": "📍 {distance}",
+          "viewDetails": "View Details"
+        },
+        "placesGrid": {
+          "activateMap": "Activate Map",
+          "featuredPlaces": "Featured Places"
+        },
+        "interactiveMap": {
+          "title": "Interactive Map",
+          "placesFound": "{count} places found",
+          "legend": {
+            "title": "Legend:",
+            "restaurant": "Restaurant",
+            "school": "School",
+            "facility": "Facility",
+            "sportCenter": "Sport Center",
+            "yourLocation": "Your Location"
+          }
+        },
+        "locationControls": {
+          "title": "📍 Real-time Location",
+          "accuracy": "±{meters}m",
+          "locationActive": "Location active",
+          "tracking": "🔄 Tracking",
+          "getMyLocation": "📍 Get My Location",
+          "stopTracking": "🚫 Stop Tracking",
+          "startTracking": "🔄 Start Tracking",
+          "yourLocation": "Your Location:",
+          "locationDenied": "⚠️ Location access denied. Please enable location permissions in your browser."
+        },
+        "advices": {
+          "title": "Local Advices",
+          "authorPrefix": "— "
+        },
+        "reviews": {
+          "title": "Recent Reviews",
+          "by": "by {reviewer}",
+          "stars": "{stars}{emptyStars}"
+        }
+      }
+    }
+  }
+}

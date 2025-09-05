@@ -1,0 +1,179 @@
+{
+  "types": {
+    "chat": {
+      "message": {
+        "id": "[Message ID]",
+        "senderId": "[Sender ID]",
+        "receiverId": "[Receiver ID]",
+        "type": "[Message Type]",
+        "content": "[Message Content]",
+        "timestamp": "[Timestamp]",
+        "user": "[User]",
+        "isRead": "[Read Status]",
+        "isEdited": "[Edited Status]",
+        "editHistory": "[Edit History]",
+        "reactions": "[Reactions]",
+        "replyTo": "[Reply To]",
+        "userId": "[User ID]",
+        "entityId": "[Entity ID]",
+        "entityType": "[Entity Type]",
+        "threadId": "[Thread ID]",
+        "channelId": "[Channel ID]",
+        "replyToId": "[Reply To ID]",
+        "metadata": "[Metadata]",
+        "agency": "[Agency]"
+      },
+      "conversation": {
+        "id": "[Conversation ID]",
+        "user": "[User]",
+        "messages": "[Messages]",
+        "lastMessage": "[Last Message]",
+        "unreadCount": "[Unread Count]",
+        "active": "[Active Status]"
+      },
+      "sendMessage": {
+        "content": "[Message Content]",
+        "receiverId": "[Receiver ID]",
+        "threadId": "[Thread ID]",
+        "type": "[Message Type]",
+        "entityId": "[Entity ID]",
+        "entityType": "[Entity Type]",
+        "channelId": "[Channel ID]",
+        "replyToId": "[Reply To ID]",
+        "metadata": "[Metadata]",
+        "name": "[Guest Name]",
+        "email": "[Guest Email]"
+      },
+      "editMessage": {
+        "messageId": "[Message ID]",
+        "content": "[New Content]"
+      },
+      "deleteMessage": {
+        "messageId": "[Message ID]"
+      },
+      "addReaction": {
+        "messageId": "[Message ID]",
+        "emoji": "[Emoji]"
+      },
+      "typingIndicator": {
+        "userId": "[User ID]",
+        "userName": "[User Name]",
+        "threadId": "[Thread ID]",
+        "isTyping": "[Typing Status]",
+        "timestamp": "[Timestamp]"
+      },
+      "supportAgent": {
+        "id": "[Agent ID]",
+        "name": "[Agent Name]",
+        "avatar": "[Avatar]",
+        "role": "[Role]",
+        "displayName": "[Display Name]",
+        "agencyId": "[Agency ID]",
+        "online": "[Online Status]",
+        "agency": "[Agency]"
+      },
+      "conversationStats": {
+        "totalMessages": "[Total Messages]",
+        "sentMessages": "[Sent Messages]",
+        "receivedMessages": "[Received Messages]",
+        "unreadCount": "[Unread Count]",
+        "averageResponseTime": "[Average Response Time]"
+      }
+    },
+    "property": {
+      "propertyType": {
+        "apartment": "[Apartment]",
+        "villa": "[Villa]",
+        "residence": "[Residence]",
+        "condo": "[Condo]",
+        "mansion": "[Mansion]",
+        "building": "[Building]",
+        "shop": "[Shop]",
+        "sharedRoom": "[Shared Room]",
+        "sharedPlace": "[Shared Place]",
+        "singleHouse": "[Single House]",
+        "dublexHouse": "[Duplex House]",
+        "penthouse": "[Penthouse]",
+        "restaurant": "[Restaurant]",
+        "warehouse": "[Warehouse]",
+        "industrial": "[Industrial]"
+      },
+      "propertyStatus": {
+        "available": "[Available]",
+        "owner": "[Owner]",
+        "rented": "[Rented]",
+        "underConstruction": "[Under Construction]",
+        "newProject": "[New Project]",
+        "reserved": "[Reserved]",
+        "sold": "[Sold]",
+        "empty": "[Empty]"
+      },
+      "listingType": {
+        "forSale": "[For Sale]",
+        "forRent": "[For Rent]",
+        "booking": "[Booking]"
+      },
+      "propertyTypeOption": {
+        "name": "[Property Type Name]",
+        "description": "[Description]",
+        "checked": "[Selected]"
+      },
+      "propertyFilters": {
+        "propertyType": "[Property Type]",
+        "status": "[Status]",
+        "listingType": "[Listing Type]",
+        "priceRange": "[Price Range]",
+        "amenities": "[Amenities]",
+        "location": "[Location]",
+        "dates": "[Dates]",
+        "guests": "[Guests]"
+      }
+    },
+    "guest": {
+      "guestComposition": {
+        "adultCount": "[Adult Count]",
+        "childCount": "[Child Count]"
+      },
+      "guestData": {
+        "adults": "[Adults]",
+        "children": "[Children]",
+        "infants": "[Infants]",
+        "specialRequests": "[Special Requests]",
+        "loyaltyPoints": "[Loyalty Points]",
+        "isVIP": "[VIP Status]"
+      },
+      "guestsObject": {
+        "guestAdults": "[Adult Guests]",
+        "guestChildren": "[Child Guests]",
+        "guestInfants": "[Infant Guests]",
+        "composition": "[Guest Composition]"
+      }
+    },
+    "search": {
+      "staySearchFormFields": {
+        "location": "[Location]",
+        "guests": "[Guests]",
+        "dates": "[Dates]",
+        "price": "[Price]",
+        "propertyType": "[Property Type]"
+      },
+      "dateRange": "[Date Range]"
+    },
+    "route": {
+      "route": "[Route]",
+      "pathname": "[Pathname]",
+      "path": "[Path]",
+      "query": "[Query Parameters]",
+      "hash": "[Hash]",
+      "nextRoute": "[Next.js Route]",
+      "dynamicRoute": "[Dynamic Route]",
+      "href": "[Href]",
+      "pageComponent": "[Page Component]",
+      "nextPage": "[Next.js Page]",
+      "dynamicParams": "[Dynamic Parameters]",
+      "appRouteConfig": "[App Route Configuration]",
+      "routeLiteral": "[Route Literal]",
+      "routeHelper": "[Route Helper]"
+    }
+  }
+}

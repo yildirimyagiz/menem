@@ -1,12 +1,11 @@
 import type { Account as PrismaAccount, User } from "@prisma/client";
 import type { TRPCRouterRecord } from "@trpc/server";
-import { z } from "zod";
-
 import {
   AccountFilterSchema,
   CreateAccountSchema,
   UpdateAccountSchema,
-} from "@acme/validators";
+} from "@reservatior/validators";
+import { z } from "zod";
 
 import { getPaginationParams } from "../helpers/pagination";
 import { withCacheAndFormat } from "../helpers/withCacheAndFormat";
@@ -14,8 +13,27 @@ import { protectedProcedure } from "../trpc";
 
 type AccountWithUser = PrismaAccount & { user: User | null };
 
+// Define a type that matches the sanitized account object
+export type SanitizedAccount = Omit<PrismaAccount, "user"> & {
+  user: {
+    id: string;
+    name: string | null;
+    email: string;
+    phoneNumber: string | null;
+    isActive: boolean;
+    createdAt: Date;
+    updatedAt: Date;
+    deletedAt: Date | null;
+    emailVerified: Date | null;
+    image: string | null;
+    role: string;
+  } | null;
+};
+
 // Utility to sanitize account data
-function sanitizeAccount(account: AccountWithUser | null) {
+function sanitizeAccount(
+  account: AccountWithUser | null,
+): SanitizedAccount | null {
   if (!account) return null;
   const { user, ...rest } = account;
   return {

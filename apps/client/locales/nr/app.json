@@ -1,0 +1,340 @@
+{
+  "app": {
+    "layout": {
+      "metadata": {
+        "title": "[Reservatior]",
+        "titleTemplate": "[%s | Reservatior]",
+        "description": "[Property Management System]",
+        "favicon": "[Favicon]",
+        "metadataBase": "[Metadata Base URL]"
+      },
+      "viewport": {
+        "themeColor": "[Theme Color]",
+        "light": "[Light Theme]",
+        "dark": "[Dark Theme]",
+        "width": "[Viewport Width]",
+        "initialScale": "[Initial Scale]"
+      },
+      "html": {
+        "lang": "[Language]",
+        "suppressHydrationWarning": "[Suppress Hydration Warning]"
+      },
+      "body": {
+        "className": "[Body Class Name]",
+        "minHeight": "[Minimum Height]",
+        "background": "[Background]",
+        "font": "[Font]",
+        "antialiased": "[Antialiased Text]"
+      },
+      "providers": {
+        "locale": "[Locale]",
+        "messages": "[Messages]",
+        "children": "[Children]"
+      },
+      "toaster": {
+        "useToast": "[Use Toast Hook]"
+      }
+    },
+    "page": {
+      "main": "[Main Content]",
+      "flex": "[Flex Layout]",
+      "minHeight": "[Minimum Height]",
+      "flexCol": "[Flex Column]",
+      "background": "[Background]"
+    },
+    "mainPageClient": {
+      "dashboard": {
+        "title": "[Dashboard]",
+        "welcome": "[Welcome to your property management dashboard]",
+        "overview": "[Overview Cards]",
+        "properties": {
+          "title": "[Properties]",
+          "count": "[5]",
+          "description": "[Active properties]"
+        },
+        "tenants": {
+          "title": "[Tenants]",
+          "count": "[12]",
+          "description": "[Total tenants]"
+        },
+        "payments": {
+          "title": "[Payments]",
+          "amount": "[$8,540]",
+          "description": "[This month]"
+        },
+        "tasks": {
+          "title": "[Tasks]",
+          "count": "[7]",
+          "description": "[Pending tasks]"
+        }
+      },
+      "userInfo": {
+        "title": "[User Information]",
+        "username": "[Username]",
+        "email": "[Email]",
+        "role": "[Role]"
+      },
+      "quickActions": {
+        "title": "[Quick Actions]",
+        "properties": "[Properties]",
+        "adminDashboard": "[Admin Dashboard]",
+        "tenants": "[Tenants]",
+        "payments": "[Payments]"
+      },
+      "welcomeScreen": {
+        "hero": {
+          "title": "[Reservatior]",
+          "description": "[Your comprehensive property management solution for owners, tenants, and agents]",
+          "getStarted": "[Get Started]",
+          "exploreFeatures": "[Explore Features]"
+        },
+        "features": {
+          "title": "[Comprehensive Property Management]",
+          "description": "[Everything you need to manage your real estate portfolio efficiently]",
+          "propertyManagement": {
+            "title": "[Property Management]",
+            "description": "[Efficiently manage properties, units, and facilities with detailed analytics and reporting.]"
+          },
+          "tenantManagement": {
+            "title": "[Tenant Management]",
+            "description": "[Handle tenant onboarding, maintenance requests, lease agreements, and payments.]"
+          },
+          "financialTools": {
+            "title": "[Financial Tools]",
+            "description": "[Track expenses, manage payments, and generate financial reports for your properties.]"
+          },
+          "mapIntegration": {
+            "title": "[Map Integration]",
+            "description": "[Visualize your properties on interactive maps with neighborhood insights and analytics.]"
+          },
+          "analyticsInsights": {
+            "title": "[Analytics & Insights]",
+            "description": "[Make data-driven decisions with comprehensive analytics and property performance metrics.]"
+          },
+          "communicationTools": {
+            "title": "[Communication Tools]",
+            "description": "[Built-in messaging system with notifications to keep everyone informed and connected.]"
+          }
+        },
+        "cta": {
+          "title": "[Ready to streamline your property management?]",
+          "description": "[Join thousands of property owners, managers, and tenants who trust Reservatior for their real estate needs.]",
+          "signUpNow": "[Sign Up Now]",
+          "learnMore": "[Learn More]"
+        },
+        "footer": {
+          "features": "[Features]",
+          "pricing": "[Pricing]",
+          "testimonials": "[Testimonials]",
+          "faq": "[FAQ]",
+          "copyright": "[© {year} Reservatior. All rights reserved.]"
+        }
+      }
+    },
+    "components": {
+      "footer": {
+        "title": "[Footer]",
+        "navigation": "[Footer Navigation]",
+        "links": "[Footer Links]",
+        "copyright": "[Copyright]",
+        "social": "[Social Media]"
+      },
+      "header": {
+        "title": "[Header]",
+        "navigation": "[Header Navigation]",
+        "logo": "[Logo]",
+        "menu": "[Menu]",
+        "search": "[Search]",
+        "userMenu": "[User Menu]",
+        "notifications": "[Notifications]"
+      },
+      "datePicker": {
+        "customHeader": "[Custom Header]",
+        "twoMonth": "[Two Month View]",
+        "customTime": "[Custom Time]",
+        "customDay": "[Custom Day]",
+        "calendar": "[Calendar]",
+        "date": "[Date]",
+        "time": "[Time]",
+        "month": "[Month]",
+        "year": "[Year]"
+      },
+      "mobileLayout": {
+        "title": "[Mobile Layout]",
+        "navigation": "[Mobile Navigation]",
+        "menu": "[Mobile Menu]",
+        "overlay": "[Mobile Overlay]"
+      },
+      "providers": {
+        "title": "[Providers]",
+        "server": "[Server Providers]",
+        "client": "[Client Providers]",
+        "context": "[Context Providers]"
+      },
+      "authShowcase": {
+        "title": "[Auth Showcase]",
+        "login": "[Login]",
+        "register": "[Register]",
+        "logout": "[Logout]",
+        "profile": "[Profile]"
+      },
+      "posts": {
+        "title": "[Posts]",
+        "create": "[Create Post]",
+        "edit": "[Edit Post]",
+        "delete": "[Delete Post]",
+        "publish": "[Publish Post]",
+        "draft": "[Draft Post]"
+      },
+      "priceRangeSlider": {
+        "title": "[Price Range Slider]",
+        "min": "[Minimum Price]",
+        "max": "[Maximum Price]",
+        "range": "[Price Range]",
+        "currency": "[Currency]"
+      },
+      "starRating": {
+        "title": "[Star Rating]",
+        "rating": "[Rating]",
+        "stars": "[Stars]",
+        "average": "[Average Rating]",
+        "total": "[Total Ratings]"
+      },
+      "dropdowns": {
+        "title": "[Dropdowns]",
+        "menu": "[Dropdown Menu]",
+        "options": "[Dropdown Options]",
+        "select": "[Select Option]"
+      },
+      "layouts": {
+        "title": "[Layouts]",
+        "main": "[Main Layout]",
+        "sidebar": "[Sidebar Layout]",
+        "header": "[Header Layout]",
+        "footer": "[Footer Layout]"
+      },
+      "tasks": {
+        "title": "[Tasks]",
+        "create": "[Create Task]",
+        "edit": "[Edit Task]",
+        "delete": "[Delete Task]",
+        "complete": "[Complete Task]",
+        "pending": "[Pending Task]"
+      }
+    },
+    "home": {
+      "heroSearchSection": {
+        "title": "[Hero Search Section]",
+        "search": "[Search]",
+        "location": "[Location]",
+        "dates": "[Dates]",
+        "guests": "[Guests]",
+        "searchButton": "[Search Properties]"
+      },
+      "statsSection": {
+        "title": "[Statistics Section]",
+        "properties": "[Properties]",
+        "tenants": "[Tenants]",
+        "revenue": "[Revenue]",
+        "satisfaction": "[Satisfaction]"
+      },
+      "exploreDestinations": {
+        "title": "[Explore Destinations]",
+        "destinations": "[Destinations]",
+        "popular": "[Popular Destinations]",
+        "trending": "[Trending Destinations]",
+        "viewAll": "[View All]"
+      },
+      "quickBrowseLinks": {
+        "title": "[Quick Browse Links]",
+        "browse": "[Browse]",
+        "quickLinks": "[Quick Links]",
+        "categories": "[Categories]"
+      },
+      "featuredProperties": {
+        "title": "[Featured Properties]",
+        "featured": "[Featured]",
+        "properties": "[Properties]",
+        "viewAll": "[View All Properties]",
+        "property": "[Property]",
+        "price": "[Price]",
+        "location": "[Location]",
+        "rating": "[Rating]"
+      },
+      "marketTrendsSection": {
+        "title": "[Market Trends Section]",
+        "trends": "[Market Trends]",
+        "analysis": "[Market Analysis]",
+        "insights": "[Market Insights]"
+      },
+      "howItWorksSection": {
+        "title": "[How It Works Section]",
+        "steps": "[Steps]",
+        "process": "[Process]",
+        "guide": "[How It Works]"
+      },
+      "neighborhoodHighlights": {
+        "title": "[Neighborhood Highlights]",
+        "neighborhoods": "[Neighborhoods]",
+        "highlights": "[Highlights]",
+        "local": "[Local Area]"
+      },
+      "getStartedBanner": {
+        "title": "[Get Started Banner]",
+        "cta": "[Call to Action]",
+        "signUp": "[Sign Up]",
+        "learnMore": "[Learn More]"
+      },
+      "enhancedHeroSection": {
+        "title": "[Enhanced Hero Section]",
+        "hero": "[Hero]",
+        "mainTitle": "[Main Title]",
+        "subtitle": "[Subtitle]",
+        "search": "[Search]"
+      },
+      "enhancedMakeMoneySection": {
+        "title": "[Enhanced Make Money Section]",
+        "makeMoney": "[Make Money]",
+        "earnings": "[Earnings]",
+        "income": "[Income]",
+        "revenue": "[Revenue]"
+      },
+      "enhancedStatsSection": {
+        "title": "[Enhanced Stats Section]",
+        "statistics": "[Statistics]",
+        "metrics": "[Metrics]",
+        "numbers": "[Numbers]"
+      },
+      "locationAutocomplete": {
+        "title": "[Location Autocomplete]",
+        "location": "[Location]",
+        "search": "[Search Location]",
+        "autocomplete": "[Autocomplete]",
+        "suggestions": "[Suggestions]"
+      }
+    },
+    "navigation": {
+      "redirect": "[Redirect]",
+      "authenticated": "[Authenticated]",
+      "unauthenticated": "[Unauthenticated]",
+      "auth": "[Authentication]",
+      "home": "[Home]",
+      "admin": "[Admin]",
+      "dashboard": "[Dashboard]"
+    },
+    "responsive": {
+      "mobile": "[Mobile]",
+      "tablet": "[Tablet]",
+      "desktop": "[Desktop]",
+      "responsive": "[Responsive]",
+      "breakpoint": "[Breakpoint]"
+    },
+    "accessibility": {
+      "ariaLabel": "[ARIA Label]",
+      "accessibility": "[Accessibility]",
+      "screenReader": "[Screen Reader]",
+      "focus": "[Focus]",
+      "keyboard": "[Keyboard Navigation]"
+    }
+  }
+}

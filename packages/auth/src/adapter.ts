@@ -1,8 +1,8 @@
+import type { AccountType } from "@prisma/client";
 import type { Adapter, AdapterAccount, AdapterUser } from "next-auth/adapters";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 
-import type { AccountType } from "@acme/db";
-import { db } from "@acme/db";
+import { db } from "@reservatior/db";
 
 const providerToAccountType: Record<string, AccountType> = {
   google: "GOOGLE",
@@ -10,9 +10,12 @@ const providerToAccountType: Record<string, AccountType> = {
   oidc: "OIDC",
   credentials: "CREDENTIALS",
   facebook: "FACEBOOK",
-};
+} as const;
 
 export function CustomPrismaAdapter(): Adapter {
+  if (!db) {
+    throw new Error("Prisma client is not initialized");
+  }
   const prismaAdapter = PrismaAdapter(db);
 
   return {
@@ -39,6 +42,7 @@ export function CustomPrismaAdapter(): Adapter {
       const type: AccountType =
         providerToAccountType[account.provider] ?? "GOOGLE";
       // Try to find an existing user with the same providerAccountId and provider
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       const existingAccount = await db.account.findFirst({
         where: {
           provider: account.provider,

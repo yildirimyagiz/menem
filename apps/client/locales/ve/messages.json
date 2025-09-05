@@ -1,0 +1,88 @@
+{
+  "Chat": {
+    "error": "[Error]",
+    "messageSendError": "[Message Send Error]",
+    "": {
+      "/EnhancedChatWithChannels": "[Enhanced Chat With Channels]"
+    },
+    "loading": "[Loading]",
+    "footer": {
+      "title": "[Title]",
+      "description": "[Description]",
+      "support": "[Support]",
+      "activeUsers": "[Active Users]",
+      "rating": "[Rating]",
+      "copyright": "[Copyright]"
+    },
+    "header": {
+      "title": "[Title]",
+      "description": "[Description]"
+    },
+    " ": "[]",
+    "title": "[Title]",
+    "searchPlaceholder": "[Search Placeholder]",
+    "typeMessage": "[Type Message]",
+    "noConversationSelected": "[No Conversation Selected]",
+    "selectConversationToStart": "[Select Conversation To Start]",
+    "Edit message:": "[Edit message:]",
+    "input": {
+      "placeholder": "[Placeholder]"
+    },
+    "typingIndicator": {
+      "isTyping": "[Is Typing]"
+    },
+    "messageSearch": {
+      "placeholder": "[Placeholder]",
+      "searchButton": "[Search Button]",
+      "dateFrom": "[Date From]",
+      "dateTo": "[Date To]",
+      "messageType": "[Message Type]",
+      "type": {
+        "${type}": "[Type]"
+      }
+    },
+    "T": "[]",
+    "conversationList": {
+      "yesterday": "[Yesterday]",
+      "noMessagesYet": "[No Messages Yet]",
+      "title": "[Title]",
+      "searchPlaceholder": "[Search Placeholder]",
+      "all": "[All]",
+      "unread": "[Unread]",
+      "online": "[Online]",
+      "noFound": "[No Found]",
+      "noConversations": "[No Conversations]",
+      "tryAdjust": "[Try Adjust]",
+      "startNew": "[Start New]"
+    },
+    "conversation": {
+      "unreadOverflow": "[Unread Overflow]"
+    },
+    "sidebar": {
+      "noMessages": "[No Messages]",
+      "title": "[Title]",
+      "closeSidebar": "[Close Sidebar]",
+      "noConversations": "[No Conversations]"
+    },
+    "messageList": {
+      "unknownContent": "[Unknown Content]",
+      "loading": "[Loading]",
+      "noMessages": "[No Messages]",
+      "reply": "[Reply]",
+      "copy": "[Copy]",
+      "edit": "[Edit]",
+      "delete": "[Delete]",
+      "addReaction": "[Add Reaction]",
+      "reactWith": "[React With]"
+    },
+    ":": "[]",
+    "chatInput": {
+      "sendAria": "[Send Aria]",
+      "placeholder": "[Placeholder]",
+      "inputAria": "[Input Aria]",
+      "sendButton": "[Send Button]",
+      "sending": "[Sending]"
+    },
+    "\\n": "[]"
+  }
+}

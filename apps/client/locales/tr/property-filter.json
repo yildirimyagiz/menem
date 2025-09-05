@@ -1,0 +1,76 @@
+{
+  "propertyFilter": {
+    "title": "Gayrimenkul Filtreleri",
+    "search": {
+      "location": "Konum girin...",
+      "budget": "Bütçe girin...",
+      "propertyType": "Gayrimenkul Türü",
+      "priceRange": "Fiyat Aralığı",
+      "sizeRange": "Boyut Aralığı",
+      "bedrooms": "Yatak Odası",
+      "bathrooms": "Banyo",
+      "yearBuilt": "İnşa Yılı"
+    },
+    "filters": {
+      "apply": "Filtreleri Uygula",
+      "clear": "Tümünü Temizle",
+      "reset": "Sıfırla",
+      "showMore": "Daha Fazla Göster",
+      "showLess": "Daha Az Göster"
+    },
+    "sort": {
+      "title": "Sırala",
+      "newest": "En Yeni",
+      "oldest": "En Eski",
+      "priceHigh": "Fiyat: Yüksekten Düşüğe",
+      "priceLow": "Fiyat: Düşükten Yükseğe",
+      "sizeHigh": "Boyut: Büyükten Küçüğe",
+      "sizeLow": "Boyut: Küçükten Büyüğe"
+    },
+    "categories": {
+      "propertyType": "Gayrimenkul Türü",
+      "price": "Fiyat",
+      "size": "Boyut",
+      "bedrooms": "Yatak Odası",
+      "bathrooms": "Banyo",
+      "yearBuilt": "İnşa Yılı",
+      "features": "Özellikler",
+      "amenities": "Olanaklar",
+      "location": "Konum",
+      "ownership": "Mülkiyet",
+      "contact": "İletişim Yöntemi"
+    },
+    "options": {
+      "furnished": "Eşyalı",
+      "featured": "Öne Çıkan",
+      "active": "Aktif",
+      "inactive": "Pasif"
+    },
+    "loading": "Filtreler yükleniyor...",
+    "noResults": "Bu filtrelerle mülk bulunamadı.",
+    "error": "Filtreler yüklenirken hata oluştu. Lütfen tekrar deneyin.",
+    "propertyTypes": {
+      "residential": "Konut",
+      "commercial": "Ticari",
+      "land": "Arsa",
+      "industrial": "Endüstriyel",
+      "mixedUse": "Karma Kullanım"
+    },
+    "statusOptions": {
+      "available": "Mevcut",
+      "pending": "Beklemede",
+      "sold": "Satıldı",
+      "rented": "Kiralandı"
+    },
+    "sortOptions": {
+      "price": "Fiyat",
+      "size": "Boyut",
+      "createdAt": "Oluşturulma Tarihi"
+    },
+    "utils": {
+      "formatPrice": "Fiyat",
+      "formatSize": "Boyut",
+      "getPropertyTypeLabel": "Gayrimenkul Türü"
+    }
+  }
+} 

@@ -1,0 +1,70 @@
+{
+  "footer": {
+    "title": "Footer",
+    "description": "Açıklama",
+    "support": "Destek",
+    "activeUsers": "Aktif Kullanıcılar",
+    "rating": "Puan",
+    "copyright": "Telif Hakkı"
+  },
+  "header": {
+    "title": "Başlık",
+    "description": "Açıklama"
+  },
+  "input": {
+    "placeholder": "Placeholder"
+  },
+  "typingIndicator": {
+    "isTyping": "Yazıyor"
+  },
+  "messageSearch": {
+    "placeholder": "Arama",
+    "searchButton": "Ara",
+    "dateFrom": "Tarih Başlangıç",
+    "dateTo": "Tarih Bitiş",
+    "messageType": "Mesaj Tipi",
+    "type": {
+      "${type}": "Tip"
+    }
+  },
+  "conversationList": {
+    "yesterday": "Dün",
+    "noMessagesYet": "Henüz Mesaj Yok",
+    "title": "Başlık",
+    "searchPlaceholder": "Arama",
+    "all": "Tümü",
+    "unread": "Okunmamış",
+    "online": "Çevrimiçi",
+    "noFound": "Bulunamadı",
+    "noConversations": "Geçmiş Yok",
+    "tryAdjust": "Ayarla",
+    "startNew": "Yeni Başlat"
+  },
+  "conversation": {
+    "unreadOverflow": "Okunmamış"
+  },
+  "sidebar": {
+    "noMessages": "Mesaj Yok",
+    "title": "Başlık",
+    "closeSidebar": "Kapat",
+    "noConversations": "Geçmiş Yok"
+  },
+  "messageList": {
+    "unknownContent": "Bilinmeyen İçerik",
+    "loading": "Yükleniyor",
+    "noMessages": "Mesaj Yok",
+    "reply": "Cevapla",
+    "copy": "Kopyala",
+    "edit": "Düzenle",
+    "delete": "Sil",
+    "addReaction": "Ekle",
+    "reactWith": "Ekle"
+  },
+  "chatInput": {
+    "sendArea": "Gönder",
+    "placeholder": "Mesaj",
+    "inputArea": "Mesaj",
+    "sendButton": "Gönder",
+    "sending": "Gönderiliyor"
+  }
+}

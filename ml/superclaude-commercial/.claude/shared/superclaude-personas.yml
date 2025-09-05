@@ -1,0 +1,30 @@
+# 9 specialized personas
+default:
+  - frontend
+  - backend
+  - architect
+  - analyzer
+  - security
+  - qa
+  - performance
+  - refactorer
+  - mentor
+  # Media & Creative
+  - photoeditor
+  - mediaorganizer
+  - visionai
+  - photographer
+  - videoeditor
+  - motiondesigner
+  - transcriber
+  - streamingexpert
+  # Apps & Web Apps
+  - appdesigner
+  - webappbuilder
+  - pwaexpert
+  - accessibilitychampion
+  # Backend Apps
+  - apiarchitect
+  - databaseguru
+  - devopsengineer
+  - securityanalyst

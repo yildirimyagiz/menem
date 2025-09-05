@@ -3,24 +3,24 @@ import { z } from "zod";
 export const AgencyStatus = z.enum(["PENDING", "ACTIVE", "SUSPENDED"]);
 
 export const AgencySchema = z.object({
-  id: z.string(),
-  name: z.string(),
-  description: z.string().optional(),
-  email: z.string().email().optional(),
-  phoneNumber: z.string().optional(),
-  address: z.string().optional(),
-  website: z.string().optional(),
-  logoUrl: z.string().optional(),
+  id: z.string().uuid(),
+  name: z.string().min(1, "Agency name is required").max(255),
+  description: z.string().max(1000).optional(),
+  email: z.string().email("Invalid email format").optional(),
+  phoneNumber: z.string().max(20).optional(),
+  address: z.string().max(500).optional(),
+  website: z.string().url("Invalid website URL").optional(),
+  logoUrl: z.string().url("Invalid logo URL").optional(),
   status: AgencyStatus.default("PENDING"),
   createdAt: z.date(),
   updatedAt: z.date(),
-  deletedAt: z.date().optional(),
-  isActive: z.boolean().optional(),
-  ownerId: z.string().optional(),
-  settings: z.any().optional(),
-  theme: z.string().optional(),
-  externalId: z.string().optional(),
-  integration: z.any().optional(),
+  deletedAt: z.date().nullable().optional(),
+  isActive: z.boolean().default(true),
+  ownerId: z.string().uuid().optional(),
+  settings: z.record(z.any()).optional(),
+  theme: z.string().max(50).optional(),
+  externalId: z.string().max(100).optional(),
+  integration: z.record(z.any()).optional(),
 
   Agent: z.array(z.any()).optional(),
   Analytics: z.array(z.any()).optional(),
@@ -28,6 +28,7 @@ export const AgencySchema = z.object({
   ComplianceRecord: z.array(z.any()).optional(),
   Expense: z.array(z.any()).optional(),
   Hashtag: z.array(z.any()).optional(),
+  location: z.array(z.any()).optional(),
   Language: z.array(z.any()).optional(),
 
   Mention: z.array(z.any()).optional(),
@@ -43,53 +44,65 @@ export const AgencySchema = z.object({
 });
 
 export const CreateAgencySchema = z.object({
-  name: z.string(),
-  description: z.string().optional(),
-  email: z.string().email().optional(),
-  phoneNumber: z.string().optional(),
-  address: z.string().optional(),
-  website: z.string().optional(),
-  logoUrl: z.string().optional(),
+  name: z.string().min(1, "Agency name is required").max(255),
+  description: z.string().max(1000).optional(),
+  email: z.string().email("Invalid email format").optional(),
+  phoneNumber: z.string().max(20).optional(),
+  address: z.string().max(500).optional(),
+  website: z.string().url("Invalid website URL").optional(),
+  logoUrl: z.string().url("Invalid logo URL").optional(),
   status: AgencyStatus.optional(),
-  isActive: z.boolean().optional(),
-  ownerId: z.string().optional(),
-  settings: z.any().optional(),
-  theme: z.string().optional(),
-  externalId: z.string().optional(),
-  integration: z.any().optional(),
+  isActive: z.boolean().default(true),
+  ownerId: z.string().uuid().optional(),
+  settings: z.record(z.any()).optional(),
+  theme: z.string().max(50).optional(),
+  externalId: z.string().max(100).optional(),
+  integration: z.record(z.any()).optional(),
 });
 
 export const UpdateAgencySchema = z.object({
-  id: z.string(),
-  name: z.string().optional(),
-  description: z.string().optional(),
-  email: z.string().email().optional(),
-  phoneNumber: z.string().optional(),
-  address: z.string().optional(),
-  website: z.string().optional(),
-  logoUrl: z.string().optional(),
+  id: z.string().uuid("Invalid agency ID"),
+  name: z.string().min(1, "Agency name is required").max(255).optional(),
+  description: z.string().max(1000).optional(),
+  email: z.string().email("Invalid email format").optional(),
+  phoneNumber: z.string().max(20).optional(),
+  address: z.string().max(500).optional(),
+  website: z.string().url("Invalid website URL").optional(),
+  logoUrl: z.string().url("Invalid logo URL").optional(),
   status: AgencyStatus.optional(),
   isActive: z.boolean().optional(),
-  ownerId: z.string().optional(),
-  settings: z.any().optional(),
-  theme: z.string().optional(),
-  externalId: z.string().optional(),
-  integration: z.any().optional(),
-  deletedAt: z.date().optional(),
+  ownerId: z.string().uuid().optional(),
+  settings: z.record(z.any()).optional(),
+  theme: z.string().max(50).optional(),
+  externalId: z.string().max(100).optional(),
+  integration: z.record(z.any()).optional(),
+  deletedAt: z.date().nullable().optional(),
 });
 
 export const AgencyFilterSchema = z.object({
-  search: z.string().optional(), // free-text search by name, email, etc.
-  email: z.string().email().optional(),
+  search: z
+    .string()
+    .min(1, "Search term must be at least 1 character")
+    .optional(),
+  email: z.string().email("Invalid email format").optional(),
   isActive: z.boolean().optional(),
-  ownerId: z.string().optional(),
-  hasDeleted: z.boolean().optional(), // include soft-deleted
+  ownerId: z.string().uuid("Invalid owner ID").optional(),
+  status: AgencyStatus.optional(),
+  hasDeleted: z.boolean().optional(),
   createdFrom: z.date().optional(),
   createdTo: z.date().optional(),
-  sortBy: z.enum(["name", "createdAt", "updatedAt"]).optional(),
+  updatedFrom: z.date().optional(),
+  updatedTo: z.date().optional(),
+  sortBy: z
+    .enum(["name", "createdAt", "updatedAt", "status", "isActive"])
+    .optional(),
   sortOrder: z.enum(["asc", "desc"]).optional(),
-  page: z.number().min(1).optional(),
-  pageSize: z.number().min(1).max(100).optional(),
+  page: z.number().min(1, "Page must be at least 1").optional(),
+  pageSize: z
+    .number()
+    .min(1, "Page size must be at least 1")
+    .max(100, "Page size cannot exceed 100")
+    .optional(),
 });
 
 export type Agency = z.infer<typeof AgencySchema>;

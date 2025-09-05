@@ -1,0 +1,24 @@
+{
+  "language": {
+    "title": "Dil",
+    "noCurrencies": "Para birimi mevcut değil."
+  },
+  "currency": {
+    "title": "Para Birimi"
+  },
+  "languages": {
+    "en": "İngilizce",
+    "tr": "Türkçe",
+    "zh": "Çince",
+    "es": "İspanyolca",
+    "ar": "Arapça",
+    "hi": "Hintçe",
+    "fr": "Fransızca",
+    "fa": "Farsça",
+    "de": "Almanca",
+    "ja": "Japonca",
+    "it": "İtalyanca",
+    "ru": "Rusça",
+    "th": "Tayca"
+  }
+} 

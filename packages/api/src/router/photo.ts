@@ -1,19 +1,17 @@
 import { randomUUID } from "crypto";
 import type { PhotoType, Prisma } from "@prisma/client";
-import type { TRPCRouterRecord } from "@trpc/server";
-import { z } from "zod";
-
 import {
   CreatePhotoSchema,
   PhotoFilterSchema,
   UpdatePhotoSchema,
-} from "@acme/validators";
+} from "@reservatior/validators";
+import { z } from "zod";
 
 import {
   getPaginationParams,
   paginationInputSchema,
 } from "../helpers/pagination";
-import { protectedProcedure } from "../trpc";
+import { createTRPCRouter, protectedProcedure } from "../trpc";
 
 const photoInclude = {
   Agency: true,
@@ -28,7 +26,7 @@ type PhotoWithIncludes = Prisma.PhotoGetPayload<{
   include: typeof photoInclude;
 }>;
 
-interface SanitizedPhoto {
+export interface SanitizedPhoto {
   id: string;
   url: string;
   type: PhotoType;
@@ -88,7 +86,7 @@ function sanitizePhoto(photo: PhotoWithIncludes): SanitizedPhoto {
   };
 }
 
-export const photoRouter: TRPCRouterRecord = {
+export const photoRouter = createTRPCRouter({
   list: protectedProcedure
     .input(
       z
@@ -290,4 +288,4 @@ export const photoRouter: TRPCRouterRecord = {
         throw error;
       }
     }),
-} satisfies TRPCRouterRecord;
+});

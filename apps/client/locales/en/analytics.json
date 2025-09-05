@@ -1,0 +1,221 @@
+{
+  "Analytics": {
+    "title": "Analytics",
+    "subtitle": "Comprehensive insights and performance metrics",
+    "description": "Comprehensive analytics and insights for your platform",
+    "loading": "Loading analytics...",
+    "error": {
+      "loading": "Error loading analytics"
+    },
+    "retry": "Try Again",
+    "refresh": {
+      "label": "Refresh",
+      "tooltip": "Refresh analytics data"
+    },
+    "refresh_success": "Data refreshed successfully!",
+    "refresh_error": "Refresh failed. Please try again.",
+    "refreshing": "Refreshing...",
+    "export": {
+      "label": "Export",
+      "tooltip": "Export overview data"
+    },
+    "export_success": "Successfully exported",
+    "export_error": "Export failed. Please try again.",
+    "export_data": "data",
+    "exporting": "Exporting...",
+
+    "sharing": "Sharing...",
+    "share_tooltip": "Share overview data",
+    "export_tooltip": "Export overview data",
+    "overview": "Overview",
+    "status": {
+      "live": "Live Data"
+    },
+    "settingsDescription": "Configure analytics settings and preferences",
+    "quickActions": {
+      "label": "Quick Actions",
+      "success": "Filters updated successfully!",
+      "last7Days": "Last 7 Days",
+      "last30Days": "Last 30 Days",
+      "last90Days": "Last 90 Days",
+      "clearFilters": "Clear Filters"
+    },
+    "quickActions_success": "Filters updated successfully!",
+    "quickActions_last7Days": "Last 7 Days",
+    "quickActions_last30Days": "Last 30 Days",
+    "quickActions_last90Days": "Last 90 Days",
+    "quickActions_clearFilters": "Clear Filters",
+    "filters": {
+      "title": "Filters & Date Range",
+      "search": "Search",
+      "searchPlaceholder": "Search analytics...",
+      "typeLabel": "Type",
+      "allTypes": "All Types",
+      "analyticsType": "Analytics Type",
+      "type": {
+        "all": "All Types",
+        "listingView": "Listing View",
+        "bookingConversion": "Booking Conversion",
+        "mlPropertyScore": "ML Property Score",
+        "userEngagement": "User Engagement",
+        "revenue": "Revenue",
+        "performance": "Performance",
+        "agentPerformance": "Agent Performance",
+        "agencyPerformance": "Agency Performance"
+      },
+      "entityType": "Entity Type",
+      "allEntities": "All Entities",
+      "entity": {
+        "all": "All Entities",
+        "property": "Property",
+        "user": "User",
+        "agent": "Agent",
+        "agency": "Agency",
+        "reservation": "Reservation",
+        "task": "Task"
+      },
+      "dateRange": "Date Range",
+      "startDate": "Start Date",
+      "endDate": "End Date"
+    },
+    "types": {
+      "LISTING_VIEW": "Listing View",
+      "BOOKING_CONVERSION": "Booking Conversion",
+      "ML_PROPERTY_SCORE": "ML Property Score",
+      "USER_ENGAGEMENT": "User Engagement",
+      "REVENUE": "Revenue",
+      "PERFORMANCE": "Performance",
+      "AGENT_PERFORMANCE": "Agent Performance",
+      "AGENCY_PERFORMANCE": "Agency Performance"
+    },
+    "entityTypes": {
+      "property": "Property",
+      "user": "User",
+      "agent": "Agent",
+      "agency": "Agency",
+      "reservation": "Reservation",
+      "task": "Task"
+    },
+    "metrics": {
+      "totalRecords": "Total Records",
+      "averagePerDay": "Average Per Day",
+      "uniqueTypes": "Unique Types",
+      "growthRate": "Growth Rate"
+    },
+    "chart": {
+      "title": "Analytics Charts",
+      "description": "Visual representation of analytics data",
+      "noData": "No data available",
+      "analyticsOverTime": "Analytics Over Time",
+      "totalRecords": "Total Records",
+      "uniqueTypes": "Unique Types",
+      "avgPerDay": "Avg Per Day",
+      "totalAnalytics": "Total Analytics",
+      "inDateRange": "in date range",
+      "differentAnalyticsTypes": "different analytics types",
+      "averageDailyRecords": "average daily records"
+    },
+    "table": {
+      "title": "Analytics Data",
+      "description": "Detailed analytics records",
+      "totalRecords": "total records",
+      "type": "Type",
+      "entity": "Entity",
+      "relatedTo": "Related To",
+      "timestamp": "Timestamp",
+      "data": "Data",
+      "actions": "Actions",
+      "noData": "No analytics data found",
+      "confirmDelete": "Are you sure you want to delete this analytics record?",
+      "viewDetails": "View Details",
+      "delete": "Delete",
+      "showing": "Showing",
+      "of": "of",
+      "results": "results",
+      "previous": "Previous",
+      "next": "Next"
+    },
+    "settings": {
+      "general": "General Settings",
+      "trackingSettings": "Tracking Settings",
+      "chartSettings": "Chart Settings",
+      "exportSettings": "Export Settings",
+      "security": "Security Settings",
+      "dataRetention": "Data Retention",
+      "accessControl": "Access Control"
+    },
+    "summary": {
+      "totalUsers": "Total Users",
+      "activeProperties": "Active Properties",
+      "revenue": "Revenue",
+      "bookings": "Bookings",
+      "agents": "Active Agents",
+      "fromLastMonth": "from last month"
+    },
+    "tabs": {
+      "overview": "Overview",
+      "revenue": "Revenue",
+      "properties": "Properties",
+      "users": "Users",
+      "agents": "Agents",
+      "performance": "Performance"
+    },
+    "dashboard": {
+      "overview": "Analytics Overview"
+    },
+    "revenue": {
+      "title": "Revenue Analytics"
+    },
+    "user": {
+      "error": "Error",
+      "loginRequired": "Login Required",
+      "title": "Title",
+      "totalUsers": "Total Users",
+      "activeUsers": "Active Users",
+      "newUsers": "New Users",
+      "avgSession": "Avg Session",
+      "topPages": "Top Pages",
+      "views": "Views",
+      "noData": "No Data"
+    },
+    "property": {
+      "error": "Error",
+      "loginRequired": "Login Required",
+      "title": "Title",
+      "count": "Count",
+      "avgPrice": "Avg Price",
+      "views": "Views",
+      "inquiries": "Inquiries"
+    },
+    "performance": {
+      "title": "Title",
+      "metric": {
+        "responseTime": "Response Time",
+        "uptime": "Uptime"
+      }
+    },
+    "testData": {
+      "title": "Test Data Generator",
+      "status": "Create sample analytics data for testing the dashboard components.",
+      "generating": "Creating...",
+      "generate": "Generate Test Data"
+    },
+    "errorLoading": "Error Loading",
+    "tryAgain": "Try Again",
+    "loginRequired": "Login Required",
+    "last30days": "Last 30 Days",
+    "trend": {
+      "up": "Trending Up",
+      "down": "Trending Down",
+      "stable": "Stable"
+    },
+    "noData": "No Data",
+    "details": "Details",
+    "share": {
+      "label": "Share",
+      "tooltip": "Share overview data"
+    },
+    "share_success": "Shareable link copied to clipboard!",
+    "share_error": "Share failed. Please try again."
+  }
+}

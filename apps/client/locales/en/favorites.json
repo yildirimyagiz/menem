@@ -1,0 +1,85 @@
+{
+  "favorites": {
+    "title": "Favorites",
+    "description": "Your favorite listings and properties.",
+    "favoritesTitle": "My Favorites",
+    "favoritesDescription": "Your saved properties and preferences",
+    "favoritesLoading": "Loading your favorite properties...",
+    "favoritesErrorTitle": "Error Loading Favorites",
+    "favoritesEmptyTitle": "No favorites yet",
+    "favoritesEmptyDescription": "Start exploring properties and add them to your favorites",
+    "exploreProperties": "Explore Properties",
+    "empty": {
+      "title": "No favorites yet",
+      "description": "Start exploring properties and add them to your favorites"
+    },
+    "buttons": {
+      "explore": "Explore Properties",
+      "remove": "Remove from Favorites",
+      "viewDetails": "View Details"
+    },
+    "stats": {
+      "totalFavorites": "Total Favorites",
+      "averagePrice": "Average Price",
+      "averageRating": "Average Rating",
+      "propertiesViewed": "Properties Viewed",
+      "favoritesStatsTotal": "Total Favorites",
+      "favoritesStatsAveragePrice": "Average Price",
+      "favoritesStatsAverageRating": "Average Rating",
+      "favoritesStatsPropertiesViewed": "Properties Viewed"
+    },
+    "propertyTypes": {
+      "apartment": "Apartment",
+      "house": "House",
+      "villa": "Villa",
+      "land": "Land",
+      "commercial": "Commercial",
+      "propertyTypesApartment": "Apartment",
+      "propertyTypesHouse": "House",
+      "propertyTypesVilla": "Villa",
+      "propertyTypesLand": "Land",
+      "propertyTypesCommercial": "Commercial"
+    },
+    "labels": {
+      "priceOnRequest": "Price on request",
+      "locationNotSpecified": "Location not specified",
+      "ratingNotAvailable": "N/A"
+    },
+    "actions": {
+      "viewProperty": "View Property",
+      "removeFromFavorites": "Remove from Favorites",
+      "addToFavorites": "Add to Favorites"
+    },
+    "errors": {
+      "loadError": "Failed to load favorites",
+      "loadErrorDescription": "There was an error loading your favorites. Please try again.",
+      "retryButton": "Retry"
+    },
+    "loading": {
+      "title": "Loading Favorites",
+      "description": "Loading your favorite properties..."
+    },
+    "list": {
+      "title": "Favorites",
+      "empty": "No favorites found.",
+      "loading": "Loading favorites...",
+      "noFavoritesFound": "No favorites found",
+      "createFirstFavorite": "Start exploring properties to add them to your favorites",
+      "viewAll": "View all"
+    },
+    "property": {
+      "title": "Property",
+      "description": "Property description",
+      "location": "Location",
+      "type": "Type",
+      "rating": "Rating",
+      "price": "Price",
+      "priceOnRequest": "Price on request",
+      "noRating": "N/A"
+    },
+    "navigation": {
+      "backToProperties": "Back to Properties",
+      "viewProperty": "View Property Details"
+    }
+  }
+}

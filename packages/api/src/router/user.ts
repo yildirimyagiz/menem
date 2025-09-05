@@ -6,6 +6,7 @@ import type {
   Agent,
   Analytics,
   CommunicationLog,
+  Currency,
   ExtraCharge,
   Facility,
   Hashtag,
@@ -28,13 +29,12 @@ import type {
   Tenant,
 } from "@prisma/client";
 import type { TRPCRouterRecord } from "@trpc/server";
-import { z } from "zod";
-
 import {
   CreateUserSchema,
   UpdateUserSchema,
   UserFilterSchema,
-} from "@acme/validators";
+} from "@reservatior/validators";
+import { z } from "zod";
 
 import { getPaginationParams } from "../helpers/pagination";
 import { withCacheAndFormat } from "../helpers/withCacheAndFormat";
@@ -72,6 +72,7 @@ type UserWithIncludes = Omit<PrismaUser, "responseTime"> & {
   Agent?: Agent[];
   Subscription?: Subscription[];
   responseTime?: string | null;
+  Currency?: Currency | null;
 };
 
 const sanitizeUser = (user: UserWithIncludes | null) => {
@@ -110,6 +111,7 @@ const sanitizeUser = (user: UserWithIncludes | null) => {
     ExtraCharge: user.ExtraCharge ?? null,
     Agent: user.Agent ?? [],
     Subscription: user.Subscription ?? [],
+    Currency: user.Currency ?? null,
   };
 };
 
@@ -157,7 +159,6 @@ export const userRouter = {
               Analytics: true,
               CommunicationLog: true,
               Hashtag: true,
-
               Notification: true,
               Offer: true,
               Photo: true,
@@ -165,9 +166,9 @@ export const userRouter = {
               Reservation: true,
               Review: true,
               Session: true,
-
               Tenant: true,
               Permission: true,
+              Currency: true,
             },
           }),
           ctx.db.user.count({ where }),
@@ -211,6 +212,7 @@ export const userRouter = {
           TasksAssigned: true,
           Tenant: true,
           Permission: true,
+          Currency: true,
         },
       });
       return sanitizeUser(user);
@@ -233,11 +235,8 @@ export const userRouter = {
         };
 
         // Handle responseTime with proper type checking
-        if (responseTime !== undefined) {
-          createData.responseTime =
-            responseTime instanceof Date
-              ? responseTime.toISOString()
-              : responseTime;
+        if (typeof responseTime === "string") {
+          createData.responseTime = responseTime;
         }
 
         // Handle agency relation
@@ -275,6 +274,7 @@ export const userRouter = {
             ExtraCharge: true,
             Agent: true,
             Subscription: true,
+            Currency: true,
           },
         });
         return sanitizeUser(user);
@@ -310,13 +310,10 @@ export const userRouter = {
       }
 
       // Handle responseTime separately to ensure correct typing
-      if (responseTime !== undefined) {
-        updateData.responseTime =
-          responseTime === null
-            ? null
-            : responseTime instanceof Date
-              ? responseTime.toISOString()
-              : responseTime;
+      if (responseTime === null) {
+        updateData.responseTime = null;
+      } else if (typeof responseTime === "string") {
+        updateData.responseTime = responseTime;
       }
 
       const user = await ctx.db.user.update({
@@ -341,6 +338,7 @@ export const userRouter = {
           TasksAssigned: true,
           Tenant: true,
           Permission: true,
+          Currency: true,
         },
       });
       return sanitizeUser(user);
@@ -380,6 +378,7 @@ export const userRouter = {
             ExtraCharge: true,
             Agent: true,
             Subscription: true,
+            Currency: true,
           },
         });
         return sanitizeUser(user);

@@ -1,0 +1,41 @@
+{
+  "nav": {
+    "dashboard": "[Dashboard]",
+    "properties": "[Properties]",
+    "listings": "[Listings]",
+    "favorites": "[Favorites]",
+    "messages": "[Messages]",
+    "notifications": "[Notifications]",
+    "payments": "[Payments]",
+    "expenses": "[Expenses]",
+    "taxRecords": "[Tax Records]",
+    "subscription": "[Subscription]",
+    "users": "[Users]",
+    "agents": "[Agents]",
+    "analytics": "[Analytics]",
+    "reports": "[Reports]",
+    "compliance": "[Compliance]",
+    "facilities": "[Facilities]",
+    "help": "[Help]",
+    "support": "[Support]",
+    "settings": "[Settings]"
+  },
+  "categories": {
+    "dashboard": "[Dashboard]",
+    "properties": "[Properties]",
+    "communication": "[Communication]",
+    "financial": "[Financial]",
+    "admin": "[Admin]",
+    "support": "[Support]"
+  },
+  "user": {
+    "welcome": "[Welcome back,]",
+    "logout": "[Logout]"
+  },
+  "brand": {
+    "name": "[Reservatior]"
+  },
+  "actions": {
+    "close": "[Close menu]"
+  }
+}

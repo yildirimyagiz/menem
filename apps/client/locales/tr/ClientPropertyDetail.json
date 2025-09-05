@@ -1,0 +1,148 @@
+{
+  "untitled": "Mülk",
+  "noImage": "Görsel yok",
+  "about": "Bu mülk hakkında",
+  "mapsKeyMissing": "Google Maps API anahtarı eksik.",
+  "listingType": {
+    "sale": "Satılık",
+    "rent": "Kiralık",
+    "booking": "Rezervasyon"
+  },
+  "amenities": "Olanaklar",
+  "loadFailed": "Mülk yüklenemedi.",
+  "notFound": "Mülk bulunamadı veya kullanılamıyor.",
+  "facts": {
+    "title": "Mülk Bilgileri",
+    "physical": "Fiziksel",
+    "technical": "Teknik",
+    "size": "Metrekare",
+    "bedrooms": "Yatak Odası",
+    "bathrooms": "Banyo",
+    "floors": "Kat Sayısı",
+    "yearBuilt": "Yapım Yılı",
+    "condition": "Durum",
+    "construction": "Yapı Tipi",
+    "buildingClass": "Bina Sınıfı",
+    "energy": "Enerji Sınıfı",
+    "efficiency": "Verimlilik",
+    "heating": "Isıtma",
+    "cooling": "Soğutma",
+    "style": "Mimari Stil",
+    "parking": "Otopark",
+    "parkingSpaces": "Otopark Adedi",
+    "greenCertification": "Yeşil Sertifika",
+    "type": "Tür",
+    "status": "Durum"
+  },
+  "badges": {
+    "featured": "Öne Çıkan"
+  },
+  "features": {
+    "title": "Özellikler",
+    "subtitle": "Öne çıkan mülk özellikleri"
+  },
+  "breadcrumb": {
+    "home": "Ana Sayfa",
+    "properties": "Mülkler"
+  },
+  "tabs": {
+    "overview": "Genel Bakış",
+    "details": "Detaylar",
+    "amenities": "Olanaklar",
+    "features": "Özellikler",
+    "location": "Konum",
+    "policies": "Kurallar",
+    "financial": "Finansal",
+    "contacts": "İletişim",
+    "similar": "Benzerleri"
+  },
+  "policies": {
+    "title": "Kurallar ve Notlar",
+    "checkIn": "Giriş",
+    "checkOut": "Çıkış",
+    "cancellation": "İptal Politikası",
+    "rules": "Kurallar",
+    "notes": "Özel Notlar",
+    "attractions": "Yakın Çekim Merkezleri",
+    "transport": "Ulaşım"
+  },
+  "financial": {
+    "title": "Finansal",
+    "marketValue": "Pazar Değeri",
+    "taxValue": "Vergi Değeri",
+    "insuranceValue": "Sigorta Değeri",
+    "mortgageEligible": "Krediye Uygun"
+  },
+  "contacts": {
+    "title": "İletişim",
+    "preferred": "Tercih Edilen",
+    "email": "E-posta",
+    "phone": "Telefon"
+  },
+  "similar": {
+    "title": "Benzer Mülkler"
+  },
+  "common": {
+    "yes": "Evet",
+    "no": "Hayır"
+  },
+  "atAGlance": "Kısaca",
+  "location": {
+    "title": "Yakınlarda"
+  },
+  "priceFrom": "Başlangıç fiyatı",
+  "facility": {
+    "title": "Tesis",
+    "amenities": "Tesis olanakları",
+    "locationAmenities": "Konum olanakları"
+  },
+  "includedServices": {
+    "title": "Dahil hizmetler"
+  },
+  "extraServices": {
+    "title": "Ek hizmetler"
+  },
+  "expenses": {
+    "title": "Giderler",
+    "untitled": "Gider",
+    "due": "Son tarih",
+    "paid": "Ödendi"
+  },
+  "booking": {
+    "title": "Konaklamanı rezerve et",
+    "pricePerNight": "Gecelik fiyat",
+    "checkIn": "Giriş",
+    "checkInHelp": "Geliş tarihinizi seçin.",
+    "checkOut": "Çıkış",
+    "checkOutHelp": "Girişten sonraki bir tarihi seçin.",
+    "invalidRange": "Çıkış tarihi, girişten sonra olmalı.",
+    "guests": "Misafir",
+    "guestsHelp": "Kaç kişi konaklayacak?",
+    "nights": "Gece",
+    "total": "Toplam tutar",
+    "reserve": "Rezervasyon isteği gönder",
+    "policyNote": "Rezervasyondan sonraki 48 saat içinde ücretsiz iptal."
+  },
+  "rent": {
+    "title": "Bu mülkü kirala",
+    "monthly": "Aylık",
+    "moveInDate": "Tercih edilen taşınma tarihi",
+    "moveInHelp": "Gelecek bir tarih seçin.",
+    "message": "Ev sahibi/acenteye mesaj",
+    "messagePh": "Kiralama ile ilgileniyorum...",
+    "messageHint": "Kendinizi tanıtın, kira süresi ve sorularınızı paylaşın.",
+    "requestTour": "Tur talep et",
+    "apply": "Başvur"
+  },
+  "sale": {
+    "title": "Bu mülkü satın al",
+    "price": "Fiyat",
+    "makeOffer": "Teklif yap (opsiyonel)",
+    "message": "Ev sahibi/acenteye mesaj",
+    "messagePh": "Bu mülk hakkında konuşmak istiyorum...",
+    "offerHelp": "Bir fiyat önerebilir veya boş bırakabilirsiniz.",
+    "messageHint": "Zaman planınızı, finansman durumunuzu ve sorularınızı paylaşın.",
+    "requestInfo": "Bilgi iste",
+    "scheduleTour": "Tur planla"
+  }
+}

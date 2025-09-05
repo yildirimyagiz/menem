@@ -1,0 +1,210 @@
+{
+  "dashboard": {
+    "title": "Kullanıcı Paneli",
+    "description": "Kullanıcı paneline hoş geldiniz. Platformunuzu verimli bir şekilde izleyin ve yönetin.",
+    "systemOnline": "Sistem Çevrimiçi",
+    "refresh": "Yenile",
+    "statistics": {
+      "totalUsers": "Toplam Kullanıcı",
+      "activeProperties": "Aktif Mülkler",
+      "revenue": "Gelir",
+      "systemHealth": "Sistem Sağlığı",
+      "activeUsersThisMonth": "Bu ay aktif kullanıcılar",
+      "propertiesAvailable": "Mevcut mülkler",
+      "thisMonthsRevenue": "Bu ayın geliri",
+      "uptimeThisMonth": "Bu ayki çalışma süresi",
+      "changeVsLastMonth": "geçen aya göre"
+    },
+    "quickActions": {
+      "title": "Hızlı İşlemler",
+      "description": "En yaygın görevler ve kısayollar",
+      "addUser": "Kullanıcı Ekle",
+      "addUserDesc": "Yeni kullanıcı hesabı oluştur",
+      "addProperty": "Gayrimenkul Ekle",
+      "addPropertyDesc": "Yeni mülk ilanı oluştur",
+      "viewAnalytics": "Analitikleri Görüntüle",
+      "viewAnalyticsDesc": "Performans metriklerini kontrol et",
+      "createTask": "Görev Oluştur",
+      "createTaskDesc": "Yeni görev veya hatırlatıcı ekle"
+    },
+    "systemStatus": {
+      "online": "Çevrimiçi",
+      "offline": "Çevrimdışı",
+      "maintenance": "Bakımda",
+      "used": "{percent}% kullanıldı"
+    },
+    "floatingActions": {
+      "add": "Ekle",
+      "dashboard": "Panel",
+      "notifications": "Bildirimler",
+      "userManagementDescription": "Tüm kullanıcılarınızı yönetin ve görüntüleyin",
+      "addNewUser": "Yeni Kullanıcı Ekle",
+      "addFirstUser": "İlk Kullanıcıyı Ekle",
+      "searchUsers": "Kullanıcıları ara...",
+      "noUsersFound": "Kullanıcı bulunamadı. İlk kullanıcınızı ekleyerek başlayın!",
+      "showingResults": "{start}-{end} / {total} sonuç gösteriliyor",
+      "name": "İsim",
+      "role": "Rol",
+      "viewDetails": "Detayları Gör",
+      "editUser": "Kullanıcıyı Düzenle",
+      "deleteUser": "Kullanıcıyı Sil",
+      "owners": "Sahipler",
+      "messages": "Mesajlar",
+      "reports": "Raporlar",
+      "subscriptionPackages": "Abonelik Paketleri",
+      "reviews": "Yorumlar",
+      "extraCharges": "Ekstra Ücretler",
+      "languages": "Diller",
+      "increases": "Artışlar",
+      "includedServices": "Dahil Hizmetler",
+      "expenses": "Giderler",
+      "locations": "Lokasyonlar",
+      "mentions": "Bahsedenler",
+      "mortgages": "İpotekler",
+      "offers": "Teklifler",
+      "payments": "Ödemeler",
+      "permissions": "İzinler",
+      "photos": "Fotoğraflar",
+      "posts": "Gönderiler",
+      "pricingRules": "Fiyat Kuralları",
+      "tickets": "Talepler",
+      "tasks": "Görevler"
+    },
+
+    "recentActivities": {
+      "title": "Son Etkinlikler",
+      "liveUpdates": "Canlı güncellemeler",
+      "userRegistered": "{name} kaydoldu",
+      "propertyAdded": "{property} mülkü eklendi",
+      "paymentReceived": "{amount} ödeme alındı",
+      "systemAlert": "Sistem uyarısı tetiklendi",
+      "timeMinutesAgo": "{minutes} dakika önce"
+    },
+
+    "managementSections": {
+      "title": "Yönetim Bölümleri",
+      "view": "Görüntüle",
+      "clickToManage": "Yönetmek için tıklayın",
+      "collapseAll": "Tümünü Daralt",
+      "expandAll": "Tümünü Genişlet"
+    },
+
+    "sectionGroups": {
+      "userManagement": {
+        "title": "Kullanıcı Yönetimi",
+        "description": "Kullanıcıları, ajanları, ajansları ve kiracıları yönetin",
+        "users": {
+          "title": "Kullanıcılar",
+          "description": "Kullanıcı hesaplarını ve izinleri yönetin",
+          "badge": "Aktif"
+        },
+        "agents": {
+          "title": "Ajanlar",
+          "description": "Emlak danışmanlarını yönetin",
+          "badge": "Aktif"
+        },
+        "agencies": {
+          "title": "Ajanslar",
+          "description": "Emlak ajanslarını yönetin",
+          "badge": "Aktif"
+        },
+        "tenants": {
+          "title": "Kiracılar",
+          "description": "Kiracı bilgilerini yönetin",
+          "badge": "Aktif"
+        }
+      },
+      "propertyManagement": {
+        "title": "Mülk Yönetimi",
+        "description": "Mülkleri, tesisleri ve sağlayıcıları yönetin",
+        "properties": {
+          "title": "Mülkler",
+          "description": "Mülk ilanlarını yönetin",
+          "badge": "Aktif"
+        },
+        "facilities": {
+          "title": "Tesisler",
+          "description": "Mülk tesislerini yönetin",
+          "badge": "Aktif"
+        },
+        "providers": {
+          "title": "Sağlayıcılar",
+          "description": "Hizmet sağlayıcılarını yönetin",
+          "badge": "Aktif"
+        },
+        "availability": {
+          "title": "Müsaitlik",
+          "description": "Mülk müsaitliğini yönetin",
+          "badge": "Aktif"
+        }
+      },
+      "financials": {
+        "title": "Finans",
+        "description": "Ödemeleri, para birimini ve abonelikleri yönetin",
+        "payment": {
+          "title": "Ödeme",
+          "description": "Ödeme işlemlerini yönetin",
+          "badge": "Aktif"
+        },
+        "currency": {
+          "title": "Para Birimi",
+          "description": "Para birimi ayarlarını yönetin",
+          "badge": "Aktif"
+        },
+        "subscription": {
+          "title": "Abonelik",
+          "description": "Abonelik planlarını yönetin",
+          "badge": "Aktif"
+        },
+        "subscriptions": {
+          "title": "Abonelikler",
+          "description": "Kullanıcı aboneliklerini yönetin",
+          "badge": "Aktif"
+        }
+      },
+      "operationsAnalytics": {
+        "title": "Operasyonlar ve Analitik",
+        "description": "Analitikleri, görevleri, etkinlikleri ve raporları yönetin",
+        "analytics": {
+          "title": "Analitik",
+          "description": "Performans analitiğini görüntüleyin",
+          "badge": "Aktif"
+        },
+        "tasks": {
+          "title": "Görevler",
+          "description": "Görevleri ve atamaları yönetin",
+          "badge": "Aktif"
+        },
+        "events": {
+          "title": "Etkinlikler",
+          "description": "Etkinlikleri ve takvimleri yönetin",
+          "badge": "Aktif"
+        },
+        "report": {
+          "title": "Rapor",
+          "description": "Rapor oluşturun ve görüntüleyin",
+          "badge": "Aktif"
+        }
+      },
+      "settingsMisc": {
+        "title": "Ayarlar ve Diğer",
+        "description": "Profil, ayarlar ve bildirimleri yönetin",
+        "profile": {
+          "title": "Profil",
+          "description": "Kullanıcı profilini yönetin",
+          "badge": "Aktif"
+        },
+        "settings": {
+          "title": "Ayarlar",
+          "description": "Sistem ayarlarını yönetin",
+          "badge": "Aktif"
+        },
+        "notifications": {
+          "title": "Bildirimler",
+          "description": "Bildirimleri yönetin",
+          "badge": "Aktif"
+        }
+      }
+    }
+  }
+}

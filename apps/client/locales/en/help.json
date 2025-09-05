@@ -1,0 +1,104 @@
+{
+  "help": {
+    "title": "Help & Support",
+    "description": "Find answers to common questions and get support",
+    "subject": "Subject",
+    "subjectPlaceholder": "Enter subject",
+    "descriptionPlaceholder": "Describe your issue",
+    "submitTicket": "Submit Ticket",
+    "searchPlaceholder": "Search help articles...",
+    "email": "Email Support",
+    "phone": "Phone Support",
+
+    "tickets": {
+      "title": "My Tickets",
+      "noTicketsFound": "No tickets found",
+      "noTicketsFoundDescription": "You haven't created any support tickets yet.",
+      "noTickets": "No tickets found",
+      "noTicketsDescription": "You haven't created any support tickets yet.",
+      "createTicket": "Create New Ticket",
+      "status": {
+        "open": "Open",
+        "inProgress": "In Progress",
+        "resolved": "Resolved",
+        "closed": "Closed"
+      },
+      "priority": {
+        "low": "Low",
+        "medium": "Medium",
+        "high": "High",
+        "urgent": "Urgent"
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "description": "Find answers to common questions",
+      "howToSearch": {
+        "question": "How do I search for properties?",
+        "answer": "Use the search bar on the homepage to find properties by location, price range, and other criteria. You can also use advanced filters to narrow down your search."
+      },
+      "contactOwner": {
+        "question": "How do I contact a property owner?",
+        "answer": "Click on any property to view its details, then use the contact form or call the provided phone number to get in touch with the owner or agent."
+      },
+      "paymentMethods": {
+        "question": "What payment methods are accepted?",
+        "answer": "We accept various payment methods including credit cards, bank transfers, and digital wallets. Payment options may vary by property."
+      },
+      "reportIssue": {
+        "question": "How do I report an issue with a property?",
+        "answer": "If you encounter any issues with a property listing, please contact our support team through the help section or submit a ticket."
+      },
+      "saveProperties": {
+        "question": "Can I save properties to view later?",
+        "answer": "Yes! Click the heart icon on any property to add it to your favorites. You can view all your saved properties in the Favorites section."
+      }
+    },
+    "chat": {
+      "liveSupport": "Live Chat Support",
+      "instantHelp": "Get instant help from our support team"
+    },
+    "contact": {
+      "title": "Contact Support",
+      "description": "Get in touch with our support team",
+      "email": "Email Support",
+      "phone": "Phone Support",
+      "chat": "Live Chat"
+    },
+    "search": {
+      "placeholder": "Search help articles...",
+      "noResults": "No help articles found"
+    },
+    "supportTickets": {
+      "title": "Support Tickets",
+      "createTicket": "Create Ticket",
+      "viewTicket": "View Ticket",
+      "back": "Back",
+      "send": "Send",
+      "typeMessage": "Type your message...",
+      "ticketNumber": "Ticket #{id}",
+      "createdAt": "Created {date}",
+      "status": "Status",
+      "priority": "Priority",
+      "assignedTo": "Assigned To",
+      "lastUpdated": "Last Updated"
+    },
+    "actions": {
+      "createTicket": "Create Ticket",
+      "viewTicket": "View Ticket",
+      "reply": "Reply",
+      "close": "Close",
+      "back": "Back"
+    },
+    "errors": {
+      "createTicketFailed": "Failed to create ticket",
+      "loadTicketsFailed": "Failed to load tickets",
+      "sendMessageFailed": "Failed to send message"
+    },
+    "loading": {
+      "creatingTicket": "Creating ticket...",
+      "loadingTickets": "Loading tickets...",
+      "sendingMessage": "Sending message..."
+    }
+  }
+}

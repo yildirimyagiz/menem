@@ -1,0 +1,109 @@
+{
+  "ClientDashboard": {
+    "title": "[Client Dashboard]",
+    "description": "[Overview of your client dashboard]",
+    "sections": {
+      "properties": "[Properties]",
+      "tenants": "[Tenants]",
+      "payments": "[Payments]",
+      "tasks": "[Tasks]",
+      "messages": "[Messages]"
+    },
+    "badges": {
+      "totalProperties": "[Total Properties]",
+      "totalTenants": "[Total Tenants]",
+      "totalPayments": "[Total Payments]",
+      "totalTasks": "[Total Tasks]",
+      "totalMessages": "[Total Messages]"
+    },
+    "quickActions": {
+      "addProperty": "[Add Property]",
+      "addTenant": "[Add Tenant]",
+      "makePayment": "[Make Payment]",
+      "createTask": "[Create Task]",
+      "sendMessage": "[Send Message]"
+    },
+    "systemStatus": {
+      "online": "[Online]",
+      "offline": "[Offline]",
+      "maintenance": "[Maintenance]"
+    },
+    "floatingActions": {
+      "add": "[Add]",
+      "dashboard": "[Dashboard]",
+      "notifications": "[Notifications]",
+      "userManagementDescription": "[Manage and view all your users]",
+      "addNewUser": "[Add New User]",
+      "addFirstUser": "[Add First User]",
+      "searchUsers": "[Search users...]",
+      "noUsersFound": "[No users found. Get started by adding your first user!]",
+      "showingResults": "[Showing {start}-{end} of {total} results]",
+      "name": "[Name]",
+      "role": "[Role]",
+      "viewDetails": "[View Details]",
+      "editUser": "[Edit User]",
+      "deleteUser": "[Delete User]",
+      "owners": "[Owners]",
+      "messages": "[Messages]",
+      "reports": "[Reports]",
+      "subscriptionPackages": "[Subscription Packages]",
+      "reviews": "[Reviews]",
+      "extraCharges": "[Extra Charges]",
+      "languages": "[Languages]",
+      "increases": "[Increases]",
+      "includedServices": "[Included Services]",
+      "expenses": "[Expenses]",
+      "locations": "[Locations]",
+      "mentions": "[Mentions]",
+      "mortgages": "[Mortgages]",
+      "offers": "[Offers]",
+      "payments": "[Payments]",
+      "permissions": "[Permissions]",
+      "photos": "[Photos]",
+      "posts": "[Posts]",
+      "pricingRules": "[Pricing Rules]",
+      "tickets": "[Tickets]",
+      "tasks": "[Tasks]",
+      "common": {
+        "search": "[Search...]",
+        "filter": "[Filter]",
+        "sort": "[Sort]",
+        "actions": "[Actions]",
+        "view": "[View]",
+        "edit": "[Edit]",
+        "delete": "[Delete]",
+        "create": "[Create]",
+        "save": "[Save]",
+        "cancel": "[Cancel]",
+        "confirm": "[Confirm]",
+        "back": "[Back]",
+        "next": "[Next]",
+        "previous": "[Previous]",
+        "loading": "[Loading...]",
+        "noData": "[No data available]",
+        "viewDetails": "[View Details]",
+        "error": "[Error]",
+        "success": "[Success]",
+        "warning": "[Warning]",
+        "info": "[Information]",
+        "hide": "[Hide]",
+        "show": "[Show]",
+        "manage": "[Manage]"
+      }
+    },
+    "dateTime": {
+      "timePicker": {
+        "label": "[Time]",
+        "placeholder": "[Enter time]",
+        "invalidTime": "[Please enter a valid time]",
+        "format": "[Time format]"
+      },
+      "datePicker": {
+        "label": "[Date]",
+        "placeholder": "[Enter date]",
+        "invalidDate": "[Please enter a valid date]",
+        "format": "[Date format]"
+      }
+    }
+  }
+}

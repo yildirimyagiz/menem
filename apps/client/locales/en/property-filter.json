@@ -1,0 +1,76 @@
+{
+  "propertyFilter": {
+    "title": "Property Filters",
+    "search": {
+      "location": "Enter location...",
+      "budget": "Enter budget...",
+      "propertyType": "Property Type",
+      "priceRange": "Price Range",
+      "sizeRange": "Size Range",
+      "bedrooms": "Bedrooms",
+      "bathrooms": "Bathrooms",
+      "yearBuilt": "Year Built"
+    },
+    "filters": {
+      "apply": "Apply Filters",
+      "clear": "Clear All",
+      "reset": "Reset",
+      "showMore": "Show More",
+      "showLess": "Show Less"
+    },
+    "sort": {
+      "title": "Sort By",
+      "newest": "Newest First",
+      "oldest": "Oldest First",
+      "priceHigh": "Price: High to Low",
+      "priceLow": "Price: Low to High",
+      "sizeHigh": "Size: High to Low",
+      "sizeLow": "Size: Low to High"
+    },
+    "categories": {
+      "propertyType": "Property Type",
+      "price": "Price",
+      "size": "Size",
+      "bedrooms": "Bedrooms",
+      "bathrooms": "Bathrooms",
+      "yearBuilt": "Year Built",
+      "features": "Features",
+      "amenities": "Amenities",
+      "location": "Location",
+      "ownership": "Ownership",
+      "contact": "Contact Method"
+    },
+    "options": {
+      "furnished": "Furnished",
+      "featured": "Featured",
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "loading": "Loading filters...",
+    "noResults": "No properties found with these filters.",
+    "error": "Error loading filters. Please try again.",
+    "propertyTypes": {
+      "residential": "Residential",
+      "commercial": "Commercial",
+      "land": "Land",
+      "industrial": "Industrial",
+      "mixedUse": "Mixed Use"
+    },
+    "statusOptions": {
+      "available": "Available",
+      "pending": "Pending",
+      "sold": "Sold",
+      "rented": "Rented"
+    },
+    "sortOptions": {
+      "price": "Price",
+      "size": "Size",
+      "createdAt": "Date Created"
+    },
+    "utils": {
+      "formatPrice": "Price",
+      "formatSize": "Size",
+      "getPropertyTypeLabel": "Property Type"
+    }
+  }
+} 

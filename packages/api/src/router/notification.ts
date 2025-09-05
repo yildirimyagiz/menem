@@ -1,20 +1,13 @@
-import type {
-  Agency,
-  Agent,
-  Prisma,
-  Notification as PrismaNotification,
-  Review,
-  Tenant,
-  User,
-} from "@prisma/client";
-import type { TRPCRouterRecord } from "@trpc/server";
-import { z } from "zod";
-
+import type { NotificationType } from "@prisma/client";
+import { Prisma } from "@prisma/client";
 import {
   CreateNotificationSchema,
   NotificationFilterSchema,
   UpdateNotificationSchema,
-} from "@acme/validators";
+} from "@reservatior/validators";
+import type { TRPCRouterRecord } from "@trpc/server";
+import { TRPCError } from "@trpc/server";
+import { z } from "zod";
 
 import { getPaginationParams } from "../helpers/pagination";
 import { withCacheAndFormat } from "../helpers/withCacheAndFormat";
@@ -85,24 +78,22 @@ export const notificationRouter = {
     .query(async ({ ctx, input }) => {
       const safePage = typeof input?.page === "number" ? input.page : undefined;
       const safeLimit =
-        typeof input?.limit === "number" ? input.limit : undefined;
+        typeof input?.pageSize === "number" ? input.pageSize : undefined;
       const { skip, take, page, limit } = getPaginationParams({
         page: safePage,
         limit: safeLimit,
       });
       // Construct a dynamic cache key based on filters to ensure cache validity
-      const filterParams =
-        input && typeof input === "object" && input !== null
-          ? Object.entries(input as object)
-              .filter(([, value]) => value !== undefined)
-              .sort(([keyA], [keyB]) => keyA.localeCompare(keyB)) // Sort for consistent key order
-              .map(([key, value]) => `${key}=${String(value)}`)
-              .join("&")
-          : "";
+      const filterObj = input ?? {};
+      const filterParams = Object.entries(filterObj as object)
+        .filter(([, value]) => value !== undefined)
+        .sort(([keyA], [keyB]) => keyA.localeCompare(keyB))
+        .map(([key, value]) => `${key}=${String(value)}`)
+        .join("&");
       const cacheKey = `notifications:all:page${page}:limit${limit}:${filterParams}`;
 
       return await withCacheAndFormat(cacheKey, async () => {
-        const where: Record<string, unknown> = {
+        const where: Prisma.NotificationWhereInput = {
           deletedAt: null, // Default to not showing deleted notifications
         };
 
@@ -130,18 +121,15 @@ export const notificationRouter = {
           }
         }
 
+        const sortBy = input?.sortBy;
+        const sortOrder = input?.sortOrder;
         const [notifications, total] = await Promise.all([
           ctx.db.notification.findMany({
             where,
             orderBy:
-              typeof input?.sortBy === "string"
-                ? {
-                    [input.sortBy]:
-                      typeof input?.sortOrder === "string"
-                        ? input.sortOrder
-                        : "asc",
-                  }
-                : { createdAt: "desc" }, // Default sort by creation date
+              typeof sortBy === "string"
+                ? { [sortBy]: typeof sortOrder === "string" ? sortOrder : "asc" }
+                : { createdAt: "desc" },
             skip,
             take,
             include: notificationInclude,
@@ -180,13 +168,15 @@ export const notificationRouter = {
           typeof input.content !== "string" ||
           typeof input.userId !== "string"
         ) {
-          throw new Error(
-            "Missing required fields: type, content, or userId for NotificationCreateInput",
-          );
+          throw new TRPCError({
+            code: "BAD_REQUEST",
+            message:
+              "Missing required fields: type, content, or userId for NotificationCreateInput",
+          });
         }
         const data: Prisma.NotificationCreateInput = {
           id: crypto.randomUUID(),
-          type: input.type as any,
+          type: input.type as NotificationType,
           content: input.content,
           isRead: false,
           createdAt: new Date(),
@@ -213,13 +203,14 @@ export const notificationRouter = {
         });
         return sanitizeNotification(notification as FullNotificationFromPrisma);
       } catch (err: unknown) {
-        console.error("Failed to create notification:", err);
-        if (err instanceof Error) {
-          throw new Error(`Failed to create notification: ${err.message}`);
-        }
-        throw new Error(
-          "An unknown error occurred while creating the notification.",
-        );
+        throw new TRPCError({
+          code: "INTERNAL_SERVER_ERROR",
+          message:
+            err instanceof Error
+              ? `Failed to create notification: ${err.message}`
+              : "Failed to create notification.",
+          cause: err instanceof Error ? err : undefined,
+        });
       }
     }),
 
@@ -238,11 +229,20 @@ export const notificationRouter = {
         });
         return sanitizeNotification(notification as FullNotificationFromPrisma);
       } catch (error: unknown) {
-        if (error instanceof Error && (error as any).code === "P2025") {
-          throw new Error("Notification not found or already deleted.");
+        if (
+          error instanceof Prisma.PrismaClientKnownRequestError &&
+          error.code === "P2025"
+        ) {
+          throw new TRPCError({
+            code: "NOT_FOUND",
+            message: "Notification not found or already deleted.",
+          });
         }
-        console.error("Failed to update notification:", error);
-        throw new Error("Failed to update notification.");
+        throw new TRPCError({
+          code: "INTERNAL_SERVER_ERROR",
+          message: "Failed to update notification.",
+          cause: error instanceof Error ? error : undefined,
+        });
       }
     }),
 
@@ -260,11 +260,320 @@ export const notificationRouter = {
         });
         return sanitizeNotification(notification as FullNotificationFromPrisma);
       } catch (error: unknown) {
-        if (error instanceof Error && (error as any).code === "P2025") {
-          throw new Error("Notification not found or already deleted.");
+        if (
+          error instanceof Prisma.PrismaClientKnownRequestError &&
+          error.code === "P2025"
+        ) {
+          throw new TRPCError({
+            code: "NOT_FOUND",
+            message: "Notification not found or already deleted.",
+          });
         }
-        console.error("Failed to delete notification:", error);
-        throw new Error("Failed to delete notification.");
+        throw new TRPCError({
+          code: "INTERNAL_SERVER_ERROR",
+          message: "Failed to delete notification.",
+          cause: error instanceof Error ? error : undefined,
+        });
       }
+    }),
+
+  // Bulk mark as read
+  markAllAsRead: protectedProcedure
+    .input(z.object({ userId: z.string().optional() }))
+    .mutation(async ({ ctx, input }) => {
+      try {
+        const where: Prisma.NotificationWhereInput = {
+          isRead: false,
+          deletedAt: null,
+        };
+
+        if (input.userId) {
+          where.userId = input.userId;
+        }
+
+        const result = await ctx.db.notification.updateMany({
+          where,
+          data: {
+            isRead: true,
+            updatedAt: new Date(),
+          },
+        });
+
+        return { updatedCount: result.count };
+      } catch (error: unknown) {
+        throw new TRPCError({
+          code: "INTERNAL_SERVER_ERROR",
+          message: "Failed to mark all notifications as read.",
+          cause: error instanceof Error ? error : undefined,
+        });
+      }
+    }),
+
+  // Get notification statistics
+  stats: protectedProcedure
+    .input(z.object({ userId: z.string().optional() }))
+    .query(async ({ ctx, input }) => {
+      const where: Prisma.NotificationWhereInput = {
+        deletedAt: null,
+      };
+
+      if (input.userId) {
+        where.userId = input.userId;
+      }
+
+      const [total, unread, today] = await Promise.all([
+        ctx.db.notification.count({ where }),
+        ctx.db.notification.count({ where: { ...where, isRead: false } }),
+        ctx.db.notification.count({
+          where: {
+            ...where,
+            createdAt: {
+              gte: new Date(new Date().setHours(0, 0, 0, 0)),
+            },
+          },
+        }),
+      ]);
+
+      return {
+        total,
+        unread,
+        today,
+      };
+    }),
+
+  // Get unread count
+  unreadCount: protectedProcedure
+    .input(z.object({ userId: z.string().optional() }))
+    .query(async ({ ctx, input }) => {
+      const where: Prisma.NotificationWhereInput = {
+        isRead: false,
+        deletedAt: null,
+      };
+
+      if (input.userId) {
+        where.userId = input.userId;
+      }
+
+      const count = await ctx.db.notification.count({ where });
+      return { count };
+    }),
+
+  // Get notifications by type
+  byType: protectedProcedure
+    .input(
+      z.object({
+        type: z.enum([
+          "MENTION",
+          "TASK_ASSIGNED",
+          "BOOKING_CONFIRMED",
+          "REVIEW_RECEIVED",
+          "PRICE_CHANGE",
+          "SYSTEM_UPDATE",
+          "COMPLIANCE_ALERT",
+          "COMMUNICATION_RECEIVED",
+          "RENT_DUE",
+          "RENT_PAID",
+          "LEASE_EXPIRING",
+          "MAINTENANCE_REQUEST",
+          "LEASE_RENEWAL",
+          "LATE_PAYMENT_WARNING",
+          "LEASE_TERMINATION",
+          "RENT_INCREASE",
+          "COMMUNITY_NOTICE",
+          "POLICY_UPDATE",
+          "LIKE",
+          "COMMENT",
+          "FOLLOW",
+          "AVAILABILITY",
+          "OTHER",
+        ]),
+        userId: z.string().optional(),
+        page: z.number().min(1).optional(),
+        pageSize: z.number().min(1).max(100).optional(),
+      }),
+    )
+    .query(async ({ ctx, input }) => {
+      const { skip, take, page, limit } = getPaginationParams({
+        page: input.page,
+        limit: input.pageSize,
+      });
+
+      const where: Prisma.NotificationWhereInput = {
+        type: input.type,
+        deletedAt: null,
+      };
+
+      if (input.userId) {
+        where.userId = input.userId;
+      }
+
+      const [notifications, total] = await Promise.all([
+        ctx.db.notification.findMany({
+          where,
+          orderBy: { createdAt: "desc" },
+          skip,
+          take,
+          include: notificationInclude,
+        }),
+        ctx.db.notification.count({ where }),
+      ]);
+
+      return {
+        data: notifications.map((n) =>
+          sanitizeNotification(n as FullNotificationFromPrisma),
+        ),
+        page,
+        limit,
+        total,
+      };
+    }),
+
+  // Get high priority notifications
+  highPriority: protectedProcedure
+    .input(
+      z.object({
+        userId: z.string().optional(),
+        page: z.number().min(1).optional(),
+        pageSize: z.number().min(1).max(100).optional(),
+      }),
+    )
+    .query(async ({ ctx, input }) => {
+      const { skip, take, page, limit } = getPaginationParams({
+        page: input.page,
+        limit: input.pageSize,
+      });
+
+      const highPriorityTypes = [
+        "TASK_ASSIGNED",
+        "BOOKING_CONFIRMED",
+        "COMPLIANCE_ALERT",
+        "RENT_DUE",
+        "LEASE_EXPIRING",
+        "LEASE_RENEWAL",
+        "LATE_PAYMENT_WARNING",
+        "LEASE_TERMINATION",
+      ];
+
+      const where: Record<string, unknown> = {
+        type: { in: highPriorityTypes },
+        deletedAt: null,
+      };
+
+      if (input.userId) {
+        where.userId = input.userId;
+      }
+
+      const [notifications, total] = await Promise.all([
+        ctx.db.notification.findMany({
+          where,
+          orderBy: { createdAt: "desc" },
+          skip,
+          take,
+          include: notificationInclude,
+        }),
+        ctx.db.notification.count({ where }),
+      ]);
+
+      return {
+        data: notifications.map((n) =>
+          sanitizeNotification(n as FullNotificationFromPrisma),
+        ),
+        page,
+        limit,
+        total,
+      };
+    }),
+
+  // Get today's notifications
+  today: protectedProcedure
+    .input(
+      z.object({
+        userId: z.string().optional(),
+        page: z.number().min(1).optional(),
+        pageSize: z.number().min(1).max(100).optional(),
+      }),
+    )
+    .query(async ({ ctx, input }) => {
+      const { skip, take, page, limit } = getPaginationParams({
+        page: input.page,
+        limit: input.pageSize,
+      });
+
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+
+      const where: Prisma.NotificationWhereInput = {
+        createdAt: { gte: today },
+        deletedAt: null,
+      };
+
+      if (input.userId) {
+        where.userId = input.userId;
+      }
+
+      const [notifications, total] = await Promise.all([
+        ctx.db.notification.findMany({
+          where,
+          orderBy: { createdAt: "desc" },
+          skip,
+          take,
+          include: notificationInclude,
+        }),
+        ctx.db.notification.count({ where }),
+      ]);
+
+      return {
+        data: notifications.map((n) =>
+          sanitizeNotification(n as FullNotificationFromPrisma),
+        ),
+        page,
+        limit,
+        total,
+      };
+    }),
+
+  // Get mentions
+  mentions: protectedProcedure
+    .input(
+      z.object({
+        userId: z.string().optional(),
+        page: z.number().min(1).optional(),
+        pageSize: z.number().min(1).max(100).optional(),
+      }),
+    )
+    .query(async ({ ctx, input }) => {
+      const { skip, take, page, limit } = getPaginationParams({
+        page: input.page,
+        limit: input.pageSize,
+      });
+
+      const where: Prisma.NotificationWhereInput = {
+        type: "MENTION",
+        deletedAt: null,
+      };
+
+      if (input.userId) {
+        where.userId = input.userId;
+      }
+
+      const [notifications, total] = await Promise.all([
+        ctx.db.notification.findMany({
+          where,
+          orderBy: { createdAt: "desc" },
+          skip,
+          take,
+          include: notificationInclude,
+        }),
+        ctx.db.notification.count({ where }),
+      ]);
+
+      return {
+        data: notifications.map((n) =>
+          sanitizeNotification(n as FullNotificationFromPrisma),
+        ),
+        page,
+        limit,
+        total,
+      };
     }),
 } satisfies TRPCRouterRecord;

@@ -78,7 +78,7 @@ export const ReservationSchema = z
     Guest: z.any().optional(),
   })
   .refine(
-    (data) => !data.endDate || !data.startDate || data.endDate > data.startDate,
+    (data) => data.endDate && data.startDate && data.endDate > data.startDate,
     {
       message: "End date must be after start date",
       path: ["endDate"],
@@ -142,77 +142,99 @@ export const CreateReservationSchema = z
   });
 
 // Update Reservation Schema
-export const UpdateReservationSchema = z.object({
-  id: z.string({
-    required_error: "Reservation ID is required",
-    invalid_type_error: "Reservation ID must be a string",
-  }),
-  propertyId: z.string().optional(),
-  guestId: z.string().optional(),
-  userId: z.string().optional(),
-  agentId: z.string().optional(),
-  startDate: z.date().optional(),
-  endDate: z.date().optional(),
-  guests: z
-    .number()
-    .int()
-    .positive("Number of guests must be positive")
-    .optional(),
-  status: ReservationStatusEnum.optional(),
-  totalPrice: z.number().optional(),
-  currencyId: z.string().optional(),
-  paymentStatus: PaymentStatusEnum.optional(),
-  specialRequests: z.string().optional(),
-  checkInTime: z.date().optional(),
-  checkOutTime: z.date().optional(),
-  pricingRuleId: z.string().optional(),
-  discountId: z.string().optional(),
-  agencyId: z.string().optional(),
-  reportId: z.string().optional(),
-  providerId: z.string().optional(),
-  deletedAt: z.date().optional(),
-}).refine(data => !data.endDate || !data.startDate || data.endDate > data.startDate, {
-  message: "End date must be after start date",
-  path: ["endDate"],
-});
+export const UpdateReservationSchema = z
+  .object({
+    id: z.string({
+      required_error: "Reservation ID is required",
+      invalid_type_error: "Reservation ID must be a string",
+    }),
+    propertyId: z.string().optional(),
+    guestId: z.string().optional(),
+    userId: z.string().optional(),
+    agentId: z.string().optional(),
+    startDate: z.date().optional(),
+    endDate: z.date().optional(),
+    guests: z
+      .number()
+      .int()
+      .positive("Number of guests must be positive")
+      .optional(),
+    status: ReservationStatusEnum.optional(),
+    totalPrice: z.number().optional(),
+    currencyId: z.string().optional(),
+    paymentStatus: PaymentStatusEnum.optional(),
+    specialRequests: z.string().optional(),
+    checkInTime: z.date().optional(),
+    checkOutTime: z.date().optional(),
+    pricingRuleId: z.string().optional(),
+    discountId: z.string().optional(),
+    agencyId: z.string().optional(),
+    reportId: z.string().optional(),
+    providerId: z.string().optional(),
+    deletedAt: z.date().optional(),
+  })
+  .refine(
+    (data) => !data.endDate || !data.startDate || data.endDate > data.startDate,
+    {
+      message: "End date must be after start date",
+      path: ["endDate"],
+    },
+  );
 
 // Reservation Filter Schema
-export const ReservationFilterSchema = z.object({
-  propertyId: z.string().optional(),
-  guestId: z.string().optional(),
-  userId: z.string().optional(),
-  agentId: z.string().optional(),
-  status: ReservationStatusEnum.optional(),
-  startDateFrom: z.date().optional(),
-  startDateTo: z.date().optional(),
-  endDateFrom: z.date().optional(),
-  endDateTo: z.date().optional(),
-  paymentStatus: PaymentStatusEnum.optional(),
-  currencyId: z.string().optional(),
-  agencyId: z.string().optional(),
-  providerId: z.string().optional(),
-  totalPriceFrom: z.number().optional(),
-  totalPriceTo: z.number().optional(),
-  page: z.number().min(1).optional(),
-  pageSize: z.number().min(1).max(100).optional(),
-  sortBy: z.enum(["createdAt", "status", "startDate", "endDate"]).optional(),
-  sortOrder: z.enum(["asc", "desc"]).optional(),
-}).refine((data) => {
-  // Validate date ranges
-  if (data.startDateFrom && data.startDateTo && data.startDateFrom > data.startDateTo) {
-    return false;
-  }
-  if (data.endDateFrom && data.endDateTo && data.endDateFrom > data.endDateTo) {
-    return false;
-  }
-  if (data.totalPriceFrom && data.totalPriceTo && data.totalPriceFrom > data.totalPriceTo) {
-    return false;
-  }
-  return true;
-}, {
-  message: "'To' date/price must be after 'From' date/price",
-  path: ["dateRange"],
-});
+export const ReservationFilterSchema = z
+  .object({
+    propertyId: z.string().optional(),
+    guestId: z.string().optional(),
+    userId: z.string().optional(),
+    agentId: z.string().optional(),
+    status: ReservationStatusEnum.optional(),
+    startDateFrom: z.date().optional(),
+    startDateTo: z.date().optional(),
+    endDateFrom: z.date().optional(),
+    endDateTo: z.date().optional(),
+    paymentStatus: PaymentStatusEnum.optional(),
+    currencyId: z.string().optional(),
+    agencyId: z.string().optional(),
+    providerId: z.string().optional(),
+    totalPriceFrom: z.number().optional(),
+    totalPriceTo: z.number().optional(),
+    page: z.number().min(1).optional(),
+    pageSize: z.number().min(1).max(100).optional(),
+    sortBy: z.enum(["createdAt", "status", "startDate", "endDate"]).optional(),
+    sortOrder: z.enum(["asc", "desc"]).optional(),
+  })
+  .refine(
+    (data) => {
+      // Validate date ranges
+      if (
+        data.startDateFrom &&
+        data.startDateTo &&
+        data.startDateFrom > data.startDateTo
+      ) {
+        return false;
+      }
+      if (
+        data.endDateFrom &&
+        data.endDateTo &&
+        data.endDateFrom > data.endDateTo
+      ) {
+        return false;
+      }
+      if (
+        data.totalPriceFrom &&
+        data.totalPriceTo &&
+        data.totalPriceFrom > data.totalPriceTo
+      ) {
+        return false;
+      }
+      return true;
+    },
+    {
+      message: "'To' date/price must be after 'From' date/price",
+      path: ["dateRange"],
+    },
+  );
 
 // Zod Type Inference for TypeScript
 export type Reservation = z.infer<typeof ReservationSchema>;

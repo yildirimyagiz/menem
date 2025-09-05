@@ -1,0 +1,194 @@
+{
+  "ClientDashboard": {
+    "title": "Müşteri Paneli",
+    "description": "Müşteri panelinizin genel bakışı",
+    "sections": {
+      "properties": "Mülkler",
+      "tenants": "Kiracılar",
+      "payments": "Ödemeler",
+      "tasks": "Görevler",
+      "messages": "Mesajlar"
+    },
+    "badges": {
+      "totalProperties": "Toplam Gayrimenkul",
+      "totalTenants": "Toplam Kiracı",
+      "totalPayments": "Toplam Ödeme",
+      "totalTasks": "Toplam Görev",
+      "totalMessages": "Toplam Mesaj"
+    },
+    "quickActions": {
+      "addProperty": "Gayrimenkul Ekle",
+      "addTenant": "Kiracı Ekle",
+      "makePayment": "Ödeme Yap",
+      "createTask": "Görev Oluştur",
+      "sendMessage": "Mesaj Gönder"
+    },
+    "systemStatus": {
+      "online": "Çevrimiçi",
+      "offline": "Çevrimdışı",
+      "maintenance": "Bakım"
+    },
+    "floatingActions": {
+      "add": "Ekle",
+      "dashboard": "Panel",
+      "notifications": "Bildirimler",
+      "userManagementDescription": "Tüm kullanıcılarınızı yönetin ve görüntüleyin",
+      "addNewUser": "Yeni Kullanıcı Ekle",
+      "addFirstUser": "İlk Kullanıcıyı Ekle",
+      "searchUsers": "Kullanıcı ara...",
+      "noUsersFound": "Kullanıcı bulunamadı. İlk kullanıcınızı ekleyerek başlayın!",
+      "showingResults": "{start}-{end} / {total} sonuç gösteriliyor",
+      "name": "Ad",
+      "role": "Rol",
+      "viewDetails": "Detayları Görüntüle",
+      "editUser": "Kullanıcı Düzenle",
+      "deleteUser": "Kullanıcı Sil",
+      "owners": "Sahipleri",
+      "messages": "Mesajlar",
+      "reports": "Raporlar",
+      "subscriptionPackages": "Abonelik Paketleri",
+      "reviews": "Yorumlar",
+      "extraCharges": "Ek Ücretler",
+      "languages": "Diller",
+      "increases": "Artışlar",
+      "includedServices": "Dahil Hizmetler",
+      "expenses": "Giderler",
+      "locations": "Konumlar",
+      "mentions": "Bahsedilenler",
+      "mortgages": "İpotekler",
+      "offers": "Teklifler",
+      "payments": "Ödemeler",
+      "permissions": "İzinler",
+      "photos": "Fotoğraflar",
+      "posts": "Gönderiler",
+      "pricingRules": "Fiyatlandırma Kuralları",
+      "tickets": "Destek Talepleri",
+      "tasks": "Görevler",
+      "common": {
+        "search": "Ara...",
+        "filter": "Filtrele",
+        "sort": "Sırala",
+        "actions": "İşlemler",
+        "view": "Görüntüle",
+        "edit": "Düzenle",
+        "delete": "Sil",
+        "create": "Oluştur",
+        "save": "Kaydet",
+        "cancel": "İptal",
+        "confirm": "Onayla",
+        "back": "Geri",
+        "next": "İleri",
+        "previous": "Önceki",
+        "loading": "Yükleniyor...",
+        "noData": "Veri mevcut değil",
+        "viewDetails": "Detayları Görüntüle",
+        "error": "Hata",
+        "success": "Başarılı",
+        "warning": "Uyarı",
+        "info": "Bilgi",
+        "hide": "Gizle",
+        "show": "Göster",
+        "manage": "Yönet"
+      }
+    },
+    "dateTime": {
+      "timePicker": {
+        "label": "Saat",
+        "placeholder": "Saat girin",
+        "invalidTime": "Lütfen geçerli bir saat girin",
+        "format": "Saat formatı"
+      },
+      "datePicker": {
+        "label": "Tarih",
+        "placeholder": "Tarih girin",
+        "invalidDate": "Lütfen geçerli bir tarih girin",
+        "format": "Tarih formatı"
+      }
+    },
+    "places": {
+      "title": "{city} Şehrindeki Yerler",
+      "subtitle": "Çevrenizdeki en iyi yerleri keşfedin",
+      "resultsSummary": "{total} yerden {showing} tanesi gösteriliyor",
+      "page": {
+        "title": "Şehir Rehberi: Öne Çıkan Yerler",
+        "description": "Yerel rehberler tarafından ilham alınarak seçilmiş restoranlar, barlar, fırınlar ve daha fazlasını keşfedin."
+      },
+      "categories": {
+        "all": "Tümü",
+        "restaurant": "Restoranlar",
+        "school": "Okullar",
+        "facility": "Tesisler",
+        "sport": "Spor",
+        "featuredPlaces": "Öne Çıkan Yerler"
+      },
+      "goldenGateRestaurant": {
+        "name": "Golden Gate Restoranı",
+        "description": "Sembolik Golden Gate Köprüsü manzarasına sahip lüks yemek yeme deneyimi.",
+        "address": "123 Köprü Manzaralı Caddesi, San Francisco, CA"
+      },
+      "sanFranciscoHighSchool": {
+        "name": "San Francisco Lisesi",
+        "description": "Zengin bir tarihe sahip prestijli bir eğitim kurumu.",
+        "address": "456 Eğitim Caddesi, San Francisco, CA"
+      },
+      "downtownFitnessCenter": {
+        "name": "Downtown Fitness Merkezi",
+        "description": "Şehir merkezinde yer alan son teknoloji fitness tesisleri.",
+        "address": "789 Fitness Bulvarı, San Francisco, CA"
+      },
+      "marinaSportsComplex": {
+        "name": "Marina Spor Kompleksi",
+        "description": "Muhteşem marina manzarasına sahip çok sporlu tesisler.",
+        "address": "321 Marina Bulvarı, San Francisco, CA"
+      },
+      "searchAndFilter": {
+        "listView": "Liste Görünümü",
+        "mapView": "Harita Görünümü",
+        "searchPlaceholder": "Yer ara...",
+        "filterBy": "Filtrele:"
+      },
+      "placeCard": {
+        "noImage": "Resim mevcut değil",
+        "rating": "⭐ {rating}",
+        "distance": "📍 {distance}",
+        "viewDetails": "Detayları Görüntüle"
+      },
+      "placesGrid": {
+        "activateMap": "Haritayı Etkinleştir",
+        "featuredPlaces": "Öne Çıkan Yerler"
+      },
+      "interactiveMap": {
+        "title": "Etkileşimli Harita",
+        "placesFound": "{count} yer bulundu",
+        "legend": {
+          "title": "Lejant:",
+          "restaurant": "Restoran",
+          "school": "Okul",
+          "facility": "Tesis",
+          "sportCenter": "Spor Merkezi",
+          "yourLocation": "Konumunuz"
+        }
+      },
+      "locationControls": {
+        "title": "📍 Gerçek Zamanlı Konum",
+        "accuracy": "±{meters}m",
+        "locationActive": "Konum aktif",
+        "tracking": "🔄 Takip Ediliyor",
+        "getMyLocation": "📍 Konumumu Al",
+        "stopTracking": "🚫 Takibi Durdur",
+        "startTracking": "🔄 Takibi Başlat",
+        "yourLocation": "Konumunuz:",
+        "locationDenied": "⚠️ Konum erişimi reddedildi. Lütfen tarayıcınızda konum izinlerini etkinleştirin."
+      },
+      "advices": {
+        "title": "Yerel Tavsiyeler",
+        "authorPrefix": "— "
+      },
+      "reviews": {
+        "title": "Son İncelemeler",
+        "by": "{reviewer} tarafından",
+        "stars": "{stars}{emptyStars}"
+      }
+    }
+  }
+}

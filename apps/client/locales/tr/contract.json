@@ -1,0 +1,146 @@
+{
+  "contract": {
+    "title": "Sözleşme Yönetimi",
+    "subtitle": "Kiralama sözleşmelerinizi yönetin, anlaşmaları takip edin ve kapsamlı sözleşme kontrol panelimizle mülk yönetiminizi optimize edin.",
+    "form": {
+      "title": "Sözleşme",
+      "add": "Sözleşme Ekle",
+      "edit": "Sözleşme Düzenle",
+      "delete": "Sözleşme Sil",
+      "contractNumber": "Sözleşme Numarası",
+      "startDate": "Başlangıç Tarihi",
+      "endDate": "Bitiş Tarihi",
+      "actions": "İşlemler",
+      "submit": "Gönder",
+      "cancel": "İptal"
+    },
+    "stats": {
+      "totalContracts": "Toplam Sözleşme",
+      "activeContracts": "Aktif Sözleşmeler",
+      "expiredContracts": "Süresi Dolmuş Sözleşmeler",
+      "draftContracts": "Taslak Sözleşmeler"
+    },
+    "tabs": {
+      "all": "Tümü",
+      "active": "Aktif",
+      "expired": "Süresi Dolmuş",
+      "draft": "Taslak"
+    },
+    "actions": {
+      "newContract": "Yeni Sözleşme",
+      "createContract": "Sözleşme Oluştur",
+      "analytics": "Analizler",
+      "search": "Sözleşmelerde ara...",
+      "tryAgain": "Tekrar Dene"
+    },
+    "tooltips": {
+      "createContract": "Yeni bir sözleşme oluştur",
+      "analytics": "Sözleşme analizlerini görüntüle"
+    },
+    "status": {
+      "active": "Aktif",
+      "inactive": "Pasif",
+      "draft": "Taslak",
+      "published": "Yayınlandı",
+      "expired": "Süresi Dolmuş",
+      "terminated": "Sonlandırıldı",
+      "cancelled": "İptal Edildi",
+      "overdue": "Gecikmiş",
+      "renewed": "Yenilendi"
+    },
+    "card": {
+      "noDescription": "Açıklama bulunamadı",
+      "daysRemaining": "gün kaldı",
+      "expired": "süresi doldu",
+      "expiringSoon": "yakında sona erecek",
+      "viewDetails": "Detayları Görüntüle",
+      "editContract": "Sözleşmeyi Düzenle",
+      "deleteContract": "Sözleşmeyi Sil",
+      "viewTerms": "Şartları Görüntüle",
+      "signContract": "Sözleşmeyi İmzala",
+      "property": "Mülk",
+      "agency": "Acente",
+      "duration": "Süre",
+      "status": "Durum",
+      "terms": "Şartlar",
+      "view": "Görüntüle",
+      "created": "Oluşturuldu",
+      "actions": {
+        "viewTerms": "Şartları Görüntüle",
+        "signContract": "Sözleşmeyi İmzala",
+        "editContract": "Sözleşmeyi Düzenle",
+        "deleteContract": "Sözleşmeyi Sil"
+      }
+    },
+    "errors": {
+      "failedToLoad": "Sözleşmeler Yüklenemedi",
+      "unexpectedError": "Beklenmeyen bir hata oluştu.",
+      "noContractsFound": "Sözleşme Bulunamadı",
+      "noSearchResults": "Arama kriterlerinize uygun sözleşme bulunamadı.",
+      "getStarted": "İlk sözleşmenizi oluşturarak başlayın."
+    },
+    "filter": {
+      "filters": "Filtreler",
+      "show": "Göster",
+      "hide": "Gizle",
+      "status": "Duruma göre filtrele",
+      "allStatuses": "Tüm Durumlar",
+      "advancedFilters": "Gelişmiş Filtreler",
+      "refineDescription": "Sözleşme aramanızı detaylı kriterlerle daraltın",
+      "tenantId": "Kiracı ID",
+      "enterTenantId": "Kiracı ID girin",
+      "propertyId": "Mülk ID",
+      "enterPropertyId": "Mülk ID girin",
+      "agencyId": "Acente ID",
+      "enterAgencyId": "Acente ID girin",
+      "startDate": "Başlangıç Tarihi",
+      "endDate": "Bitiş Tarihi",
+      "startDateFrom": "Başlangıç Tarihi (Başlangıç)",
+      "startDateTo": "Başlangıç Tarihi (Bitiş)",
+      "endDateFrom": "Bitiş Tarihi (Başlangıç)",
+      "endDateTo": "Bitiş Tarihi (Bitiş)",
+      "pickDate": "Tarih seçin",
+      "sortBy": "Sırala",
+      "sortOrder": "Sıralama Düzeni",
+      "apply": "Uygula",
+      "clear": "Temizle",
+      "activeFilters": "Aktif Filtreler:",
+      "sortOptions": {
+        "startDate": "Başlangıç Tarihi",
+        "endDate": "Bitiş Tarihi",
+        "status": "Durum",
+        "name": "İsim"
+      },
+      "orderOptions": {
+        "asc": "Artan",
+        "desc": "Azalan"
+      }
+    },
+    "toast": {
+      "added": {
+        "title": "Sözleşme Eklendi",
+        "description": "Sözleşme başarıyla eklendi."
+      },
+      "updated": {
+        "title": "Sözleşme Güncellendi",
+        "description": "Sözleşme başarıyla güncellendi."
+      },
+      "deleted": {
+        "title": "Sözleşme Silindi",
+        "description": "Sözleşme başarıyla silindi."
+      },
+      "error": {
+        "title": "Hata",
+        "description": "Bir hata oluştu. Lütfen tekrar deneyin."
+      },
+      "createContract": {
+        "title": "Sözleşme Oluştur",
+        "description": "Sözleşme oluşturma özelliği yakında geliyor!"
+      }
+    },
+    "list": {
+      "empty": "Sözleşme bulunamadı.",
+      "loading": "Sözleşmeler yükleniyor..."
+    }
+  }
+}

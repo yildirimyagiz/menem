@@ -1,47 +1,24 @@
 import type {
-  Agency,
-  Agent,
-  Subscription as PrismaSubscription,
+    Agency,
+    Agent,
+    Subscription as PrismaSubscription,
 } from "@prisma/client";
-import type Stripe from "stripe";
-import { Prisma, SubscriptionStatus, SubscriptionTier } from "@prisma/client";
+import { Prisma } from "@prisma/client";
+import {
+    CreateSubscriptionSchema,
+    SubscriptionFilterSchema,
+    UpdateSubscriptionSchema,
+} from "@reservatior/validators";
 import { TRPCError } from "@trpc/server"; // Added TRPCError
+import type Stripe from "stripe";
 
 import { z } from "zod";
-
-import {
-  CreateSubscriptionSchema,
-  UpdateSubscriptionSchema,
-} from "@acme/validators";
 
 import { getPaginationParams } from "../helpers/pagination";
 import { stripe } from "../helpers/stripe";
 import { withCacheAndFormat } from "../helpers/withCacheAndFormat";
 import { createTRPCRouter, protectedProcedure, publicProcedure } from "../trpc";
 import { SUBSCRIPTION_PACKAGES } from "./subscriptionPackages";
-
-const SubscriptionFilterInputSchema = z
-  .object({
-    entityId: z.string().optional(),
-    entityType: z.string().optional(),
-    tier: z.nativeEnum(SubscriptionTier).optional(),
-    status: z.nativeEnum(SubscriptionStatus).optional(),
-    isAutoRenew: z.boolean().optional(),
-    startDateFrom: z.string().datetime().optional(),
-    startDateTo: z.string().datetime().optional(),
-    endDateFrom: z.string().datetime().optional(),
-    endDateTo: z.string().datetime().optional(),
-    createdAtFrom: z.string().datetime().optional(),
-    createdAtTo: z.string().datetime().optional(),
-    updatedAtFrom: z.string().datetime().optional(),
-    updatedAtTo: z.string().datetime().optional(),
-    deletedAt: z.date().nullable().optional(),
-    sortBy: z.string().optional(),
-    sortOrder: z.enum(["asc", "desc"]).optional(),
-    page: z.number().optional(),
-    limit: z.number().optional(),
-  })
-  .strict();
 
 type SubscriptionWithRelations = PrismaSubscription & {
   Agency: Agency | null;
@@ -72,12 +49,12 @@ function sanitizeSubscription(subscription: SubscriptionWithRelations | null) {
 export const subscriptionRouter = createTRPCRouter({
   // List all available subscription packages
   listPackages: publicProcedure.query(() => SUBSCRIPTION_PACKAGES),
-  all: protectedProcedure
-    .input(SubscriptionFilterInputSchema)
+  all: publicProcedure
+    .input(SubscriptionFilterSchema)
     .query(async ({ ctx, input }) => {
       const paginationInput = {
         page: input.page ?? 1,
-        limit: input.limit ?? 10,
+        limit: input.pageSize ?? 10,
       };
       const { skip, take, page, limit } = getPaginationParams(paginationInput);
       const cacheKey = `subscriptions:${page}:${limit}`;
@@ -131,7 +108,6 @@ export const subscriptionRouter = createTRPCRouter({
                   },
                 }
               : {},
-            input.deletedAt !== undefined ? { deletedAt: input.deletedAt } : {},
           ],
         };
 
@@ -163,7 +139,7 @@ export const subscriptionRouter = createTRPCRouter({
               sanitizeSubscription(subscription),
           ),
           page,
-          pageSize: limit, // Changed limit to pageSize
+          pageSize: limit,
           total,
         };
       });
@@ -244,7 +220,7 @@ export const subscriptionRouter = createTRPCRouter({
       }
     }),
   filter: protectedProcedure
-    .input(SubscriptionFilterInputSchema)
+    .input(SubscriptionFilterSchema)
     .query(async ({ ctx, input }) => {
       const subscriptions = await ctx.db.subscription.findMany({
         where: input,

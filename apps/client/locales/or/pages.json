@@ -1,0 +1,29 @@
+{
+  "title": "[Pages]",
+  "description": "[Static and dynamic pages.]",
+  "propertyListingsLink": {
+    "view": "[View Property Listings]"
+  },
+  "welcome": {
+    "title": "[Welcome to Reservatior]",
+    "intro": "[Your all-in-one platform to discover, connect, and manage properties, agencies, and rentals—trusted by professionals and renters alike.]",
+    "signIn": "[Sign In]",
+    "signUp": "[Sign Up]",
+    "exploreGuest": "[Explore as Guest]",
+    "copyright": "[All rights reserved.]",
+    "category": {
+      "discover": "[Discover]",
+      "connect": "[Connect]",
+      "manage": "[Manage]",
+      "discover.step1": "[Browse properties in your city or worldwide.]",
+      "discover.step2": "[Filter by type, price, and amenities.]",
+      "discover.step3": "[See real photos and city highlights.]",
+      "connect.step1": "[Contact trusted agencies and agents.]",
+      "connect.step2": "[Read verified reviews and ratings.]",
+      "connect.step3": "[Ask questions and get expert advice.]",
+      "manage.step1": "[Book, reserve, and track your stays.]",
+      "manage.step2": "[Manage tasks, contracts, and payments.]",
+      "manage.step3": "[Leave feedback and help others decide.]"
+    }
+  }
+}

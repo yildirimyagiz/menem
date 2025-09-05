@@ -1,4 +1,4 @@
-import type { Prisma } from "@acme/db";
+import type { Prisma } from "@reservatior/db";
 
 export type FavoriteWithIncludes = Prisma.FavoriteGetPayload<{
   include: {

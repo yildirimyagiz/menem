@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+
 # create-t3-turbo
 
 > [!NOTE]
@@ -72,7 +73,7 @@ tooling
       └─ shared tsconfig you can extend from
 ```
 
-> In this template, we use `@acme` as a placeholder for package names. As a user, you might want to replace it with your own organization or project name. You can use find-and-replace to change all the instances of `@acme` to something like `@my-company` or `@project-name`.
+> In this template, we use `@reservatior` as a placeholder for package names. As a user, you might want to replace it with your own organization or project name. You can use find-and-replace to change all the instances of `@reservatior` to something like `@my-company` or `@project-name`.
 
 ## Quick Start
 
@@ -265,7 +266,8 @@ Deploying your Expo application works slightly differently compared to Next.js o
 
 The stack originates from [create-t3-app](https://github.com/t3-oss/create-t3-app).
 
-A [blog post](https://jumr.dev/blog/t3-turbo) where I wrote how to migrate a T3 app into this.
-=======
-# menem
->>>>>>> 7b271fafd0a4f439b59838ddbf7135ee8736fae3
+# A [blog post](https://jumr.dev/blog/t3-turbo) where I wrote how to migrate a T3 app into this.
+
+# reservatior
+
+> > > > > > > 7b271fafd0a4f439b59838ddbf7135ee8736fae3

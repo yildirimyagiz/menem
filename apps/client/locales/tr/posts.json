@@ -1,0 +1,16 @@
+{
+  "Posts": {
+    "errorUnauthorized": "Unauthorized",
+    "errorCreatePost": "Error Create Post",
+    "title": "Başlık",
+    "content": "Content",
+    "create": "Oluştur",
+    "noPostsYet": "No Posts Yet",
+    "errorDeleting": "Error Deleting",
+    "errorUpdatePost": "Error Update Post",
+    "save": "Kaydet",
+    "cancel": "İptal",
+    "edit": "Düzenle",
+    "delete": "Sil"
+  }
+}

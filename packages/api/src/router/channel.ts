@@ -1,16 +1,15 @@
 import type { Channel } from "@prisma/client";
-import type { TRPCRouterRecord } from "@trpc/server";
-import { z } from "zod";
-
 import {
   ChannelFilterSchema,
   CreateChannelSchema,
   UpdateChannelSchema,
-} from "@acme/validators";
+} from "@reservatior/validators";
+import type { TRPCRouterRecord } from "@trpc/server";
+import { z } from "zod";
 
 import { getPaginationParams } from "../helpers/pagination";
 import { withCacheAndFormat } from "../helpers/withCacheAndFormat";
-import { protectedProcedure } from "../trpc";
+import { protectedProcedure, publicProcedure } from "../trpc";
 
 // Utility to sanitize channel data
 function sanitizeChannel(channel: Channel | null) {
@@ -23,7 +22,7 @@ function sanitizeChannel(channel: Channel | null) {
 
 export const channelRouter = {
   // Get a single channel by id
-  getById: protectedProcedure
+  getById: publicProcedure
     .input(z.object({ id: z.string() }))
     .query(async ({ ctx, input }) => {
       const channel = await ctx.db.channel.findUnique({
@@ -34,10 +33,13 @@ export const channelRouter = {
     }),
 
   // List channels with filtering, sorting, and pagination
-  list: protectedProcedure
+  list: publicProcedure
     .input(ChannelFilterSchema.optional())
     .query(async ({ ctx, input = {} }) => {
-      const { skip, take, page, limit } = getPaginationParams({ page: input.page, limit: input.pageSize });
+      const { skip, page, limit } = getPaginationParams({
+        page: input.page,
+        limit: input.pageSize,
+      });
       const {
         name,
         createdAtFrom,
@@ -48,7 +50,7 @@ export const channelRouter = {
         sortBy = "createdAt",
         sortOrder = "desc",
       } = input;
-      const where: any = {
+      const where: Record<string, unknown> = {
         ...(name ? { name: { contains: name, mode: "insensitive" } } : {}),
         ...(createdAtFrom || createdAtTo
           ? {
@@ -68,7 +70,7 @@ export const channelRouter = {
           : {}),
         ...(deletedAt ? { deletedAt } : { deletedAt: null }),
       };
-      const cacheKey = `channels:${page}:${limit}:${name ?? ""}:${createdAtFrom ?? ""}:${createdAtTo ?? ""}:${updatedAtFrom ?? ""}:${updatedAtTo ?? ""}:${deletedAt ?? ""}:${sortBy}:${sortOrder}`;
+      const cacheKey = `channels:${page}:${limit}:${name ?? ""}:${createdAtFrom?.toISOString() ?? ""}:${createdAtTo?.toISOString() ?? ""}:${updatedAtFrom?.toISOString() ?? ""}:${updatedAtTo?.toISOString() ?? ""}:${deletedAt?.toISOString() ?? ""}:${sortBy}:${sortOrder}`;
       return await withCacheAndFormat(cacheKey, async () => {
         const [total, channels] = await Promise.all([
           ctx.db.channel.count({ where }),

@@ -1,0 +1,32 @@
+"use client";
+
+import { useTranslations } from "next-intl";
+
+interface ServiceLike {
+  name?: string;
+  description?: string;
+  icon?: string;
+}
+
+export default function IncludedServicesCard({ services }: { services?: ServiceLike[] | null }) {
+  const t = useTranslations("ClientPropertyDetail");
+  const list = Array.isArray(services) ? services.filter(Boolean) : [];
+  if (list.length === 0) return null;
+
+  return (
+    <div className="mt-6 rounded-xl border bg-white p-4 shadow-sm">
+      <h3 className="mb-2 text-base font-semibold text-foreground">{t("includedServices.title", { default: "Included services" })}</h3>
+      <ul className="space-y-2">
+        {list.slice(0, 12).map((s, i) => (
+          <li key={i} className="flex items-start gap-2">
+            {s.icon && <span className="mt-0.5 text-sm">{s.icon}</span>}
+            <div>
+              <div className="text-sm text-foreground">{s.name ?? ""}</div>
+              {s.description && <div className="text-xs text-muted-foreground">{s.description}</div>}
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}

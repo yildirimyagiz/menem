@@ -1,0 +1,28 @@
+{
+  "dashboard": {
+    "welcome": {
+      "title": "Admin Paneline Hoş Geldiniz",
+      "description": "Burada mülkleri, kullanıcıları, görevleri yönetebilir ve analitikleri bir bakışta görebilirsiniz."
+    },
+    "stats": {
+      "totalProperties": "Toplam Gayrimenkul",
+      "activeUsers": "Aktif Kullanıcılar",
+      "payments": "Ödemeler",
+      "openTasks": "Açık Görevler",
+      "weeklyChange": "bu hafta +{count}",
+      "weeklyDecrease": "bu hafta -{count}"
+    },
+    "quickLinks": {
+      "title": "Hızlı Bağlantılar",
+      "manageProperties": "Mülkleri Yönet",
+      "userManagement": "Kullanıcı Yönetimi",
+      "viewTasks": "Görevleri Görüntüle",
+      "analytics": "Analitik"
+    },
+    "systemStatus": {
+      "title": "Sistem Durumu",
+      "operational": "Tüm sistemler çalışıyor",
+      "lastChecked": "Son kontrol: {time} önce"
+    }
+  }
+} 

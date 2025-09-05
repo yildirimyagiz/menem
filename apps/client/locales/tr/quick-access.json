@@ -1,0 +1,10 @@
+{
+  "quickAccess": {
+    "title": "Hızlı Erişim",
+    "description": "Başlamanız için bazı hızlı bağlantılar.",
+    "noSession": "Kullanıcı oturumu yok.",
+    "loading": "Kullanıcı verileri yükleniyor...",
+    "manageProperties": "Mülkleri Yönet",
+    "createListing": "Yeni İlan Oluştur"
+  }
+} 

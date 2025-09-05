@@ -1,0 +1,123 @@
+{
+  "places": {
+    "title": "City Guide: Notable Places",
+    "subtitle": "Discover curated restaurants, bars, bakeries, and more in {city}, inspired by local guides.",
+    "pageTitle": "City Guide: Notable Places",
+    "pageDescription": "Discover curated restaurants, bars, bakeries, and more in San Francisco, inspired by local guides.",
+    "advices": {
+      "title": "Local Advices",
+      "authorPrefix": "— "
+    },
+    "categoryFilters": {
+      "title": "Categories"
+    },
+    "placeCard": {
+      "viewDetails": "View Details",
+      "featured": "Featured"
+    },
+    "reviews": {
+      "title": "Reviews",
+      "by": "by",
+      "stars": "stars"
+    },
+    "interactiveMap": {
+      "title": "Map View",
+      "placesFound": "{count} places found",
+      "locationEnabled": "Location enabled"
+    },
+    "locationControls": {
+      "title": "Location Controls",
+      "getMyLocation": "Get My Location",
+      "startTracking": "Start Tracking",
+      "stopTracking": "Stop Tracking",
+      "tracking": "Tracking...",
+      "locationActive": "Location is active",
+      "yourLocation": "Your Location",
+      "locationDenied": "Location permission denied",
+      "accuracy": "Accuracy: {accuracy}m"
+    },
+    "mapLegend": {
+      "title": "Legend",
+      "restaurant": "Restaurant",
+      "school": "School",
+      "facility": "Facility",
+      "sportCenter": "Sport Center",
+      "yourLocation": "Your Location"
+    },
+    "placesGrid": {
+      "featuredPlaces": "Featured Places",
+      "activateMap": "Activate Map"
+    },
+    "searchAndFilter": {
+      "listView": "List View",
+      "mapView": "Map View",
+      "searchPlaceholder": "Search places...",
+      "filterBy": "Filter by"
+    },
+    "categories": {
+      "all": "All Places",
+      "restaurant": "Restaurants",
+      "school": "Schools",
+      "facility": "Facilities",
+      "sport": "Sports Centers"
+    },
+    "resultsSummary": "{showing} / {total} places shown",
+    "places": {
+      "goldenGateRestaurant": {
+        "name": "Golden Gate Restaurant",
+        "description": "A popular restaurant with stunning views of the Golden Gate Bridge",
+        "address": "123 Golden Gate Ave, San Francisco, CA"
+      },
+      "sanFranciscoHighSchool": {
+        "name": "San Francisco High School",
+        "description": "A prestigious public high school in the heart of San Francisco",
+        "address": "456 Education St, San Francisco, CA"
+      },
+      "downtownFitnessCenter": {
+        "name": "Downtown Fitness Center",
+        "description": "State-of-the-art fitness facility in downtown San Francisco",
+        "address": "789 Health Blvd, San Francisco, CA"
+      },
+      "marinaSportsComplex": {
+        "name": "Marina Sports Complex",
+        "description": "Multi-sport complex with indoor and outdoor facilities",
+        "address": "321 Marina Way, San Francisco, CA"
+      }
+    },
+    "actions": {
+      "viewPlace": "View Place",
+      "getDirections": "Get Directions",
+      "sharePlace": "Share Place",
+      "addToFavorites": "Add to Favorites",
+      "removeFromFavorites": "Remove from Favorites"
+    },
+    "loading": {
+      "loadingPlaces": "Loading places...",
+      "loadingMap": "Loading map...",
+      "gettingLocation": "Getting your location..."
+    },
+    "errors": {
+      "loadFailed": "Failed to load places",
+      "loadFailedDescription": "There was an error loading the places. Please try again.",
+      "locationFailed": "Failed to get location",
+      "locationFailedDescription": "Unable to get your current location. Please check your permissions.",
+      "retryButton": "Retry"
+    },
+    "empty": {
+      "noPlacesFound": "No places found",
+      "noPlacesDescription": "Try adjusting your search criteria or filters to find more places.",
+      "clearFilters": "Clear all filters"
+    },
+    "details": {
+      "title": "Place Details",
+      "address": "Address",
+      "phone": "Phone",
+      "website": "Website",
+      "hours": "Hours",
+      "rating": "Rating",
+      "price": "Price",
+      "type": "Type",
+      "description": "Description"
+    }
+  }
+}

@@ -1,13 +1,13 @@
 import type { PaymentStatus, Prisma } from "@prisma/client";
-import type { TRPCRouterRecord } from "@trpc/server";
-import { TRPCError } from "@trpc/server";
-import { z } from "zod";
-
 import {
   CreatePaymentSchema,
   PaymentFilterSchema,
   UpdatePaymentSchema,
-} from "@acme/validators";
+} from "@reservatior/validators";
+import type { TRPCRouterRecord } from "@trpc/server";
+import { TRPCError } from "@trpc/server";
+import Stripe from "stripe";
+import { z } from "zod";
 
 import {
   getPaginationParams,
@@ -18,6 +18,13 @@ import { protectedProcedure } from "../trpc";
 const paymentInclude = {
   Currency: true,
   Tenant: true,
+  Property: true,
+  Expense: true,
+  Reservation: true,
+  Subscription: true,
+  CommissionRule: true,
+  IncludedService: true,
+  ExtraCharge: true,
 } as const satisfies Prisma.PaymentInclude;
 
 type PaymentWithIncludes = Prisma.PaymentGetPayload<{
@@ -40,27 +47,67 @@ export interface SanitizedPayment {
   deletedAt: Date | null;
   currency: { id: string; code: string; symbol: string } | null;
   tenant: { id: string; name: string } | null;
+  property: { id: string; title?: string } | null;
+  expense: { id: string; type?: string } | null;
+  reservation: { id: string; startDate?: Date } | null;
+  subscription: { id: string; tier?: string } | null;
+  commissionRule: { id: string; ruleType?: string } | null;
+  includedService: { id: string; name?: string } | null;
+  extraCharge: { id: string; name?: string } | null;
 }
 
 function sanitizePayment(payment: PaymentWithIncludes): SanitizedPayment {
-  const { Currency, Tenant, ...rest } = payment;
+  const {
+    Currency,
+    Tenant,
+    Property,
+    Expense,
+    Reservation,
+    Subscription,
+    CommissionRule,
+    IncludedService,
+    ExtraCharge,
+    ...rest
+  } = payment;
   return {
     ...rest,
-    currency: Currency
-      ? {
-          id: Currency.id,
-          code: Currency.code || "",
-          symbol: Currency.symbol || "",
-        }
+    // Currency and Tenant are guaranteed by schema here; avoid unnecessary conditionals
+    currency: {
+      id: Currency.id,
+      code: Currency.code || "",
+      symbol: Currency.symbol || "",
+    },
+    tenant: {
+      id: Tenant.id,
+      name: `${Tenant.firstName || ""} ${Tenant.lastName || ""}`.trim(),
+    },
+    property: Property ? { id: Property.id, title: Property.title } : null,
+    expense: Expense ? { id: Expense.id, type: Expense.type } : null,
+    reservation: Reservation
+      ? { id: Reservation.id, startDate: Reservation.startDate }
       : null,
-    tenant: Tenant
-      ? {
-          id: Tenant.id,
-          name: `${Tenant.firstName || ""} ${Tenant.lastName || ""}`.trim(),
-        }
+    subscription: Subscription
+      ? { id: Subscription.id, tier: Subscription.tier }
+      : null,
+    commissionRule: CommissionRule
+      ? { id: CommissionRule.id, ruleType: CommissionRule.ruleType }
+      : null,
+    includedService: IncludedService
+      ? { id: IncludedService.id, name: IncludedService.name }
+      : null,
+    extraCharge: ExtraCharge
+      ? { id: ExtraCharge.id, name: ExtraCharge.name }
       : null,
   };
 }
+
+const stripeSecret = process.env.STRIPE_SECRET_KEY;
+if (!stripeSecret) {
+  throw new Error("STRIPE_SECRET_KEY is not set");
+}
+const stripe = new Stripe(stripeSecret, {
+  apiVersion: "2025-06-30.basil",
+});
 
 export const paymentRouter = {
   list: protectedProcedure
@@ -92,7 +139,8 @@ export const paymentRouter = {
       }> => {
         const { skip, take, page, limit } = getPaginationParams(input ?? {});
         const where: Prisma.PaymentWhereInput = {
-          ...(input?.tenantId && { tenantId: input.tenantId }),
+          // Always filter by current user's ID for security, unless explicitly overridden
+          tenantId: input?.tenantId ?? ctx.session.user.id,
           ...(input?.currencyId && { currencyId: input.currencyId }),
           ...(input?.status && { status: input.status }),
           ...(input?.paymentMethod && { paymentMethod: input.paymentMethod }),
@@ -160,7 +208,16 @@ export const paymentRouter = {
             message: "Payment not found",
           });
         }
-        return sanitizePayment(payment);
+        return sanitizePayment({
+          ...payment,
+          Property: null,
+          Expense: null,
+          Reservation: null,
+          Subscription: null,
+          CommissionRule: null,
+          IncludedService: null,
+          ExtraCharge: null,
+        });
       } catch (error) {
         // console.error(`Error fetching payment: ${error instanceof Error ? error.message : 'Unknown error'}`);
         if (error instanceof TRPCError) throw error;
@@ -181,10 +238,12 @@ export const paymentRouter = {
           data: {
             ...input,
             id: crypto.randomUUID(),
+            // Ensure tenantId is set from session if not provided
+            tenantId: input.tenantId ?? ctx.session.user.id,
             createdAt: new Date(),
             updatedAt: new Date(),
             // Ensure status is set if not part of CreatePaymentSchema, e.g., default to UNPAID
-            status: input.status ?? "UNPAID",
+            status: input.status,
           },
           include: paymentInclude,
         });
@@ -318,37 +377,153 @@ export const paymentRouter = {
       }),
     )
     .mutation(async ({ ctx, input }): Promise<SanitizedPayment> => {
-      try {
-        // console.log(`Refunding payment with ID: ${input.id}`);
-        const payment = await ctx.db.payment.update({
-          where: { id: input.id },
-          data: {
-            status: "REFUNDED",
-            notes: input.reason,
-            updatedAt: new Date(),
-          },
-          include: paymentInclude,
-        });
-        return sanitizePayment(payment);
-      } catch (error) {
-        // console.error(`Error refunding payment: ${error instanceof Error ? error.message : 'Unknown error'}`);
-        if (
-          error instanceof Error &&
-          "code" in error &&
-          error.code === "P2025"
-        ) {
-          // console.log(`Payment with ID ${input.id} not found for refund.`);
-          throw new TRPCError({
-            code: "NOT_FOUND",
-            message: "Payment not found for refund.",
-          });
-        }
-        if (error instanceof TRPCError) throw error;
+      // 1. Find the payment
+      const payment = await ctx.db.payment.findUnique({
+        where: { id: input.id },
+      });
+      if (!payment?.stripePaymentIntentId) {
         throw new TRPCError({
-          code: "INTERNAL_SERVER_ERROR",
-          message: "Failed to refund payment.",
-          cause: error,
+          code: "NOT_FOUND",
+          message: "Payment not found or not a Stripe payment",
         });
       }
+
+      // 2. Create Stripe refund
+      const refundParams: Stripe.RefundCreateParams = {
+        payment_intent: payment.stripePaymentIntentId,
+      };
+      // Only set reason if it matches Stripe's allowed values
+      if (
+        input.reason === "duplicate" ||
+        input.reason === "fraudulent" ||
+        input.reason === "requested_by_customer"
+      ) {
+        refundParams.reason = input.reason as Stripe.RefundCreateParams.Reason;
+      }
+      await stripe.refunds.create(refundParams);
+
+      // 3. Update DB
+      const updated = await ctx.db.payment.update({
+        where: { id: input.id },
+        data: {
+          status: "REFUNDED",
+          notes: input.reason,
+          updatedAt: new Date(),
+        },
+        include: paymentInclude,
+      });
+      return sanitizePayment(updated);
     }),
-} satisfies TRPCRouterRecord;
+
+  createPaymentIntent: protectedProcedure
+    .input(
+      z.object({
+        amount: z.number(),
+        currency: z.string(),
+        paymentMethod: z.string(),
+        description: z.string().optional(),
+      }),
+    )
+    .mutation(
+      async ({
+        ctx,
+        input,
+      }): Promise<{
+        paymentIntent: Stripe.PaymentIntent;
+        payment: SanitizedPayment;
+      }> => {
+        try {
+          const paymentIntent = await stripe.paymentIntents.create({
+            amount: Math.round(input.amount * 100), // Convert to cents
+            currency: input.currency.toLowerCase(),
+            payment_method_types: [input.paymentMethod],
+            description: input.description,
+          });
+
+          // Create a payment record in the database
+          const payment = await ctx.db.payment.create({
+            data: {
+              id: crypto.randomUUID(),
+              tenantId: ctx.session.user.id,
+              amount: input.amount,
+              currencyId: input.currency,
+              paymentDate: new Date(),
+              dueDate: new Date(),
+              status: "PENDING" as PaymentStatus,
+              paymentMethod: input.paymentMethod,
+              reference: paymentIntent.id,
+              stripePaymentIntentId: paymentIntent.id,
+              stripeClientSecret: paymentIntent.client_secret,
+              stripeStatus: paymentIntent.status,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            include: paymentInclude,
+          });
+
+          return {
+            paymentIntent,
+            payment: sanitizePayment(payment),
+          };
+        } catch (error) {
+          console.error("Error creating payment intent:", error);
+          throw new TRPCError({
+            code: "INTERNAL_SERVER_ERROR",
+            message: "Failed to create payment intent",
+            cause: error,
+          });
+        }
+      },
+    ),
+
+  confirmPayment: protectedProcedure
+    .input(
+      z.object({
+        paymentIntentId: z.string(),
+      }),
+    )
+    .mutation(
+      async ({
+        ctx,
+        input,
+      }): Promise<{
+        paymentIntent: Stripe.PaymentIntent;
+        payment: SanitizedPayment;
+      }> => {
+        try {
+          const paymentIntent = await stripe.paymentIntents.confirm(
+            input.paymentIntentId,
+          );
+
+          // Update the payment record in the database
+          const payment = await ctx.db.payment.update({
+            where: {
+              stripePaymentIntentId: input.paymentIntentId,
+            },
+            data: {
+              status: (paymentIntent.status === "succeeded"
+                ? "PAID"
+                : "PENDING") as PaymentStatus,
+              stripeStatus: paymentIntent.status,
+              updatedAt: new Date(),
+            },
+            include: paymentInclude,
+          });
+
+          return {
+            paymentIntent,
+            payment: sanitizePayment(payment),
+          };
+        } catch (error) {
+          console.error("Error confirming payment:", error);
+          throw new TRPCError({
+            code: "INTERNAL_SERVER_ERROR",
+            message: "Failed to confirm payment",
+            cause: error,
+          });
+        }
+      },
+    ),
+} as const satisfies TRPCRouterRecord;
+
+export type PaymentRouter = typeof paymentRouter;

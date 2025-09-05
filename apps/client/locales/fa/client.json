@@ -1,0 +1,14 @@
+{
+  "client": {
+    "searchProperties": "Search Properties",
+    "favorites": "Favorites",
+    "myProperties": "My Properties",
+    "appointments": "Appointments",
+    "messages": "Messages",
+    "savedSearches": "Saved Searches",
+    "myReviews": "My Reviews",
+    "documents": "Documents",
+    "billing": "Billing",
+    "notifications": "Notifications"
+  }
+}

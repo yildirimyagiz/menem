@@ -1,0 +1,13 @@
+{
+  "page": {
+    "title": "My Commission Rules",
+    "search": "Ara",
+    "listPlaceholder": "Commission rules list goes here."
+  },
+  "list": {
+    "loading": "Loading commission rules...",
+    "error": "Error loading commission rules.",
+    "none": "No commission rules found.",
+    "view": "Görüntüle"
+  }
+}

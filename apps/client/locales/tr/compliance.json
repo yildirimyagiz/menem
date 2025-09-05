@@ -1,0 +1,264 @@
+{
+  "compliance": {
+    "title": "Uyumluluk Kayıtları",
+    "subtitle": "Uyumluluk ve düzenleyici kayıtları yönetin",
+    "description": "Uyumluluk kayıtlarını, düzenleyici gereksinimleri ve denetim izlerini takip edin ve yönetin",
+    "complianceRecords": "Uyumluluk Kayıtları",
+    "addNewRecord": "Yeni Kayıt Ekle",
+    "addComplianceRecord": "Uyumluluk Kaydı Ekle",
+    "loadingComplianceRecords": "Uyumluluk kayıtları yükleniyor...",
+    "search": {
+      "title": "Ara",
+      "placeholder": "Uyumluluk kayıtlarında ara...",
+      "search": "Ara",
+      "clear": "Aramayı Temizle",
+      "filters": "Filtreler",
+      "applyFilters": "Filtreleri Uygula",
+      "clearFilters": "Filtreleri Temizle"
+    },
+    "records": {
+      "title": "Uyumluluk Kayıtları",
+      "subtitle": "Uyumluluk ve düzenleyici kayıtlarınız",
+      "recordId": "Kayıt ID",
+      "type": "Tür",
+      "category": "Kategori",
+      "status": "Durum",
+      "priority": "Öncelik",
+      "dueDate": "Son Tarih",
+      "completionDate": "Tamamlanma Tarihi",
+      "assignedTo": "Atanan Kişi",
+      "description": "Açıklama",
+      "requirements": "Gereksinimler",
+      "evidence": "Kanıt",
+      "notes": "Notlar",
+      "attachments": "Ekler",
+      "createdBy": "Oluşturan",
+      "createdDate": "Oluşturma Tarihi",
+      "updatedBy": "Güncelleyen",
+      "updatedDate": "Güncelleme Tarihi"
+    },
+    "types": {
+      "title": "Uyumluluk Türleri",
+      "regulatory": "Düzenleyici",
+      "legal": "Yasal",
+      "financial": "Finansal",
+      "operational": "Operasyonel",
+      "security": "Güvenlik",
+      "privacy": "Gizlilik",
+      "environmental": "Çevresel",
+      "health": "Sağlık ve Güvenlik",
+      "quality": "Kalite Güvencesi",
+      "audit": "Denetim"
+    },
+    "categories": {
+      "title": "Kategoriler",
+      "licensing": "Lisanslama",
+      "permits": "İzinler",
+      "certifications": "Sertifikalar",
+      "inspections": "Denetimler",
+      "reports": "Raporlar",
+      "training": "Eğitim",
+      "documentation": "Belgelendirme",
+      "procedures": "Prosedürler",
+      "policies": "Politikalar",
+      "standards": "Standartlar"
+    },
+    "status": {
+      "title": "Durum",
+      "pending": "Beklemede",
+      "inProgress": "Devam Ediyor",
+      "completed": "Tamamlandı",
+      "overdue": "Gecikmiş",
+      "cancelled": "İptal Edildi",
+      "suspended": "Askıya Alındı",
+      "review": "İncelemede",
+      "approved": "Onaylandı",
+      "rejected": "Reddedildi"
+    },
+    "priority": {
+      "title": "Öncelik",
+      "low": "Düşük",
+      "medium": "Orta",
+      "high": "Yüksek",
+      "critical": "Kritik",
+      "urgent": "Acil"
+    },
+    "form": {
+      "title": "Uyumluluk Kayıt Formu",
+      "subtitle": "Uyumluluk kaydı oluşturun veya düzenleyin",
+      "type": {
+        "label": "Tür",
+        "placeholder": "Uyumluluk türünü seçin",
+        "required": "Tür gereklidir"
+      },
+      "category": {
+        "label": "Kategori",
+        "placeholder": "Kategori seçin",
+        "required": "Kategori gereklidir"
+      },
+      "status": {
+        "label": "Durum",
+        "placeholder": "Durum seçin",
+        "required": "Durum gereklidir"
+      },
+      "priority": {
+        "label": "Öncelik",
+        "placeholder": "Öncelik seçin",
+        "required": "Öncelik gereklidir"
+      },
+      "dueDate": {
+        "label": "Son Tarih",
+        "placeholder": "Son tarih seçin",
+        "required": "Son tarih gereklidir"
+      },
+      "completionDate": {
+        "label": "Tamamlanma Tarihi",
+        "placeholder": "Tamamlanma tarihi seçin"
+      },
+      "assignedTo": {
+        "label": "Atanan Kişi",
+        "placeholder": "Atanan kişiyi seçin"
+      },
+      "description": {
+        "label": "Açıklama",
+        "placeholder": "Açıklama girin",
+        "required": "Açıklama gereklidir"
+      },
+      "requirements": {
+        "label": "Gereksinimler",
+        "placeholder": "Gereksinimleri girin"
+      },
+      "evidence": {
+        "label": "Kanıt",
+        "placeholder": "Uyumluluk kanıtını veya ispatını girin"
+      },
+      "notes": {
+        "label": "Notlar",
+        "placeholder": "Ek notları girin"
+      },
+      "attachments": {
+        "label": "Ekler",
+        "placeholder": "Destekleyici belgeleri yükleyin",
+        "upload": "Dosya Yükle",
+        "dragDrop": "Dosyaları buraya sürükleyip bırakın",
+        "supportedFormats": "Desteklenen formatlar: PDF, DOC, DOCX, JPG, PNG",
+        "maxFileSize": "Maksimum dosya boyutu: 10MB"
+      }
+    },
+    "list": {
+      "title": "Uyumluluk Kayıtları Listesi",
+      "empty": "Uyumluluk kaydı bulunamadı",
+      "emptyDescription": "Arama kriterlerinize uygun uyumluluk kaydı bulunamadı. Filtrelerinizi veya arama terimlerinizi ayarlamayı deneyin.",
+      "loading": "Uyumluluk kayıtları yükleniyor...",
+      "error": "Uyumluluk kayıtları yüklenirken hata oluştu",
+      "retry": "Tekrar Dene"
+    },
+    "modal": {
+      "title": "Uyumluluk Kayıt Detayları",
+      "create": "Uyumluluk Kaydı Oluştur",
+      "edit": "Uyumluluk Kaydı Düzenle",
+      "delete": "Uyumluluk Kaydı Sil",
+      "view": "Uyumluluk Kaydını Görüntüle",
+      "close": "Kapat",
+      "save": "Kaydet",
+      "cancel": "İptal",
+      "confirm": "Onayla",
+      "deleteConfirm": "Bu uyumluluk kaydını silmek istediğinizden emin misiniz?",
+      "deleteWarning": "Bu işlem geri alınamaz."
+    },
+    "filters": {
+      "title": "Filtreler",
+      "type": "Tür",
+      "category": "Kategori",
+      "status": "Durum",
+      "priority": "Öncelik",
+      "assignedTo": "Atanan Kişi",
+      "dateRange": "Tarih Aralığı",
+      "clearFilters": "Filtreleri Temizle",
+      "applyFilters": "Filtreleri Uygula"
+    },
+    "validation": {
+      "title": "Doğrulama",
+      "required": "Bu alan gereklidir",
+      "invalidDate": "Lütfen geçerli bir tarih girin",
+      "dueDatePast": "Son tarih geçmişte olamaz",
+      "completionAfterDue": "Tamamlanma tarihi son tarihten sonra olmalıdır",
+      "minLength": "En az {min} karakter olmalıdır",
+      "maxLength": "En fazla {max} karakter olmalıdır",
+      "typeRequired": "Uyumluluk türü gereklidir",
+      "categoryRequired": "Kategori gereklidir",
+      "statusRequired": "Durum gereklidir",
+      "priorityRequired": "Öncelik gereklidir",
+      "dueDateRequired": "Son tarih gereklidir",
+      "descriptionRequired": "Açıklama gereklidir"
+    },
+    "notifications": {
+      "title": "Bildirimler",
+      "recordCreated": "Uyumluluk Kaydı Oluşturuldu",
+      "recordCreatedDesc": "Uyumluluk kaydınız başarıyla oluşturuldu!",
+      "recordUpdated": "Uyumluluk Kaydı Güncellendi",
+      "recordUpdatedDesc": "Uyumluluk kaydınız başarıyla güncellendi!",
+      "recordDeleted": "Uyumluluk Kaydı Silindi",
+      "recordDeletedDesc": "Uyumluluk kaydınız başarıyla silindi!",
+      "error": "Hata",
+      "recordCreateFailed": "Uyumluluk kaydı oluşturulamadı",
+      "recordUpdateFailed": "Uyumluluk kaydı güncellenemedi",
+      "recordDeleteFailed": "Uyumluluk kaydı silinemedi",
+      "loadFailed": "Uyumluluk kayıtları yüklenemedi"
+    },
+    "loading": {
+      "title": "Yükleniyor",
+      "loading": "Yükleniyor...",
+      "loadingRecords": "Uyumluluk kayıtları yükleniyor...",
+      "creating": "Oluşturuluyor...",
+      "updating": "Güncelleniyor...",
+      "deleting": "Siliniyor...",
+      "saving": "Kaydediliyor...",
+      "processing": "İşleniyor...",
+      "uploading": "Yükleniyor..."
+    },
+    "errors": {
+      "title": "Hata",
+      "loadFailed": "Uyumluluk kayıtları yüklenemedi",
+      "createFailed": "Uyumluluk kaydı oluşturulamadı",
+      "updateFailed": "Uyumluluk kaydı güncellenemedi",
+      "deleteFailed": "Uyumluluk kaydı silinemedi",
+      "uploadFailed": "Dosyalar yüklenemedi",
+      "networkError": "Ağ hatası",
+      "serverError": "Sunucu hatası",
+      "tryAgain": "Tekrar deneyin",
+      "contactSupport": "Destekle iletişime geçin"
+    },
+    "actions": {
+      "title": "İşlemler",
+      "create": "Oluştur",
+      "edit": "Düzenle",
+      "delete": "Sil",
+      "view": "Görüntüle",
+      "save": "Kaydet",
+      "cancel": "İptal",
+      "confirm": "Onayla",
+      "back": "Geri",
+      "close": "Kapat",
+      "export": "Dışa Aktar",
+      "import": "İçe Aktar",
+      "download": "İndir",
+      "print": "Yazdır",
+      "assign": "Ata",
+      "complete": "Tamamlandı Olarak İşaretle",
+      "approve": "Onayla",
+      "reject": "Reddet"
+    },
+    "reports": {
+      "title": "Raporlar",
+      "subtitle": "Uyumluluk raporları ve analitikler",
+      "overdue": "Gecikmiş Kayıtlar",
+      "upcoming": "Yaklaşan Son Tarihler",
+      "completed": "Tamamlanan Kayıtlar",
+      "summary": "Özet Rapor",
+      "detailed": "Detaylı Rapor",
+      "export": "Raporu Dışa Aktar",
+      "print": "Raporu Yazdır"
+    }
+  }
+}

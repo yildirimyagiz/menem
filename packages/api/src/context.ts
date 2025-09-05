@@ -1,17 +1,20 @@
-import type { CreateHTTPContextOptions } from "@trpc/server/adapters/standalone";
 import type { inferAsyncReturnType } from "@trpc/server";
-import { db } from "@acme/db";
+import type { CreateHTTPContextOptions } from "@trpc/server/adapters/standalone";
 
-export function createContext({ req }: CreateHTTPContextOptions) {
-  // Extract token from Authorization header
-  const authHeader = req.headers.authorization ?? '';
-  const token = authHeader.startsWith('Bearer ') ? authHeader.slice(7) : null;
+import { db } from "@reservatior/db";
 
-  return {
-    db,
-    session: null, // You'll want to add proper session handling here
-    token, // Add required token field
-  };
+import { validateToken } from "./utils/jwt";
+
+export function createContext({ req, session }: { req: any; session?: any }) {
+  // Use provided session (from NextAuth/cookies) if available
+  if (session) {
+    return { db, session, token: null };
+  }
+  // Fallback: Extract token from Authorization header (for mobile/JWT)
+  const authHeader = req.headers.authorization ?? "";
+  const token = authHeader.startsWith("Bearer ") ? authHeader.slice(7) : null;
+  const sessionFromToken = token ? validateToken(token) : null;
+  return { db, session: sessionFromToken, token };
 }
 
 export type Context = inferAsyncReturnType<typeof createContext>;

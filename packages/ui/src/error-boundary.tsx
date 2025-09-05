@@ -1,5 +1,5 @@
 import type { ErrorInfo, ReactNode } from "react";
-import React, { Component } from "react";
+import { Component } from "react";
 
 import { EmptyState } from "./empty-state";
 
@@ -33,7 +33,7 @@ export class ErrorBoundary extends Component<Props, State> {
             icon={<div className="h-12 w-12 rounded-full bg-red-500" />}
             title="Something went wrong"
             description={
-              this.state.error?.message || "An unexpected error occurred"
+              this.state.error?.message ?? "An unexpected error occurred"
             }
           />
         </div>

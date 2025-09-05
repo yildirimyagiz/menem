@@ -15,23 +15,39 @@ export const SUBSCRIPTION_PACKAGES: SubscriptionPackage[] = [
     name: "Basic",
     price: 0,
     currency: "USD",
-    features: ["Essential features", "Email support"],
-    description: "Free basic plan for individuals and small teams.",
+    features: [
+      "Access to core platform features",
+      "Standard analytics dashboard",
+      "Email support",
+    ],
+    description: "Perfect for individuals and small teams getting started.",
   },
   {
     tier: "PRO",
     name: "Pro",
     price: 29,
     currency: "USD",
-    features: ["All Basic features", "Advanced analytics", "Priority support"],
-    description: "Professional plan for growing businesses.",
+    features: [
+      "Everything in Basic",
+      "Advanced analytics & reporting",
+      "Priority email support",
+      "Team collaboration tools",
+    ],
+    description:
+      "Ideal for growing businesses that need more insights and support.",
   },
   {
     tier: "ENTERPRISE",
     name: "Enterprise",
     price: 99,
     currency: "USD",
-    features: ["All Pro features", "Custom integrations", "Dedicated support"],
-    description: "Best for large organizations with custom needs.",
+    features: [
+      "Everything in Pro",
+      "Custom integrations",
+      "Dedicated account manager",
+      "24/7 premium support",
+    ],
+    description:
+      "Best for large organizations with custom needs and dedicated support.",
   },
 ];

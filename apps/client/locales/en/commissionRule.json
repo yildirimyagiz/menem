@@ -1,0 +1,26 @@
+{
+  "page": {
+    "title": "My Commission Rules",
+    "subtitle": "View your commission rules and payment terms.",
+    "search": "Search",
+    "searchPlaceholder": "Search by type or provider...",
+    "listPlaceholder": "Commission rules list goes here."
+  },
+  "list": {
+    "loading": "Loading commission rules...",
+    "error": "Error loading commission rules.",
+    "none": "No commission rules found.",
+    "view": "View"
+  },
+  "table": {
+    "provider": "Provider",
+    "type": "Type",
+    "commission": "Commission",
+    "start": "Start",
+    "end": "End",
+    "actions": "Actions"
+  },
+  "card": {
+    "title": "Commission Rules"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "untitled": "Property",
+  "noImage": "No image",
+  "about": "About this property",
+  "mapsKeyMissing": "Google Maps API key missing.",
+  "listingType": {
+    "sale": "For Sale",
+    "rent": "For Rent",
+    "booking": "Booking"
+  },
+  "amenities": "Amenities",
+  "loadFailed": "Failed to load property.",
+  "notFound": "Property not found or unavailable.",
+  "facts": {
+    "size": "Size",
+    "bedrooms": "Bedrooms",
+    "bathrooms": "Bathrooms",
+    "type": "Type",
+    "status": "Status"
+  },
+  "badges": {
+    "featured": "Featured"
+  },
+  "features": {
+    "title": "Features",
+    "subtitle": "Key property features"
+  },
+  "location": {
+    "title": "Nearby"
+  },
+  "priceFrom": "Starting from",
+  "facility": {
+    "title": "Facility",
+    "amenities": "Facility amenities",
+    "locationAmenities": "Location amenities"
+  },
+  "includedServices": {
+    "title": "Included services"
+  },
+  "extraServices": {
+    "title": "Extra services"
+  },
+  "expenses": {
+    "title": "Expenses",
+    "untitled": "Expense",
+    "due": "Due",
+    "paid": "Paid"
+  },
+  "booking": {
+    "title": "Reserve your stay",
+    "pricePerNight": "Price per night",
+    "checkIn": "Check-in",
+    "checkInHelp": "Choose your arrival date.",
+    "checkOut": "Check-out",
+    "checkOutHelp": "Choose a date after check-in.",
+    "invalidRange": "Check-out must be after check-in.",
+    "guests": "Guests",
+    "guestsHelp": "How many people will stay?",
+    "nights": "Nights",
+    "total": "Total price",
+    "reserve": "Request to book",
+    "policyNote": "Free cancellation within 48 hours of booking."
+  },
+  "rent": {
+    "title": "Rent this property",
+    "monthly": "Monthly",
+    "moveInDate": "Preferred move-in date",
+    "moveInHelp": "Select a future date.",
+    "message": "Message to owner/agent",
+    "messagePh": "I am interested in renting...",
+    "messageHint": "Introduce yourself, desired lease term, and any questions.",
+    "requestTour": "Request a tour",
+    "apply": "Apply"
+  },
+  "sale": {
+    "title": "Buy this property",
+    "price": "Price",
+    "makeOffer": "Make an offer (optional)",
+    "message": "Message to owner/agent",
+    "messagePh": "I would like to discuss this property...",
+    "offerHelp": "You can propose a price or leave it blank.",
+    "messageHint": "Share your timeline, financing status, and questions.",
+    "requestInfo": "Request info",
+    "scheduleTour": "Schedule a tour"
+  }
+}

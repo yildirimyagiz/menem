@@ -1,0 +1,125 @@
+{
+  "trpc": {
+    "client": {
+      "provider": "tRPC Provider",
+      "queryClient": "Query Client",
+      "createClient": "Create Client",
+      "links": "Client Links",
+      "loggerLink": "Logger Link",
+      "splitLink": "Split Link",
+      "wsLink": "WebSocket Link",
+      "httpBatchStreamLink": "HTTP Batch Stream Link",
+      "transformer": "Data Transformer",
+      "headers": "Request Headers",
+      "subscription": "Subscription",
+      "query": "Query",
+      "mutation": "Mutation"
+    },
+    "react": {
+      "provider": "React Provider",
+      "queryClientProvider": "Query Client Provider",
+      "useQuery": "Use Query Hook",
+      "useMutation": "Use Mutation Hook",
+      "useSubscription": "Use Subscription Hook",
+      "invalidate": "Invalidate Query",
+      "refetch": "Refetch Query",
+      "loading": "Yükleniyor",
+      "error": "Hata",
+      "success": "Başarılı",
+      "idle": "Boşta",
+      "data": "Data",
+      "status": "Durum"
+    },
+    "server": {
+      "router": "tRPC Router",
+      "procedure": "Procedure",
+      "query": "Query Procedure",
+      "mutation": "Mutation Procedure",
+      "subscription": "Subscription Procedure",
+      "middleware": "Middleware",
+      "context": "Context",
+      "input": "Input Validation",
+      "output": "Output Validation",
+      "error": "Error Handler"
+    },
+    "query": {
+      "client": "Query Client",
+      "createQueryClient": "Create Query Client",
+      "queryClientSingleton": "Query Client Singleton",
+      "server": "Server Query Client",
+      "browser": "Browser Query Client",
+      "window": "Window Object",
+      "undefined": "Undefined"
+    },
+    "websocket": {
+      "client": "WebSocket Client",
+      "connection": "WebSocket Connection",
+      "url": "WebSocket URL",
+      "baseUrl": "Base URL",
+      "wsUrl": "WebSocket URL",
+      "getBaseUrl": "Get Base URL",
+      "getWsUrl": "Get WebSocket URL",
+      "window": "Window Object",
+      "origin": "Origin",
+      "location": "Location",
+      "protocol": "Protocol",
+      "host": "Host",
+      "port": "Port"
+    },
+    "environment": {
+      "development": "Development",
+      "production": "Production",
+      "nodeEnv": "Node Environment",
+      "vercelUrl": "Vercel URL",
+      "port": "Port",
+      "process": "Process",
+      "env": "Environment Variables"
+    },
+    "headers": {
+      "xTrpcSource": "tRPC Source Header",
+      "nextjsReact": "Next.js React",
+      "setHeader": "Set Header",
+      "getHeaders": "Get Headers",
+      "fromEntries": "From Entries"
+    },
+    "errors": {
+      "connection": "Connection Error",
+      "timeout": "Timeout Error",
+      "network": "Network Error",
+      "server": "Server Error",
+      "client": "Client Error",
+      "validation": "Validation Error",
+      "authentication": "Authentication Error",
+      "authorization": "Authorization Error",
+      "notFound": "Not Found Error",
+      "internal": "Internal Server Error"
+    },
+    "status": {
+      "idle": "Boşta",
+      "loading": "Yükleniyor",
+      "success": "Başarılı",
+      "error": "Hata",
+      "pending": "Beklemede",
+      "fulfilled": "Fulfilled",
+      "rejected": "Rejected"
+    },
+    "operations": {
+      "direction": "Operation Direction",
+      "up": "Up",
+      "down": "Down",
+      "result": "Operation Result",
+      "type": "Operation Type",
+      "condition": "Operation Condition",
+      "enabled": "Etkin",
+      "disabled": "Devre Dışı"
+    },
+    "subscriptions": {
+      "enabled": "Subscription Enabled",
+      "disabled": "Subscription Disabled",
+      "onData": "On Data Callback",
+      "onError": "On Error Callback",
+      "params": "Subscription Parameters",
+      "threadId": "Thread ID"
+    }
+  }
+}

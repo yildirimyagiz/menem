@@ -1,8 +1,10 @@
 import { randomUUID } from "crypto";
 import type { Prisma, Session as PrismaSession, User } from "@prisma/client";
+import {
+  CreateSessionSchema,
+  UpdateSessionSchema,
+} from "@reservatior/validators";
 import { z } from "zod";
-
-import { CreateSessionSchema, UpdateSessionSchema } from "@acme/validators";
 
 import { createTRPCRouter, protectedProcedure } from "../trpc";
 

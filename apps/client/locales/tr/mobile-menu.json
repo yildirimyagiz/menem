@@ -1,0 +1,41 @@
+{
+  "nav": {
+    "dashboard": "Gösterge Paneli",
+    "properties": "Mülkler",
+    "listings": "İlanlar",
+    "favorites": "Favoriler",
+    "messages": "Mesajlar",
+    "notifications": "Bildirimler",
+    "payments": "Ödemeler",
+    "expenses": "Giderler",
+    "taxRecords": "Vergi Kayıtları",
+    "subscription": "Abonelik",
+    "users": "Kullanıcılar",
+    "agents": "Acenteler",
+    "analytics": "Analitik",
+    "reports": "Raporlar",
+    "compliance": "Uyumluluk",
+    "facilities": "Tesisler",
+    "help": "Yardım",
+    "support": "Destek",
+    "settings": "Ayarlar"
+  },
+  "categories": {
+    "dashboard": "Gösterge Paneli",
+    "properties": "Mülkler",
+    "communication": "İletişim",
+    "financial": "Finansal",
+    "admin": "Yönetim",
+    "support": "Destek"
+  },
+  "user": {
+    "welcome": "Tekrar hoş geldiniz,",
+    "logout": "Çıkış"
+  },
+  "brand": {
+    "name": "Reservatior"
+  },
+  "actions": {
+    "close": "Menüyü kapat"
+  }
+} 

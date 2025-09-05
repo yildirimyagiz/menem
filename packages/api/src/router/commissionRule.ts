@@ -5,13 +5,12 @@ import type {
   Provider,
 } from "@prisma/client";
 import type { TRPCRouterRecord } from "@trpc/server";
-import { z } from "zod";
-
 import {
   CommissionRuleFilterSchema,
   CreateCommissionRuleSchema,
   UpdateCommissionRuleSchema,
-} from "@acme/validators";
+} from "@reservatior/validators";
+import { z } from "zod";
 
 import { getPaginationParams } from "../helpers/pagination";
 import { withCacheAndFormat } from "../helpers/withCacheAndFormat";

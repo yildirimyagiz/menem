@@ -24,11 +24,21 @@ const BaseGuestSchema = {
   agencyId: z.string().uuid("Invalid agency ID").nullable().optional(),
 };
 
+// Accept both UUID and CUID
+const cuidRegex = /^c[a-z0-9]{24}$/;
+const uuidOrCuid = z
+  .string()
+  .refine(
+    (val) => z.string().uuid().safeParse(val).success || cuidRegex.test(val),
+    { message: "Invalid ID format" },
+  );
+
 // Guest Schema
 export const GuestSchema = z
   .object({
-    id: z.string().uuid("Invalid ID format"),
+    id: uuidOrCuid,
     ...BaseGuestSchema,
+    agencyId: uuidOrCuid.nullable().optional(),
     createdAt: z.date(),
     updatedAt: z.date(),
     deletedAt: z.date().nullable(),
@@ -50,18 +60,18 @@ export const CreateGuestSchema = z
         z
           .string()
           .datetime()
-          .or(z.string().regex(/^\d{4}-\d{2}-\d{2}$/)),
+          .or(z.string().regex(/^[\d]{4}-[\d]{2}-[\d]{2}$/)),
       ])
       .pipe(z.coerce.date()),
     image: z.string().url("Invalid image URL").nullable().optional(),
-    agencyId: z.string().uuid("Invalid agency ID").nullable().optional(),
+    agencyId: uuidOrCuid.nullable().optional(),
   })
   .strict();
 
 // Update Guest Schema
 export const UpdateGuestSchema = z
   .object({
-    id: z.string().uuid("Invalid ID format"),
+    id: uuidOrCuid,
     name: BaseGuestSchema.name.optional(),
     phone: BaseGuestSchema.phone.optional(),
     image: BaseGuestSchema.image,
@@ -74,7 +84,7 @@ export const UpdateGuestSchema = z
         z
           .string()
           .datetime()
-          .or(z.string().regex(/^\d{4}-\d{2}-\d{2}$/)),
+          .or(z.string().regex(/^[\d]{4}-[\d]{2}-[\d]{2}$/)),
       ])
       .pipe(z.coerce.date())
       .optional(),
@@ -83,7 +93,7 @@ export const UpdateGuestSchema = z
     country: BaseGuestSchema.country.optional(),
     zipCode: BaseGuestSchema.zipCode.optional(),
     email: BaseGuestSchema.email.optional(),
-    agencyId: BaseGuestSchema.agencyId,
+    agencyId: uuidOrCuid.nullable().optional(),
     deletedAt: z.date().nullable().optional(),
   })
   .strict()
@@ -104,7 +114,7 @@ export const GuestFilterSchema = z
     passportNumber: z.string().optional(),
     nationality: z.string().optional(),
     gender: GenderEnum.optional(),
-    agencyId: z.string().uuid("Invalid agency ID").optional(),
+    agencyId: uuidOrCuid.optional(),
 
     // Date range
     createdAtFrom: z.date().optional(),

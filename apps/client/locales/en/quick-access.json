@@ -1,0 +1,10 @@
+{
+  "quickAccess": {
+    "title": "Quick Access",
+    "description": "Here are some quick links to get you started.",
+    "noSession": "No user session.",
+    "loading": "Loading user data...",
+    "manageProperties": "Manage Properties",
+    "createListing": "Create New Listing"
+  }
+} 

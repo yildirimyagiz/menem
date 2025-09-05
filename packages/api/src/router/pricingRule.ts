@@ -2,13 +2,12 @@ import { randomUUID } from "crypto";
 import type { PricingRule as PrismaPricingRule } from "@prisma/client";
 import type { TRPCRouterRecord } from "@trpc/server";
 import { Prisma } from "@prisma/client";
-import { z } from "zod";
-
 import {
   CreatePricingRuleSchema,
   PricingRuleFilterSchema,
   UpdatePricingRuleSchema,
-} from "@acme/validators";
+} from "@reservatior/validators";
+import { z } from "zod";
 
 import { getPaginationParams } from "../helpers/pagination";
 import { withCacheAndFormat } from "../helpers/withCacheAndFormat";
@@ -238,5 +237,23 @@ export const pricingRuleRouter = {
         }
         throw new Error(`Failed to delete pricing rule: ${error.message}`);
       }
+    }),
+
+  byProperty: protectedProcedure
+    .input(z.object({ propertyId: z.string() }))
+    .query(async ({ ctx, input }) => {
+      const rules = await ctx.db.pricingRule.findMany({
+        where: { propertyId: input.propertyId, deletedAt: null },
+        include: {
+          Property: { select: { id: true } },
+          Reservation: { select: { id: true } },
+          Availability: { select: { id: true } },
+          Subscriptions: { select: { id: true } },
+          Discounts: { select: { id: true } },
+          currency: { select: { id: true } },
+        },
+        orderBy: { createdAt: "desc" },
+      });
+      return rules.map(sanitizePricingRule);
     }),
 } satisfies TRPCRouterRecord;

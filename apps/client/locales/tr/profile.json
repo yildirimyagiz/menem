@@ -1,0 +1,15 @@
+{
+  "Profile": {
+    "title": "Profil",
+    "description": "Profil bilgilerinizi yönetin",
+    "personalInfo": "Kişisel Bilgiler",
+    "accountSettings": "Hesap Ayarları",
+    "security": "Güvenlik",
+    "preferences": "Tercihler",
+    "saveChanges": "Değişiklikleri Kaydet",
+    "cancel": "İptal",
+    "loading": "Yükleniyor...",
+    "success": "Profil başarıyla güncellendi",
+    "error": "Profil güncellenemedi"
+  }
+}

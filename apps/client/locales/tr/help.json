@@ -1,0 +1,44 @@
+{
+  "Help": {
+    "title": "Yardım & Destek",
+    "description": "Hesabınız ve mülk yönetimi konusunda yardım alın",
+    "subject": "Konu",
+    "subjectPlaceholder": "Konu girin",
+
+    "descriptionPlaceholder": "Sorununuzu açıklayın",
+    "submitTicket": "Destek Talebi Gönder",
+    "tickets": {
+      "title": "Destek Taleplerim",
+      "noTickets": "Destek talebi bulunamadı",
+      "noTicketsDescription": "Henüz hiç destek talebi oluşturmadınız.",
+      "createTicket": "Yeni Destek Talebi Oluştur",
+      "status": {
+        "open": "Açık",
+        "inProgress": "İşlemde",
+        "resolved": "Çözüldü",
+        "closed": "Kapalı"
+      },
+      "priority": {
+        "low": "Düşük",
+        "medium": "Orta",
+        "high": "Yüksek",
+        "urgent": "Acil"
+      }
+    },
+    "faq": {
+      "title": "Sık Sorulan Sorular",
+      "description": "Yaygın soruların cevaplarını bulun"
+    },
+    "contact": {
+      "title": "Destek ile İletişim",
+      "description": "Destek ekibimizle iletişime geçin",
+      "email": "E-posta Desteği",
+      "phone": "Telefon Desteği",
+      "chat": "Canlı Destek"
+    },
+    "search": {
+      "placeholder": "Yardım makalelerinde ara...",
+      "noResults": "Yardım makalesi bulunamadı"
+    }
+  }
+} 

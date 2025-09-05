@@ -1,0 +1,150 @@
+{
+  "_meta": {
+    "description": "User-facing strings for the subscription module. Fill with extracted and translated keys from subscription UI."
+  },
+  "page": {
+    "title": "Subscription Management",
+    "subtitle": "Manage your subscription plans and billing",
+    "loading": "Loading subscriptions..."
+  },
+  "pricing": {
+    "title": "Choose Your Plan",
+    "subtitle": "Select the perfect plan for your needs",
+    "monthly": "Monthly",
+    "annual": "Annual",
+    "saveUpTo": "Save up to {percentage}%",
+    "planTypes": {
+      "free": "Free",
+      "startup": "Startup",
+      "team": "Team",
+      "enterprise": "Enterprise"
+    },
+    "foreverFree": "Forever Free",
+    "users": {
+      "single": "Single User",
+      "multiple": "Multiple Users"
+    },
+    "planFeatures": "Plan Features",
+    "productSupport": "Product Support",
+    "getStarted": "Get Started",
+    "contactUs": "Contact Us",
+    "featureTypes": {
+      "financialData": "Financial Data",
+      "onchainData": "On-chain Data",
+      "socialData": "Social Data"
+    },
+    "features": {
+      "ohlc": "OHLC",
+      "priceVolume": "Price Volume",
+      "networkGrowth": "Network Growth",
+      "tokenAge": "Token Age",
+      "exchangeFlow": "Exchange Flow",
+      "erc20Flow": "ERC20 Flow",
+      "devActivity": "Dev Activity",
+      "topicSearch": "Topic Search",
+      "socialDominance": "Social Dominance"
+    }
+  },
+  "plans": {
+    "starter": {
+      "name": "Starter",
+      "desc": "Perfect for getting started",
+      "price": "$5",
+      "perMonth": "/mo",
+      "features": [
+        "Automated Reporting",
+        "Faster Processing",
+        "Customizations"
+      ]
+    },
+    "basic": {
+      "name": "Basic",
+      "desc": "Great for growing businesses",
+      "price": "$15",
+      "perMonth": "/mo",
+      "features": [
+        "Everything in Starter",
+        "100 Builds",
+        "Progress Reports",
+        "Premium Support"
+      ]
+    },
+    "plus": {
+      "name": "Plus",
+      "desc": "Advanced features for professionals",
+      "price": "$25",
+      "perMonth": "/mo",
+      "features": [
+        "Everything in Basic",
+        "Unlimited Builds",
+        "Advanced Analytics",
+        "Company Evaluations"
+      ]
+    }
+  },
+  "currentSubscription": {
+    "title": "Current Subscription",
+    "status": "Status:",
+    "tier": "Tier:",
+    "autoRenew": "Auto-renew:",
+    "started": "Started:",
+    "expires": "Expires:",
+    "yes": "Evet",
+    "no": "Hayır",
+    "actions": {
+      "edit": "Düzenle",
+      "cancel": "İptal"
+    }
+  },
+  "availablePlans": {
+    "title": "Available Plans",
+    "currentPlan": "Current Plan",
+    "upgrade": "Upgrade",
+    "subscribe": "Subscribe"
+  },
+  "status": {
+    "active": "Aktif",
+    "inactive": "Pasif",
+    "cancelled": "CANCELLED",
+    "pending": "Beklemede",
+    "expired": "EXPIRED"
+  },
+  "tiers": {
+    "basic": "BASIC",
+    "pro": "PRO",
+    "enterprise": "ENTERPRISE"
+  },
+  "badges": {
+    "popular": "Popular"
+  },
+  "toast": {
+    "success": {
+      "created": "Subscription created successfully!",
+      "updated": "Subscription updated successfully!",
+      "cancelled": "Subscription cancelled successfully!"
+    },
+    "error": {
+      "create": "Failed to create subscription: {message}",
+      "update": "Failed to update subscription: {message}",
+      "cancel": "Failed to cancel subscription: {message}"
+    }
+  },
+  "ariaLabel": {
+    "subscribe": "Subscribe to {plan} plan"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Hata",
+    "success": "Başarılı",
+    "cancel": "İptal",
+    "save": "Kaydet",
+    "delete": "Sil",
+    "close": "Kapat",
+    "view": "Görüntüle",
+    "edit": "Düzenle",
+    "confirm": "Onayla",
+    "back": "Geri",
+    "next": "İleri",
+    "previous": "Önceki"
+  }
+}
